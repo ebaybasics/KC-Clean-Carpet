@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpet. Serving the Kansas City metro. Call (816) 715-1130 or book now.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kcleancarpet.com/schedule.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Schedule a Cleaning | KC Clean Carpet – Book Online Today">
+    <meta property="og:description" content="Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpet. Serving the Kansas City metro. Call (816) 715-1130 or book now.">
+    <meta property="og:url" content="https://www.kcleancarpet.com/schedule.html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Cleaning | KC Clean Carpet – Book Online Today</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; background: #f5f7fb; }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ── TOP BAR & NAV (same as site) ── */
+        .top-bar { background: var(--kc-blue-dark); color: #fff; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 7px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-phone { font-size: 15px; font-weight: 800; color: var(--kc-gold); }
+        .top-socials { display: flex; gap: 8px; }
+        .top-socials a { width: 22px; height: 22px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; transition: background .2s; }
+        .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
+        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); }
+        .nav-logo { height: 72px; width: auto; }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links a { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; transition: color .2s, background .2s; }
+        .nav-links a:hover { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+
+        /* ── HERO BAND ── */
+        .page-band {
+            background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue) 100%);
+            padding: 52px 32px 48px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,179,0,.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-band-stars { font-size: 22px; color: var(--kc-gold); letter-spacing: .08em; margin-bottom: 12px; position: relative; }
+        .page-band h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(24px,4vw,44px); margin: 0 0 10px; position: relative; line-height: 1.15; }
+        .page-band p { font-size: 16px; opacity: .85; margin: 0; position: relative; }
+
+        /* ── MAIN LAYOUT ── */
+        .main-wrap {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 52px 32px 72px;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 48px;
+            align-items: start;
+        }
+
+        /* ── FORM CARD ── */
+        .form-card {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 4px 32px rgba(13,71,161,.1);
+            overflow: hidden;
+        }
+        .form-header {
+            background: var(--kc-blue-dark);
+            padding: 24px 32px;
+            color: #fff;
+        }
+        .form-header h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 20px; margin: 0 0 4px; }
+        .form-header p { font-size: 13px; opacity: .8; margin: 0; }
+        .form-body { padding: 32px; }
+
+        .field-group { margin-bottom: 20px; }
+        .field-group label { display: block; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #444; margin-bottom: 7px; }
+        .field-group label span { color: var(--kc-gold); }
+        .field-group input,
+        .field-group select,
+        .field-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1.5px solid #dde2ee;
+            border-radius: 3px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #222;
+            background: #fafbfd;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .field-group input:focus,
+        .field-group select:focus,
+        .field-group textarea:focus {
+            border-color: var(--kc-blue);
+            box-shadow: 0 0 0 3px rgba(21,101,192,.1);
+            background: #fff;
+        }
+        .field-group textarea { resize: vertical; min-height: 110px; }
+        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        .service-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+        .chip { display: flex; align-items: center; gap: 6px; }
+        .chip input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--kc-blue); cursor: pointer; }
+        .chip label { font-size: 13px; color: #444; cursor: pointer; font-weight: 500; }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--kc-gold);
+            color: var(--kc-navy);
+            font-family: 'Montserrat',sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: 17px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 8px;
+            transition: background .2s, transform .1s, box-shadow .2s;
+            box-shadow: 0 4px 18px rgba(255,179,0,.35);
+        }
+        .submit-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,160,0,.45); }
+        .submit-btn:active { transform: translateY(0); }
+
+        .form-fine {
+            font-size: 11px;
+            color: #999;
+            text-align: center;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* ── STEP 2 (Markate widget) ── */
+        #step-2 {
+            display: none;
+        }
+        .step2-header {
+            background: var(--kc-blue-dark);
+            padding: 24px 32px;
+            color: #fff;
+        }
+        .step2-header h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 20px; margin: 0 0 4px; color: var(--kc-gold); }
+        .step2-header p { font-size: 13px; opacity: .8; margin: 0; }
+        .step2-body { padding: 32px; min-height: 500px; }
+
+        /* ── SIDEBAR ── */
+        .sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+        .trust-box {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(13,71,161,.08);
+            padding: 28px 24px;
+        }
+        .trust-box h3 {
+            font-family: 'Montserrat',sans-serif;
+            font-weight: 900;
+            font-size: 15px;
+            color: var(--kc-blue-dark);
+            margin: 0 0 18px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .trust-item:last-child { margin-bottom: 0; }
+        .trust-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--kc-blue-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        .trust-item-text strong { display: block; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 13px; color: #222; margin-bottom: 2px; }
+        .trust-item-text span { font-size: 12px; color: #777; line-height: 1.5; }
+
+        .review-snippet {
+            background: var(--kc-navy);
+            border-radius: 6px;
+            padding: 24px;
+            color: #fff;
+        }
+        .review-snippet .stars { font-size: 18px; color: var(--kc-gold); margin-bottom: 10px; }
+        .review-snippet p { font-size: 13px; font-style: italic; line-height: 1.7; opacity: .9; margin: 0 0 10px; }
+        .review-snippet span { font-size: 12px; opacity: .65; }
+
+        .phone-band {
+            background: var(--kc-blue);
+            border-radius: 6px;
+            padding: 20px 24px;
+            text-align: center;
+            color: #fff;
+        }
+        .phone-band p { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin: 0 0 6px; }
+        .phone-band a { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 24px; color: var(--kc-gold); }
+
+        footer { background: #07142A; padding: 32px; }
+        .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); flex-wrap: wrap; gap: 8px; }
+
+        @media (max-width: 768px) {
+            .main-wrap { grid-template-columns: 1fr; }
+            .field-row { grid-template-columns: 1fr; }
+            .top-bar { flex-direction: column; gap: 4px; text-align: center; }
+        }
+    
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; cursor: pointer; transition: color .2s, background .2s; display: inline-flex; align-items: center; gap: 4px; }
+        .nav-dropdown-trigger:hover, .nav-dropdown:hover .nav-dropdown-trigger { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e8edf5; border-radius: 4px; box-shadow: 0 8px 32px rgba(13,71,161,.14); min-width: 210px; z-index: 200; overflow: hidden; padding-top: 6px; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a { display: block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 600; color: var(--kc-blue-dark); padding: 11px 18px; letter-spacing: .04em; transition: background .15s, color .15s; border-bottom: 1px solid #f0f3fa; }
+        .nav-dropdown-menu a:last-child { border-bottom: none; }
+        .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <span>Customer Service &amp; Quality is Our #1 Priority!</span>
+    <div style="display:flex;align-items:center;gap:20px;">
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;">&#128222; (816) 715-1130</a>
+        <div class="top-socials"><a href="https://www.facebook.com/KCCleanCarpet" title="Facebook" target="_blank" rel="noopener">f</a></div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <a href="index.html"><img src="brand_assets/KC Clean Carpet Logo.png" class="nav-logo" alt="KC Clean Carpet"></a>
+        <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+            <span class="nav-dropdown-trigger">Services &#9662;</span>
+            <div class="nav-dropdown-menu">
+                <a href="carpet-cleaning.html">Carpet Cleaning</a>
+                <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+                <a href="sandless-refinishing.html">Sandless Refinishing</a>
+                <a href="wax-removal.html">Wax Removal</a>
+                <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+                <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+            </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+                <a href="schedule.html" class="nav-cta">Schedule a Clean</a>
+    </div>
+</nav>
+
+<div class="page-band">
+    <div class="page-band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <h1>Schedule Your Super Clean</h1>
+    <p>Fill out the form below &amp; we'll get you on the calendar fast — most bookings confirmed within 1 hour.</p>
+</div>
+
+<div class="main-wrap">
+
+    <!-- LEFT: FORM -->
+    <div>
+
+        <!-- STEP 1 -->
+        <div id="step-1" class="form-card">
+            <div class="form-header">
+                <h2>Step 1 of 2 &mdash; Tell Us About You</h2>
+                <p>Takes less than 60 seconds. No obligation — just a quick heads-up so we can prepare.</p>
+            </div>
+            <div class="form-body">
+                <form id="lead-form" novalidate>
+
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label>First Name <span>*</span></label>
+                            <input type="text" id="fname" placeholder="Jane" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Last Name <span>*</span></label>
+                            <input type="text" id="lname" placeholder="Smith" required>
+                        </div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label>Phone Number <span>*</span></label>
+                            <input type="tel" id="phone" placeholder="(816) 555-0000" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Email Address <span>*</span></label>
+                            <input type="email" id="email" placeholder="jane@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Services Needed <span>*</span></label>
+                        <div class="service-chips">
+                            <div class="chip"><input type="checkbox" id="s1" value="Carpet Cleaning"><label for="s1">Carpet Cleaning</label></div>
+                            <div class="chip"><input type="checkbox" id="s2" value="Hardwood Floor Cleaning"><label for="s2">Hardwood Floor Cleaning</label></div>
+                            <div class="chip"><input type="checkbox" id="s3" value="Upholstery Cleaning"><label for="s3">Upholstery Cleaning</label></div>
+                            <div class="chip"><input type="checkbox" id="s4" value="Tile & Grout Cleaning"><label for="s4">Tile &amp; Grout Cleaning</label></div>
+                            <div class="chip"><input type="checkbox" id="s6" value="Sandless Refinishing"><label for="s6">Sandless Refinishing</label></div>
+                            <div class="chip"><input type="checkbox" id="s7" value="Wax Removal"><label for="s7">Wax Removal</label></div>
+                            <div class="chip"><input type="checkbox" id="s5" value="Not Sure"><label for="s5">Not Sure Yet</label></div>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Additional Information</label>
+                        <textarea id="notes" placeholder="Tell us anything that would help — number of rooms, pet stains, special concerns, preferred dates, etc."></textarea>
+                    </div>
+
+                    <div id="form-error" style="display:none; background:#FFF3CD; border:1px solid #FFB300; color:#7a5000; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
+                        Please fill in all required fields (Name, Phone, Email, and at least one service).
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Continue to Book My Appointment &#8594;
+                    </button>
+                    <p class="form-fine">&#128274; Your information is 100% secure and will never be sold or shared. We'll only contact you about your cleaning appointment.</p>
+                </form>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div id="step-2" class="form-card">
+            <div class="step2-header">
+                <h2>&#10003; Almost There — Pick Your Date &amp; Time</h2>
+                <p>Use the booking tool below to choose the appointment that works best for you.</p>
+            </div>
+            <div class="step2-body">
+                <div id="markate-widget-booking"></div>
+                <script>(function() { function async_load() {var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                var u = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.markate.com/public/widget/booking/js';
+                var t = Math.random()*10000000000000000;
+                s.src = u + '?id=7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231&ref=' + encodeURIComponent(window.location.href) + '&t=' + t;
+                var w = document.getElementById('markate-widget-booking'); w.parentNode.insertBefore(s, w);
+                } if (window.attachEvent) { window.attachEvent('onload', async_load); } else { window.addEventListener('load', async_load, false); }
+                })();</script>
+            </div>
+        </div>
+
+    </div><!-- /left -->
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="trust-box">
+            <h3>Why KC Clean Carpet?</h3>
+            <div class="trust-item">
+                <div class="trust-icon">&#9733;</div>
+                <div class="trust-item-text">
+                    <strong>5-Star Rated Service</strong>
+                    <span>Consistently rated 5 stars on Google and Facebook by Kansas City homeowners.</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#9989;</div>
+                <div class="trust-item-text">
+                    <strong>100% Satisfaction Guarantee</strong>
+                    <span>Not happy? We'll come back and make it right — no questions asked.</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#128197;</div>
+                <div class="trust-item-text">
+                    <strong>Fast, Easy Booking</strong>
+                    <span>Most appointments confirmed within 1 hour. Same-week and next-day slots often available.</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#127807;</div>
+                <div class="trust-item-text">
+                    <strong>Eco-Friendly Solutions</strong>
+                    <span>Safe for kids, pets, and allergy sufferers. No harsh chemicals left behind.</span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">&#128737;</div>
+                <div class="trust-item-text">
+                    <strong>Licensed &amp; Insured</strong>
+                    <span>Fully licensed, bonded, and insured. Your home is in safe, professional hands.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-snippet">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"The KC Clean Carpet team did an incredible job. My carpet was heavily stained and they made it look brand new. Technician was professional, on time, and explained everything before starting."</p>
+            <span>&#126; Michelle T., Kansas City</span>
+        </div>
+
+        <div class="phone-band">
+            <p>Prefer to call? We're here Mon–Sat 7am–7pm</p>
+            <a href="tel:8167151130">(816) 715-1130</a>
+        </div>
+
+    </aside>
+</div>
+
+<footer>
+    <div class="footer-bottom">
+        <span>&copy; 2026 KC Clean Carpet. All rights reserved.</span>
+        <span>Heroic Cleaning. Superior Results.</span>
+    </div>
+</footer>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var fname   = document.getElementById('fname').value.trim();
+    var lname   = document.getElementById('lname').value.trim();
+    var phone   = document.getElementById('phone').value.trim();
+    var email   = document.getElementById('email').value.trim();
+    var services = Array.from(document.querySelectorAll('.chip input:checked')).map(function(c){ return c.value; });
+    var errorBox = document.getElementById('form-error');
+
+    if (!fname || !lname || !phone || !email || services.length === 0) {
+        errorBox.style.display = 'block';
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
+    errorBox.style.display = 'none';
+
+    // Hide step 1, show step 2
+    document.getElementById('step-1').style.display = 'none';
+    document.getElementById('step-2').style.display = 'block';
+    document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+</body>
+</html>

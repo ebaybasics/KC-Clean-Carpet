@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Meet the KC Clean Carpet team. Family-owned and operated in Raytown, MO, proudly serving the Kansas City metro with 5-star carpet and floor cleaning since day one.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kcleancarpet.com/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | KC Clean Carpet – Family-Owned KC Metro Cleaners">
+    <meta property="og:description" content="Meet the KC Clean Carpet team. Family-owned and operated in Raytown, MO, proudly serving the Kansas City metro with 5-star carpet and floor cleaning since day one.">
+    <meta property="og:url" content="https://www.kcleancarpet.com/about.html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | KC Clean Carpet – Family-Owned KC Metro Cleaners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        .top-bar { background: var(--kc-blue-dark); color: #fff; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 7px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-phone { font-size: 15px; font-weight: 800; color: var(--kc-gold); }
+        .top-socials { display: flex; gap: 8px; }
+        .top-socials a { width: 22px; height: 22px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; transition: background .2s; }
+        .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
+
+        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { height: 72px; width: auto; }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links > a { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; transition: color .2s, background .2s; }
+        .nav-links > a:hover { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-cta { background: var(--kc-gold) !important; color: var(--kc-navy) !important; padding: 9px 20px !important; font-weight: 800 !important; border-radius: 2px; }
+        .nav-cta:hover { background: #E65100 !important; color: #fff !important; }
+
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; cursor: pointer; transition: color .2s, background .2s; display: flex; align-items: center; gap: 4px; }
+        .nav-dropdown-trigger:hover, .nav-dropdown:hover .nav-dropdown-trigger { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e8edf5; border-radius: 4px; box-shadow: 0 8px 32px rgba(13,71,161,.14); min-width: 210px; z-index: 200; overflow: hidden; padding-top: 6px; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a { display: block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 600; color: var(--kc-blue-dark); padding: 11px 18px; letter-spacing: .04em; transition: background .15s, color .15s; border-bottom: 1px solid #f0f3fa; }
+        .nav-dropdown-menu a:last-child { border-bottom: none; }
+        .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
+
+        /* Hero */
+        .page-hero { position: relative; height: 320px; background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,179,0,.1) 0%, transparent 70%); }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 0 24px; }
+        .page-hero-content h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(28px,5vw,52px); margin: 0 0 10px; }
+        .page-hero-content p { font-family: 'Montserrat',sans-serif; font-size: 16px; opacity: .85; margin: 0; }
+
+        /* Content */
+        .content-wrap { max-width: 1060px; margin: 0 auto; padding: 64px 32px; }
+
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 72px; }
+        .intro-grid img { width: 100%; border-radius: 4px; box-shadow: 0 8px 40px rgba(13,71,161,.15); }
+        .intro-text h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(20px,3vw,28px); color: var(--kc-blue-dark); margin: 0 0 18px; line-height: 1.25; }
+        .intro-text p { font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px; }
+        .intro-text .tagline { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 16px; color: var(--kc-blue); font-style: italic; border-left: 4px solid var(--kc-gold); padding-left: 16px; margin: 24px 0 0; }
+
+        .values-band { background: var(--kc-blue-dark); padding: 64px 32px; }
+        .values-inner { max-width: 1060px; margin: 0 auto; }
+        .values-inner h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 22px; color: var(--kc-gold); text-align: center; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 48px; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .value-card { text-align: center; color: #fff; }
+        .value-icon { font-size: 36px; margin-bottom: 16px; }
+        .value-card h3 { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 15px; color: var(--kc-gold); text-transform: uppercase; letter-spacing: .06em; margin: 0 0 10px; }
+        .value-card p { font-size: 13px; line-height: 1.75; opacity: .85; margin: 0; }
+
+        .promise-section { padding: 64px 0; }
+        .promise-section h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 22px; color: var(--kc-blue-dark); margin: 0 0 32px; }
+        .promise-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .promise-item { display: flex; gap: 14px; align-items: flex-start; background: #f5f7fb; padding: 20px; border-radius: 4px; }
+        .promise-check { width: 32px; height: 32px; background: var(--kc-blue-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--kc-gold); font-size: 14px; font-weight: 900; }
+        .promise-text strong { display: block; font-family: 'Montserrat',sans-serif; font-size: 13px; font-weight: 800; color: #222; margin-bottom: 4px; }
+        .promise-text span { font-size: 13px; color: #666; line-height: 1.6; }
+
+        .cta-band { background: var(--kc-gold); padding: 56px 32px; text-align: center; }
+        .cta-band h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(20px,3vw,30px); color: var(--kc-navy); margin: 0 0 8px; }
+        .cta-band p { font-size: 15px; color: var(--kc-navy); opacity: .75; margin: 0 0 28px; }
+        .btn-navy { display: inline-block; background: var(--kc-navy); color: #fff; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; padding: 15px 40px; border-radius: 2px; transition: background .2s, transform .1s; box-shadow: 0 4px 18px rgba(10,36,99,.25); }
+        .btn-navy:hover { background: var(--kc-blue-dark); transform: translateY(-2px); }
+
+        footer { background: #07142A; padding: 48px 32px 24px; }
+        .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 160px 1fr 1fr 1fr; gap: 40px 32px; }
+        .footer-logo-wrap img { width: 110px; }
+        .footer-logo-wrap p { font-size: 12px; color: rgba(255,255,255,.5); margin: 10px 0 0; line-height: 1.6; }
+        .footer-col h4 { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-gold); margin: 0 0 14px; }
+        .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 7px; transition: color .2s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { max-width: 1060px; margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); flex-wrap: wrap; gap: 8px; }
+
+        @media (max-width: 768px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .promise-list { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .footer-logo-wrap { grid-column: 1/-1; }
+            .top-bar { flex-direction: column; gap: 4px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <span>Customer Service &amp; Quality is Our #1 Priority!</span>
+    <div style="display:flex;align-items:center;gap:20px;">
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;">&#128222; (816) 715-1130</a>
+        <div class="top-socials"><a href="https://www.facebook.com/KCCleanCarpet" title="Facebook" target="_blank" rel="noopener">f</a></div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <a href="index.html"><img src="brand_assets/KC Clean Carpet Logo.png" class="nav-logo" alt="KC Clean Carpet"></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+            <span class="nav-dropdown-trigger">Services &#9662;</span>
+            <div class="nav-dropdown-menu">
+                <a href="carpet-cleaning.html">Carpet Cleaning</a>
+                <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+                <a href="sandless-refinishing.html">Sandless Refinishing</a>
+                <a href="wax-removal.html">Wax Removal</a>
+                <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+                <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+            </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+                <a href="schedule.html" class="nav-cta">Schedule a Clean</a>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="page-hero-content">
+        <h1>About KC Clean Carpet</h1>
+        <p>Family owned &amp; operated — quality over volume, every time</p>
+    </div>
+</div>
+
+<div class="content-wrap">
+    <div class="intro-grid">
+        <img src="images/Clean Carpet Example.jpg" alt="KC Clean Carpet team at work">
+        <div class="intro-text">
+            <h2>A Family Business Built on Trust &amp; Quality</h2>
+            <p>KC Clean Carpet was founded on a simple belief: that every customer deserves the same level of care and attention that you'd give a family member's home. We are a family owned and operated company, and that means something to us — it shapes every decision we make and every job we take on.</p>
+            <p>We recognize the great trust you place in us when you invite us into your home. That trust is never taken for granted. Unlike large national franchises built on volume and speed, we deliberately keep our operation focused and personal. We don't run a high-volume business — we run a high-quality one.</p>
+            <p>When you call KC Clean Carpet, you're not getting a different crew each time. You're getting a dedicated team that takes pride in their work, shows up on time, and won't leave until you're completely satisfied.</p>
+            <div class="tagline">"We put customers first — not because it's good for business, but because it's the right thing to do."</div>
+        </div>
+    </div>
+</div>
+
+<section class="values-band">
+    <div class="values-inner">
+        <h2>What Sets Us Apart</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">&#127968;</div>
+                <h3>Family Owned &amp; Operated</h3>
+                <p>We're not a franchise. We're a local Kansas City family business — every job reflects our personal reputation, and we treat it that way.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">&#127942;</div>
+                <h3>Quality Over Volume</h3>
+                <p>We focus on doing each job right rather than rushing to the next one. We'd rather earn your loyalty with one perfect clean than disappoint you with ten mediocre ones.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">&#129309;</div>
+                <h3>Customer First — Always</h3>
+                <p>Your satisfaction is our only measure of success. We listen, we communicate, and we make it right if something isn't perfect — no arguments, no excuses.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="content-wrap">
+    <div class="promise-section">
+        <h2>Our Promises to You</h2>
+        <div class="promise-list">
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>We Show Up On Time</strong>
+                    <span>We respect your schedule. If something changes, we'll call you — never leave you wondering.</span>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>We Treat Your Home With Care</strong>
+                    <span>Furniture pads, corner guards, careful movement through your space — your home is protected throughout the process.</span>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>Transparent, Honest Pricing</strong>
+                    <span>No surprises at the end. You'll know exactly what you're paying before we start. What we quote is what you pay.</span>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>100% Satisfaction Guarantee</strong>
+                    <span>Not happy with a spot or area? We'll come back and fix it — free of charge. We won't rest until you're completely satisfied.</span>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>Eco-Friendly, Safe Products</strong>
+                    <span>Our cleaning solutions are safe for children, pets, and allergy sufferers. Heroic results without the harsh chemicals.</span>
+                </div>
+            </div>
+            <div class="promise-item">
+                <div class="promise-check">&#10003;</div>
+                <div class="promise-text">
+                    <strong>Fully Licensed &amp; Insured</strong>
+                    <span>We carry full liability insurance and are properly licensed so you're protected — and so are we.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta-band">
+    <h2>Ready to Experience the KC Clean Carpet Difference?</h2>
+    <p>Schedule your cleaning today and see what a family-focused, quality-first company looks like in action.</p>
+    <a href="schedule.html" class="btn-navy">Schedule a Super Clean</a>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo-wrap">
+            <img src="brand_assets/KC Clean Carpet Logo.png" alt="KC Clean Carpet">
+            <p>Heroic Cleaning.<br>Superior Results.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="carpet-cleaning.html">Carpet Cleaning</a>
+            <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+            <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+            <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="#">Testimonials</a>
+                        <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <a href="tel:8167151130">(816) 715-1130</a>
+            <a href="#">info@kccleancarpet.com</a>
+            <a href="#">Kansas City, MO</a>
+            <a href="#">Mon–Sat: 7am – 7pm</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 KC Clean Carpet. All rights reserved.</span>
+        <span>Heroic Cleaning. Superior Results.</span>
+    </div>
+</footer>
+
+</body>
+</html>

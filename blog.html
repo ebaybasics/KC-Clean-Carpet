@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The KC Clean Carpet blog: professional carpet care tips, local service guides for Lee's Summit, Overland Park, Leawood &amp; the Kansas City metro.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kcleancarpet.com/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carpet Cleaning Tips & Local Guides | KC Clean Carpet Blog">
+    <meta property="og:description" content="The KC Clean Carpet blog: professional carpet care tips, local service guides for Lee's Summit, Overland Park, Leawood &amp; the Kansas City metro.">
+    <meta property="og:url" content="https://www.kcleancarpet.com/blog.html">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpet Cleaning Tips & Local Guides | KC Clean Carpet Blog</title>
+    <meta name="description" content="Expert carpet cleaning tips, local guides, and advice from KC Clean Carpet — serving Lee's Summit, Overland Park, Leawood, and the entire Kansas City metro.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        .top-bar { background: var(--kc-blue-dark); color: #fff; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 7px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-phone { font-size: 15px; font-weight: 800; color: var(--kc-gold); }
+        .top-socials { display: flex; gap: 8px; }
+        .top-socials a { width: 22px; height: 22px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; transition: background .2s; }
+        .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
+
+        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { height: 72px; width: auto; }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links > a { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; transition: color .2s, background .2s; }
+        .nav-links > a:hover { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-links > a.active { color: var(--kc-gold); }
+        .nav-cta { background: var(--kc-gold) !important; color: var(--kc-navy) !important; padding: 9px 20px !important; font-weight: 800 !important; border-radius: 2px; }
+        .nav-cta:hover { background: #E65100 !important; color: #fff !important; }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; cursor: pointer; transition: color .2s, background .2s; display: flex; align-items: center; gap: 4px; }
+        .nav-dropdown-trigger:hover, .nav-dropdown:hover .nav-dropdown-trigger { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e8edf5; border-radius: 4px; box-shadow: 0 8px 32px rgba(13,71,161,.14); min-width: 210px; z-index: 200; overflow: hidden; padding-top: 6px; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a { display: block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 600; color: var(--kc-blue-dark); padding: 11px 18px; letter-spacing: .04em; transition: background .15s, color .15s; border-bottom: 1px solid #f0f3fa; }
+        .nav-dropdown-menu a:last-child { border-bottom: none; }
+        .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
+
+        .page-hero { position: relative; height: 260px; background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,179,0,.1) 0%, transparent 70%); }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 0 24px; }
+        .page-hero-content h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(26px,5vw,46px); margin: 0 0 10px; }
+        .page-hero-content p { font-family: 'Montserrat',sans-serif; font-size: 15px; opacity: .85; margin: 0; }
+
+        .blog-wrap { max-width: 1060px; margin: 0 auto; padding: 64px 32px; }
+        .blog-wrap h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 22px; color: var(--kc-blue-dark); margin: 0 0 40px; letter-spacing: -.01em; }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .blog-card { background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(13,71,161,.09); transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 10px 40px rgba(13,71,161,.16); }
+        .blog-card-img { position: relative; height: 200px; background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue) 100%); overflow: hidden; }
+        .blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .blog-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,36,99,.65) 0%, transparent 60%); }
+        .blog-card-tag { position: absolute; top: 14px; left: 14px; background: var(--kc-gold); color: var(--kc-navy); font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+        .blog-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+        .blog-card-meta { font-size: 11px; color: #999; font-family: 'Montserrat',sans-serif; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+        .blog-card-title { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 17px; color: var(--kc-blue-dark); line-height: 1.35; margin: 0 0 12px; }
+        .blog-card-excerpt { font-size: 13px; line-height: 1.75; color: #555; margin: 0 0 20px; flex: 1; }
+        .blog-card-link { display: inline-block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--kc-blue); border-bottom: 2px solid var(--kc-gold); padding-bottom: 2px; transition: color .2s; }
+        .blog-card-link:hover { color: var(--kc-gold); }
+
+        .cta-band { background: var(--kc-gold); padding: 56px 32px; text-align: center; margin-top: 64px; }
+        .cta-band h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(20px,3vw,28px); color: var(--kc-navy); margin: 0 0 8px; }
+        .cta-band p { font-size: 15px; color: var(--kc-navy); opacity: .75; margin: 0 0 28px; }
+        .btn-navy { display: inline-block; background: var(--kc-navy); color: #fff; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; padding: 15px 40px; border-radius: 2px; transition: background .2s, transform .1s; box-shadow: 0 4px 18px rgba(10,36,99,.25); }
+        .btn-navy:hover { background: var(--kc-blue-dark); transform: translateY(-2px); }
+
+        footer { background: #07142A; padding: 48px 32px 24px; }
+        .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 160px 1fr 1fr 1fr; gap: 40px 32px; }
+        .footer-logo-wrap img { width: 110px; }
+        .footer-logo-wrap p { font-size: 12px; color: rgba(255,255,255,.5); margin: 10px 0 0; line-height: 1.6; }
+        .footer-col h4 { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-gold); margin: 0 0 14px; }
+        .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,.55); margin-bottom: 7px; transition: color .2s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom { max-width: 1060px; margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); flex-wrap: wrap; gap: 8px; }
+
+        @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } .footer-logo-wrap { grid-column: 1/-1; } }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <span>Customer Service &amp; Quality is Our #1 Priority!</span>
+    <div style="display:flex;align-items:center;gap:20px;">
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;">&#128222; (816) 715-1130</a>
+        <div class="top-socials"><a href="https://www.facebook.com/KCCleanCarpet" title="Facebook" target="_blank" rel="noopener">f</a></div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <a href="index.html"><img src="brand_assets/KC Clean Carpet Logo.png" class="nav-logo" alt="KC Clean Carpet"></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+            <span class="nav-dropdown-trigger">Services &#9662;</span>
+            <div class="nav-dropdown-menu">
+                <a href="carpet-cleaning.html">Carpet Cleaning</a>
+                <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+                <a href="sandless-refinishing.html">Sandless Refinishing</a>
+                <a href="wax-removal.html">Wax Removal</a>
+                <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+                <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+            </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="blog.html" class="active">Blog</a>
+                <a href="schedule.html" class="nav-cta">Schedule a Clean</a>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="page-hero-content">
+        <h1>The KC Clean Carpet Blog</h1>
+        <p>Local guides, expert tips, and cleaning advice for Kansas City homeowners</p>
+    </div>
+</div>
+
+<div class="blog-wrap">
+    <h2>Latest Articles</h2>
+    <div class="blog-grid">
+
+        <a href="blog-lees-summit-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Clean Carpet Example.jpg" alt="Carpet cleaning in Lee's Summit MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Lee's Summit</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">March 5, 2026 &nbsp;·&nbsp; Carpet Cleaning</div>
+                <div class="blog-card-title">Why Lee's Summit Homeowners Are Switching to Professional Carpet Cleaning</div>
+                <p class="blog-card-excerpt">High foot traffic, pets, and Missouri's humid summers can turn clean carpet into a hidden breeding ground for allergens. Here's what Lee's Summit families need to know.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-overland-park-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Hardwood example.png" alt="Carpet cleaning Overland Park KS">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Overland Park</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">February 18, 2026 &nbsp;·&nbsp; Carpet Cleaning</div>
+                <div class="blog-card-title">Overland Park's Guide to Keeping Carpets Clean Between Professional Visits</div>
+                <p class="blog-card-excerpt">Between professional cleanings, the right daily habits make a huge difference. Our guide helps Overland Park homeowners protect their investment year-round.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-leawood-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Upholstery Example.png" alt="Carpet cleaning Leawood KS">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Leawood</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">February 3, 2026 &nbsp;·&nbsp; Carpet Cleaning</div>
+                <div class="blog-card-title">High-End Homes, High Standards: Carpet Care for Leawood Homeowners</div>
+                <p class="blog-card-excerpt">Leawood homes feature premium carpet and flooring. Learn why high-end properties require a more careful, detail-oriented approach to professional cleaning.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-independence-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Clean Carpet Example.jpg" alt="Pet stain and odor removal carpet cleaning Independence MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Independence</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">January 28, 2026 &nbsp;·&nbsp; Pet Stain Removal</div>
+                <div class="blog-card-title">Why Pet Odors Keep Coming Back — And How to Actually Eliminate Them</div>
+                <p class="blog-card-excerpt">DIY cleaners only reach the carpet surface. Pet urine soaks into the padding where odor crystals form and reactivate with every cleaning. Here's the professional fix Independence homeowners need.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-gladstone-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Upholstery Example.png" alt="Carpet allergens and indoor air quality Gladstone MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Gladstone</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">January 15, 2026 &nbsp;·&nbsp; Allergen Control</div>
+                <div class="blog-card-title">Is Your Carpet Making Your Allergies Worse? A Guide for Gladstone Homeowners</div>
+                <p class="blog-card-excerpt">Dust mites, pollen, mold spores, and pet dander accumulate deep in carpet fibers where vacuuming can't reach. Learn how professional cleaning helps Gladstone families breathe easier.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-liberty-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Hardwood example.png" alt="Extend carpet life or replace Liberty MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Liberty</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">January 8, 2026 &nbsp;·&nbsp; Carpet Longevity</div>
+                <div class="blog-card-title">Replace or Deep Clean? How Liberty Homeowners Can Get More Years from Their Carpet</div>
+                <p class="blog-card-excerpt">New carpet costs $2,000–$6,000 installed. Before you replace, learn what professional cleaning can actually restore — and when replacement is truly the right call.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-olathe-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Tile and Grout.png" alt="DIY vs professional carpet cleaning Olathe KS">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Olathe</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">December 19, 2025 &nbsp;·&nbsp; Carpet Cleaning Tips</div>
+                <div class="blog-card-title">Rental Machine vs. Professional Carpet Cleaning: The Honest Comparison for Olathe Homeowners</div>
+                <p class="blog-card-excerpt">Temperature, pressure, extraction power, and drying time — the technical differences between rental machines and professional truck-mounts are bigger than you think.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-grandview-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Workvan Pic.png" alt="Move-in move-out carpet cleaning Grandview MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Grandview</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">December 5, 2025 &nbsp;·&nbsp; Moving &amp; Property Care</div>
+                <div class="blog-card-title">The Grandview Renter's &amp; Landlord's Guide to Move-In and Move-Out Carpet Cleaning</div>
+                <p class="blog-card-excerpt">Security deposits, vacancy time, and buyer impressions all hinge on carpet condition. Here's what Grandview renters, landlords, and home sellers need to know.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+        <a href="blog-blue-springs-carpet-cleaning.html" class="blog-card">
+            <div class="blog-card-img">
+                <img src="images/Clean Carpet Example.jpg" alt="Carpet drying mold prevention Blue Springs MO">
+                <div class="blog-card-img-overlay"></div>
+                <span class="blog-card-tag">Blue Springs</span>
+            </div>
+            <div class="blog-card-body">
+                <div class="blog-card-meta">November 21, 2025 &nbsp;·&nbsp; Carpet Maintenance</div>
+                <div class="blog-card-title">Why Carpet Drying Speed Matters — And How to Protect Your Blue Springs Home After Cleaning</div>
+                <p class="blog-card-excerpt">Carpet wet for more than 12 hours is at risk of mold growth in the padding. Blue Springs' summer humidity makes this a real concern — here's how to manage it.</p>
+                <span class="blog-card-link">Read Article &rarr;</span>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+<div class="cta-band">
+    <h2>Ready for Carpet That Looks Brand New?</h2>
+    <p>Serving Independence, Gladstone, Liberty, Olathe, Grandview, Blue Springs &amp; the entire KC metro.</p>
+    <a href="schedule.html" class="btn-navy">Schedule a Super Clean</a>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo-wrap">
+            <img src="brand_assets/KC Clean Carpet Logo.png" alt="KC Clean Carpet">
+            <p>Heroic Cleaning.<br>Superior Results.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="carpet-cleaning.html">Carpet Cleaning</a>
+            <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+            <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+            <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="#">Testimonials</a>
+                        <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <a href="tel:8167151130">(816) 715-1130</a>
+            <a href="#">info@kccleancarpet.com</a>
+            <span style="font-size:13px;color:rgba(255,255,255,.55);">Lee's Summit, MO &amp; KC Metro</span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 KC Clean Carpet. All rights reserved.</span>
+        <span>Proudly serving the Kansas City Metro Area</span>
+    </div>
+</footer>
+
+</body>
+</html>

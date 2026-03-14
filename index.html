@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="KC Clean Carpet provides professional carpet, hardwood, upholstery, and tile &amp; grout cleaning in Raytown, Lee's Summit, Overland Park, Leawood &amp; the KC metro. Call (816) 715-1130.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kcleancarpet.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KC Clean Carpet | Professional Carpet Cleaning in Kansas City, MO">
+    <meta property="og:description" content="Family-owned carpet cleaning company serving the Kansas City metro. 5-star rated on Google &amp; Facebook. Carpet, hardwood, upholstery &amp; tile cleaning.">
+    <meta property="og:url" content="https://www.kcleancarpet.com/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://www.kcleancarpet.com/#business",
+      "name": "KC Clean Carpet",
+      "url": "https://www.kcleancarpet.com/",
+      "telephone": "+18167151130",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10409 E 56th St",
+        "addressLocality": "Raytown",
+        "addressRegion": "MO",
+        "postalCode": "64133",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.0039,
+        "longitude": -94.4573
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "ratingCount": "50"
+      },
+      "priceRange": "$",
+      "areaServed": [
+        {"@type": "City", "name": "Raytown", "addressRegion": "MO"},
+        {"@type": "City", "name": "Kansas City", "addressRegion": "MO"},
+        {"@type": "City", "name": "Lee's Summit", "addressRegion": "MO"},
+        {"@type": "City", "name": "Overland Park", "addressRegion": "KS"},
+        {"@type": "City", "name": "Leawood", "addressRegion": "KS"},
+        {"@type": "City", "name": "Independence", "addressRegion": "MO"},
+        {"@type": "City", "name": "Blue Springs", "addressRegion": "MO"},
+        {"@type": "City", "name": "Shawnee", "addressRegion": "KS"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Cleaning Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Carpet Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hardwood Floor Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Upholstery Cleaning"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Tile & Grout Cleaning"}}
+        ]
+      },
+      "sameAs": ["https://www.facebook.com/KCCleanCarpet"]
+    }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KC Clean Carpet | Professional Carpet Cleaning in Kansas City, MO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kc-blue:      #1565C0;
+            --kc-blue-mid:  #1976D2;
+            --kc-blue-dark: #0D47A1;
+            --kc-navy:      #0A2463;
+            --kc-gold:      #FFB300;
+            --kc-gold-dark: #E65100;
+            --kc-green:     #43A047;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ── TOP BAR ─────────────────────────────────── */
+        .top-bar {
+            background: var(--kc-blue-dark);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: 7px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .top-bar-phone {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--kc-gold);
+            letter-spacing: .02em;
+        }
+        .top-socials { display: flex; gap: 8px; }
+        .top-socials a {
+            width: 22px; height: 22px;
+            background: rgba(255,255,255,.15);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff;
+            font-size: 11px; font-weight: 700;
+            transition: background .2s;
+        }
+        .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
+
+        /* ── NAV ─────────────────────────────────────── */
+        .navbar {
+            background: #fff;
+            padding: 10px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(13,71,161,.12);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo { height: 72px; width: auto; }
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            color: var(--kc-blue-dark);
+            padding: 8px 14px;
+            border-radius: 2px;
+            transition: color .2s, background .2s;
+        }
+        .nav-links a:hover {
+            color: var(--kc-gold);
+            background: rgba(21,101,192,.06);
+        }
+        .nav-cta {
+            background: var(--kc-gold) !important;
+            color: var(--kc-navy) !important;
+            padding: 9px 20px !important;
+            font-weight: 800 !important;
+        }
+        .nav-cta:hover { background: #E65100 !important; color: #fff !important; }
+
+        /* ── HERO ────────────────────────────────────── */
+        .hero {
+            position: relative;
+            min-height: 480px;
+            background: url('images/489329724_2497462943930599_2179967781429943751_n.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        /* Blue center panel with angled edges — wood floor shows on sides */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg,
+                transparent 0%,
+                transparent 8%,
+                rgba(13,71,161,.92) 18%,
+                rgba(13,71,161,.92) 82%,
+                transparent 92%,
+                transparent 100%);
+            z-index: 1;
+        }
+        /* Gold diagonal accent lines */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(105deg, transparent 16%, var(--kc-gold) 16.5%, var(--kc-gold) 17.5%, transparent 18%),
+                linear-gradient(105deg, transparent 81.5%, var(--kc-gold) 82%, var(--kc-gold) 83%, transparent 83.5%);
+            z-index: 2;
+            opacity: .85;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            padding: 60px 24px 100px;
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(28px, 6vw, 68px);
+            line-height: 1.12;
+            margin: 0 0 6px;
+            text-shadow: 0 4px 24px rgba(0,0,0,.45);
+        }
+        .hero-content h1 .brand {
+            color: var(--kc-gold);
+            display: block;
+        }
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(14px, 2.2vw, 20px);
+            font-weight: 500;
+            letter-spacing: .03em;
+            opacity: .92;
+            margin: 12px 0 32px;
+        }
+        .btn {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 14px 36px;
+            border: none;
+            cursor: pointer;
+            transition: background .2s, transform .1s, box-shadow .2s;
+        }
+        .btn:active { transform: translateY(1px); }
+        .btn-gold {
+            background: var(--kc-gold);
+            color: var(--kc-navy);
+            box-shadow: 0 4px 16px rgba(255,179,0,.35);
+        }
+        .btn-gold:hover {
+            background: #FFA000;
+            box-shadow: 0 6px 24px rgba(255,160,0,.45);
+            transform: translateY(-2px);
+        }
+
+        /* hero wave bottom */
+        .hero-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 4;
+        }
+
+        /* ── SERVICES ─────────────────────────────────── */
+        .services {
+            background: #fff;
+            padding: 56px 32px 64px;
+        }
+        .section-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--kc-blue);
+            text-align: center;
+            margin: 0 0 40px;
+            position: relative;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 4px;
+            background: var(--kc-gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .service-card {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .service-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+        .service-card:hover img { transform: scale(1.07); }
+        .service-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                rgba(13,71,161,.88) 0%,
+                rgba(13,71,161,.2) 55%,
+                transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 18px 16px;
+        }
+        .service-card-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .service-card-btn {
+            display: inline-block;
+            margin-top: 6px;
+            background: var(--kc-gold);
+            color: var(--kc-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+        }
+
+        /* ── VAN / ABOUT ─────────────────────────────── */
+        .about-band {
+            background: var(--kc-blue);
+            position: relative;
+        }
+        .about-wave-top {
+            line-height: 0;
+            overflow: hidden;
+        }
+        .about-inner {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 56px 32px 64px;
+        }
+        .about-img-wrap {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+        .about-img-wrap img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(0,0,0,.3);
+        }
+        .about-copy { flex: 1; color: #fff; }
+        .about-copy h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(18px, 2.5vw, 26px);
+            color: var(--kc-gold);
+            margin: 0 0 18px;
+            line-height: 1.25;
+        }
+        .about-copy p {
+            font-size: 14px;
+            line-height: 1.75;
+            opacity: .9;
+            margin: 0 0 14px;
+        }
+        .about-wave-bottom { line-height: 0; overflow: hidden; }
+
+        /* ── AWARDS ──────────────────────────────────── */
+        .awards-section {
+            background: #fff;
+            padding: 60px 32px;
+        }
+        .awards-inner {
+            max-width: 1060px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .awards-badges {
+            display: flex;
+            gap: 18px;
+            flex-shrink: 0;
+        }
+        .award-badge {
+            width: 130px;
+            background: var(--kc-blue-dark);
+            border-radius: 6px;
+            text-align: center;
+            padding: 20px 12px;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(13,71,161,.25);
+        }
+        .award-badge .badge-org {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .85;
+        }
+        .award-badge .badge-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            opacity: .9;
+            margin: 4px 0;
+        }
+        .award-badge .badge-year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px;
+            font-weight: 900;
+            color: var(--kc-gold);
+            line-height: 1;
+        }
+        .awards-copy { flex: 1; min-width: 240px; }
+        .awards-copy h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(16px, 2.2vw, 22px);
+            color: var(--kc-blue-dark);
+            margin: 0 0 16px;
+            line-height: 1.3;
+        }
+        .awards-copy p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #555;
+            margin: 0 0 12px;
+        }
+
+        /* ── SUBSCRIBE ───────────────────────────────── */
+        .subscribe-band {
+            background: var(--kc-navy);
+            padding: 56px 32px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .subscribe-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 50%,
+                rgba(21,101,192,.4) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .subscribe-band h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 20px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--kc-gold);
+            margin: 0 0 8px;
+            position: relative;
+        }
+        .subscribe-band > p {
+            font-size: 13px;
+            opacity: .75;
+            margin: 0 0 28px;
+            position: relative;
+        }
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            max-width: 480px;
+            margin: 0 auto 18px;
+            position: relative;
+        }
+        .subscribe-form input {
+            flex: 1;
+            padding: 13px 18px;
+            border: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            outline: none;
+        }
+        .subscribe-form button {
+            background: var(--kc-gold);
+            color: var(--kc-navy);
+            border: none;
+            padding: 13px 26px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        .subscribe-form button:hover { background: #FFA000; }
+        .subscribe-band .fine {
+            font-size: 11px;
+            opacity: .45;
+            position: relative;
+        }
+
+        /* ── FOOTER ──────────────────────────────────── */
+        footer {
+            background: #07142A;
+            padding: 48px 32px 24px;
+        }
+        .footer-inner {
+            max-width: 1060px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 160px 1fr 1fr 1fr;
+            gap: 40px 32px;
+        }
+        .footer-logo-wrap img { width: 110px; }
+        .footer-logo-wrap p {
+            font-size: 12px;
+            color: rgba(255,255,255,.5);
+            margin: 10px 0 0;
+            line-height: 1.6;
+        }
+        .footer-col h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--kc-gold);
+            margin: 0 0 14px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 13px;
+            color: rgba(255,255,255,.55);
+            margin-bottom: 7px;
+            transition: color .2s;
+        }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom {
+            max-width: 1060px;
+            margin: 28px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: rgba(255,255,255,.3);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* ── RESPONSIVE ─────────────────────────────── */
+        @media (max-width: 768px) {
+            .top-bar { font-size: 10px; flex-direction: column; gap: 4px; text-align: center; }
+            .navbar { padding: 10px 16px; }
+            .nav-links { gap: 2px; }
+            .nav-links a { padding: 6px 8px; font-size: 10px; }
+            .about-inner { flex-direction: column; }
+            .about-img-wrap { max-width: 100%; flex: none; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .footer-logo-wrap { grid-column: 1/-1; }
+            .awards-inner { flex-direction: column; }
+        }
+    
+        /* Dropdown */
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; cursor: pointer; transition: color .2s, background .2s; display: inline-flex; align-items: center; gap: 4px; }
+        .nav-dropdown-trigger:hover, .nav-dropdown:hover .nav-dropdown-trigger { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e8edf5; border-radius: 4px; box-shadow: 0 8px 32px rgba(13,71,161,.14); min-width: 210px; z-index: 200; overflow: hidden; padding-top: 6px; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a { display: block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 600; color: var(--kc-blue-dark); padding: 11px 18px; letter-spacing: .04em; transition: background .15s, color .15s; border-bottom: 1px solid #f0f3fa; }
+        .nav-dropdown-menu a:last-child { border-bottom: none; }
+        .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
+    </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <span>Customer Service &amp; Quality is Our #1 Priority!</span>
+    <div class="top-bar-right">
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;">&#128222; (816) 715-1130</a>
+        <div class="top-socials">
+            <a href="https://www.facebook.com/KCCleanCarpet" title="Facebook" target="_blank" rel="noopener">f</a>
+        </div>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav class="navbar">
+    <a href="#"><img src="brand_assets/KC Clean Carpet Logo.png" class="nav-logo" alt="KC Clean Carpet"></a>
+        <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+            <span class="nav-dropdown-trigger">Services &#9662;</span>
+            <div class="nav-dropdown-menu">
+                <a href="carpet-cleaning.html">Carpet Cleaning</a>
+                <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
+                <a href="sandless-refinishing.html">Sandless Refinishing</a>
+                <a href="wax-removal.html">Wax Removal</a>
+                <a href="upholstery-cleaning.html">Upholstery Cleaning</a>
+                <a href="tile-grout-cleaning.html">Tile &amp; Grout Cleaning</a>
+            </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a>
+                <a href="schedule.html" class="nav-cta">Schedule a Clean</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Welcome to<br>
+            <span class="brand">KC Clean Carpet</span>
+        </h1>
+        <p class="hero-tagline">Kansas City's Professional Floor &amp; Upholstery Cleaning</p>
+        <a href="schedule.html" class="btn btn-gold">Schedule a Super Clean</a>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="80">
+            <path d="M0,55 C240,10 480,80 720,50 C960,20 1200,70 1440,45 L1440,80 L0,80 Z" fill="#FFB300" opacity=".9"/>
+            <path d="M0,65 C300,20 600,80 900,55 C1100,40 1280,70 1440,55 L1440,80 L0,80 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <h2 class="section-heading">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="images/Clean Carpet Example.jpg" alt="Carpet Cleaning">
+            <div class="service-card-overlay">
+                <div>
+                    <div class="service-card-label">Carpet Cleaning</div>
+                    <a href="carpet-cleaning.html" class="service-card-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="images/Hardwood example.png" alt="Hardwood Floor Cleaning">
+            <div class="service-card-overlay">
+                <div>
+                    <div class="service-card-label">Hardwood Floor Cleaning</div>
+                    <a href="hardwood-cleaning.html" class="service-card-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="images/Upholstery Example.png" alt="Upholstery Cleaning">
+            <div class="service-card-overlay">
+                <div>
+                    <div class="service-card-label">Upholstery Cleaning</div>
+                    <a href="upholstery-cleaning.html" class="service-card-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="images/Tile and Grout.png" alt="Tile & Grout Cleaning">
+            <div class="service-card-overlay">
+                <div>
+                    <div class="service-card-label">Tile &amp; Grout Cleaning</div>
+                    <a href="tile-grout-cleaning.html" class="service-card-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT / VAN -->
+<div class="about-band">
+    <div class="about-wave-top">
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="60">
+            <path d="M0,0 C360,60 1080,0 1440,40 L1440,0 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+    <div class="about-inner">
+        <div class="about-img-wrap">
+            <img src="images/Workvan Pic.png" alt="KC Clean Carpet Service Van">
+        </div>
+        <div class="about-copy">
+            <h2>Kansas City's Trusted Cleaning Heroes</h2>
+            <p>At KC Clean Carpet, we are dedicated to providing the Kansas City metro area with the finest professional cleaning services available. Our trained technicians use state-of-the-art equipment and eco-friendly solutions to deliver heroic results.</p>
+            <p>From deep carpet cleaning to hardwood floor restoration, upholstery refreshing, and tile &amp; grout treatment — we treat every job with the same commitment: superior results, every single time.</p>
+            <p>Fully licensed, insured, and backed by a 100% satisfaction guarantee. When you call KC Clean Carpet, you're calling in the heroes.</p>
+            <a href="schedule.html" class="btn btn-gold" style="margin-top:8px;">Learn More About Us</a>
+        </div>
+    </div>
+    <div class="about-wave-bottom">
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="60">
+            <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</div>
+
+
+<!-- REVIEWS -->
+<section id="reviews" style="background:#fff; padding:64px 32px 72px;">
+    <div style="text-align:center; margin-bottom:48px;">
+        <div style="font-size:28px; color:var(--kc-gold); letter-spacing:.05em; margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <h2 style="font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(22px,4vw,36px); color:#0A2463; margin:0 0 12px; line-height:1.15;">Our 5-Star Reviews</h2>
+        <p style="font-size:14px; color:#666; margin:0 auto; max-width:560px;">Our customers love what we do — see what Kansas City homeowners are saying about KC Clean Carpet.</p>
+    </div>
+
+    <!-- Carousel with side arrows -->
+    <div style="position:relative; max-width:1060px; margin:0 auto; display:flex; align-items:center; gap:12px;">
+
+        <!-- Prev Arrow -->
+        <button id="rev-prev" onclick="reviewNav(-1)" style="flex-shrink:0; width:44px; height:44px; border-radius:50%; border:2px solid var(--kc-blue); background:#fff; color:var(--kc-blue); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s, color .2s; z-index:2;" onmouseover="this.style.background='#1565C0';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.color='#1565C0'">&#8592;</button>
+
+        <!-- Track viewport -->
+        <div style="flex:1; overflow:hidden;">
+            <div id="review-track" style="display:flex; transition:transform .4s cubic-bezier(.4,0,.2,1); gap:24px;">
+
+                <!-- Review 1 -->
+                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
+                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">The KC Clean Carpet team did an incredible job on our living room carpet. It was heavily stained and I had nearly given up hope — they made it look brand new. The technician was professional, on time, and explained everything before starting.</p>
+                    <span style="font-size:13px; color:#555;">~ Michelle T.</span>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
+                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">These guys were better than on-time — they were a few minutes early! Courteous, professional, and thorough from start to finish. They cleaned our hardwood floors and tile grout and I could not believe the difference. Will absolutely use them again...</p>
+                    <span style="font-size:13px; color:#555;">~ James K.</span>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
+                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">KC Clean Carpet is the only carpet cleaning company we use anymore. They do a fantastic job! The technicians are always very professional and friendly. Our carpet gets clean and stays looking bright and fresh for months. So easy to book too...</p>
+                    <span style="font-size:13px; color:#555;">~ Craig and Charla R.</span>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
+                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">We had our upholstery and two area rugs done. The service technician was friendly, helpful, and informative. He did the work quickly and efficiently, then made sure I was happy with the result before leaving. Highly recommend to anyone in Kansas City!</p>
+                    <span style="font-size:13px; color:#555;">~ Sandy H.</span>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
+                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">I called KC Clean Carpet after a pet accident soaked into the carpet padding. I was worried we'd need to replace it entirely. Their team came out the next day and completely eliminated the stain and odor. Truly heroic results — I'm amazed!</p>
+                    <span style="font-size:13px; color:#555;">~ Brenda L.</span>
+                </div>
+
+            </div><!-- /track -->
+        </div>
+
+        <!-- Next Arrow -->
+        <button id="rev-next" onclick="reviewNav(1)" style="flex-shrink:0; width:44px; height:44px; border-radius:50%; border:2px solid var(--kc-blue); background:var(--kc-blue); color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s, color .2s; z-index:2;" onmouseover="this.style.background='#0D47A1'" onmouseout="this.style.background='#1565C0'">&#8594;</button>
+
+    </div>
+</section>
+
+<style>
+/* Sticky floating action buttons */
+.sticky-fab {
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 999;
+    top: 55%;
+    transform: translateY(-50%);
+}
+.sticky-fab a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    text-decoration: none;
+    opacity: .65;
+    transition: opacity .2s, transform .2s;
+    box-shadow: -2px 2px 10px rgba(0,0,0,.14);
+}
+.sticky-fab a:first-child {
+    background: var(--kc-blue-dark);
+    color: #fff;
+    border-radius: 6px 0 0 0;
+}
+.sticky-fab a:last-child {
+    background: var(--kc-gold);
+    color: var(--kc-navy);
+    border-radius: 0 0 0 6px;
+}
+.sticky-fab a:hover { opacity: 1; transform: translateX(-3px); }
+.sticky-fab svg { width: 19px; height: 19px; }
+</style>
+
+<!-- Sticky FAB -->
+<div class="sticky-fab">
+    <a href="tel:8167151130" title="Call KC Clean Carpet">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    </a>
+    <a href="schedule.html" title="Book a Cleaning">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H5V8h14v13zM7 10h5v5H7z"/></svg>
+    </a>
+</div>
+
+<script>
+(function() {
+    const track    = document.getElementById('review-track');
+    const cards    = track.querySelectorAll('.review-card');
+    const total    = cards.length;
+    let current    = 0;
+
+    function visibleCount() {
+        return window.innerWidth < 640 ? 1 : 3;
+    }
+
+    function setCardWidths() {
+        const viewport = track.parentElement;
+        const gap      = 24;
+        const vis      = visibleCount();
+        const w        = (viewport.offsetWidth - gap * (vis - 1)) / vis;
+        cards.forEach(c => {
+            c.style.width    = w + 'px';
+            c.style.minWidth = w + 'px';
+        });
+    }
+
+    function maxIndex() {
+        return total - visibleCount();
+    }
+
+    function move() {
+        const gap = 24;
+        const w   = cards[0].getBoundingClientRect().width;
+        track.style.transform = 'translateX(-' + (current * (w + gap)) + 'px)';
+        document.getElementById('rev-prev').style.opacity = current === 0 ? '.35' : '1';
+        document.getElementById('rev-next').style.opacity = current >= maxIndex() ? '.35' : '1';
+    }
+
+    window.reviewNav = function(dir) {
+        current = Math.max(0, Math.min(maxIndex(), current + dir));
+        move();
+    };
+
+    function init() {
+        setCardWidths();
+        current = Math.min(current, maxIndex());
+        move();
+    }
+
+    window.addEventListener('resize', init);
+    init();
+})();
+</script>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe-band">
+    <h2>Subscribe to Our Site</h2>
+    <p>Sign up for cleaning tips, special offers, and heroic deals from KC's cleaning experts.</p>
+    <div class="subscribe-form">
+        <input type="email" placeholder="Enter your email address…">
+        <button type="button">Subscribe</button>
+    </div>
+    <p class="fine">We respect your privacy &amp; will never share your information. Unsubscribe anytime.</p>
+    <div style="max-width:700px; margin:40px auto 0; color:rgba(255,255,255,.65); font-size:13px; line-height:1.75; position:relative;">
+        <p>KC Clean Carpet is a locally owned and operated cleaning company proudly serving the Kansas City metro area. We are committed to providing an honest, high-quality service at a fair price — every time.</p>
+    </div>
+</section>
+
+<!-- MAP -->
+<section style="width:100%; height:450px; display:block;">
+    <iframe
+        src="https://maps.google.com/maps?q=10409+E+56th+St,+Raytown,+MO+64133&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="100%"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo-wrap">
+            <img src="brand_assets/KC Clean Carpet Logo.png" alt="KC Clean Carpet">
+            <p>Heroic Cleaning.<br>Superior Results.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <a href="#">Carpet Cleaning</a>
+            <a href="#">Hardwood Floor Cleaning</a>
+            <a href="#">Upholstery Cleaning</a>
+            <a href="#">Tile &amp; Grout Cleaning</a>
+            <a href="#">Commercial Cleaning</a>
+        </div>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Testimonials</a>
+                        <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <a href="tel:8167151130">(816) 715-1130</a>
+            <a href="#">info@kccleancarpet.com</a>
+            <a href="#">Kansas City, MO</a>
+            <a href="#">Mon–Sat: 7am – 7pm</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 KC Clean Carpet. All rights reserved.</span>
+        <span>Heroic Cleaning. Superior Results.</span>
+    </div>
+</footer>
+
+</body>
+</html>

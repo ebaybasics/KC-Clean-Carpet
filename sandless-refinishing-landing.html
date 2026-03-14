@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandless Hardwood Floor Refinishing in Kansas City | KC Clean Carpet</title>
+    <meta name="description" content="Get beautiful hardwood floors in one day — no dust, no sanding, no moving out. KC Clean Carpet's sandless refinishing serves the Kansas City metro. Call (816) 715-1130.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kcleancarpet.com/sandless-refinishing-landing.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Sandless Hardwood Floor Refinishing",
+      "provider": { "@type": "LocalBusiness", "name": "KC Clean Carpet", "telephone": "+18167151130", "url": "https://www.kcleancarpet.com/" },
+      "areaServed": { "@type": "City", "name": "Kansas City", "addressRegion": "MO" }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold:   #FFB300;
+            --gold-d: #E65100;
+            --navy:   #0A2463;
+            --blue:   #0D47A1;
+            --dark:   #110d06;
+            --warm:   #1c1509;
+            --mid:    #2a1f0e;
+            --text:   rgba(255,255,255,.88);
+            --muted:  rgba(255,255,255,.55);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lora', Georgia, serif; background: var(--dark); color: var(--text); }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        /* ── STICKY TOP BAR ────────────────────────────── */
+        .lp-topbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+            background: rgba(17,13,6,.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,179,0,.15);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 40px;
+        }
+        .lp-topbar-logo { height: 48px; width: auto; }
+        .lp-topbar-right { display: flex; align-items: center; gap: 20px; }
+        .lp-phone { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 18px; color: var(--gold); letter-spacing: .01em; }
+        .lp-phone:hover { color: #fff; }
+        .btn-cta-top {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 12px;
+            letter-spacing: .1em; text-transform: uppercase;
+            background: var(--gold); color: var(--navy);
+            padding: 11px 24px; border-radius: 2px;
+            transition: background .2s, transform .15s;
+            white-space: nowrap;
+        }
+        .btn-cta-top:hover { background: #FFC733; transform: translateY(-1px); }
+
+        /* ── HERO ──────────────────────────────────────── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+            padding: 120px 40px 80px;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background-image: url('images/Hardwood example.png');
+            background-size: cover; background-position: center;
+            transform: scale(1.04);
+            transition: transform 8s ease;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom,
+                rgba(17,13,6,.6) 0%,
+                rgba(17,13,6,.72) 40%,
+                rgba(17,13,6,.92) 80%,
+                var(--dark) 100%
+            );
+        }
+        .hero-grain {
+            position: absolute; inset: 0; pointer-events: none; z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+            background-repeat: repeat; background-size: 256px;
+            opacity: .4;
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            max-width: 820px; text-align: center;
+        }
+        .hero-eyebrow {
+            font-family: 'Montserrat',sans-serif;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: .2em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 24px;
+            display: inline-flex; align-items: center; gap: 12px;
+        }
+        .hero-eyebrow::before, .hero-eyebrow::after {
+            content: ''; display: block;
+            width: 32px; height: 1px; background: var(--gold); opacity: .6;
+        }
+        .hero-h1 {
+            font-family: 'Montserrat',sans-serif;
+            font-weight: 900;
+            font-size: clamp(34px, 6vw, 68px);
+            line-height: 1.05;
+            letter-spacing: -.025em;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+        .hero-h1 em {
+            font-style: normal;
+            color: var(--gold);
+        }
+        .hero-sub {
+            font-size: clamp(15px, 2vw, 19px);
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 40px;
+            max-width: 620px; margin-left: auto; margin-right: auto;
+        }
+        .hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+        .btn-primary {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 14px;
+            letter-spacing: .1em; text-transform: uppercase;
+            background: var(--gold); color: var(--navy);
+            padding: 18px 48px; border-radius: 2px;
+            transition: background .2s, transform .15s, box-shadow .2s;
+            box-shadow: 0 8px 32px rgba(255,179,0,.28);
+        }
+        .btn-primary:hover { background: #FFC733; transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255,179,0,.38); }
+        .btn-secondary {
+            font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 14px;
+            letter-spacing: .06em; text-transform: uppercase;
+            background: transparent; color: #fff;
+            padding: 18px 40px; border-radius: 2px;
+            border: 1px solid rgba(255,255,255,.3);
+            transition: border-color .2s, background .2s;
+        }
+        .btn-secondary:hover { border-color: var(--gold); background: rgba(255,179,0,.08); }
+        .trust-badges {
+            display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;
+        }
+        .trust-badge {
+            font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700;
+            letter-spacing: .07em; text-transform: uppercase;
+            color: var(--muted);
+            display: flex; align-items: center; gap: 7px;
+        }
+        .trust-badge-icon { color: var(--gold); font-size: 14px; }
+
+        /* ── SECTION SHARED ────────────────────────────── */
+        section { position: relative; }
+        .section-inner { max-width: 1060px; margin: 0 auto; padding: 96px 40px; }
+        .section-label {
+            font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 800;
+            letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+            margin-bottom: 12px; display: block;
+        }
+        .section-h2 {
+            font-family: 'Montserrat',sans-serif; font-weight: 900;
+            font-size: clamp(26px,4vw,44px); line-height: 1.1; letter-spacing: -.02em;
+            color: #fff; margin-bottom: 20px;
+        }
+        .section-lead {
+            font-size: clamp(15px,1.8vw,18px); line-height: 1.8;
+            color: var(--text); max-width: 620px;
+        }
+
+        /* ── PROBLEM SECTION ───────────────────────────── */
+        .problem-section { background: var(--warm); }
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 56px; }
+        .problem-list { display: flex; flex-direction: column; gap: 24px; }
+        .problem-item { display: flex; gap: 20px; align-items: flex-start; }
+        .problem-num {
+            flex-shrink: 0;
+            width: 40px; height: 40px;
+            background: rgba(255,179,0,.12);
+            border: 1px solid rgba(255,179,0,.25);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 14px; color: var(--gold);
+        }
+        .problem-item h4 { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 15px; color: #fff; margin-bottom: 4px; }
+        .problem-item p { font-size: 14px; line-height: 1.7; color: var(--muted); }
+        .problem-visual {
+            background: var(--mid);
+            border: 1px solid rgba(255,179,0,.1);
+            border-radius: 4px;
+            padding: 36px 32px;
+            text-align: center;
+        }
+        .problem-visual-headline {
+            font-family: 'Montserrat',sans-serif; font-weight: 900;
+            font-size: clamp(40px,6vw,72px); color: var(--gold); line-height: 1;
+            margin-bottom: 8px;
+        }
+        .problem-visual-label {
+            font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 12px;
+            text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
+            margin-bottom: 32px;
+        }
+        .problem-vs-divider {
+            border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; margin-top: 4px;
+        }
+        .problem-visual-headline2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(32px,5vw,56px); color: #fff; line-height: 1; margin-bottom: 8px; }
+
+        /* ── BENEFITS SECTION ──────────────────────────── */
+        .benefits-section { background: var(--dark); }
+        .benefits-header { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 56px; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(255,179,0,.08);
+            border: 1px solid rgba(255,179,0,.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .benefit-card {
+            background: var(--warm);
+            padding: 36px 32px;
+            transition: background .25s;
+        }
+        .benefit-card:hover { background: var(--mid); }
+        .benefit-icon {
+            font-size: 32px; margin-bottom: 16px; display: block;
+        }
+        .benefit-h { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 16px; color: #fff; margin-bottom: 10px; line-height: 1.2; }
+        .benefit-p { font-size: 14px; line-height: 1.75; color: var(--muted); }
+
+        /* ── PROCESS SECTION ───────────────────────────── */
+        .process-section { background: var(--warm); }
+        .process-track {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 0; margin-top: 60px; position: relative;
+        }
+        .process-track::before {
+            content: '';
+            position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+            background: linear-gradient(to right, var(--gold), rgba(255,179,0,.3));
+        }
+        .process-step { text-align: center; padding: 0 16px; }
+        .step-circle {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--navy);
+            font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            position: relative; z-index: 1;
+            box-shadow: 0 0 0 6px rgba(255,179,0,.15);
+        }
+        .step-h { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 13px; color: #fff; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .04em; }
+        .step-p { font-size: 12px; line-height: 1.65; color: var(--muted); }
+
+        /* ── COMPARISON SECTION ────────────────────────── */
+        .compare-section { background: var(--dark); }
+        .compare-table-wrap { margin-top: 56px; overflow-x: auto; border-radius: 4px; border: 1px solid rgba(255,179,0,.12); }
+        table.lp-compare { width: 100%; border-collapse: collapse; min-width: 560px; }
+        .lp-compare th {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 12px;
+            letter-spacing: .1em; text-transform: uppercase; padding: 18px 24px;
+            text-align: left;
+        }
+        .lp-compare th:nth-child(1) { background: rgba(255,255,255,.04); color: var(--muted); width: 38%; }
+        .lp-compare th:nth-child(2) { background: var(--gold); color: var(--navy); }
+        .lp-compare th:nth-child(3) { background: rgba(255,255,255,.07); color: var(--muted); }
+        .lp-compare td {
+            font-size: 14px; padding: 14px 24px;
+            border-bottom: 1px solid rgba(255,255,255,.06); vertical-align: middle;
+        }
+        .lp-compare tr:last-child td { border-bottom: none; }
+        .lp-compare td:nth-child(1) { font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 13px; color: rgba(255,255,255,.7); background: rgba(255,255,255,.03); }
+        .lp-compare td:nth-child(2) { color: #fff; background: rgba(255,179,0,.06); }
+        .lp-compare td:nth-child(3) { color: var(--muted); background: rgba(255,255,255,.025); }
+        .lp-yes { color: #66BB6A; font-weight: 700; }
+        .lp-no  { color: #EF5350; font-weight: 700; }
+
+        /* ── MID CTA SECTION ───────────────────────────── */
+        .mid-cta-section {
+            background: linear-gradient(135deg, var(--gold) 0%, #E65100 100%);
+            padding: 80px 40px; text-align: center;
+        }
+        .mid-cta-section h2 {
+            font-family: 'Montserrat',sans-serif; font-weight: 900;
+            font-size: clamp(24px,4vw,40px); color: var(--navy);
+            margin-bottom: 12px; letter-spacing: -.02em;
+        }
+        .mid-cta-section p { font-size: 16px; color: rgba(10,36,99,.75); margin-bottom: 36px; }
+        .mid-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-dark {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 14px;
+            letter-spacing: .1em; text-transform: uppercase;
+            background: var(--navy); color: #fff;
+            padding: 18px 48px; border-radius: 2px;
+            transition: background .2s, transform .15s;
+            box-shadow: 0 8px 28px rgba(10,36,99,.35);
+        }
+        .btn-dark:hover { background: #050e2b; transform: translateY(-2px); }
+        .btn-phone-lg {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 18px;
+            color: var(--navy);
+            padding: 16px 36px; border-radius: 2px;
+            border: 2px solid var(--navy);
+            transition: background .2s;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .btn-phone-lg:hover { background: rgba(10,36,99,.08); }
+
+        /* ── IS IT RIGHT SECTION ───────────────────────── */
+        .right-section { background: var(--warm); }
+        .right-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 56px; }
+        .right-col h3 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 18px; margin-bottom: 24px; }
+        .right-col.yes h3 { color: #66BB6A; }
+        .right-col.no h3 { color: #EF5350; }
+        .right-list { display: flex; flex-direction: column; gap: 12px; }
+        .right-item { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--text); line-height: 1.6; }
+        .right-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+
+        /* ── SERVICE AREAS ─────────────────────────────── */
+        .areas-section { background: var(--dark); }
+        .areas-grid {
+            display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px;
+        }
+        .area-pill {
+            font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: 12px;
+            letter-spacing: .07em; text-transform: uppercase;
+            border: 1px solid rgba(255,179,0,.25);
+            color: rgba(255,255,255,.7);
+            padding: 9px 18px; border-radius: 100px;
+            transition: border-color .2s, color .2s;
+        }
+        .area-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ── FINAL CTA ─────────────────────────────────── */
+        .final-cta { background: var(--warm); padding: 120px 40px; text-align: center; }
+        .final-cta-inner { max-width: 680px; margin: 0 auto; }
+        .final-cta h2 {
+            font-family: 'Montserrat',sans-serif; font-weight: 900;
+            font-size: clamp(28px,5vw,52px); line-height: 1.08;
+            letter-spacing: -.025em; color: #fff; margin-bottom: 16px;
+        }
+        .final-cta h2 span { color: var(--gold); }
+        .final-cta p { font-size: 16px; color: var(--muted); margin-bottom: 48px; line-height: 1.7; }
+        .final-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+        .btn-final {
+            font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 15px;
+            letter-spacing: .1em; text-transform: uppercase;
+            background: var(--gold); color: var(--navy);
+            padding: 20px 64px; border-radius: 2px;
+            transition: background .2s, transform .15s, box-shadow .2s;
+            box-shadow: 0 8px 32px rgba(255,179,0,.25);
+        }
+        .btn-final:hover { background: #FFC733; transform: translateY(-3px); box-shadow: 0 16px 48px rgba(255,179,0,.35); }
+        .final-phone { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 28px; color: var(--gold); }
+        .final-phone:hover { color: #fff; }
+        .final-guarantee {
+            font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700;
+            letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+            margin-top: 20px;
+        }
+
+        /* ── FOOTER ────────────────────────────────────── */
+        .lp-footer {
+            background: #080603;
+            padding: 32px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 1px solid rgba(255,179,0,.08);
+            flex-wrap: wrap; gap: 16px;
+        }
+        .lp-footer-logo { height: 40px; }
+        .lp-footer-links { display: flex; gap: 24px; }
+        .lp-footer-links a { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+        .lp-footer-links a:hover { color: var(--gold); }
+        .lp-footer-copy { font-family: 'Montserrat',sans-serif; font-size: 11px; color: rgba(255,255,255,.2); }
+
+        /* ── RESPONSIVE ────────────────────────────────── */
+        @media (max-width: 900px) {
+            .process-track { grid-template-columns: 1fr 1fr; }
+            .process-track::before { display: none; }
+            .benefits-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 760px) {
+            .problem-grid { grid-template-columns: 1fr; }
+            .right-grid { grid-template-columns: 1fr; }
+            .lp-topbar { padding: 12px 20px; }
+            .lp-phone { font-size: 15px; }
+            .section-inner { padding: 72px 24px; }
+        }
+        @media (max-width: 640px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+            .process-track { grid-template-columns: 1fr; }
+            .hero-cta-group { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+            .lp-topbar-right .btn-cta-top { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<header class="lp-topbar">
+    <img src="brand_assets/KC Clean Carpet Logo.png" alt="KC Clean Carpet" class="lp-topbar-logo">
+    <div class="lp-topbar-right">
+        <a href="tel:8167151130" class="lp-phone">&#128222; (816) 715-1130</a>
+        <a href="schedule.html" class="btn-cta-top">Free Assessment</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+        <span class="hero-eyebrow">KC Clean Carpet &mdash; Kansas City</span>
+        <h1 class="hero-h1">Your Floors,<br><em>Transformed.</em><br>In One Day.</h1>
+        <p class="hero-sub">Sandless refinishing restores your hardwood floors to a rich, like-new finish — without the dust clouds, the week of disruption, or the five-figure price tag of traditional refinishing.</p>
+        <div class="hero-cta-group">
+            <a href="schedule.html" class="btn-primary">Schedule a Free Assessment</a>
+            <a href="tel:8167151130" class="btn-secondary">&#128222; Call (816) 715-1130</a>
+        </div>
+        <div class="trust-badges">
+            <span class="trust-badge"><span class="trust-badge-icon">&#11088;</span> 5-Star Rated</span>
+            <span class="trust-badge"><span class="trust-badge-icon">&#10003;</span> No Dust. No Sanding.</span>
+            <span class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Done in One Day</span>
+            <span class="trust-badge"><span class="trust-badge-icon">&#10003;</span> 100% Satisfaction Guarantee</span>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+    <div class="section-inner">
+        <span class="section-label">The Problem with Traditional Refinishing</span>
+        <h2 class="section-h2">Traditional Sanding Is Expensive,<br>Messy, and Exhausting</h2>
+        <p class="section-lead">If you've priced traditional hardwood floor refinishing before, you already know. Most Kansas City homeowners are shocked by the reality — and there's a better way.</p>
+
+        <div class="problem-grid">
+            <div class="problem-list">
+                <div class="problem-item">
+                    <div class="problem-num">1</div>
+                    <div>
+                        <h4>Dust Everywhere</h4>
+                        <p>Traditional sanding generates enormous volumes of fine wood dust that infiltrates every room in your home — into vents, closets, cabinets, and electronics. Cleaning up after takes days longer than the refinishing itself.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-num">2</div>
+                    <div>
+                        <h4>Days of Disruption</h4>
+                        <p>Sanding, staining, and applying multiple finish coats takes 4–7 days minimum. Many families must relocate or live in a fraction of their home during the process.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-num">3</div>
+                    <div>
+                        <h4>High Cost</h4>
+                        <p>Full sand-and-refinish averages $3–$8 per square foot in the KC market. For a 1,200 sq ft floor, that's $3,600–$9,600 — just for floors that already exist in your home.</p>
+                    </div>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-num">4</div>
+                    <div>
+                        <h4>It Wears Away Your Wood</h4>
+                        <p>Every sanding removes approximately 1/16&Prime; of wood. Solid hardwood floors can only be sanded a finite number of times before the wood is too thin to refinish. It's a resource you spend with each refinish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problem-visual">
+                <div class="problem-visual-headline">$6,800</div>
+                <div class="problem-visual-label">Avg. traditional refinishing cost<br>1,200 sq ft home in KC metro</div>
+                <div class="problem-vs-divider">
+                    <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">vs. sandless refinishing</div>
+                    <div class="problem-visual-headline2">1 Day</div>
+                    <div class="problem-visual-label" style="margin-bottom:16px;">Complete. Walkable. Done.</div>
+                    <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);">At a fraction of the traditional cost</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+    <div class="section-inner">
+        <div class="benefits-header">
+            <span class="section-label">Why Sandless Refinishing</span>
+            <h2 class="section-h2">Everything You Want.<br>None of What You Don't.</h2>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">&#127981;</span>
+                <h3 class="benefit-h">Zero Dust. Zero Mess.</h3>
+                <p class="benefit-p">Our light abrasion screening process generates virtually no dust. Your home stays clean throughout — no tarps on furniture, no dust in your vents, no cleanup nightmare when we leave.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#9201;</span>
+                <h3 class="benefit-h">Done in One Day</h3>
+                <p class="benefit-p">Most jobs are complete in a single visit. Light foot traffic is safe the same day. Full cure happens within 24 hours — not the 5–7 day wait of traditional oil-based systems.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#127968;</span>
+                <h3 class="benefit-h">Stay in Your Home</h3>
+                <p class="benefit-p">No fumes that require evacuation. No rooms sealed off for days. Your family and pets can return to a normal routine the same evening the work is finished.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#128176;</span>
+                <h3 class="benefit-h">Fraction of the Cost</h3>
+                <p class="benefit-p">Sandless refinishing delivers a dramatic transformation at significantly lower cost than traditional sanding — making it one of the highest-ROI flooring services available to homeowners.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#9736;</span>
+                <h3 class="benefit-h">Preserves Your Wood</h3>
+                <p class="benefit-p">We remove no wood. Traditional sanding removes a layer of your floor with every refinish. Sandless refinishing lets you repeat the process many more times over the life of your floors.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">&#127807;</span>
+                <h3 class="benefit-h">Professional-Grade Finish</h3>
+                <p class="benefit-p">We apply professional waterborne polyurethane in your choice of sheen — matte, satin, semi-gloss, or gloss. The result is a rich, even finish that looks like a brand-new floor.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+    <div class="section-inner">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-h2">Five Steps. One Day.<br>Beautiful Floors.</h2>
+
+        <div class="process-track">
+            <div class="process-step">
+                <div class="step-circle">1</div>
+                <div class="step-h">Deep Clean</div>
+                <p class="step-p">We clean every inch of the floor surface to remove dirt, wax, oils, and residue — ensuring the new finish bonds perfectly.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-circle">2</div>
+                <div class="step-h">Screening</div>
+                <p class="step-p">A professional buffer with fine abrasive screens lightly scuffs the existing finish — no wood removed, minimal dust.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-circle">3</div>
+                <div class="step-h">Edge Detail</div>
+                <p class="step-p">All edges, corners, and wall lines are hand-buffed to ensure complete, consistent coverage throughout every room.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-circle">4</div>
+                <div class="step-h">Tack &amp; Clean</div>
+                <p class="step-p">The floor is vacuumed and tack-clothed to remove every particle before coating — because anything left under the finish stays visible.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-circle">5</div>
+                <div class="step-h">Finish Coat</div>
+                <p class="step-p">Professional-grade polyurethane is applied in your chosen sheen with a T-bar applicator for uniform thickness and streak-free coverage.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare-section">
+    <div class="section-inner">
+        <span class="section-label">Side-by-Side Comparison</span>
+        <h2 class="section-h2">The Numbers Don't Lie</h2>
+        <p class="section-lead">Here's exactly how sandless refinishing compares to traditional sanding — across every factor that matters to your home and your family.</p>
+
+        <div class="compare-table-wrap">
+            <table class="lp-compare">
+                <thead>
+                    <tr>
+                        <th>Factor</th>
+                        <th>&#10022; Sandless Refinishing</th>
+                        <th>Traditional Sanding</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dust Generated</td>
+                        <td><span class="lp-yes">&#10003;</span> Virtually none</td>
+                        <td><span class="lp-no">&#10007;</span> Significant throughout home</td>
+                    </tr>
+                    <tr>
+                        <td>Time to Complete</td>
+                        <td><span class="lp-yes">&#10003;</span> 1 day</td>
+                        <td><span class="lp-no">&#10007;</span> 4–7 days</td>
+                    </tr>
+                    <tr>
+                        <td>Walkable After</td>
+                        <td><span class="lp-yes">&#10003;</span> Same day</td>
+                        <td><span class="lp-no">&#10007;</span> 24–48 hrs minimum</td>
+                    </tr>
+                    <tr>
+                        <td>Fully Cured</td>
+                        <td><span class="lp-yes">&#10003;</span> 24 hours</td>
+                        <td><span class="lp-no">&#10007;</span> 5–7 days</td>
+                    </tr>
+                    <tr>
+                        <td>Stay in Your Home</td>
+                        <td><span class="lp-yes">&#10003;</span> Yes</td>
+                        <td><span class="lp-no">&#10007;</span> Often must relocate</td>
+                    </tr>
+                    <tr>
+                        <td>Wood Removed</td>
+                        <td><span class="lp-yes">&#10003;</span> None — floor preserved</td>
+                        <td><span class="lp-no">&#10007;</span> ~1/16&Prime; per refinish</td>
+                    </tr>
+                    <tr>
+                        <td>Relative Cost</td>
+                        <td><span class="lp-yes">&#10003;</span> Fraction of traditional</td>
+                        <td><span class="lp-no">&#10007;</span> $3–$8 per sq ft</td>
+                    </tr>
+                    <tr>
+                        <td>Satisfaction Guarantee</td>
+                        <td><span class="lp-yes">&#10003;</span> 100% guaranteed</td>
+                        <td>Varies by contractor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- MID CTA -->
+<div class="mid-cta-section">
+    <h2>Ready to See What Your Floors Can Look Like?</h2>
+    <p>Free floor assessment. No pressure. Just honest answers about what's possible.</p>
+    <div class="mid-cta-group">
+        <a href="schedule.html" class="btn-dark">Schedule a Free Assessment</a>
+        <a href="tel:8167151130" class="btn-phone-lg">&#128222; (816) 715-1130</a>
+    </div>
+</div>
+
+<!-- IS IT RIGHT -->
+<section class="right-section">
+    <div class="section-inner">
+        <span class="section-label">Is Sandless Refinishing Right for You?</span>
+        <h2 class="section-h2">We'll Always Be Honest<br>About What Your Floors Need</h2>
+        <p class="section-lead">Sandless refinishing is the right solution for most dull, scuffed, or worn hardwood floors. Here's a quick checklist to help you understand where your floors fall.</p>
+
+        <div class="right-grid">
+            <div class="right-col yes">
+                <h3>&#10003; Great Candidate — Sandless Works</h3>
+                <div class="right-list">
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>Floors look dull, hazy, or have lost their sheen</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>Light surface scratches and scuff marks from daily use</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>Traffic lanes that look faded compared to less-used areas</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>Finish feels sticky or looks uneven</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>You want to refresh the look without the cost of full refinishing</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#66BB6A;">&#10003;</span><span>You've had the floors for 5+ years and they've never been professionally refinished</span></div>
+                </div>
+            </div>
+            <div class="right-col no">
+                <h3>&#9888; May Need Traditional Refinishing</h3>
+                <div class="right-list">
+                    <div class="right-item"><span class="right-icon" style="color:#EF5350;">&#9888;</span><span>Deep gouges or scratches that penetrate through finish into wood</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#EF5350;">&#9888;</span><span>Stains that have soaked into the wood grain itself</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#EF5350;">&#9888;</span><span>Warped, cupped, or structurally damaged boards</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#EF5350;">&#9888;</span><span>Floors with wax finish (not polyurethane)</span></div>
+                    <div class="right-item"><span class="right-icon" style="color:#EF5350;">&#9888;</span><span>Laminate or LVP flooring (no real wood finish to key)</span></div>
+                </div>
+                <p style="font-size:13px;color:var(--muted);margin-top:20px;line-height:1.7;">Not sure which category your floors fall into? We'll assess them for free and tell you exactly what we recommend — with no obligation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas-section">
+    <div class="section-inner">
+        <span class="section-label">Service Area</span>
+        <h2 class="section-h2">Serving the Entire Kansas City Metro</h2>
+        <p class="section-lead">KC Clean Carpet is based in Raytown, MO and serves homeowners throughout the greater Kansas City area.</p>
+        <div class="areas-grid">
+            <span class="area-pill">Raytown, MO</span>
+            <span class="area-pill">Kansas City, MO</span>
+            <span class="area-pill">Lee's Summit, MO</span>
+            <span class="area-pill">Independence, MO</span>
+            <span class="area-pill">Blue Springs, MO</span>
+            <span class="area-pill">Grandview, MO</span>
+            <span class="area-pill">Gladstone, MO</span>
+            <span class="area-pill">Liberty, MO</span>
+            <span class="area-pill">Overland Park, KS</span>
+            <span class="area-pill">Leawood, KS</span>
+            <span class="area-pill">Olathe, KS</span>
+            <span class="area-pill">Shawnee, KS</span>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+    <div class="final-cta-inner">
+        <h2>Your Floors Deserve to Look<br><span>Like This Again.</span></h2>
+        <p>One call, one visit, one day. That's all it takes to bring your hardwood floors back to the beautiful condition they were meant to be in. KC Clean Carpet is local, family-owned, and proud to stand behind every job with a 100% satisfaction guarantee.</p>
+        <div class="final-cta-group">
+            <a href="schedule.html" class="btn-final">Schedule a Free Assessment</a>
+            <a href="tel:8167151130" class="final-phone">&#128222; (816) 715-1130</a>
+            <p class="final-guarantee">&#10003; No Commitment &nbsp;&nbsp; &#10003; Free Floor Assessment &nbsp;&nbsp; &#10003; 100% Satisfaction Guaranteed</p>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+    <img src="brand_assets/KC Clean Carpet Logo.png" alt="KC Clean Carpet" class="lp-footer-logo">
+    <div class="lp-footer-links">
+        <a href="index.html">Home</a>
+        <a href="sandless-refinishing.html">Service Details</a>
+        <a href="about.html">About Us</a>
+        <a href="schedule.html">Schedule</a>
+    </div>
+    <span class="lp-footer-copy">&copy; 2026 KC Clean Carpet &mdash; Raytown, MO</span>
+</footer>
+
+</body>
+</html>

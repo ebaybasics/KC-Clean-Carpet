@@ -692,8 +692,10 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
+    // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
     fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             "leadStatus": "new",
@@ -705,20 +707,15 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
             "info": info
         })
     })
-    .then(function(res) { return res.json(); })
-    .then(function(data) {
-        console.log('Zapier response:', JSON.stringify(data));
-        if (data.status === 'success') {
-            successBox.style.display = 'block';
-            submitBtn.textContent = 'Sent ✓';
-            setTimeout(function() {
-                document.getElementById('step-1').style.display = 'none';
-                document.getElementById('step-2').style.display = 'block';
-                document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 1500);
-        } else {
-            throw new Error(data.message || 'success was false');
-        }
+    .then(function() {
+        // no-cors always resolves with opaque response — treat as success
+        successBox.style.display = 'block';
+        submitBtn.textContent = 'Sent ✓';
+        setTimeout(function() {
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+            document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 1500);
     })
     .catch(function(err) {
         var msg = err && err.message ? err.message : String(err);

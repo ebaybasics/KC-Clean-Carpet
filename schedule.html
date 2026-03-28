@@ -27,7 +27,7 @@
         .top-socials { display: flex; gap: 8px; }
         .top-socials a { width: 22px; height: 22px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; transition: background .2s; }
         .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
-        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); }
+        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); position: sticky; top: 0; z-index: 100; }
         .nav-logo { height: 72px; width: auto; }
         .nav-links { display: flex; gap: 8px; align-items: center; }
         .nav-links a { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; transition: color .2s, background .2s; }
@@ -707,8 +707,8 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
+        console.log('FormSubmit response:', JSON.stringify(data));
         if (data.success === 'true' || data.success === true) {
-            // Show success, then advance to step 2
             successBox.style.display = 'block';
             submitBtn.textContent = 'Sent ✓';
             setTimeout(function() {
@@ -717,14 +717,16 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
                 document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 1500);
         } else {
-            throw new Error('Submission failed');
+            throw new Error(data.message || 'success was false');
         }
     })
-    .catch(function() {
-        errorBox.textContent = 'Something went wrong. Please try again or call us at (816) 715-1130.';
+    .catch(function(err) {
+        var msg = err && err.message ? err.message : String(err);
+        errorBox.textContent = 'Error: ' + msg;
         errorBox.style.display = 'block';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Continue to Book My Appointment →';
+        console.error('Form submission error:', err);
     });
 });
 </script>

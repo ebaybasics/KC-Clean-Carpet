@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# /book-now redirects to /schedule
+RewriteRule ^book-now$ /schedule [R=301,L]
+
 # /home serves index.html (internal rewrite — must be before redirect rules)
 RewriteRule ^home$ index.html [L]
 

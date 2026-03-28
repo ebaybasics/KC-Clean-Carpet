@@ -44,6 +44,13 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // Alias /book-now → /schedule
+  if (urlPath === '/book-now') {
+    res.writeHead(301, { 'Location': '/schedule' });
+    res.end();
+    return;
+  }
+
   let filePath;
   if (urlPath === '/home') {
     filePath = path.join(__dirname, 'index.html');

@@ -11,12 +11,30 @@
     <meta property="og:url" content="https://www.kcleancarpet.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Clean Carpet | Professional Carpet Cleaning in Kansas City, MO</title>
-        <link rel="preload" as="image" href="images/Clean Carpet Example.webp">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preload" as="image" href="images/Clean Carpet Example.webp" fetchpriority="high">
+        <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:ital,wght@1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:ital,wght@1,400&display=swap"></noscript>
     <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(fonts/montserrat-900-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/roboto-400-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
         :root {
             --kc-blue:      #1565C0;
             --kc-blue-mid:  #1976D2;
@@ -513,7 +531,8 @@
             .nav-links { gap: 2px; }
             .nav-links a { padding: 6px 8px; font-size: 10px; }
             .about-inner { flex-direction: column; }
-            .about-img-wrap { max-width: 100%; flex: none; }
+            .about-img-wrap { display: none; }
+            .map-section { display: none; }
             .footer-inner { grid-template-columns: 1fr 1fr; }
             .footer-logo-wrap { grid-column: 1/-1; }
             .awards-inner { flex-direction: column; }
@@ -1042,7 +1061,7 @@
 
 <!-- NAV -->
 <nav class="navbar">
-    <a href="#"><img src="brand_assets/KC Clean Carpet Logo.webp" class="nav-logo" alt="KC Clean Carpet"></a>
+    <a href="#"><img src="brand_assets/KC Clean Carpet Logo.webp" class="nav-logo" alt="KC Clean Carpet" width="386" height="417"></a>
         <button class="hamburger" aria-label="Menu" onclick="toggleMobNav()"><span></span><span></span><span></span></button>
         <div class="nav-links">
         <a href="index.html">Home</a>
@@ -1088,25 +1107,25 @@
     <h2 class="section-heading">Our Services</h2>
     <div class="services-grid">
         <a href="carpet-cleaning.html" class="service-card">
-            <img loading="lazy" src="images/Clean Carpet Example.webp" alt=>
+            <img loading="lazy" src="images/Clean Carpet Example.webp" alt="Carpet cleaning example" width="810" height="810">
             <div class="service-card-overlay">
                 <div class="service-card-label">Carpet Cleaning</div>
             </div>
         </a>
         <a href="hardwood-cleaning.html" class="service-card">
-            <img loading="lazy" src="images/Hardwood example.webp" alt=>
+            <img loading="lazy" src="images/Hardwood example.webp" alt="Hardwood floor cleaning" width="700" height="374">
             <div class="service-card-overlay">
                 <div class="service-card-label">Hardwood Floor Cleaning</div>
             </div>
         </a>
         <a href="upholstery-cleaning.html" class="service-card">
-            <img loading="lazy" src="images/Upholstery Example.webp" alt=>
+            <img loading="lazy" src="images/Upholstery Example.webp" alt="Upholstery cleaning" width="620" height="372">
             <div class="service-card-overlay">
                 <div class="service-card-label">Upholstery Cleaning</div>
             </div>
         </a>
         <a href="tile-grout-cleaning.html" class="service-card">
-            <img loading="lazy" src="images/Tile and Grout.webp" alt=>
+            <img loading="lazy" src="images/Tile and Grout.webp" alt="Tile and grout cleaning" width="620" height="369">
             <div class="service-card-overlay">
                 <div class="service-card-label">Tile &amp; Grout Cleaning</div>
             </div>
@@ -1123,7 +1142,7 @@
     </div>
     <div class="about-inner">
         <div class="about-img-wrap">
-            <img loading="lazy" src="images/Workvan Pic.webp" alt="KC Clean Carpet Service Van">
+            <img loading="lazy" src="images/Workvan Pic.webp" alt="KC Clean Carpet Service Van" width="960" height="776">
         </div>
         <div class="about-copy">
             <h2>Kansas City's Trusted Cleaning Heroes</h2>
@@ -1256,6 +1275,7 @@
     const cards    = track.querySelectorAll('.review-card');
     const total    = cards.length;
     let current    = 0;
+    let cardWidth  = 0;
 
     function visibleCount() {
         return window.innerWidth < 640 ? 1 : 3;
@@ -1265,10 +1285,10 @@
         const viewport = track.parentElement;
         const gap      = 24;
         const vis      = visibleCount();
-        const w        = (viewport.offsetWidth - gap * (vis - 1)) / vis;
+        cardWidth      = (viewport.offsetWidth - gap * (vis - 1)) / vis;
         cards.forEach(c => {
-            c.style.width    = w + 'px';
-            c.style.minWidth = w + 'px';
+            c.style.width    = cardWidth + 'px';
+            c.style.minWidth = cardWidth + 'px';
         });
     }
 
@@ -1278,8 +1298,7 @@
 
     function move() {
         const gap = 24;
-        const w   = cards[0].getBoundingClientRect().width;
-        track.style.transform = 'translateX(-' + (current * (w + gap)) + 'px)';
+        track.style.transform = 'translateX(-' + (current * (cardWidth + gap)) + 'px)';
         document.getElementById('rev-prev').style.opacity = current === 0 ? '.35' : '1';
         document.getElementById('rev-next').style.opacity = current >= maxIndex() ? '.35' : '1';
     }
@@ -1314,8 +1333,8 @@
     </div>
 </section>
 
-<!-- MAP -->
-<section style="width:100%; height:450px; display:block;">
+<!-- MAP — hidden on mobile via CSS, SEO preserved via LocalBusiness JSON-LD -->
+<section class="map-section" style="width:100%; height:450px;">
     <iframe title="KC Clean Carpet Location Map"
         src="https://www.google.com/maps?q=KC+Clean+Carpets,+Raytown,+MO&output=embed"
         width="100%" height="100%"

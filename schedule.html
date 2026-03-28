@@ -524,8 +524,8 @@
                             <input type="tel" id="phone" placeholder="(816) 555-0000" required>
                         </div>
                         <div class="field-group">
-                            <label>Email Address <span>*</span></label>
-                            <input type="email" id="email" placeholder="jane@email.com" required>
+                            <label>Email Address</label>
+                            <input type="email" id="email" placeholder="jane@email.com">
                         </div>
                     </div>
 
@@ -564,7 +564,7 @@
                     </div>
 
                     <div id="form-error" style="display:none; background:#FFF3CD; border:1px solid #FFB300; color:#7a5000; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
-                        Please fill in all required fields (Name, Phone, Email, and at least one service).
+                        Please fill in all required fields (First Name, Last Name, and Phone).
                     </div>
 
                     <div id="form-success" style="display:none; background:#d4edda; border:1px solid #28a745; color:#155724; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
@@ -676,7 +676,7 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     var successBox = document.getElementById('form-success');
     var submitBtn = document.querySelector('.submit-btn');
 
-    if (!fname || !lname || !phone || !email || services.length === 0) {
+    if (!fname || !lname || !phone) {
         errorBox.style.display = 'block';
         successBox.style.display = 'none';
         errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });

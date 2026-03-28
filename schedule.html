@@ -692,23 +692,23 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    fetch('https://formsubmit.co/ajax/kccleancarpets@gmail.com', {
+    fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-            "Name": fname,
+            "access_key": "720798e8-324a-4c80-8d4b-11937f6f369b",
+            "subject": "New Booking Request — KC Clean Carpets",
+            "from_name": fname + ' ' + lname,
+            "Name": fname + ' ' + lname,
             "Phone": phone,
             "Email": email,
-            "Additional Info": info,
-            "_subject": 'message from "kc clean carpets"',
-            "_captcha": false,
-            "_template": "basic"
+            "Services": info
         })
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-        console.log('FormSubmit response:', JSON.stringify(data));
-        if (data.success === 'true' || data.success === true) {
+        console.log('Web3Forms response:', JSON.stringify(data));
+        if (data.success === true) {
             successBox.style.display = 'block';
             submitBtn.textContent = 'Sent ✓';
             setTimeout(function() {

@@ -692,23 +692,20 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    fetch('https://api.web3forms.com/submit', {
+    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            "access_key": "720798e8-324a-4c80-8d4b-11937f6f369b",
-            "subject": "New Booking Request — KC Clean Carpets",
-            "from_name": fname + ' ' + lname,
-            "Name": fname + ' ' + lname,
-            "Phone": phone,
-            "Email": email,
-            "Services": info
+            "firstname": fname,
+            "phone": phone,
+            "email": email,
+            "info": info
         })
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-        console.log('Web3Forms response:', JSON.stringify(data));
-        if (data.success === true) {
+        console.log('Zapier response:', JSON.stringify(data));
+        if (data.status === 'success') {
             successBox.style.display = 'block';
             submitBtn.textContent = 'Sent ✓';
             setTimeout(function() {

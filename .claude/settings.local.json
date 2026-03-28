@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\'' -ErrorAction SilentlyContinue | Select-Object Name\")"
+      "Bash(powershell.exe -Command \"Get-ChildItem ''C:\\\\'' -ErrorAction SilentlyContinue | Select-Object Name\")",
+      "Bash(export PATH=\"/c/Users/snipe/AppData/Local/nvm/v24.14.0:$PATH\")",
+      "Bash(node update-schema.mjs)",
+      "Bash(node -e \":*)"
     ]
   }
 }

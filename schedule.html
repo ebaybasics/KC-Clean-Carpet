@@ -231,6 +231,33 @@
         .nav-dropdown-menu a:last-child { border-bottom: none; }
         .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Schedule a Cleaning — KC Clean Carpet",
+      "description": "Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpet. Serving the Kansas City metro. Call (816) 715-1130 or book online.",
+      "url": "https://www.kcleancarpet.com/schedule.html",
+      "mainEntity": {
+        "@id": "https://www.kcleancarpet.com/#business"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.kcleancarpet.com/schedule.html",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "Cleaning Appointment"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
 

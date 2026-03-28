@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# /home serves index.html (internal rewrite — must be before redirect rules)
+RewriteRule ^home$ index.html [L]
+
+# Serve .html file for clean URLs (internal rewrite)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Redirect /index.html to /home (only real browser requests, not internal rewrites)
+RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+RewriteRule ^ /home [R=301,L]
+
+# Redirect any .html URL to clean version (only real browser requests)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Redirect / to /home
+RewriteCond %{THE_REQUEST} \s/\s
+RewriteRule ^$ /home [R=301,L]

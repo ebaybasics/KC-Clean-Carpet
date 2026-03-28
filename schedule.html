@@ -107,10 +107,14 @@
         .field-group textarea { resize: vertical; min-height: 110px; }
         .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-        .service-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+        .service-chips { display: flex; flex-direction: column; gap: 16px; margin-top: 4px; }
+        .svc-category { display: flex; flex-direction: column; gap: 6px; }
+        .svc-cat-label { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--kc-blue-dark); padding-bottom: 5px; border-bottom: 1.5px solid #e8edf5; margin-bottom: 2px; }
+        .svc-cat-chips { display: flex; flex-wrap: wrap; gap: 8px; }
         .chip { display: flex; align-items: center; gap: 6px; }
         .chip input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--kc-blue); cursor: pointer; }
         .chip label { font-size: 13px; color: #444; cursor: pointer; font-weight: 500; }
+        .svc-divider { display: none; }
 
         .submit-btn {
             width: 100%;
@@ -277,6 +281,7 @@
             <span class="nav-dropdown-trigger">Services &#9662;</span>
             <div class="nav-dropdown-menu">
                 <a href="carpet-cleaning.html">Carpet Cleaning</a>
+                <a href="commercial-carpet-cleaning.html">Commercial Carpet Cleaning</a>
                 <a href="hardwood-cleaning.html">Hardwood Floor Cleaning</a>
                 <a href="sandless-refinishing.html">Sandless Refinishing</a>
                 <a href="wax-removal.html">Wax Removal</a>
@@ -335,13 +340,29 @@
                     <div class="field-group">
                         <label>Services Needed <span>*</span></label>
                         <div class="service-chips">
-                            <div class="chip"><input type="checkbox" id="s1" value="Carpet Cleaning"><label for="s1">Carpet Cleaning</label></div>
-                            <div class="chip"><input type="checkbox" id="s2" value="Hardwood Floor Cleaning"><label for="s2">Hardwood Floor Cleaning</label></div>
-                            <div class="chip"><input type="checkbox" id="s3" value="Upholstery Cleaning"><label for="s3">Upholstery Cleaning</label></div>
-                            <div class="chip"><input type="checkbox" id="s4" value="Tile & Grout Cleaning"><label for="s4">Tile &amp; Grout Cleaning</label></div>
-                            <div class="chip"><input type="checkbox" id="s6" value="Sandless Refinishing"><label for="s6">Sandless Refinishing</label></div>
-                            <div class="chip"><input type="checkbox" id="s7" value="Wax Removal"><label for="s7">Wax Removal</label></div>
-                            <div class="chip"><input type="checkbox" id="s5" value="Not Sure"><label for="s5">Not Sure Yet</label></div>
+                            <div class="svc-category">
+                                <div class="svc-cat-label">Residential</div>
+                                <div class="svc-cat-chips">
+                                    <div class="chip"><input type="checkbox" id="s1" value="Carpet Cleaning"><label for="s1">Carpet Cleaning</label></div>
+                                    <div class="chip"><input type="checkbox" id="s3" value="Upholstery Cleaning"><label for="s3">Upholstery Cleaning</label></div>
+                                    <div class="chip"><input type="checkbox" id="s4" value="Tile & Grout Cleaning"><label for="s4">Tile &amp; Grout Cleaning</label></div>
+                                </div>
+                            </div>
+                            <div class="svc-category">
+                                <div class="svc-cat-label">Hardwood</div>
+                                <div class="svc-cat-chips">
+                                    <div class="chip"><input type="checkbox" id="s2" value="Hardwood Floor Cleaning"><label for="s2">Hardwood Floor Cleaning</label></div>
+                                    <div class="chip"><input type="checkbox" id="s6" value="Sandless Refinishing"><label for="s6">Sandless Refinishing</label></div>
+                                    <div class="chip"><input type="checkbox" id="s7" value="Wax Removal"><label for="s7">Wax Removal</label></div>
+                                </div>
+                            </div>
+                            <div class="svc-category">
+                                <div class="svc-cat-label">Commercial</div>
+                                <div class="svc-cat-chips">
+                                    <div class="chip"><input type="checkbox" id="s8" value="Commercial Carpet Cleaning"><label for="s8">Commercial Carpet Cleaning</label></div>
+                                </div>
+                            </div>
+                            <div class="chip" style="margin-top:4px;"><input type="checkbox" id="s5" value="Not Sure"><label for="s5">Not Sure Yet</label></div>
                         </div>
                     </div>
 

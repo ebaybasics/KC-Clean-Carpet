@@ -44,8 +44,8 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // Alias /book-now → /schedule
-  if (urlPath === '/book-now') {
+  // Aliases
+  if (urlPath === '/book-now' || urlPath === '/contact-us') {
     res.writeHead(301, { 'Location': '/schedule' });
     res.end();
     return;

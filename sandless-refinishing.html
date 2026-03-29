@@ -82,7 +82,7 @@
         .benefit-card p { font-size: 13px; color: #555; margin: 0; line-height: 1.6; }
 
         /* ── COMPARISON TABLE ────────── */
-        .comparison-wrap { background: #f5f7fb; border-radius: 4px; overflow: hidden; margin: 28px 0; }
+        .comparison-wrap { background: #f5f7fb; border-radius: 4px; overflow-x: auto; margin: 28px 0; -webkit-overflow-scrolling: touch; }
         .comparison-table { width: 100%; border-collapse: collapse; }
         .comparison-table th { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; padding: 16px 20px; text-align: left; }
         .comparison-table th:nth-child(1) { background: #e9edf5; color: var(--kc-navy); width: 36%; }
@@ -573,8 +573,19 @@
       ]
     }
     </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WJHSP6P6');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJHSP6P6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="top-bar">
     <span>Customer Service &amp; Quality is Our #1 Priority!</span>
@@ -948,6 +959,22 @@ function closeMobNav() {
     document.body.style.overflow = '';
 }
 window.addEventListener('resize', function() { if (window.innerWidth > 768) closeMobNav(); });
+</script>
+<script>
+document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'phone_click',
+            'phone_number': link.href.replace('tel:', ''),
+            'click_location': link.closest('.sticky-fab') ? 'fab' :
+                              link.closest('.top-bar') ? 'top_bar' :
+                              link.closest('.mob-drawer') ? 'mobile_nav' :
+                              link.closest('footer') ? 'footer' : 'other'
+        });
+    }
+});
 </script>
 </body>
 </html>

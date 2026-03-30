@@ -94,7 +94,7 @@
         .page-band h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(22px,4vw,46px); margin: 0 0 20px; position: relative; line-height: 1.1; letter-spacing: -.01em; text-shadow: 0 4px 32px rgba(0,0,0,.3); }
 
         /* ── REVIEW CAROUSEL ── */
-        .band-carousel { position: relative; margin: 0 auto; max-width: 620px; }
+        .band-carousel { position: relative; margin: 0 auto; max-width: 620px; cursor: pointer; }
         .band-review { display: none; opacity: 0; transition: opacity .6s ease; }
         .band-review.active { display: block; opacity: 1; }
 
@@ -107,17 +107,6 @@
             position: relative;
             backdrop-filter: blur(4px);
             text-align: left;
-        }
-        .review-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -8px; left: 20px;
-            font-size: 72px;
-            font-family: Georgia, serif;
-            color: var(--kc-gold);
-            opacity: .5;
-            line-height: 1;
-            pointer-events: none;
         }
         .band-stars { font-size: 15px; color: var(--kc-gold); letter-spacing: .08em; margin-bottom: 10px; filter: drop-shadow(0 1px 3px rgba(255,179,0,.6)); }
         .review-card p { font-size: 14px; opacity: .92; margin: 0 0 14px; font-style: italic; line-height: 1.7; color: #fff; }
@@ -492,6 +481,19 @@
         @media (max-width: 768px) {
             html, body { overflow-x: hidden; }
         }
+        @media (max-width: 420px) {
+            .lp-header { padding: 8px 12px; }
+            .lp-logo { height: 36px; }
+            .lp-phone { font-size: 15px; }
+            .lp-phone-label { font-size: 8px; }
+            .main-wrap { padding: 12px 8px 48px; }
+            .form-body { padding: 16px 12px; }
+            .field-row { grid-template-columns: 1fr; gap: 0; }
+            .step-item { padding: 14px 12px; gap: 10px; }
+            .step-label { font-size: 11px; }
+            .step-sub { font-size: 10px; }
+            .step-num { width: 28px; height: 28px; font-size: 13px; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -846,13 +848,22 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     var dots = document.querySelectorAll('#carouselDots .carousel-dot');
     var current = 0;
     if (reviews.length < 2) return;
-    setInterval(function() {
+
+    function advance() {
         reviews[current].classList.remove('active');
         dots[current].classList.remove('active');
         current = (current + 1) % reviews.length;
         reviews[current].classList.add('active');
         dots[current].classList.add('active');
-    }, 4500);
+    }
+
+    var timer = setInterval(advance, 4500);
+
+    document.getElementById('bandCarousel').addEventListener('click', function() {
+        clearInterval(timer);
+        advance();
+        timer = setInterval(advance, 4500);
+    });
 })();
 </script>
 <script>

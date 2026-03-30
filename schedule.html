@@ -53,7 +53,7 @@
         .lp-logo { height: 56px; width: auto; display: block; transition: opacity .2s; }
         .lp-logo:hover { opacity: .85; }
         .lp-phone-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-        .lp-phone-label { font-family: 'Montserrat',sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+        .lp-phone-label { font-family: 'Montserrat',sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); }
         .lp-phone {
             font-family: 'Montserrat',sans-serif;
             font-weight: 900;
@@ -100,12 +100,11 @@
 
         /* Review card — makes it unmistakably a testimonial */
         .review-card {
-            background: rgba(255,255,255,.09);
-            border: 1px solid rgba(255,255,255,.15);
+            background: rgba(10,36,99,.55);
+            border: 1px solid rgba(255,255,255,.2);
             border-radius: 12px;
             padding: 24px 28px 20px;
             position: relative;
-            backdrop-filter: blur(4px);
             text-align: left;
         }
         .band-stars { font-size: 15px; color: var(--kc-gold); letter-spacing: .08em; margin-bottom: 10px; filter: drop-shadow(0 1px 3px rgba(255,179,0,.6)); }
@@ -122,7 +121,7 @@
             color: var(--kc-navy);
             flex-shrink: 0;
         }
-        .review-author { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: rgba(255,255,255,.75); letter-spacing: .04em; }
+        .review-author { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: rgba(255,255,255,.9); letter-spacing: .04em; }
         /* Dot indicators */
         .carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
         .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.25); transition: background .3s, transform .3s; }
@@ -216,7 +215,7 @@
         .step-item.active .step-label { color: var(--kc-gold); }
         .step-sub {
             font-size: 11px;
-            color: rgba(255,255,255,.6);
+            color: rgba(255,255,255,.82);
             font-family: 'Roboto', sans-serif;
             margin-top: 3px;
             display: block;
@@ -321,7 +320,7 @@
 
         .form-fine {
             font-size: 11px;
-            color: #aaa;
+            color: #767676;
             text-align: center;
             margin-top: 14px;
             line-height: 1.7;
@@ -381,7 +380,7 @@
             box-shadow: 0 3px 10px rgba(13,71,161,.2);
         }
         .trust-item-text strong { display: block; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; }
-        .trust-item-text span { font-size: 12px; color: #888; line-height: 1.55; }
+        .trust-item-text span { font-size: 12px; color: #5a5a6e; line-height: 1.55; }
 
         .review-snippet {
             border-radius: 10px;
@@ -443,7 +442,7 @@
         }
         .review-snippet-caption span {
             font-size: 11px;
-            opacity: .72;
+            opacity: .9;
             letter-spacing: .03em;
         }
 
@@ -745,7 +744,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="review-snippet">
-            <img src="images/Clean Carpet Example.jpg" alt="KC Clean Carpet — Professional Carpet Cleaning Results">
+            <img src="images/Clean Carpet Example.jpg" alt="KC Clean Carpet — Professional Carpet Cleaning Results" loading="lazy" width="360" height="270">
             <div class="review-snippet-overlay"></div>
             <div class="review-snippet-badge">Our Work</div>
             <div class="review-snippet-caption">

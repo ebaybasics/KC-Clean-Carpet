@@ -93,39 +93,53 @@
         }
         .page-band h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(22px,4vw,46px); margin: 0 0 20px; position: relative; line-height: 1.1; letter-spacing: -.01em; text-shadow: 0 4px 32px rgba(0,0,0,.3); }
 
-        /* ── REVIEW CAROUSEL ── */
-        .band-carousel { position: relative; margin: 0 auto; max-width: 620px; cursor: pointer; }
-        .band-review { display: none; opacity: 0; transition: opacity .6s ease; }
-        .band-review.active { display: block; opacity: 1; }
-
-        /* Review card — makes it unmistakably a testimonial */
-        .review-card {
-            background: rgba(10,36,99,.55);
-            border: 1px solid rgba(255,255,255,.2);
-            border-radius: 12px;
-            padding: 24px 28px 20px;
-            position: relative;
-            text-align: left;
+        /* ── STATIC REVIEW ── */
+        .band-review-static {
+            margin: 0 auto;
+            max-width: 580px;
+            text-align: center;
         }
-        .band-stars { font-size: 15px; color: var(--kc-gold); letter-spacing: .08em; margin-bottom: 10px; filter: drop-shadow(0 1px 3px rgba(255,179,0,.6)); }
-        .review-card p { font-size: 14px; opacity: .92; margin: 0 0 14px; font-style: italic; line-height: 1.7; color: #fff; }
-        .review-card-footer { display: flex; align-items: center; gap: 10px; }
-        .review-avatar {
-            width: 32px; height: 32px;
-            background: linear-gradient(135deg, var(--kc-gold), #e65100);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 13px;
-            color: var(--kc-navy);
+        .band-stars {
+            font-size: 18px;
+            color: var(--kc-gold);
+            letter-spacing: .1em;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 1px 4px rgba(255,179,0,.5));
+        }
+        .band-review-static blockquote {
+            margin: 0 0 20px;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(15px, 2.2vw, 18px);
+            font-style: italic;
+            line-height: 1.75;
+            color: rgba(255,255,255,.95);
+            letter-spacing: .01em;
+        }
+        .band-review-byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+        .band-review-rule {
+            height: 1px;
+            width: 32px;
+            background: linear-gradient(90deg, transparent, var(--kc-gold));
             flex-shrink: 0;
         }
-        .review-author { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: rgba(255,255,255,.9); letter-spacing: .04em; }
-        /* Dot indicators */
-        .carousel-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
-        .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.25); transition: background .3s, transform .3s; }
-        .carousel-dot.active { background: var(--kc-gold); transform: scale(1.3); }
+        .band-review-rule.right {
+            background: linear-gradient(90deg, var(--kc-gold), transparent);
+        }
+        .band-review-byline cite {
+            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 11px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--kc-gold);
+        }
 
         /* ── MAIN LAYOUT ── */
         .main-wrap {
@@ -546,53 +560,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <div class="page-band">
     <h1>Get Your Instant Quote Now</h1>
-    <div class="band-carousel" id="bandCarousel">
-        <div class="band-review active">
-            <div class="review-card">
-                <div class="band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"The KC Clean Carpet team did an incredible job. My carpet was heavily stained and they made it look brand new. Technician was on time and explained everything."</p>
-                <div class="review-card-footer">
-                    <div class="review-avatar">M</div>
-                    <span class="review-author">Michelle T. &mdash; Kansas City</span>
-                </div>
-            </div>
+    <div class="band-review-static">
+        <div class="band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The KC Clean Carpet team did an incredible job. My carpet was heavily stained and they made it look brand new. Technician was professional, on time, and explained everything before starting."</blockquote>
+        <div class="band-review-byline">
+            <div class="band-review-rule"></div>
+            <cite>Michelle T. &mdash; Kansas City</cite>
+            <div class="band-review-rule right"></div>
         </div>
-        <div class="band-review">
-            <div class="review-card">
-                <div class="band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Called for our hardwood floors and they were amazing. Floors look better than when we moved in 12 years ago. Fair pricing and outstanding customer service."</p>
-                <div class="review-card-footer">
-                    <div class="review-avatar">J</div>
-                    <span class="review-author">James R. &mdash; Lee's Summit</span>
-                </div>
-            </div>
-        </div>
-        <div class="band-review">
-            <div class="review-card">
-                <div class="band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Best carpet cleaning service in the KC area, hands down. They got out stains I thought were permanent. The whole house smells fresh and clean."</p>
-                <div class="review-card-footer">
-                    <div class="review-avatar">S</div>
-                    <span class="review-author">Sarah K. &mdash; Overland Park</span>
-                </div>
-            </div>
-        </div>
-        <div class="band-review">
-            <div class="review-card">
-                <div class="band-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>"Had our tile and grout cleaned and the difference is night and day. Grout lines went from dark brown back to white. Extremely thorough work."</p>
-                <div class="review-card-footer">
-                    <div class="review-avatar">D</div>
-                    <span class="review-author">David M. &mdash; Lee's Summit</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-dots" id="carouselDots">
-        <div class="carousel-dot active"></div>
-        <div class="carousel-dot"></div>
-        <div class="carousel-dot"></div>
-        <div class="carousel-dot"></div>
     </div>
 </div>
 
@@ -841,30 +816,6 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
 });
 </script>
 
-<script>
-(function() {
-    var reviews = document.querySelectorAll('#bandCarousel .band-review');
-    var dots = document.querySelectorAll('#carouselDots .carousel-dot');
-    var current = 0;
-    if (reviews.length < 2) return;
-
-    function advance() {
-        reviews[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (current + 1) % reviews.length;
-        reviews[current].classList.add('active');
-        dots[current].classList.add('active');
-    }
-
-    var timer = setInterval(advance, 4500);
-
-    document.getElementById('bandCarousel').addEventListener('click', function() {
-        clearInterval(timer);
-        advance();
-        timer = setInterval(advance, 4500);
-    });
-})();
-</script>
 <script>
 document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href^="tel:"]');

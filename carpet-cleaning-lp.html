@@ -47,26 +47,27 @@
         }
 
         :root {
-            --kc-blue:      #1565C0;
-            --kc-blue-dark: #0D47A1;
-            --kc-navy:      #0A2463;
-            --kc-gold:      #FFB300;
-            --kc-gold-dark: #FFA000;
+            --kc-blue:       #1565C0;
+            --kc-blue-dark:  #0D47A1;
+            --kc-navy:       #0A2463;
+            --kc-gold:       #FFB300;
+            --kc-gold-dark:  #FFA000;
+            --page-bg:       #06101f;
         }
 
         *, *::before, *::after { box-sizing: border-box; }
 
         html, body {
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             font-family: 'Roboto', sans-serif;
-            background: #f0f4fa;
-            color: #1a1a2e;
+            background: var(--page-bg);
+            color: #fff;
         }
 
         a { text-decoration: none; }
         img { display: block; max-width: 100%; }
 
-        /* ── SR-ONLY ── */
         .sr-only {
             position: absolute;
             width: 1px; height: 1px;
@@ -78,165 +79,169 @@
         }
 
         /* ══════════════════════════════════════════
+           COLUMN WRAPPER — narrow content column
+        ══════════════════════════════════════════ */
+        .lp-wrap {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--page-bg);
+        }
+
+        /* ══════════════════════════════════════════
            A. HEADER
         ══════════════════════════════════════════ */
         .lp-header {
             background: var(--kc-navy);
-            padding: 12px 32px;
+            padding: 10px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid rgba(255,179,0,.25);
+            border-bottom: 2px solid rgba(255,179,0,.3);
         }
         .lp-logo {
-            height: 56px; width: auto; display: block;
+            height: 50px; width: auto; display: block;
             transition: opacity .2s;
         }
         .lp-logo:hover { opacity: .85; }
 
         .lp-phone-wrap {
             display: flex; flex-direction: column;
-            align-items: flex-end; gap: 2px;
+            align-items: flex-end; gap: 1px;
         }
         .lp-phone-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 9px; font-weight: 700;
-            letter-spacing: .12em; text-transform: uppercase;
-            color: rgba(255,255,255,.8);
+            font-size: 8px; font-weight: 700;
+            letter-spacing: .14em; text-transform: uppercase;
+            color: rgba(255,255,255,.75);
         }
         .lp-phone {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900; font-size: 22px;
+            font-weight: 900; font-size: 20px;
             color: var(--kc-gold);
             letter-spacing: .01em;
-            text-shadow: 0 2px 10px rgba(255,179,0,.25);
+            text-shadow: 0 2px 12px rgba(255,179,0,.3);
             transition: color .2s;
         }
         .lp-phone:hover { color: #FFD54F; }
 
         /* ══════════════════════════════════════════
-           B. HERO BAND
+           B. HERO TEXT — on dark background
         ══════════════════════════════════════════ */
         .lp-hero {
-            background: linear-gradient(160deg, var(--kc-navy) 0%, #1a3a8f 55%, var(--kc-blue) 100%);
-            padding: 32px 20px 28px;
+            background: var(--page-bg);
+            padding: 20px 18px 16px;
             text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
         }
-        .lp-hero::before {
-            content: '';
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse 80% 80% at 50% -10%, rgba(255,179,0,.18) 0%, transparent 55%),
-                radial-gradient(ellipse 50% 60% at 0% 100%, rgba(21,101,192,.45) 0%, transparent 70%),
-                radial-gradient(ellipse 50% 60% at 100% 100%, rgba(21,101,192,.45) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .lp-hero::after {
-            content: '';
-            position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,179,0,.6) 50%, transparent 100%);
-        }
-        .lp-hero-inner { position: relative; z-index: 1; }
 
         .lp-hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(26px, 5.5vw, 50px);
+            font-size: clamp(28px, 7.5vw, 42px);
             line-height: 1.05;
-            letter-spacing: -0.03em;
-            margin: 0 0 8px;
-            text-shadow: 0 3px 24px rgba(0,0,0,.4);
-        }
-        .lp-hero h1 em {
-            font-style: normal;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin: 0 0 6px;
             color: var(--kc-gold);
+            text-shadow:
+                0 0 40px rgba(255,179,0,.25),
+                0 2px 0 rgba(0,0,0,.4);
         }
+
         .lp-sub {
             font-family: 'Roboto', sans-serif;
-            font-size: clamp(13px, 2.2vw, 16px);
-            color: rgba(255,255,255,.82);
-            letter-spacing: .04em;
+            font-size: clamp(13px, 3.2vw, 16px);
+            color: rgba(255,255,255,.9);
+            letter-spacing: .02em;
             margin: 0;
+            font-weight: 500;
+        }
+        .lp-sub span {
+            color: var(--kc-gold);
         }
 
         /* ══════════════════════════════════════════
-           C. HERO IMAGE
+           C. IMAGE — padded so dark bg shows on sides
         ══════════════════════════════════════════ */
         .lp-image-wrap {
-            width: 100%; overflow: hidden;
+            padding: 10px 14px 0;
+            background: var(--page-bg);
             line-height: 0;
-            position: relative;
         }
         .lp-image-wrap img {
-            width: 100%; height: 280px;
+            width: 100%;
+            height: 220px;
             object-fit: cover;
-            object-position: center 40%;
+            object-position: center 35%;
             display: block;
-        }
-        /* Subtle gradient fade into form below */
-        .lp-image-wrap::after {
-            content: '';
-            position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
-            background: linear-gradient(to bottom, transparent, var(--kc-blue));
-            pointer-events: none;
+            border-radius: 4px 4px 0 0;
+            border: 2px solid rgba(255,255,255,.08);
+            border-bottom: none;
         }
 
         /* ══════════════════════════════════════════
-           D. FORM SECTION
+           D. FORM SECTION — clearly contained box
         ══════════════════════════════════════════ */
-        .lp-form-section {
-            background: var(--kc-blue);
-            padding: 0 20px 28px;
+        .lp-form-outer {
+            background: var(--page-bg);
+            padding: 0 14px 20px;
         }
 
-        .lp-form-label {
-            display: block;
+        .lp-form-box {
+            border: 2px solid rgba(255,255,255,.08);
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            overflow: hidden;
+        }
+
+        /* Form header band */
+        .lp-form-header {
+            background: var(--kc-blue-dark);
+            padding: 12px 16px;
+            text-align: center;
+            border-top: 3px solid var(--kc-gold);
+        }
+        .lp-form-header p {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 13px;
-            letter-spacing: .14em;
+            letter-spacing: .13em;
             text-transform: uppercase;
             color: #fff;
-            text-align: center;
-            padding: 18px 0 16px;
-            text-shadow: 0 1px 8px rgba(0,0,0,.2);
-            position: relative;
+            margin: 0;
+            text-shadow: 0 1px 6px rgba(0,0,0,.3);
         }
-        .lp-form-label::after {
-            content: '';
-            display: block;
-            width: 40px; height: 2px;
-            background: rgba(255,179,0,.5);
-            margin: 8px auto 0;
-            border-radius: 2px;
+
+        /* Form body */
+        .lp-form-body {
+            background: var(--kc-blue);
+            padding: 14px 14px 16px;
         }
 
         #lp-form { margin: 0; }
 
-        .lp-field { margin-bottom: 12px; }
+        .lp-field { margin-bottom: 10px; }
 
         .lp-field input {
             width: 100%;
-            min-height: 50px;
-            padding: 14px 16px;
-            border: 2px solid rgba(255,255,255,.22);
-            border-radius: 4px;
+            min-height: 48px;
+            padding: 13px 14px;
+            border: 2px solid rgba(255,255,255,.15);
+            border-radius: 3px;
             font-family: 'Roboto', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             color: #1a1a2e;
             background: #fff;
             outline: none;
-            transition: border-color .2s, box-shadow .2s;
             -webkit-appearance: none;
             appearance: none;
+            transition: border-color .15s, box-shadow .15s;
         }
-        .lp-field input::placeholder { color: #9aabbf; }
+        .lp-field input::placeholder {
+            color: #8899bb;
+        }
         .lp-field input:focus {
             border-color: var(--kc-gold);
-            box-shadow: 0 0 0 3px rgba(255,179,0,.28);
+            box-shadow: 0 0 0 3px rgba(255,179,0,.22);
         }
         .lp-field input:focus-visible {
             outline: 2px solid var(--kc-gold);
@@ -245,48 +250,46 @@
 
         .lp-cta-btn {
             width: 100%;
-            min-height: 56px;
+            min-height: 54px;
             background: var(--kc-gold);
-            color: var(--kc-navy);
+            color: #06101f;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 17px;
-            letter-spacing: .06em;
+            font-size: 16px;
+            letter-spacing: .07em;
             text-transform: uppercase;
-            padding: 16px 24px;
+            padding: 15px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 3px;
             cursor: pointer;
-            margin-top: 4px;
+            margin-top: 2px;
             position: relative;
             overflow: hidden;
             box-shadow:
-                0 6px 24px rgba(255,179,0,.45),
-                0 2px 8px rgba(255,179,0,.25),
-                inset 0 1px 0 rgba(255,255,255,.2);
+                0 5px 20px rgba(255,179,0,.5),
+                0 2px 6px rgba(255,179,0,.25),
+                inset 0 1px 0 rgba(255,255,255,.22);
         }
-        .lp-cta-btn::after {
+        .lp-cta-btn::before {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, transparent 60%);
+            background: linear-gradient(180deg, rgba(255,255,255,.15) 0%, transparent 55%);
             pointer-events: none;
         }
         @media (prefers-reduced-motion: no-preference) {
             .lp-cta-btn {
-                transition: background .2s, transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+                transition: background .15s, transform .12s cubic-bezier(.34,1.56,.64,1), box-shadow .15s;
             }
             .lp-cta-btn:hover {
                 background: var(--kc-gold-dark);
                 transform: translateY(-2px);
                 box-shadow:
-                    0 10px 32px rgba(255,160,0,.55),
-                    0 4px 12px rgba(255,160,0,.3);
+                    0 8px 28px rgba(255,160,0,.6),
+                    0 3px 10px rgba(255,160,0,.3);
             }
             .lp-cta-btn:active {
                 transform: translateY(0);
-                box-shadow:
-                    0 4px 12px rgba(255,179,0,.35),
-                    0 1px 4px rgba(255,179,0,.2);
+                box-shadow: 0 3px 10px rgba(255,179,0,.3);
             }
         }
         .lp-cta-btn:focus-visible {
@@ -294,7 +297,7 @@
             outline-offset: 2px;
         }
         .lp-cta-btn:disabled {
-            opacity: .65;
+            opacity: .6;
             cursor: not-allowed;
             transform: none !important;
         }
@@ -302,59 +305,65 @@
         #lp-error {
             display: none;
             color: #fff;
-            background: rgba(180,0,0,.45);
-            border: 1px solid rgba(255,100,100,.4);
-            border-radius: 4px;
-            padding: 10px 14px;
+            background: rgba(200,0,0,.4);
+            border: 1px solid rgba(255,80,80,.4);
+            border-radius: 3px;
+            padding: 9px 12px;
             font-size: 13px;
-            margin-top: 12px;
+            margin-top: 10px;
             font-family: 'Roboto', sans-serif;
         }
 
         .lp-fine-print {
             font-family: 'Roboto', sans-serif;
             font-size: 11px;
-            color: rgba(255,255,255,.5);
+            color: rgba(255,255,255,.45);
             text-align: center;
-            margin: 14px 0 0;
+            margin: 12px 0 0;
         }
 
         /* ══════════════════════════════════════════
-           E. TRUST BAR
+           E. TRUST BAR — white section, clearly separated
         ══════════════════════════════════════════ */
+        .lp-trust-outer {
+            padding: 0 14px;
+            background: var(--page-bg);
+        }
+
         .lp-trust-bar {
             background: #fff;
-            border-top: 3px solid var(--kc-gold);
-            padding: 16px 20px;
+            border-radius: 4px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 12px 16px;
             flex-wrap: wrap;
-            gap: 12px 18px;
+            border-top: 3px solid var(--kc-gold);
         }
 
         .trust-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 7px;
             flex-shrink: 0;
         }
         .trust-badge-icon {
-            width: 28px; height: 28px;
+            width: 26px; height: 26px;
             flex-shrink: 0;
         }
         .trust-stars {
-            font-size: 13px;
-            color: var(--kc-gold);
-            letter-spacing: .04em;
+            font-size: 12px;
+            color: #e8a000;
+            letter-spacing: .03em;
             line-height: 1;
         }
         .trust-meta strong {
             display: block;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 13px;
-            color: #1a1a2e;
+            font-size: 12px;
+            color: #111;
             letter-spacing: -.01em;
             line-height: 1.2;
         }
@@ -363,24 +372,23 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 10px;
-            color: #666;
+            color: #555;
             margin-top: 1px;
         }
         .trust-divider {
-            width: 1px; height: 34px;
+            width: 1px; height: 32px;
             background: #dde3ef;
             flex-shrink: 0;
-            display: none;
         }
         .trust-tagline {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
             font-size: 10px;
             color: var(--kc-navy);
-            letter-spacing: .09em;
+            letter-spacing: .08em;
             text-transform: uppercase;
             text-align: center;
-            line-height: 1.4;
+            line-height: 1.45;
             margin: 0;
         }
 
@@ -388,45 +396,34 @@
            F. FOOTER
         ══════════════════════════════════════════ */
         .lp-footer {
-            background: var(--kc-navy);
-            padding: 14px 20px;
+            background: var(--page-bg);
+            padding: 16px 18px 20px;
             text-align: center;
             font-family: 'Roboto', sans-serif;
             font-size: 11px;
-            color: rgba(255,255,255,.4);
-            border-top: 1px solid rgba(255,179,0,.12);
+            color: rgba(255,255,255,.3);
         }
 
         /* ══════════════════════════════════════════
-           RESPONSIVE
+           RESPONSIVE — narrow mobile
         ══════════════════════════════════════════ */
-
-        /* 420px+ — horizontal trust bar */
-        @media (min-width: 420px) {
-            .trust-divider { display: block; }
-            .lp-trust-bar { flex-wrap: nowrap; }
+        @media (max-width: 360px) {
+            .lp-header { padding: 8px 14px; }
+            .lp-logo { height: 42px; }
+            .lp-phone { font-size: 17px; }
+            .lp-hero { padding: 18px 14px 14px; }
+            .trust-divider { display: none; }
+            .lp-trust-bar { flex-direction: column; gap: 10px; }
         }
 
-        /* 768px+ — center constrain form inner content */
-        @media (min-width: 768px) {
-            .lp-hero { padding: 44px 40px 38px; }
-            .lp-image-wrap img { height: 380px; }
-            .lp-form-section { padding-bottom: 36px; }
-            .lp-form-inner {
-                max-width: 540px;
-                margin: 0 auto;
+        /* Desktop — add breathing room around the column */
+        @media (min-width: 500px) {
+            body { padding: 24px 0 32px; }
+            .lp-wrap {
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 20px 80px rgba(0,0,0,.6), 0 4px 20px rgba(0,0,0,.4);
             }
-            .lp-trust-bar { padding: 18px 40px; }
-        }
-
-        /* Narrow mobile adjustments */
-        @media (max-width: 419px) {
-            .lp-header { padding: 10px 16px; }
-            .lp-logo { height: 44px; }
-            .lp-phone { font-size: 18px; }
-            .lp-hero { padding: 24px 16px 22px; }
-            .lp-form-section { padding: 0 16px 24px; }
-            .lp-trust-bar { flex-direction: column; align-items: center; gap: 10px; }
         }
     </style>
 </head>
@@ -436,138 +433,147 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- ── A. HEADER ── -->
-<header class="lp-header">
-    <a href="/home">
-        <img src="brand_assets/KC Clean Carpet Logo.webp" class="lp-logo" alt="KC Clean Carpet — Home">
-    </a>
-    <div class="lp-phone-wrap">
-        <span class="lp-phone-label">Call Now</span>
-        <a href="tel:8167151130" class="lp-phone" aria-label="Call KC Clean Carpet at (816) 715-1130">
-            <span aria-hidden="true">📞</span> <span class="goog-sn">(816) 715-1130</span>
+<div class="lp-wrap">
+
+    <!-- ── A. HEADER ── -->
+    <header class="lp-header">
+        <a href="/home">
+            <img src="brand_assets/KC Clean Carpet Logo.webp" class="lp-logo" alt="KC Clean Carpet — Home">
         </a>
+        <div class="lp-phone-wrap">
+            <span class="lp-phone-label">Call Now</span>
+            <a href="tel:8167151130" class="lp-phone" aria-label="Call KC Clean Carpet at (816) 715-1130">
+                <span aria-hidden="true">📞</span> <span class="goog-sn">(816) 715-1130</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ── B. HERO TEXT ── -->
+    <section class="lp-hero">
+        <h1>Get Spotless Carpets Today!</h1>
+        <p class="lp-sub"><span>|</span> Eco-Friendly &amp; Guaranteed.</p>
+    </section>
+
+    <!-- ── C. IMAGE (padded, dark bg shows on sides) ── -->
+    <div class="lp-image-wrap">
+        <img
+            src="images/landing_page_image.avif"
+            alt="Professionally cleaned carpet in a Kansas City home"
+            width="800" height="440"
+            fetchpriority="high"
+        >
     </div>
-</header>
 
-<!-- ── B. HERO BAND ── -->
-<section class="lp-hero">
-    <div class="lp-hero-inner">
-        <h1>Get <em>Spotless</em> Carpets Today!</h1>
-        <p class="lp-sub">Eco-Friendly &amp; Guaranteed · Serving Kansas City</p>
-    </div>
-</section>
+    <!-- ── D. FORM BOX ── -->
+    <div class="lp-form-outer">
+        <div class="lp-form-box">
 
-<!-- ── C. HERO IMAGE ── -->
-<div class="lp-image-wrap">
-    <img
-        src="images/landing_page_image.avif"
-        alt="Professionally cleaned carpet in a Kansas City home"
-        width="800" height="380"
-        fetchpriority="high"
-    >
-</div>
-
-<!-- ── D. FORM BOX ── -->
-<section class="lp-form-section" aria-label="Free estimate form">
-<div class="lp-form-inner">
-    <p class="lp-form-label">Get Your Free Estimate Now!</p>
-
-    <form id="lp-form" novalidate>
-        <div class="lp-field">
-            <label for="lp-name" class="sr-only">Full Name</label>
-            <input
-                type="text"
-                id="lp-name"
-                name="name"
-                placeholder="Full Name"
-                autocomplete="name"
-                required
-            >
-        </div>
-        <div class="lp-field">
-            <label for="lp-phone" class="sr-only">Phone Number</label>
-            <input
-                type="tel"
-                id="lp-phone"
-                name="phone"
-                placeholder="Phone Number"
-                autocomplete="tel"
-                inputmode="tel"
-                required
-            >
-        </div>
-        <div class="lp-field">
-            <label for="lp-zip" class="sr-only">ZIP Code</label>
-            <input
-                type="text"
-                id="lp-zip"
-                name="zip"
-                placeholder="ZIP Code"
-                autocomplete="postal-code"
-                inputmode="numeric"
-                maxlength="5"
-                pattern="[0-9]{5}"
-                required
-            >
-        </div>
-
-        <button type="submit" class="lp-cta-btn">Send My Free Quote!</button>
-
-        <p id="lp-error" role="alert" aria-live="polite"></p>
-        <p class="lp-fine-print">No spam. We respect your privacy.</p>
-    </form>
-</div>
-</section>
-
-<!-- ── E. TRUST BAR ── -->
-<div class="lp-trust-bar" aria-label="Customer reviews and trust indicators">
-
-    <!-- Google -->
-    <div class="trust-badge">
-        <!-- Google G SVG -->
-        <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-            <path fill="none" d="M0 0h48v48H0z"/>
-        </svg>
-        <div>
-            <div class="trust-stars">★★★★★</div>
-            <div class="trust-meta">
-                <strong>5.0 Rating</strong>
-                <small>128 Google Reviews</small>
+            <div class="lp-form-header">
+                <p>Get Your Free Estimate Now!</p>
             </div>
-        </div>
-    </div>
 
-    <div class="trust-divider" aria-hidden="true"></div>
+            <div class="lp-form-body">
+                <form id="lp-form" novalidate>
+                    <div class="lp-field">
+                        <label for="lp-name" class="sr-only">Full Name</label>
+                        <input
+                            type="text"
+                            id="lp-name"
+                            name="name"
+                            placeholder="Full Name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+                    <div class="lp-field">
+                        <label for="lp-phone" class="sr-only">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="lp-phone"
+                            name="phone"
+                            placeholder="Phone Number"
+                            autocomplete="tel"
+                            inputmode="tel"
+                            required
+                        >
+                    </div>
+                    <div class="lp-field">
+                        <label for="lp-zip" class="sr-only">ZIP Code</label>
+                        <input
+                            type="text"
+                            id="lp-zip"
+                            name="zip"
+                            placeholder="ZIP Code"
+                            autocomplete="postal-code"
+                            inputmode="numeric"
+                            maxlength="5"
+                            pattern="[0-9]{5}"
+                            required
+                        >
+                    </div>
 
-    <!-- Facebook -->
-    <div class="trust-badge">
-        <!-- Facebook F SVG -->
-        <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="48" height="48" rx="8" fill="#1877F2"/>
-            <path fill="#fff" d="M33 24h-6v-4c0-1.66 1.34-3 3-3h3v-6h-3c-4.97 0-9 4.03-9 9v4h-6v6h6v14h6V30h4.5L33 24z"/>
-        </svg>
-        <div>
-            <div class="trust-stars">★★★★★</div>
-            <div class="trust-meta">
-                <strong>5.0 Rating</strong>
-                <small>Facebook Reviews</small>
+                    <button type="submit" class="lp-cta-btn">Send My Free Quote!</button>
+
+                    <p id="lp-error" role="alert" aria-live="polite"></p>
+                    <p class="lp-fine-print">No spam. We respect your privacy.</p>
+                </form>
             </div>
+
         </div>
     </div>
 
-    <div class="trust-divider" aria-hidden="true"></div>
+    <!-- ── E. TRUST BAR ── -->
+    <div class="lp-trust-outer" aria-label="Customer reviews">
+        <div class="lp-trust-bar">
 
-    <p class="trust-tagline">Trusted by<br>10,000+ Happy Customers</p>
-</div>
+            <!-- Google -->
+            <div class="trust-badge">
+                <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    <path fill="none" d="M0 0h48v48H0z"/>
+                </svg>
+                <div>
+                    <div class="trust-stars">★★★★★</div>
+                    <div class="trust-meta">
+                        <strong>5.0 Rating</strong>
+                        <small>128 Google Reviews</small>
+                    </div>
+                </div>
+            </div>
 
-<!-- ── F. FOOTER ── -->
-<footer class="lp-footer">
-    &copy; 2026 KC Clean Carpet. All rights reserved.
-</footer>
+            <div class="trust-divider" aria-hidden="true"></div>
+
+            <!-- Facebook -->
+            <div class="trust-badge">
+                <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="48" height="48" rx="8" fill="#1877F2"/>
+                    <path fill="#fff" d="M33 24h-6v-4c0-1.66 1.34-3 3-3h3v-6h-3c-4.97 0-9 4.03-9 9v4h-6v6h6v14h6V30h4.5L33 24z"/>
+                </svg>
+                <div>
+                    <div class="trust-stars">★★★★★</div>
+                    <div class="trust-meta">
+                        <strong>5.0 Rating</strong>
+                        <small>Facebook Reviews</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-divider" aria-hidden="true"></div>
+
+            <p class="trust-tagline">Trusted by<br>10,000+ Happy<br>Customers</p>
+
+        </div>
+    </div>
+
+    <!-- ── F. FOOTER ── -->
+    <footer class="lp-footer">
+        &copy; 2026 KC Clean Carpet. All rights reserved.
+    </footer>
+
+</div><!-- /.lp-wrap -->
 
 <!-- Form submission handler -->
 <script>
@@ -580,7 +586,6 @@ document.getElementById('lp-form').addEventListener('submit', function(e) {
     var errorEl = document.getElementById('lp-error');
     var btn     = document.querySelector('.lp-cta-btn');
 
-    // Validation
     if (!name) {
         errorEl.textContent = 'Please enter your full name.';
         errorEl.style.display = 'block';
@@ -601,7 +606,6 @@ document.getElementById('lp-form').addEventListener('submit', function(e) {
     }
     errorEl.style.display = 'none';
 
-    // GTM: form submission event
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'form_submission',

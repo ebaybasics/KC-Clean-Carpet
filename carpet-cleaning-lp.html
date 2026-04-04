@@ -3,658 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="Get a free carpet cleaning estimate in Kansas City. Eco-friendly, guaranteed results. Call (816) 715-1130 or fill out the form.">
-    <title>Free Carpet Cleaning Estimate | KC Clean Carpet – Kansas City</title>
-
-    <!-- Font preloads -->
-    <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-
-    <!-- Hero image preload -->
-    <link rel="preload" href="images/landing_page_image.avif" as="image" type="image/avif" fetchpriority="high">
-
-    <!-- Google Fonts async -->
+    <title>KC Clean Carpet | Get Your Free Estimate</title>
+    <link rel="icon" type="image/svg+xml" href="/brand_assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/brand_assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/brand_assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500&display=swap"></noscript>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WJHSP6P6');</script>
-    <!-- End Google Tag Manager -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kc-blue': '#1565C0',
+                        'kc-navy': '#0A2463',
+                        'kc-gold': '#FFB300',
+                        'kc-green': '#2E7D32',
+                        'kc-green-light': '#A5D6A7',
+                        'kc-teal': '#5BB8BC',
+                        'kc-tan': '#C09B00',
+                        'kc-charcoal': '#212121',
+                    },
+                    fontFamily: {
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @font-face {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 900;
-            font-display: swap;
-            src: url(fonts/montserrat-900-latin.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url(fonts/roboto-400-latin.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: #f5f5f5; }
 
-        :root {
-            --kc-blue:       #1565C0;
-            --kc-blue-dark:  #0D47A1;
-            --kc-navy:       #0A2463;
-            --kc-gold:       #FFB300;
-            --kc-gold-dark:  #FFA000;
-            --page-bg:       #06101f;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: var(--page-bg);
-            color: #fff;
-        }
-
-        a { text-decoration: none; }
-        img { display: block; max-width: 100%; }
-
-        .sr-only {
-            position: absolute;
-            width: 1px; height: 1px;
-            padding: 0; margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* ══════════════════════════════════════════
-           COLUMN WRAPPER — narrow content column
-        ══════════════════════════════════════════ */
-        .lp-wrap {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--page-bg);
-        }
-
-        /* ══════════════════════════════════════════
-           A. HEADER
-        ══════════════════════════════════════════ */
-        .lp-header {
-            background: var(--kc-navy);
-            padding: 10px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid rgba(255,179,0,.3);
-        }
-        .lp-logo {
-            height: 50px; width: auto; display: block;
-            transition: opacity .2s;
-        }
-        .lp-logo:hover { opacity: .85; }
-
-        .lp-phone-wrap {
-            display: flex; flex-direction: column;
-            align-items: flex-end; gap: 1px;
-        }
-        .lp-phone-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 8px; font-weight: 700;
-            letter-spacing: .14em; text-transform: uppercase;
-            color: rgba(255,255,255,.75);
-        }
-        .lp-phone {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900; font-size: 20px;
-            color: var(--kc-gold);
-            letter-spacing: .01em;
-            text-shadow: 0 2px 12px rgba(255,179,0,.3);
-            transition: color .2s;
-        }
-        .lp-phone:hover { color: #FFD54F; }
-
-        /* ══════════════════════════════════════════
-           B. HERO TEXT — on dark background
-        ══════════════════════════════════════════ */
-        .lp-hero {
-            background: var(--page-bg);
-            padding: 20px 18px 16px;
+        /* Sticky call bar */
+        .sticky-call {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: #2E7D32;
+            padding: 14px 0;
             text-align: center;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
         }
-
-        .lp-hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: clamp(28px, 7.5vw, 42px);
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            margin: 0 0 6px;
-            color: var(--kc-gold);
-            text-shadow:
-                0 0 40px rgba(255,179,0,.25),
-                0 2px 0 rgba(0,0,0,.4);
-        }
-
-        .lp-sub {
-            font-family: 'Roboto', sans-serif;
-            font-size: clamp(13px, 3.2vw, 16px);
-            color: rgba(255,255,255,.9);
-            letter-spacing: .02em;
-            margin: 0;
-            font-weight: 500;
-        }
-        .lp-sub span {
-            color: var(--kc-gold);
-        }
-
-        /* ══════════════════════════════════════════
-           C. IMAGE — padded so dark bg shows on sides
-        ══════════════════════════════════════════ */
-        .lp-image-wrap {
-            padding: 10px 14px 0;
-            background: var(--page-bg);
-            line-height: 0;
-        }
-        .lp-image-wrap img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            object-position: center 35%;
-            display: block;
-            border-radius: 4px 4px 0 0;
-            border: 2px solid rgba(255,255,255,.08);
-            border-bottom: none;
-        }
-
-        /* ══════════════════════════════════════════
-           D. FORM SECTION — clearly contained box
-        ══════════════════════════════════════════ */
-        .lp-form-outer {
-            background: var(--page-bg);
-            padding: 0 14px 20px;
-        }
-
-        .lp-form-box {
-            border: 2px solid rgba(255,255,255,.08);
-            border-top: none;
-            border-radius: 0 0 4px 4px;
-            overflow: hidden;
-        }
-
-        /* Form header band */
-        .lp-form-header {
-            background: var(--kc-blue-dark);
-            padding: 12px 16px;
-            text-align: center;
-            border-top: 3px solid var(--kc-gold);
-        }
-        .lp-form-header p {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 13px;
-            letter-spacing: .13em;
-            text-transform: uppercase;
+        .sticky-call a {
             color: #fff;
-            margin: 0;
-            text-shadow: 0 1px 6px rgba(0,0,0,.3);
-        }
-
-        /* Form body */
-        .lp-form-body {
-            background: var(--kc-blue);
-            padding: 14px 14px 16px;
-        }
-
-        #lp-form { margin: 0; }
-
-        .lp-field { margin-bottom: 10px; }
-
-        .lp-field input {
-            width: 100%;
-            min-height: 48px;
-            padding: 13px 14px;
-            border: 2px solid rgba(255,255,255,.15);
-            border-radius: 3px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 15px;
-            color: #1a1a2e;
-            background: #fff;
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none;
-            transition: border-color .15s, box-shadow .15s;
-        }
-        .lp-field input::placeholder {
-            color: #888;
-        }
-        .lp-field input:focus {
-            border-color: var(--kc-gold);
-            box-shadow: 0 0 0 3px rgba(255,179,0,.22);
-        }
-        .lp-field input:focus-visible {
-            outline: 2px solid var(--kc-gold);
-            outline-offset: 1px;
-        }
-
-        .lp-cta-btn {
-            width: 100%;
-            min-height: 54px;
-            background: var(--kc-gold);
-            color: #06101f;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 16px;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-top: 2px;
-            position: relative;
-            overflow: hidden;
-            box-shadow:
-                0 5px 20px rgba(255,179,0,.5),
-                0 2px 6px rgba(255,179,0,.25),
-                inset 0 1px 0 rgba(255,255,255,.22);
-        }
-        .lp-cta-btn::before {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,.15) 0%, transparent 55%);
-            pointer-events: none;
-        }
-        @media (prefers-reduced-motion: no-preference) {
-            .lp-cta-btn {
-                transition: background .15s, transform .12s cubic-bezier(.34,1.56,.64,1), box-shadow .15s;
-            }
-            .lp-cta-btn:hover {
-                background: var(--kc-gold-dark);
-                transform: translateY(-2px);
-                box-shadow:
-                    0 8px 28px rgba(255,160,0,.6),
-                    0 3px 10px rgba(255,160,0,.3);
-            }
-            .lp-cta-btn:active {
-                transform: translateY(0);
-                box-shadow: 0 3px 10px rgba(255,179,0,.3);
-            }
-        }
-        .lp-cta-btn:focus-visible {
-            outline: 3px solid #fff;
-            outline-offset: 2px;
-        }
-        .lp-cta-btn:disabled {
-            opacity: .6;
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        #lp-error {
-            display: none;
-            color: #fff;
-            background: rgba(200,0,0,.4);
-            border: 1px solid rgba(255,80,80,.4);
-            border-radius: 3px;
-            padding: 9px 12px;
-            font-size: 13px;
-            margin-top: 10px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .lp-fine-print {
-            font-family: 'Roboto', sans-serif;
-            font-size: 11px;
-            color: rgba(255,255,255,.45);
-            text-align: center;
-            margin: 12px 0 0;
-        }
-
-        /* ══════════════════════════════════════════
-           E. TRUST BAR — white section, clearly separated
-        ══════════════════════════════════════════ */
-        .lp-trust-outer {
-            padding: 0 14px;
-            background: var(--page-bg);
-        }
-
-        .lp-trust-bar {
-            background: #fff;
-            border-radius: 4px;
-            padding: 14px 12px;
+            font-weight: 800;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px 14px;
-            flex-wrap: wrap;
-            border-top: 3px solid var(--kc-gold);
+            gap: 10px;
         }
 
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            flex-shrink: 0;
+        /* Pulse animation for CTA */
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.15); opacity: 0; }
         }
-        .trust-badge-icon {
-            width: 28px; height: 28px;
-            flex-shrink: 0;
+        .cta-pulse {
+            position: relative;
         }
-        .trust-stars {
-            font-size: 13px;
-            color: #e8a000;
-            letter-spacing: .02em;
-            line-height: 1;
+        .cta-pulse::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: inherit;
+            border: 3px solid #FFB300;
+            animation: pulse-ring 2s ease-out infinite;
+            pointer-events: none;
         }
-        .trust-meta strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 13px;
-            color: #111;
-            letter-spacing: -.01em;
-            line-height: 1.2;
-        }
-        .trust-meta small {
-            display: block;
+
+        /* Form input styling */
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #cfd8dc;
+            border-radius: 8px;
+            font-size: 16px;
             font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: #212121;
+            background: #fff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-input::placeholder {
+            color: #78909c;
             font-weight: 400;
-            font-size: 11px;
-            color: #444;
-            margin-top: 1px;
         }
-        .trust-divider {
-            width: 1px; height: 36px;
-            background: #cdd5e8;
-            flex-shrink: 0;
+        .form-input:focus {
+            outline: none;
+            border-color: #1565C0;
+            box-shadow: 0 0 0 4px rgba(21,101,192,0.15);
         }
-        .trust-tagline {
+
+        /* Trust badge grayscale */
+        .trust-logo {
+            filter: grayscale(0.3);
+            opacity: 0.85;
+            transition: opacity 0.2s ease, filter 0.2s ease;
+        }
+        .trust-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        /* Coupon dashed border */
+        .coupon-box {
+            border: 3px dashed #FFB300;
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFFDE7 100%);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .coupon-box::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background: #FFB300;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        /* Star rating */
+        .star { color: #FFB300; font-size: 20px; }
+
+        /* Hero image overlay */
+        .hero-img-wrap {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(10,36,99,0.18), 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .hero-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,36,99,0.25) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Submit button */
+        .submit-btn {
+            background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 11px;
-            color: var(--kc-navy);
-            letter-spacing: .07em;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(46,125,50,0.35), 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
             text-transform: uppercase;
-            text-align: center;
-            line-height: 1.5;
-            margin: 0;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(46,125,50,0.45), 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(46,125,50,0.3);
+        }
+        .submit-btn:focus-visible {
+            outline: 3px solid #FFB300;
+            outline-offset: 3px;
         }
 
-        /* ══════════════════════════════════════════
-           F. FOOTER
-        ══════════════════════════════════════════ */
-        .lp-footer {
-            background: var(--page-bg);
-            padding: 16px 18px 20px;
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            font-size: 11px;
-            color: rgba(255,255,255,.3);
+        /* Header phone button */
+        .phone-btn {
+            background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(46,125,50,0.3);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .phone-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(46,125,50,0.4);
+        }
+        .phone-btn:active {
+            transform: translateY(0);
+        }
+        .phone-btn:focus-visible {
+            outline: 3px solid #FFB300;
+            outline-offset: 2px;
         }
 
-        /* ══════════════════════════════════════════
-           RESPONSIVE — narrow mobile
-        ══════════════════════════════════════════ */
-        @media (max-width: 360px) {
-            .lp-header { padding: 8px 14px; }
-            .lp-logo { height: 42px; }
-            .lp-phone { font-size: 17px; }
-            .lp-hero { padding: 18px 14px 14px; }
-            .trust-divider { display: none; }
-            .lp-trust-bar { flex-direction: column; gap: 10px; }
+        /* Testimonial card */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(10,36,99,0.08), 0 1px 4px rgba(0,0,0,0.06);
+            border-left: 4px solid #1565C0;
         }
 
-        /* Desktop — add breathing room around the column */
-        @media (min-width: 500px) {
-            body { padding: 24px 0 32px; }
-            .lp-wrap {
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 20px 80px rgba(0,0,0,.6), 0 4px 20px rgba(0,0,0,.4);
-            }
+        /* Bottom padding for sticky bar */
+        body { padding-bottom: 70px; }
+
+        /* Noise texture overlay on header */
+        .header-bg {
+            background: linear-gradient(135deg, #0A2463 0%, #1565C0 50%, #0A2463 100%);
+            position: relative;
+        }
+        .header-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJHSP6P6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-<div class="lp-wrap">
-
-    <!-- ── A. HEADER ── -->
-    <header class="lp-header">
-        <a href="/home">
-            <img src="brand_assets/KC Clean Carpet Logo.webp" class="lp-logo" alt="KC Clean Carpet — Home">
-        </a>
-        <div class="lp-phone-wrap">
-            <span class="lp-phone-label">Call Now</span>
-            <a href="tel:8167151130" class="lp-phone" aria-label="Call KC Clean Carpet at (816) 715-1130">
-                <span aria-hidden="true">📞</span> <span class="goog-sn">(816) 715-1130</span>
+    <!-- HEADER -->
+    <header class="header-bg py-3 px-4 shadow-lg relative z-50">
+        <div class="max-w-lg mx-auto flex items-center justify-between">
+            <a href="/" class="flex-shrink-0">
+                <img src="brand_assets/KC Clean Carpet Logo.webp" alt="KC Clean Carpet" class="h-12 w-auto drop-shadow-md">
+            </a>
+            <a href="tel:+18162333325" class="phone-btn goog-sn">
+                <span class="inline-block mr-1">📞</span> CALL NOW: (816) 233-3325
             </a>
         </div>
     </header>
 
-    <!-- ── B. HERO TEXT ── -->
-    <section class="lp-hero">
-        <h1>Get Spotless Carpets Today!</h1>
-        <p class="lp-sub"><span>|</span> Eco-Friendly &amp; Guaranteed.</p>
+    <!-- HERO SECTION -->
+    <section class="header-bg pt-6 pb-0 px-4 text-center relative">
+        <div class="max-w-lg mx-auto">
+            <h1 class="font-heading text-white text-[28px] leading-tight mb-1" style="font-weight:900; letter-spacing:-0.02em;">
+                GET SPOTLESS CARPETS TODAY!
+            </h1>
+            <p class="font-heading text-kc-gold text-[18px] mb-5 flex items-center justify-center gap-2" style="font-weight:700;">
+                <span class="text-kc-gold font-black text-[22px]">|</span> Eco-Friendly &amp; Guaranteed.
+            </p>
+
+            <!-- Hero Image — full width, flush bottom -->
+            <div class="hero-img-wrap" style="border-radius:12px 12px 0 0; margin: 0 -4px;">
+                <img src="images/landing_page_image.avif" alt="Professional carpet cleaning by KC Clean Carpet" class="w-full h-auto object-cover" style="display:block; max-height:220px; object-fit:cover; border-radius:10px 10px 0 0;">
+            </div>
+        </div>
     </section>
 
-    <!-- ── C. IMAGE (padded, dark bg shows on sides) ── -->
-    <div class="lp-image-wrap">
-        <img
-            src="images/landing_page_image.avif"
-            alt="Professionally cleaned carpet in a Kansas City home"
-            width="800" height="440"
-            fetchpriority="high"
-        >
-    </div>
-
-    <!-- ── D. FORM BOX ── -->
-    <div class="lp-form-outer">
-        <div class="lp-form-box">
-
-            <div class="lp-form-header">
-                <p>Get Your Free Estimate Now!</p>
+    <!-- FORM SECTION -->
+    <section class="px-4 relative z-10" style="background:#f0f4f8;">
+        <div class="max-w-lg mx-auto bg-white shadow-xl overflow-hidden" style="border-radius:0 0 16px 16px; box-shadow: 0 8px 32px rgba(10,36,99,0.14);">
+            <!-- Green form header bar -->
+            <div class="text-center py-4 px-3" style="background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);">
+                <h2 class="font-heading text-white" style="font-weight:800; font-size:17px; letter-spacing:-0.01em; text-shadow: 0 1px 3px rgba(0,0,0,0.2); white-space:nowrap;">
+                    GET YOUR FREE ESTIMATE NOW!
+                </h2>
             </div>
-
-            <div class="lp-form-body">
-                <form id="lp-form" novalidate>
-                    <div class="lp-field">
-                        <label for="lp-name" class="sr-only">Full Name</label>
-                        <input
-                            type="text"
-                            id="lp-name"
-                            name="name"
-                            placeholder="Full Name"
-                            autocomplete="name"
-                            required
-                        >
+            <div class="p-4">
+                <form action="#" method="POST" class="space-y-3">
+                    <div>
+                        <label for="fullname" class="sr-only">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Full Name" class="form-input" required>
                     </div>
-                    <div class="lp-field">
-                        <label for="lp-phone" class="sr-only">Phone Number</label>
-                        <input
-                            type="tel"
-                            id="lp-phone"
-                            name="phone"
-                            placeholder="Phone Number"
-                            autocomplete="tel"
-                            inputmode="tel"
-                            required
-                        >
+                    <div>
+                        <label for="phone" class="sr-only">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="form-input" required>
                     </div>
-                    <div class="lp-field">
-                        <label for="lp-zip" class="sr-only">ZIP Code</label>
-                        <input
-                            type="text"
-                            id="lp-zip"
-                            name="zip"
-                            placeholder="ZIP Code"
-                            autocomplete="postal-code"
-                            inputmode="numeric"
-                            maxlength="5"
-                            pattern="[0-9]{5}"
-                            required
-                        >
+                    <div>
+                        <label for="zip" class="sr-only">ZIP Code</label>
+                        <input type="text" id="zip" name="zip" placeholder="ZIP Code" class="form-input" required>
                     </div>
-
-                    <button type="submit" class="lp-cta-btn">Send My Free Quote!</button>
-
-                    <p id="lp-error" role="alert" aria-live="polite"></p>
-                    <p class="lp-fine-print">No spam. We respect your privacy.</p>
+                    <button type="submit" class="submit-btn cta-pulse" style="border-radius:8px;">
+                        SEND MY FREE QUOTE!
+                    </button>
                 </form>
             </div>
-
         </div>
-    </div>
+    </section>
 
-    <!-- ── E. TRUST BAR ── -->
-    <div class="lp-trust-outer" aria-label="Customer reviews">
-        <div class="lp-trust-bar">
+    <!-- TRUST BAR -->
+    <section style="background:#f0f4f8; padding: 16px 16px 0;">
+        <div class="max-w-lg mx-auto bg-white rounded-xl shadow-sm px-4 py-4" style="box-shadow: 0 2px 12px rgba(10,36,99,0.08);">
+            <!-- Badge row -->
+            <div class="flex items-center justify-center gap-4 flex-wrap mb-3">
+                <!-- Google -->
+                <div class="flex flex-col items-center gap-0.5">
+                    <svg width="66" height="22" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
+                        <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
+                        <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
+                        <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
+                        <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
+                        <path d="M35.29 41.19V32H67.4c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.7.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.01z" fill="#4285F4"/>
+                    </svg>
+                    <div class="font-body text-[12px] font-bold text-kc-charcoal flex items-center gap-0.5">
+                        <span class="star text-[13px]">★★★★★</span> <span class="text-gray-500">(452)</span>
+                    </div>
+                </div>
 
-            <!-- Google -->
-            <div class="trust-badge">
-                <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/>
-                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                    <path fill="none" d="M0 0h48v48H0z"/>
-                </svg>
+                <!-- Divider -->
+                <div style="width:1px; height:36px; background:#e2e8f0;"></div>
+
+                <!-- HomeAdvisor -->
+                <div class="flex flex-col items-center gap-0.5">
+                    <div class="font-heading font-black text-[15px]" style="color:#F47920; letter-spacing:-0.5px;">home</div>
+                    <div class="font-heading font-black text-[10px] uppercase tracking-wider" style="color:#0075BF;">advisor</div>
+                </div>
+
+                <!-- Divider -->
+                <div style="width:1px; height:36px; background:#e2e8f0;"></div>
+
+                <!-- Yelp -->
                 <div>
-                    <div class="trust-stars">★★★★★</div>
-                    <div class="trust-meta">
-                        <strong>5.0 Rating</strong>
-                        <small>128 Google Reviews</small>
+                    <svg width="52" height="26" viewBox="0 0 384 192" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="155" font-family="Arial Black, sans-serif" font-weight="900" font-size="162" fill="#D32323">yelp</text>
+                    </svg>
+                </div>
+
+                <!-- Divider -->
+                <div style="width:1px; height:36px; background:#e2e8f0;"></div>
+
+                <!-- BBB A+ -->
+                <div class="flex items-center gap-1">
+                    <div class="text-center px-2 py-1 rounded" style="background:#003087; color:#fff; font-family:'Montserrat',sans-serif; font-weight:700; font-size:10px; line-height:1.2;">BBB<br><span style="font-size:7px; font-weight:400;">ACCREDITED</span></div>
+                    <div class="text-white font-heading font-extrabold text-lg px-2 py-1 rounded" style="background:#2E7D32; font-size:18px; font-weight:900; line-height:1;">A+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED BY band -->
+    <section style="background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%); padding: 10px 16px 12px;">
+        <p class="font-heading text-white text-center text-[14px] uppercase tracking-widest" style="font-weight:800; letter-spacing:0.08em;">
+            Trusted by 10,000+ Happy Customers
+        </p>
+    </section>
+
+    <!-- COUPON SECTION -->
+    <section class="px-4 pb-6 pt-4" style="background:#f0f4f8;">
+        <div class="max-w-lg mx-auto">
+            <div class="coupon-box">
+                <p class="font-heading font-900 text-kc-green text-[36px] leading-none mb-1" style="font-weight:900;">
+                    $50 OFF
+                </p>
+                <p class="font-heading font-700 text-kc-charcoal text-[15px]" style="font-weight:700;">
+                    LIMITED-TIME OFFER – Book Now!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="px-4 pb-8" style="background:#f0f4f8;">
+        <div class="max-w-lg mx-auto">
+            <div class="testimonial-card">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-full bg-kc-blue flex items-center justify-center text-white font-heading font-bold text-xl shadow-md" style="box-shadow: 0 4px 12px rgba(21,101,192,0.3);">
+                        S
+                    </div>
+                    <div class="flex-1">
+                        <div class="star text-lg mb-1">★★★★★</div>
+                        <p class="font-body text-kc-charcoal text-[15px] leading-relaxed mb-2" style="line-height:1.65;">
+                            "Brand new carpets! Friendly service and they were on time. Highly recommend KC Clean Carpet to anyone looking for a professional job."
+                        </p>
+                        <p class="font-heading font-600 text-kc-navy text-[13px]" style="font-weight:600;">
+                            – Sarah M., Kansas City
+                        </p>
                     </div>
                 </div>
             </div>
-
-            <div class="trust-divider" aria-hidden="true"></div>
-
-            <!-- Facebook -->
-            <div class="trust-badge">
-                <svg class="trust-badge-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="48" height="48" rx="8" fill="#1877F2"/>
-                    <path fill="#fff" d="M33 24h-6v-4c0-1.66 1.34-3 3-3h3v-6h-3c-4.97 0-9 4.03-9 9v4h-6v6h6v14h6V30h4.5L33 24z"/>
-                </svg>
-                <div>
-                    <div class="trust-stars">★★★★★</div>
-                    <div class="trust-meta">
-                        <strong>5.0 Rating</strong>
-                        <small>Facebook Reviews</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="trust-divider" aria-hidden="true"></div>
-
-            <p class="trust-tagline">Trusted by<br>10,000+ Happy<br>Customers</p>
-
         </div>
+    </section>
+
+    <!-- STICKY CALL BAR -->
+    <div class="sticky-call">
+        <a href="tel:+18162333325" class="goog-sn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Click to Call
+        </a>
     </div>
 
-    <!-- ── F. FOOTER ── -->
-    <footer class="lp-footer">
-        &copy; 2026 KC Clean Carpet. All rights reserved.
-    </footer>
-
-</div><!-- /.lp-wrap -->
-
-<!-- Form submission handler -->
-<script>
-document.getElementById('lp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    var name    = document.getElementById('lp-name').value.trim();
-    var phone   = document.getElementById('lp-phone').value.trim();
-    var zip     = document.getElementById('lp-zip').value.trim();
-    var errorEl = document.getElementById('lp-error');
-    var btn     = document.querySelector('.lp-cta-btn');
-
-    if (!name) {
-        errorEl.textContent = 'Please enter your full name.';
-        errorEl.style.display = 'block';
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-    }
-    if (!phone) {
-        errorEl.textContent = 'Please enter your phone number.';
-        errorEl.style.display = 'block';
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-    }
-    if (!zip || !/^\d{5}$/.test(zip)) {
-        errorEl.textContent = 'Please enter a valid 5-digit ZIP code.';
-        errorEl.style.display = 'block';
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-    }
-    errorEl.style.display = 'none';
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'form_submission',
-        'form_name': 'carpet_cleaning_lp',
-        'lead_zip': zip
-    });
-
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-
-    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "leadStatus": "new",
-            "date": new Date().toISOString().slice(0, 19),
-            "firstname": name,
-            "phone": phone,
-            "zipcode": zip,
-            "source": "carpet-cleaning-lp"
-        })
-    })
-    .then(function() {
-        btn.textContent = 'Redirecting...';
-        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
-    })
-    .catch(function(err) {
-        errorEl.textContent = 'Something went wrong. Please call us at (816) 715-1130.';
-        errorEl.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = 'Send My Free Quote!';
-    });
-});
-</script>
-
-<!-- Phone click tracking -->
-<script>
-document.addEventListener('click', function(e) {
-    var link = e.target.closest('a[href^="tel:"]');
-    if (link) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'phone_click',
-            'phone_number': link.href.replace('tel:', ''),
-            'click_location': 'lp_header'
-        });
-    }
-});
-</script>
 </body>
 </html>

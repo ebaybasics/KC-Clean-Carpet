@@ -79,108 +79,152 @@
         }
         .lp-logo { height: 56px; width: auto; display: block; transition: opacity .2s; }
         .lp-logo:hover { opacity: .85; }
-        .lp-phone-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-        .lp-phone-label { font-family: 'Montserrat',sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.8); }
-        .lp-phone {
-            font-family: 'Montserrat',sans-serif;
-            font-weight: 900;
-            font-size: 22px;
-            color: var(--kc-gold);
-            letter-spacing: .01em;
-            transition: color .2s;
-            text-shadow: 0 2px 10px rgba(255,179,0,.25);
-        }
-        .lp-phone:hover { color: #FFD54F; }
-
-        /* ── GOOGLE REVIEW CARD ── */
-        .grc-row {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            margin: 24px auto 0;
-            max-width: 1060px;
-            padding: 0 16px;
-        }
-        .google-review-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 18px 20px 16px;
-            flex: 1;
-            max-width: 340px;
-            box-shadow: 0 4px 24px rgba(0,0,0,.22), 0 1px 6px rgba(0,0,0,.12);
-            text-align: left;
-        }
-        .google-review-card:not(:first-child) { display: none; }
-        @media (min-width: 900px) {
-            .google-review-card:not(:first-child) { display: block; }
-            .phone-band p { font-size: 13px; margin-bottom: 12px; }
-            .phone-band .phone-number { font-size: 34px; }
-        }
-        .grc-header {
+        .lp-phone-wrap { display: flex; align-items: center; }
+        .lp-phone-btn {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 10px;
+            font-family: 'Montserrat',sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            color: var(--kc-navy);
+            background: var(--kc-gold);
+            padding: 10px 20px;
+            border-radius: 6px;
+            letter-spacing: .01em;
+            transition: background .2s, transform .15s, box-shadow .2s;
+            box-shadow: 0 4px 16px rgba(255,179,0,.4), 0 1px 4px rgba(255,179,0,.2);
         }
-        .grc-logo { flex-shrink: 0; width: 20px; height: 20px; }
-        .grc-label {
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            color: #5f6368;
-            flex: 1;
+        .lp-phone-btn svg { color: var(--kc-navy); flex-shrink: 0; }
+        .lp-phone-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,160,0,.5); }
+        .lp-phone-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .lp-phone-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(255,179,0,.3); }
+
+        @media (min-width: 900px) {
+            .phone-band p { font-size: 13px; margin-bottom: 12px; }
+            .phone-band .phone-number { font-size: 34px; }
         }
-        .grc-stars {
-            color: #FBBC04;
-            font-size: 15px;
-            letter-spacing: 1px;
+
+        /* ── HERO PROOF IMAGE ── */
+        .hero-proof {
+            position: relative;
+            max-width: 680px;
+            margin: 16px auto 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.18);
         }
-        .grc-text {
-            font-family: 'Roboto', sans-serif;
-            font-size: 13.5px;
-            line-height: 1.6;
-            color: #3c4043;
-            margin: 0 0 14px;
-            font-style: italic;
+        .hero-proof img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            transition: transform .7s cubic-bezier(.25,.46,.45,.94);
         }
-        .grc-footer {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-top: 12px;
-            border-top: 1px solid #f1f3f4;
+        .hero-proof:hover img { transform: scale(1.04); }
+        .hero-proof-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,36,99,.4) 0%, rgba(10,36,99,.1) 30%, transparent 100%);
+            pointer-events: none;
         }
-        .grc-avatar {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4285F4, #34A853);
-            color: #fff;
+        .hero-proof-badge {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--kc-gold);
+            color: var(--kc-navy);
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
+            font-weight: 900;
+            font-size: 9px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 5px 11px;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(255,179,0,.4);
+        }
+        /* ── HERO REVIEW CARD ── */
+        .hero-review-card {
+            max-width: 680px;
+            margin: 8px auto 0;
+            background: #fff;
+            border-radius: 8px;
+            padding: 10px 20px 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.18), 0 1px 4px rgba(0,0,0,.08);
+            text-align: center;
+            position: relative;
+        }
+        .hrc-quote {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .hrc-stars {
+            color: #FBBC04;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        .hrc-quote p {
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+        .hrc-quote cite {
+            font-style: normal;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 10px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: #5f6368;
+        }
+        .hrc-ratings-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .hrc-platform-icon {
+            width: 15px;
+            height: 15px;
             flex-shrink: 0;
         }
-        .grc-meta { display: flex; flex-direction: column; gap: 1px; }
-        .grc-name {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 500;
-            font-size: 13px;
+        .hrc-rating {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 12px;
             color: #202124;
         }
-        .grc-sublabel {
+        .hrc-count {
+            font-family: 'Roboto', sans-serif;
             font-size: 11px;
             color: #5f6368;
-            font-family: 'Roboto', sans-serif;
+        }
+        .hrc-divider {
+            width: 1px;
+            height: 14px;
+            background: #ddd;
+            margin: 0 6px;
+            flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .hero-review-card { padding: 8px 12px 6px; }
+            .hrc-quote p { font-size: 13px; }
+            .hrc-ratings-row { flex-wrap: wrap; }
         }
 
         /* ── HERO BAND ── */
         .page-band {
             background: linear-gradient(135deg, var(--kc-navy) 0%, #1a3a8f 50%, var(--kc-blue) 100%);
-            padding: 40px 32px 36px;
+            padding: 24px 32px 20px;
             text-align: center;
             color: #fff;
             position: relative;
@@ -203,7 +247,36 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,179,0,.5), transparent);
         }
-        .page-band h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(22px,4vw,46px); margin: 0 0 20px; position: relative; line-height: 1.1; letter-spacing: -.01em; text-shadow: 0 4px 32px rgba(0,0,0,.3); }
+        .hero-scroll-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: 2px solid rgba(255,255,255,.25);
+            border-radius: 12px;
+            color: #fff;
+            padding: 16px 28px 10px;
+            margin: 0 0 12px;
+            position: relative;
+            transition: transform .2s, border-color .2s, background .2s;
+        }
+        .hero-scroll-btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.05); }
+        .hero-scroll-btn:hover .scroll-chevron { opacity: 1; transform: translateY(2px); }
+        .hero-scroll-btn h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(22px,3.5vw,38px); margin: 0; position: relative; line-height: 1.1; letter-spacing: -.01em; text-shadow: 0 4px 32px rgba(0,0,0,.3); }
+        .scroll-chevron {
+            display: block;
+            width: 28px;
+            height: 28px;
+            opacity: .6;
+            transition: opacity .25s, transform .25s;
+            animation: bounce-chevron 2s ease-in-out infinite;
+        }
+        @keyframes bounce-chevron {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
 
         /* ── STATIC REVIEW ── */
         .band-review-static {
@@ -257,7 +330,7 @@
         .main-wrap {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 52px 32px 72px;
+            padding: 32px 32px 72px;
             display: grid;
             grid-template-columns: 1fr 400px;
             gap: 40px;
@@ -496,35 +569,33 @@
         .trust-item-text strong { display: block; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; }
         .trust-item-text span { font-size: 12px; color: #5a5a6e; line-height: 1.55; }
 
-        .review-snippet {
-            margin-top: 20px;
-            border-radius: 10px;
+        /* ── HERO WORK PROOF ── */
+        .hero-proof {
+            max-width: 720px;
+            margin: 28px auto 0;
+            border-radius: 12px;
             overflow: hidden;
             position: relative;
             box-shadow: 0 8px 32px rgba(10,36,99,.3), 0 2px 8px rgba(10,36,99,.15);
-            aspect-ratio: 4 / 3;
         }
-        .review-snippet img {
+        .hero-proof img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             display: block;
             transition: transform .7s cubic-bezier(.25,.46,.45,.94);
         }
-        .review-snippet:hover img { transform: scale(1.05); }
-        .review-snippet-overlay {
+        .hero-proof:hover img { transform: scale(1.03); }
+        .hero-proof-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(
                 to top,
-                rgba(10,36,99,.88) 0%,
-                rgba(10,36,99,.45) 38%,
-                rgba(10,36,99,.12) 65%,
+                rgba(10,36,99,.5) 0%,
+                rgba(10,36,99,.15) 40%,
                 transparent 100%
             );
             pointer-events: none;
         }
-        .review-snippet-badge {
+        .hero-proof-badge {
             position: absolute;
             top: 14px;
             right: 14px;
@@ -539,28 +610,6 @@
             border-radius: 2px;
             box-shadow: 0 2px 10px rgba(255,179,0,.4);
         }
-        .review-snippet-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0; right: 0;
-            padding: 18px 20px;
-            color: #fff;
-        }
-        .review-snippet-caption strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 15px;
-            letter-spacing: .01em;
-            margin-bottom: 4px;
-            text-shadow: 0 1px 6px rgba(0,0,0,.4);
-        }
-        .review-snippet-caption span {
-            font-size: 11px;
-            opacity: .9;
-            letter-spacing: .03em;
-        }
-
         .phone-band {
             background: linear-gradient(135deg, var(--kc-blue) 0%, var(--kc-blue-dark) 100%);
             border-radius: 10px;
@@ -588,7 +637,7 @@
         @media (max-width: 768px) {
             .lp-header { padding: 10px 16px; }
             .lp-logo { height: 44px; }
-            .lp-phone { font-size: 17px; }
+            .lp-phone-btn { font-size: 15px; padding: 8px 16px; }
             .main-wrap { grid-template-columns: 1fr; padding: 16px 12px 48px; gap: 20px; }
             .field-row { grid-template-columns: 1fr; gap: 0; }
             .form-body { padding: 20px 16px; }
@@ -607,8 +656,8 @@
         @media (max-width: 420px) {
             .lp-header { padding: 8px 12px; }
             .lp-logo { height: 36px; }
-            .lp-phone { font-size: 15px; }
-            .lp-phone-label { font-size: 8px; }
+            .lp-phone-btn { font-size: 14px; padding: 8px 14px; gap: 6px; }
+            .lp-phone-btn svg { width: 15px; height: 15px; }
             .main-wrap { padding: 12px 8px 48px; }
             .form-body { padding: 16px 12px; }
             .field-row { grid-template-columns: 1fr; gap: 0; }
@@ -655,73 +704,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="lp-header">
     <a href="/home"><img src="brand_assets/KC Clean Carpet Logo.webp" class="lp-logo" alt="KC Clean Carpet — Home"></a>
     <div class="lp-phone-wrap">
-        <a href="tel:8167151130" class="lp-phone"><span>📞</span> <span class="goog-sn">(816) 715-1130</span></a>
+        <a href="tel:8167151130" class="lp-phone-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span class="goog-sn">(816) 715-1130</span></a>
     </div>
 </header>
 
 <main>
 <div class="page-band">
-    <h1>See Your Exact Price in 60 Seconds — No Waiting</h1>
-    <div class="grc-row">
-        <div class="google-review-card">
-            <div class="grc-header">
-                <svg class="grc-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                </svg>
-                <span class="grc-label"></span>
-                <div class="grc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            </div>
-            <p class="grc-text">"The KC Clean Carpet team did an incredible job. My carpet was heavily stained and they made it look brand new."</p>
-            <div class="grc-footer">
-                <div class="grc-avatar">M</div>
-                <div class="grc-meta">
-                    <span class="grc-name">Michelle T.</span>
-                    <span class="grc-sublabel">Kansas City &middot; Local Guide</span>
-                </div>
-            </div>
+    <button class="hero-scroll-btn" onclick="document.getElementById('step-1').scrollIntoView({behavior:'smooth',block:'start'})">
+        <h1>See Your Exact Price in 60 Seconds — No Waiting</h1>
+        <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="hero-proof">
+        <img src="images/landing_page_image.avif" alt="KC Clean Carpet — Professional Carpet Cleaning Results" width="1060" height="400">
+        <div class="hero-proof-overlay"></div>
+        <div class="hero-proof-badge">Our Work</div>
+    </div>
+    <div class="hero-review-card">
+        <div class="hrc-quote">
+            <span class="hrc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p>"My carpet looks brand new!"</p>
+            <cite>— Michelle T.</cite>
         </div>
-        <div class="google-review-card">
-            <div class="grc-header">
-                <svg class="grc-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                </svg>
-                <span class="grc-label"></span>
-                <div class="grc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            </div>
-            <p class="grc-text">"Absolutely blown away by the results. Our living room carpet looked brand new after years of heavy use. Will definitely book again."</p>
-            <div class="grc-footer">
-                <div class="grc-avatar" style="background: linear-gradient(135deg, #EA4335, #FBBC04);">D</div>
-                <div class="grc-meta">
-                    <span class="grc-name">David R.</span>
-                    <span class="grc-sublabel">Overland Park &middot; Local Guide</span>
-                </div>
-            </div>
-        </div>
-        <div class="google-review-card">
-            <div class="grc-header">
-                <svg class="grc-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                </svg>
-                <span class="grc-label"></span>
-                <div class="grc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            </div>
-            <p class="grc-text">"Fast response, fair pricing, and the tile grout came out looking incredible. Very professional team — highly recommend to anyone in KC."</p>
-            <div class="grc-footer">
-                <div class="grc-avatar" style="background: linear-gradient(135deg, #34A853, #4285F4);">S</div>
-                <div class="grc-meta">
-                    <span class="grc-name">Sara K.</span>
-                    <span class="grc-sublabel">Lee's Summit &middot; Local Guide</span>
-                </div>
-            </div>
+        <div class="hrc-ratings-row">
+            <svg class="hrc-platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <strong class="hrc-rating">5.0</strong>
+            <span class="hrc-count">+120 five-star reviews</span>
+            <span class="hrc-divider"></span>
+            <svg class="hrc-platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.384C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/>
+            </svg>
+            <strong class="hrc-rating">5.0</strong>
+            <span class="hrc-count">five-star rated</span>
         </div>
     </div>
 </div>
@@ -738,8 +756,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="step-item active">
                         <div class="step-num">1</div>
                         <div class="step-text">
-                            <span class="step-label">Start Your 60-Second Quote</span>
-                            <span class="step-sub">Quick details for quote</span>
+                            <span class="step-label">See Our Service Menu &amp; Prices</span>
+                            <span class="step-sub">Choose your rooms on the next page for an instant total</span>
                         </div>
                         <span class="step-arrow">›</span>
                     </div>
@@ -747,8 +765,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="step-item upcoming">
                         <div class="step-num">2</div>
                         <div class="step-text">
-                            <span class="step-label">Get Your Exact Price</span>
-                            <span class="step-sub">Pick a time (optional)</span>
+                            <span class="step-label">Select Your Areas</span>
+                            <span class="step-sub">Tap the rooms you want cleaned. Your total updates instantly.</span>
                         </div>
                     </div>
                 </div>
@@ -757,15 +775,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="form-body">
                 <form id="lead-form" novalidate>
 
-                    <div class="field-row">
-                        <div class="field-group">
-                            <label>First Name <span>*</span></label>
-                            <input type="text" id="fname" placeholder="" required>
-                        </div>
-                        <div class="field-group">
-                            <label>Last Name <span>*</span></label>
-                            <input type="text" id="lname" placeholder="" required>
-                        </div>
+                    <div class="field-group">
+                        <label>First Name <span>*</span></label>
+                        <input type="text" id="fname" placeholder="" required>
                     </div>
 
                     <div class="field-group">
@@ -773,37 +785,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <input type="tel" id="phone" placeholder="" required>
                     </div>
 
-                    <div class="field-group">
-                        <label for="services">Services Needed</label>
-                        <select id="services">
-                            <option value="">— Select a service —</option>
-                            <option value="Carpet Cleaning">Carpet Cleaning</option>
-                            <option value="Hardwood Floor Cleaning">Hardwood Floor Cleaning</option>
-                            <option value="Upholstery Cleaning">Upholstery Cleaning</option>
-                            <option value="Tile &amp; Grout Cleaning">Tile &amp; Grout Cleaning</option>
-                            <option value="Other">Other — Not sure yet, just get me a quote</option>
-                        </select>
-                    </div>
-
                     <div id="form-error" style="display:none; background:#FFF3CD; border:1px solid #FFB300; color:#7a5000; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
-                        Please fill in all required fields (First Name, Last Name, and Phone).
+                        Please fill in all required fields (First Name and Phone).
                     </div>
 
                     <button type="submit" class="submit-btn">
-                        Get Quote Now
+                        Show My Price &rarr;
                     </button>
                     <p class="form-fine">&#128274; Your information is 100% secure and will never be sold or shared. We'll only contact you about your cleaning appointment.</p>
                 </form>
-            </div>
-        </div>
-
-        <div class="review-snippet">
-            <img src="images/landing_page_image.avif" alt="KC Clean Carpet — Professional Carpet Cleaning Results" loading="lazy" width="360" height="270">
-            <div class="review-snippet-overlay"></div>
-            <div class="review-snippet-badge">Our Work</div>
-            <div class="review-snippet-caption">
-                <strong>Professional Results</strong>
-                <span>Deep clean that brings carpets back to life</span>
             </div>
         </div>
 
@@ -875,29 +865,22 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     var fname    = document.getElementById('fname').value.trim();
-    var lname    = document.getElementById('lname').value.trim();
     var phone    = document.getElementById('phone').value.trim();
-    var services = [document.getElementById('services').value].filter(Boolean);
     var errorBox = document.getElementById('form-error');
     var submitBtn = document.querySelector('.submit-btn');
 
-    if (!fname || !lname || !phone) {
+    if (!fname || !phone) {
         errorBox.style.display = 'block';
-        successBox.style.display = 'none';
         errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
     }
     errorBox.style.display = 'none';
 
-    // Build additional info: services
-    var info = services.join(', ');
-
     // GTM event: form submission attempt
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
         'event': 'form_submission',
-        'form_name': 'book_appointment',
-        'services_selected': services.join(', ') || 'none'
+        'form_name': 'book_appointment'
     });
 
     // Disable button while sending
@@ -913,9 +896,7 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
             "leadStatus": "new",
             "date": new Date().toISOString().slice(0, 19),
             "firstname": fname,
-            "lastname": lname,
-            "phone": phone,
-            "info": info
+            "phone": phone
         })
     })
     .then(function() {
@@ -928,7 +909,7 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
         errorBox.textContent = 'Error: ' + msg;
         errorBox.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Get Quote Now';
+        submitBtn.textContent = 'Show My Price →';
         console.error('Form submission error:', err);
     });
 });

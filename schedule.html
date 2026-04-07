@@ -16,7 +16,10 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
-        <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
         @font-face {
@@ -145,79 +148,122 @@
         /* ── HERO REVIEW CARD ── */
         .hero-review-card {
             max-width: 680px;
-            margin: 8px auto 0;
-            background: #fff;
+            margin: 6px auto 0;
+            background: linear-gradient(135deg, #0D1B3E 0%, #111D3C 60%, #0A1830 100%);
             border-radius: 8px;
-            padding: 10px 20px 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,.18), 0 1px 4px rgba(0,0,0,.08);
+            padding: 10px 24px 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,179,0,.12);
             text-align: center;
             position: relative;
+            overflow: hidden;
+            border-top: 2px solid var(--kc-gold);
+        }
+        /* ghost quotation mark depth layer */
+        .hero-review-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -8px;
+            left: 8px;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 72px;
+            font-style: italic;
+            line-height: 1;
+            color: var(--kc-gold);
+            opacity: .18;
+            pointer-events: none;
+            user-select: none;
+        }
+        /* subtle gold shimmer streak across card */
+        .hero-review-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,179,0,.4) 40%, rgba(255,179,0,.4) 60%, transparent 100%);
+            pointer-events: none;
         }
         .hrc-quote {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 3px;
         }
         .hrc-stars {
-            color: #FBBC04;
-            font-size: 13px;
-            letter-spacing: 1px;
+            color: var(--kc-gold);
+            font-size: 11px;
+            letter-spacing: 2px;
+            line-height: 1;
+            filter: drop-shadow(0 1px 4px rgba(255,179,0,.5));
         }
         .hrc-quote p {
             margin: 0;
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-style: italic;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.4;
+            font-size: clamp(12px, 2vw, 14px);
+            color: #EDE8DC;
+            line-height: 1.55;
+            position: relative;
+            z-index: 1;
+            max-width: 520px;
+            text-wrap: balance;
         }
         .hrc-quote cite {
             font-style: normal;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 10px;
-            letter-spacing: .06em;
+            font-size: 9px;
+            letter-spacing: .14em;
             text-transform: uppercase;
-            color: #5f6368;
+            color: var(--kc-gold);
+            opacity: .75;
         }
         .hrc-ratings-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 5px;
             margin-top: 6px;
-            padding-top: 6px;
-            border-top: 1px solid #f0f0f0;
+            padding-top: 5px;
+            border-top: 1px solid rgba(255,179,0,.15);
         }
         .hrc-platform-icon {
-            width: 15px;
-            height: 15px;
+            width: 13px;
+            height: 13px;
             flex-shrink: 0;
         }
         .hrc-rating {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 12px;
-            color: #202124;
+            font-size: 11px;
+            color: #EDE8DC;
+            letter-spacing: .02em;
         }
         .hrc-count {
-            font-family: 'Roboto', sans-serif;
-            font-size: 11px;
-            color: #5f6368;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            font-weight: 600;
+            color: rgba(237,232,220,.55);
+            letter-spacing: .04em;
         }
         .hrc-divider {
             width: 1px;
-            height: 14px;
-            background: #ddd;
+            height: 12px;
+            background: rgba(255,179,0,.25);
             margin: 0 6px;
             flex-shrink: 0;
         }
         @media (max-width: 600px) {
-            .hero-review-card { padding: 8px 12px 6px; }
-            .hrc-quote p { font-size: 13px; }
-            .hrc-ratings-row { flex-wrap: wrap; }
+            .hero-review-card { padding: 8px 14px 7px; }
+            .hrc-quote p { font-size: 12px; }
+            .hrc-ratings-row { gap: 4px; }
+            .hrc-count { font-size: 9px; white-space: nowrap; }
+            .hrc-divider { margin: 0 4px; }
+        }
+        @media (max-width: 360px) {
+            .hrc-quote p { font-size: 11px; }
+            .hrc-platform-icon { width: 12px; height: 12px; }
+            .hrc-rating { font-size: 10px; }
+            .hrc-count { font-size: 8px; }
         }
 
         /* ── HERO BAND ── */
@@ -263,7 +309,7 @@
             color: rgba(10,36,99,.6);
             position: relative;
             z-index: 1;
-            margin-top: 4px;
+            margin-top: 1px;
         }
         .hero-scroll-btn {
             display: inline-flex;
@@ -275,7 +321,7 @@
             border: none;
             border-radius: 10px;
             color: var(--kc-navy);
-            padding: 14px 32px 10px;
+            padding: 8px 20px 6px;
             position: relative;
             overflow: hidden;
             transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
@@ -328,13 +374,14 @@
         .hero-scroll-btn h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(16px, 2.4vw, 26px);
+            font-size: clamp(13px, 3.5vw, 22px);
             margin: 0;
             position: relative;
             line-height: 1.1;
             letter-spacing: -.02em;
             color: var(--kc-navy);
             z-index: 1;
+            white-space: nowrap;
         }
         .scroll-chevron {
             display: block;

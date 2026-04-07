@@ -46,6 +46,9 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## Empty Messages
+- If a user message comes through empty or blank, **automatically take a fresh screenshot** of the current page on localhost and use that as the context for the next action. Do not ask the user what they meant — just screenshot and respond to what you see.
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it

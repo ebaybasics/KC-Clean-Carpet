@@ -110,7 +110,7 @@
         /* ── HERO PROOF IMAGE ── */
         .hero-proof {
             position: relative;
-            max-width: 680px;
+            max-width: clamp(680px, 82vw, 1140px);
             margin: 4px auto 0;
             border-radius: 12px;
             overflow: hidden;
@@ -147,7 +147,7 @@
         }
         /* ── HERO REVIEW CARD ── */
         .hero-review-card {
-            max-width: 680px;
+            max-width: clamp(680px, 82vw, 1140px);
             margin: 6px auto 0;
             background: linear-gradient(135deg, #0D1B3E 0%, #111D3C 60%, #0A1830 100%);
             border-radius: 8px;
@@ -264,6 +264,20 @@
             .hrc-platform-icon { width: 12px; height: 12px; }
             .hrc-rating { font-size: 10px; }
             .hrc-count { font-size: 8px; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-scroll-btn { padding: 18px 72px 14px; }
+            .hero-scroll-btn h1 { font-size: clamp(22px, 2.2vw, 34px); }
+            .hero-cta-label { font-size: 10px; letter-spacing: .15em; }
+            .hrc-quote p { font-size: clamp(15px, 1.3vw, 19px); }
+            .hrc-quote cite { font-size: 10px; }
+            .hrc-stars { font-size: 13px; }
+            .hrc-ratings-row { gap: 8px; padding-top: 7px; margin-top: 8px; }
+            .hrc-platform-icon { width: 18px; height: 18px; }
+            .hrc-rating { font-size: 14px; }
+            .hrc-count { font-size: 12px; }
+            .hrc-divider { height: 16px; margin: 0 10px; }
         }
 
         /* ── HERO BAND ── */
@@ -693,7 +707,7 @@
 
         /* ── HERO WORK PROOF ── */
         .hero-proof {
-            max-width: 720px;
+            max-width: clamp(680px, 82vw, 1140px);
             margin: 8px auto 0;
             border-radius: 12px;
             overflow: hidden;
@@ -702,7 +716,10 @@
         }
         .hero-proof img {
             width: 100%;
+            height: clamp(360px, 41vw, 577px);
             display: block;
+            object-fit: cover;
+            object-position: center 40%;
             transition: transform .7s cubic-bezier(.25,.46,.45,.94);
         }
         .hero-proof:hover img { transform: scale(1.03); }

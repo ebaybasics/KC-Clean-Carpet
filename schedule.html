@@ -86,18 +86,18 @@
             font-family: 'Montserrat',sans-serif;
             font-weight: 900;
             font-size: 18px;
-            color: var(--kc-navy);
-            background: var(--kc-gold);
+            color: #fff;
+            background: #1F7A4D;
             padding: 10px 20px;
             border-radius: 6px;
             letter-spacing: .01em;
             transition: background .2s, transform .15s, box-shadow .2s;
-            box-shadow: 0 4px 16px rgba(255,179,0,.4), 0 1px 4px rgba(255,179,0,.2);
+            box-shadow: 0 4px 14px rgba(31,122,77,.4), 0 1px 4px rgba(31,122,77,.18), inset 0 1px 0 rgba(255,255,255,.12);
         }
-        .lp-phone-btn svg { color: var(--kc-navy); flex-shrink: 0; }
-        .lp-phone-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,160,0,.5); }
+        .lp-phone-btn svg { color: #fff; flex-shrink: 0; }
+        .lp-phone-btn:hover { background: #196940; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(31,122,77,.5), 0 2px 6px rgba(31,122,77,.2); }
         .lp-phone-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-        .lp-phone-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(255,179,0,.3); }
+        .lp-phone-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(31,122,77,.3); }
 
         @media (min-width: 900px) {
             .phone-band p { font-size: 13px; margin-bottom: 12px; }
@@ -108,7 +108,7 @@
         .hero-proof {
             position: relative;
             max-width: 680px;
-            margin: 16px auto 0;
+            margin: 4px auto 0;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 40px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.18);
@@ -223,7 +223,7 @@
         /* ── HERO BAND ── */
         .page-band {
             background: linear-gradient(135deg, var(--kc-navy) 0%, #1a3a8f 50%, var(--kc-blue) 100%);
-            padding: 24px 32px 20px;
+            padding: 14px 32px 20px;
             text-align: center;
             color: #fff;
             position: relative;
@@ -256,11 +256,14 @@
         }
         .hero-cta-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
-            letter-spacing: .14em;
+            letter-spacing: .13em;
             text-transform: uppercase;
-            color: rgba(255,255,255,.55);
+            color: rgba(10,36,99,.6);
+            position: relative;
+            z-index: 1;
+            margin-top: 4px;
         }
         .hero-scroll-btn {
             display: inline-flex;
@@ -272,7 +275,7 @@
             border: none;
             border-radius: 10px;
             color: var(--kc-navy);
-            padding: 20px 40px 14px;
+            padding: 14px 32px 10px;
             position: relative;
             overflow: hidden;
             transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
@@ -321,11 +324,11 @@
                 inset 0 1px 0 rgba(255,255,255,.25);
         }
         .hero-scroll-btn:active { transform: translateY(-1px) scale(.99); }
-        .hero-scroll-btn:hover .scroll-chevron { transform: translateY(4px); opacity: 1; }
+
         .hero-scroll-btn h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(18px, 3vw, 32px);
+            font-size: clamp(16px, 2.4vw, 26px);
             margin: 0;
             position: relative;
             line-height: 1.1;
@@ -644,7 +647,7 @@
         /* ── HERO WORK PROOF ── */
         .hero-proof {
             max-width: 720px;
-            margin: 28px auto 0;
+            margin: 8px auto 0;
             border-radius: 12px;
             overflow: hidden;
             position: relative;
@@ -714,7 +717,9 @@
             .field-row { grid-template-columns: 1fr; gap: 0; }
             .form-body { padding: 20px 16px; }
             .form-header { padding: 16px 16px; }
-            .page-band { padding: 20px 16px 16px; }
+            .page-band { padding: 8px 16px 12px; }
+            .hero-scroll-wrap { margin: 0 0 6px; gap: 6px; }
+            .hero-review-card { margin: 6px auto 0; }
             .page-band h1 { font-size: clamp(18px, 6vw, 28px); margin-bottom: 12px; }
             .band-carousel { max-width: 100%; }
             .review-card { padding: 14px 16px 12px; }
@@ -783,10 +788,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <div class="page-band">
     <div class="hero-scroll-wrap">
-        <span class="hero-cta-label">Free &middot; No obligation &middot; 60 seconds</span>
         <button class="hero-scroll-btn" onclick="document.getElementById('review-card').scrollIntoView({behavior:'smooth',block:'start'})">
-            <h1>See Your Exact Price in 60 Seconds — No Waiting</h1>
-            <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            <h1>Get My Exact Price Now ↓</h1>
+            <span class="hero-cta-label">Free &middot; No obligation &middot; 60 seconds</span>
         </button>
     </div>
     <div class="hero-proof">

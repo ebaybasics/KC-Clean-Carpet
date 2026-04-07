@@ -246,36 +246,108 @@
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(255,179,0,.5), transparent);
         }
+        /* ── HERO CTA BUTTON ── */
+        .hero-scroll-wrap {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 14px;
+        }
+        .hero-cta-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.55);
+        }
         .hero-scroll-btn {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 0;
             cursor: pointer;
-            background: none;
-            border: 2px solid rgba(255,255,255,.25);
-            border-radius: 12px;
-            color: #fff;
-            padding: 16px 28px 10px;
-            margin: 0 0 12px;
+            background: var(--kc-gold);
+            border: none;
+            border-radius: 10px;
+            color: var(--kc-navy);
+            padding: 20px 40px 14px;
             position: relative;
-            transition: transform .2s, border-color .2s, background .2s;
+            overflow: hidden;
+            transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+            box-shadow:
+                0 6px 28px rgba(255,179,0,.45),
+                0 2px 8px rgba(255,179,0,.25),
+                inset 0 1px 0 rgba(255,255,255,.25);
         }
-        .hero-scroll-btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.05); }
-        .hero-scroll-btn:hover .scroll-chevron { opacity: 1; transform: translateY(2px); }
-        .hero-scroll-btn h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(22px,3.5vw,38px); margin: 0; position: relative; line-height: 1.1; letter-spacing: -.01em; text-shadow: 0 4px 32px rgba(0,0,0,.3); }
-        .hero-subhead { margin: 8px 0 0; font-family: 'Roboto', sans-serif; font-size: clamp(13px, 1.6vw, 16px); color: rgba(255,255,255,.82); line-height: 1.5; font-weight: 400; }
+        /* shimmer sweep — fires every 4s */
+        .hero-scroll-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%);
+            animation: btn-shimmer 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        /* pulse ring */
+        .hero-scroll-btn::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 13px;
+            border: 2px solid rgba(255,179,0,.6);
+            animation: btn-pulse-ring 3s ease-out infinite;
+            pointer-events: none;
+        }
+        @keyframes btn-shimmer {
+            0%   { left: -100%; opacity: 0; }
+            10%  { opacity: 1; }
+            50%  { left: 130%; opacity: 1; }
+            51%, 100% { left: 130%; opacity: 0; }
+        }
+        @keyframes btn-pulse-ring {
+            0%   { transform: scale(1); opacity: .7; }
+            70%  { transform: scale(1.06); opacity: 0; }
+            100% { transform: scale(1.06); opacity: 0; }
+        }
+        .hero-scroll-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 12px 40px rgba(255,179,0,.55),
+                0 4px 12px rgba(255,179,0,.3),
+                inset 0 1px 0 rgba(255,255,255,.25);
+        }
+        .hero-scroll-btn:active { transform: translateY(-1px) scale(.99); }
+        .hero-scroll-btn:hover .scroll-chevron { transform: translateY(4px); opacity: 1; }
+        .hero-scroll-btn h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(18px, 3vw, 32px);
+            margin: 0;
+            position: relative;
+            line-height: 1.1;
+            letter-spacing: -.02em;
+            color: var(--kc-navy);
+            z-index: 1;
+        }
         .scroll-chevron {
             display: block;
-            width: 28px;
-            height: 28px;
-            opacity: .6;
-            transition: opacity .25s, transform .25s;
-            animation: bounce-chevron 2s ease-in-out infinite;
+            width: 24px;
+            height: 24px;
+            opacity: .65;
+            margin-top: 6px;
+            color: var(--kc-navy);
+            position: relative;
+            z-index: 1;
+            transition: opacity .25s, transform .3s cubic-bezier(.34,1.56,.64,1);
+            animation: bounce-chevron 2.5s ease-in-out infinite;
         }
         @keyframes bounce-chevron {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(5px); }
+            50%       { transform: translateY(5px); }
         }
 
         /* ── STATIC REVIEW ── */
@@ -710,10 +782,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 <div class="page-band">
-    <button class="hero-scroll-btn" onclick="document.getElementById('review-card').scrollIntoView({behavior:'smooth',block:'start'})">
-        <h1>See Your Exact Price in 60 Seconds — No Waiting</h1>
-        <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
+    <div class="hero-scroll-wrap">
+        <span class="hero-cta-label">Free &middot; No obligation &middot; 60 seconds</span>
+        <button class="hero-scroll-btn" onclick="document.getElementById('review-card').scrollIntoView({behavior:'smooth',block:'start'})">
+            <h1>See Your Exact Price in 60 Seconds — No Waiting</h1>
+            <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+    </div>
     <div class="hero-proof">
         <img src="images/landing_page_image.avif" alt="KC Clean Carpet — Professional Carpet Cleaning Results" width="1060" height="400">
         <div class="hero-proof-overlay"></div>

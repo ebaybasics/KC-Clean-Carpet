@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Exact Price | KC Clean Carpet</title>
+    <meta name="description" content="Build your instant cleaning quote online. Select services, see your price in real time, and book in seconds. No commitment required.">
+    <link rel="icon" type="image/png" sizes="96x96" href="/brand_assets/favicon/favicon-96x96.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:      #0A2463;
+            --blue:      #1565C0;
+            --blue-lt:   #1976D2;
+            --gold:      #FFB300;
+            --gold-dk:   #F57F17;
+            --orange:    #E65100;
+            --orange-lt: #FF6D00;
+            --white:     #ffffff;
+            --gray-50:   #F7F7F5;
+            --gray-100:  #EEEEED;
+            --gray-200:  #DDDDD8;
+            --gray-400:  #9E9E96;
+            --gray-600:  #5C5C58;
+            --gray-800:  #28281F;
+            --green:     #2E7D32;
+            --red:       #C62828;
+            --radius:    8px;
+            --shadow-sm: 0 1px 3px rgba(10,36,99,.07), 0 1px 2px rgba(10,36,99,.04);
+            --shadow-md: 0 4px 14px rgba(10,36,99,.10), 0 2px 4px rgba(10,36,99,.05);
+            --shadow-lg: 0 8px 28px rgba(10,36,99,.13), 0 3px 8px rgba(10,36,99,.06);
+            --font-h:    'Barlow Condensed', sans-serif;
+            --font-b:    'DM Sans', sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--gray-50);
+            color: var(--gray-800);
+            min-height: 100vh;
+        }
+
+        /* ── NAV ──────────────────────────────────────────── */
+        .site-nav {
+            background: var(--navy);
+            height: 64px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 2px 10px rgba(0,0,0,.25);
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .nav-logo img { height: 38px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .nav-links a {
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            transition: color .15s;
+        }
+        .nav-links a:hover { color: white; }
+        .nav-phone-link {
+            font-family: var(--font-h);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--gold) !important;
+            letter-spacing: .02em;
+        }
+        @media (max-width: 700px) {
+            .nav-links a:not(.nav-phone-link) { display: none; }
+        }
+
+        /* ── HERO STRIP ───────────────────────────────────── */
+        .page-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+            padding: 32px 24px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .page-hero h1 {
+            font-family: var(--font-h);
+            font-size: clamp(26px, 4.5vw, 44px);
+            font-weight: 800;
+            color: white;
+            letter-spacing: -.01em;
+            text-transform: uppercase;
+            line-height: 1.05;
+            position: relative;
+            z-index: 1;
+        }
+        .page-hero h1 em {
+            color: var(--gold);
+            font-style: normal;
+        }
+        .page-hero p {
+            color: rgba(255,255,255,.72);
+            font-size: 15px;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: rgba(255,255,255,.8);
+            font-weight: 500;
+        }
+        .hero-trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+        /* ── 3-COL LAYOUT ─────────────────────────────────── */
+        .quote-wrap {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 24px 16px 80px;
+            display: grid;
+            grid-template-columns: 230px 1fr 310px;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* ── LEFT PANEL ───────────────────────────────────── */
+        .left-panel {
+            position: sticky;
+            top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* ZIP card */
+        .zip-card {
+            background: var(--navy);
+            border-radius: var(--radius);
+            padding: 18px;
+        }
+        .panel-micro-label {
+            font-family: var(--font-h);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .zip-card .panel-micro-label { color: rgba(255,255,255,.5); }
+        .zip-field {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,.1);
+            border: 1.5px solid rgba(255,255,255,.18);
+            border-radius: 6px;
+            padding: 0 10px;
+            gap: 8px;
+            transition: border-color .2s;
+        }
+        .zip-field:focus-within { border-color: var(--gold); }
+        .zip-field svg { color: rgba(255,255,255,.45); flex-shrink: 0; }
+        .zip-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: var(--font-h);
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: .06em;
+            padding: 9px 0;
+            width: 100%;
+        }
+        .zip-input::placeholder { color: rgba(255,255,255,.3); }
+        .zip-status {
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 7px;
+            min-height: 16px;
+            padding-left: 2px;
+        }
+        .zip-status.ok  { color: #81C784; }
+        .zip-status.err { color: #EF9A9A; }
+
+        /* Phone card */
+        .phone-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .phone-card .panel-micro-label { color: var(--gray-400); }
+        .phone-link {
+            font-family: var(--font-h);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--blue);
+            text-decoration: none;
+            letter-spacing: .02em;
+            display: block;
+            transition: color .15s;
+        }
+        .phone-link:hover { color: var(--gold-dk); }
+        .phone-hours { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
+
+        /* Promo card */
+        .promo-card {
+            background: linear-gradient(140deg, var(--orange) 0%, var(--orange-lt) 100%);
+            border-radius: var(--radius);
+            padding: 18px;
+            color: white;
+        }
+        .promo-badge {
+            display: inline-block;
+            background: rgba(255,255,255,.2);
+            font-family: var(--font-h);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .promo-card h3 {
+            font-family: var(--font-h);
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 7px;
+        }
+        .promo-card p { font-size: 12px; opacity: .85; line-height: 1.55; margin-bottom: 14px; }
+        .promo-card-btn {
+            width: 100%;
+            background: white;
+            color: var(--orange);
+            border: none;
+            border-radius: 5px;
+            padding: 9px;
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .15s;
+        }
+        .promo-card-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+        .promo-fine { font-size: 10px; opacity: .6; margin-top: 8px; }
+
+        /* ── CENTER PANEL ─────────────────────────────────── */
+        .center-panel { display: flex; flex-direction: column; gap: 12px; }
+
+        .panel-intro {
+            background: white;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 13px 18px;
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+            box-shadow: var(--shadow-sm);
+        }
+        .panel-intro strong { color: var(--gray-800); }
+
+        /* Category accordion */
+        .category {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+        .cat-header {
+            background: var(--navy);
+            padding: 13px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: background .18s;
+        }
+        .cat-header:hover  { background: #0d2e80; }
+        .cat-header.is-open { background: var(--blue); }
+        .cat-header-left { display: flex; align-items: center; gap: 10px; }
+        .cat-label {
+            font-family: var(--font-h);
+            font-size: 15px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+        }
+        .cat-info {
+            width: 17px; height: 17px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.18);
+            color: rgba(255,255,255,.9);
+            border: none;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: default;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: serif;
+            font-style: italic;
+        }
+        .cat-badge {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold);
+            background: rgba(255,179,0,.15);
+            border: 1px solid rgba(255,179,0,.3);
+            border-radius: 3px;
+            padding: 2px 7px;
+            display: none;
+        }
+        .cat-badge.show { display: block; }
+        .cat-chevron {
+            color: rgba(255,255,255,.65);
+            font-size: 20px;
+            line-height: 1;
+            transition: transform .3s cubic-bezier(.4,0,.2,1);
+        }
+        .cat-header.is-open .cat-chevron { transform: rotate(180deg); }
+
+        .cat-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s cubic-bezier(.4,0,.2,1);
+        }
+        .cat-body.is-open { max-height: 1400px; }
+        .cat-inner { padding: 20px 18px 16px; }
+
+        /* Service table */
+        .svc-table { width: 100%; border-collapse: collapse; }
+        .svc-table th {
+            font-family: var(--font-h);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            padding: 0 6px 12px;
+            text-align: center;
+        }
+        .svc-table th.col-item { text-align: left; padding-left: 0; }
+        .svc-table td {
+            padding: 7px 6px;
+            vertical-align: middle;
+            border-top: 1px solid var(--gray-100);
+        }
+        .svc-table td.col-item { padding-left: 0; }
+        .svc-table tr:first-child td { border-top: none; }
+
+        .item-name { font-size: 14px; font-weight: 600; color: var(--gray-800); line-height: 1.3; }
+        .item-from { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+
+        /* Tier header */
+        .th-inner { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+        .th-tier-name { font-size: 11px; font-weight: 700; letter-spacing: .1em; }
+        .th-hint {
+            font-family: var(--font-b);
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--gray-400);
+        }
+        .th-info {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 13px; height: 13px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            color: var(--gray-600);
+            font-size: 8px;
+            font-family: serif;
+            font-style: italic;
+            cursor: help;
+            position: relative;
+            margin-left: 2px;
+        }
+        .th-info::after {
+            content: attr(data-tip);
+            position: absolute;
+            bottom: calc(100% + 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gray-800);
+            color: white;
+            font-family: var(--font-b);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0;
+            text-transform: none;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .18s;
+            z-index: 50;
+        }
+        .th-info:hover::after { opacity: 1; }
+
+        /* Stepper */
+        .stepper {
+            display: inline-flex;
+            align-items: center;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 6px;
+            overflow: hidden;
+            width: 90px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .stepper.active {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 2px rgba(21,101,192,.12);
+        }
+        .step-btn {
+            width: 28px;
+            height: 34px;
+            background: var(--gray-50);
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background .12s, color .12s;
+            line-height: 1;
+        }
+        .step-btn:hover { background: var(--gray-200); color: var(--gray-800); }
+        .step-btn.inc:hover { background: var(--blue); color: white; }
+        .step-val {
+            flex: 1;
+            text-align: center;
+            font-family: var(--font-h);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--gray-800);
+            background: white;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid var(--gray-200);
+            border-right: 1px solid var(--gray-200);
+            min-width: 0;
+            user-select: none;
+        }
+        .stepper.active .step-val { color: var(--blue); }
+
+        .table-footer {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .table-note-text { font-size: 11px; color: var(--gray-400); line-height: 1.4; }
+        .tc-link { font-size: 11px; color: var(--blue); text-decoration: none; font-weight: 500; white-space: nowrap; }
+        .tc-link:hover { text-decoration: underline; }
+
+        /* Center promo row */
+        .center-promo {
+            background: white;
+            border-radius: var(--radius);
+            padding: 15px 18px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .center-promo-label {
+            font-family: var(--font-h);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .promo-input-field {
+            flex: 1;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            color: var(--gray-800);
+            outline: none;
+            transition: border-color .18s;
+        }
+        .promo-input-field::placeholder { text-transform: none; font-weight: 400; letter-spacing: 0; color: var(--gray-400); }
+        .promo-input-field:focus { border-color: var(--blue); }
+        .promo-apply-btn {
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background .15s;
+            white-space: nowrap;
+        }
+        .promo-apply-btn:hover { background: var(--blue); }
+        .promo-msg {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 6px;
+            padding: 0 18px 14px;
+        }
+        .promo-msg.ok  { color: var(--green); }
+        .promo-msg.err { color: var(--red); }
+
+        /* ── RIGHT PANEL ──────────────────────────────────── */
+        .right-panel { position: sticky; top: 80px; }
+
+        .quote-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .quote-card-header {
+            background: var(--navy);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quote-title {
+            font-family: var(--font-h);
+            font-size: 17px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .clear-btn {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,.55);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-b);
+            text-decoration: underline;
+            transition: color .15s;
+        }
+        .clear-btn:hover { color: var(--gold); }
+
+        .quote-body { padding: 16px 16px 0; }
+
+        /* Empty state */
+        .q-empty { text-align: center; padding: 36px 16px 28px; }
+        .q-empty-icon { font-size: 42px; margin-bottom: 10px; }
+        .q-empty p { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+
+        /* Line items */
+        .q-items { display: none; flex-direction: column; }
+        .q-cat-label {
+            font-family: var(--font-h);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        .q-cat-label:first-child { margin-top: 0; }
+        .q-line {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 4px 0;
+        }
+        .q-line-name {
+            flex: 1;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-800);
+            line-height: 1.35;
+        }
+        .q-line-price {
+            font-family: var(--font-h);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gray-800);
+            white-space: nowrap;
+        }
+
+        /* Totals */
+        .q-totals { display: none; }
+        .q-divider { height: 1px; background: var(--gray-100); margin: 12px 0; }
+
+        .q-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3px 0;
+        }
+        .q-row-label { font-size: 13px; color: var(--gray-600); font-weight: 500; }
+        .q-row-val { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: var(--gray-600); }
+        .q-row.promo .q-row-label { color: var(--green); font-weight: 600; }
+        .q-row.promo .q-row-val   { color: var(--green); }
+        .q-row.mod   .q-row-val   { color: var(--orange); }
+
+        .q-total-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--gray-50);
+            border-radius: 6px;
+            padding: 12px 14px;
+            margin-top: 8px;
+        }
+        .q-total-label {
+            font-family: var(--font-h);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--gray-800);
+        }
+        .q-total-val {
+            font-family: var(--font-h);
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--blue);
+            letter-spacing: -.01em;
+        }
+
+        /* Right-panel promo */
+        .q-promo-row {
+            display: none;
+            gap: 6px;
+            padding: 12px 0 6px;
+        }
+        .q-promo-input {
+            flex: 1;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 5px;
+            padding: 7px 10px;
+            font-family: var(--font-h);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--gray-800);
+            outline: none;
+            transition: border-color .18s;
+        }
+        .q-promo-input::placeholder { text-transform: none; font-weight: 400; letter-spacing: 0; color: var(--gray-400); }
+        .q-promo-input:focus { border-color: var(--blue); }
+        .q-promo-btn {
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 7px 12px;
+            font-family: var(--font-h);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            cursor: pointer;
+            transition: background .15s;
+        }
+        .q-promo-btn:hover { background: var(--blue); }
+        .q-promo-status { font-size: 11px; font-weight: 600; min-height: 16px; }
+        .q-promo-status.ok  { color: var(--green); }
+        .q-promo-status.err { color: var(--red); }
+
+        /* Modifiers */
+        .mod-section {
+            display: none;
+            border: 1.5px solid var(--gray-200);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+        .mod-header {
+            padding: 10px 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-600);
+            user-select: none;
+            transition: background .12s;
+        }
+        .mod-header:hover { background: var(--gray-50); }
+        .mod-chevron { font-size: 12px; transition: transform .25s; }
+        .mod-header.is-open .mod-chevron { transform: rotate(180deg); }
+        .mod-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+        .mod-body.is-open { max-height: 200px; }
+        .mod-inner { padding: 10px 13px; border-top: 1px solid var(--gray-100); }
+        .mod-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 5px 0;
+        }
+        .mod-item input[type="checkbox"] {
+            margin-top: 2px;
+            accent-color: var(--blue);
+            width: 14px; height: 14px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .mod-item label { font-size: 12px; color: var(--gray-600); line-height: 1.4; cursor: pointer; }
+        .mod-item label strong { color: var(--gray-800); }
+
+        /* CTA */
+        .q-cta-wrap { display: none; padding: 14px 0 16px; }
+        .q-cta {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, #FFA000 100%);
+            color: var(--navy);
+            border: none;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: var(--font-h);
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(255,179,0,.3);
+            transition: transform .15s, box-shadow .15s;
+        }
+        .q-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,179,0,.42);
+        }
+        .q-cta:active { transform: translateY(0); }
+        .q-cta-note { text-align: center; font-size: 11px; color: var(--gray-400); margin-top: 8px; }
+
+        /* Number flip */
+        @keyframes numUp {
+            from { transform: translateY(-5px); opacity: .4; }
+            to   { transform: translateY(0);    opacity: 1;  }
+        }
+        .num-flip { animation: numUp .22s cubic-bezier(.22,1,.36,1); }
+
+        /* ── RESPONSIVE ───────────────────────────────────── */
+        @media (max-width: 960px) {
+            .quote-wrap {
+                grid-template-columns: 1fr;
+                padding-top: 16px;
+            }
+            .left-panel, .right-panel { position: static; }
+            .right-panel { order: -1; }
+        }
+        @media (max-width: 560px) {
+            .svc-table th:nth-child(4),
+            .svc-table td:nth-child(4) { display: none; }
+        }
+        @media (max-width: 420px) {
+            .svc-table th:nth-child(3),
+            .svc-table td:nth-child(3) { display: none; }
+        }
+
+        /* Prevent orphaned footer */
+        footer {
+            background: var(--navy);
+            padding: 24px;
+            text-align: center;
+        }
+        footer p { color: rgba(255,255,255,.45); font-size: 13px; }
+        footer a { color: rgba(255,255,255,.45); }
+        footer a:hover { color: rgba(255,255,255,.7); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <a href="/" class="nav-logo">
+        <img src="/brand_assets/KC Clean Carpet Logo.webp" alt="KC Clean Carpet">
+    </a>
+    <div class="nav-links">
+        <a href="/carpet-cleaning">Services</a>
+        <a href="/about">About</a>
+        <a href="tel:8167151130" class="nav-phone-link">(816) 715-1130</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+    <h1>Get Your <em>Exact Price</em> in 60 Seconds</h1>
+    <p>Select your services — your quote builds instantly. No commitment required.</p>
+    <div class="hero-trust">
+        <div class="hero-trust-item">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            5-Star Rated
+        </div>
+        <div class="hero-trust-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            100% Satisfaction Guarantee
+        </div>
+        <div class="hero-trust-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Licensed &amp; Insured
+        </div>
+        <div class="hero-trust-item">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Same-Week Availability
+        </div>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="quote-wrap">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+        <div class="zip-card">
+            <div class="panel-micro-label">Your ZIP Code</div>
+            <div class="zip-field">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <input type="text" class="zip-input" id="zipInput" maxlength="5" placeholder="64101" inputmode="numeric" autocomplete="postal-code">
+            </div>
+            <div class="zip-status" id="zipStatus"></div>
+        </div>
+
+        <div class="phone-card">
+            <div class="panel-micro-label" style="color:var(--gray-400);">Questions? Call Us</div>
+            <a href="tel:8167151130" class="phone-link">(816) 715-1130</a>
+            <div class="phone-hours">Mon–Sat &nbsp;8am – 8pm</div>
+        </div>
+
+        <div class="promo-card">
+            <div class="promo-badge">Limited Offer</div>
+            <h3>First Room Free with Any 3-Room Clean</h3>
+            <p>Book online today and save. New customers only. Cannot be combined with other offers.</p>
+            <button class="promo-card-btn" onclick="applyCardPromo()">APPLY OFFER</button>
+            <p class="promo-fine">*Offer valid for standard rooms only. See terms.</p>
+        </div>
+
+    </div>
+
+    <!-- CENTER PANEL -->
+    <div class="center-panel">
+
+        <div class="panel-intro">
+            <strong>Build your quote below.</strong> Select the rooms or items you need cleaned — your estimated total updates in the panel on the right. Add any combination of services, then book when you're ready.
+        </div>
+
+        <!-- CARPET CLEANING -->
+        <div class="category" id="cat-carpet">
+            <div class="cat-header is-open" id="hdr-carpet" onclick="toggleCat('carpet')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Carpet Cleaning</span>
+                    <span class="cat-info" title="Hot water extraction removes deep-set dirt, allergens, and bacteria.">i</span>
+                    <span class="cat-badge" id="badge-carpet"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body is-open" id="body-carpet">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead>
+                            <tr>
+                                <th class="col-item"></th>
+                                <th>
+                                    <div class="th-inner">
+                                        <span class="th-tier-name">CLEAN <span class="th-info" data-tip="Hot water extraction — removes dirt & allergens">i</span></span>
+                                        <span class="th-hint">from $35</span>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="th-inner">
+                                        <span class="th-tier-name">PROTECT <span class="th-info" data-tip="Scotchgard™ — repels future stains & spills">i</span></span>
+                                        <span class="th-hint">+$20/room</span>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="th-inner">
+                                        <span class="th-tier-name">DEODORIZE <span class="th-info" data-tip="Enzyme deodorizer — eliminates pet odors at the source">i</span></span>
+                                        <span class="th-hint">+$15/room</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows-carpet"></tbody>
+                    </table>
+                    <div class="table-footer">
+                        <span class="table-note-text">Standard room up to 300 sq ft. Larger rooms may vary.</span>
+                        <a href="#" class="tc-link">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPHOLSTERY -->
+        <div class="category" id="cat-upholstery">
+            <div class="cat-header" id="hdr-upholstery" onclick="toggleCat('upholstery')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Upholstery Cleaning</span>
+                    <span class="cat-info" title="Deep cleans sofas, chairs, and fabric furniture.">i</span>
+                    <span class="cat-badge" id="badge-upholstery"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-upholstery">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead>
+                            <tr>
+                                <th class="col-item"></th>
+                                <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                                <th><div class="th-inner"><span class="th-tier-name">PROTECT <span class="th-info" data-tip="Fabric guard protects against future stains">i</span></span><span class="th-hint">+$20/piece</span></div></th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows-upholstery"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HARDWOOD -->
+        <div class="category" id="cat-hardwood">
+            <div class="cat-header" id="hdr-hardwood" onclick="toggleCat('hardwood')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Hardwood Cleaning</span>
+                    <span class="cat-info" title="Professional hardwood cleaning and conditioning — restores natural luster.">i</span>
+                    <span class="cat-badge" id="badge-hardwood"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-hardwood">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead>
+                            <tr>
+                                <th class="col-item"></th>
+                                <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows-hardwood"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TILE & GROUT -->
+        <div class="category" id="cat-tile">
+            <div class="cat-header" id="hdr-tile" onclick="toggleCat('tile')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Tile &amp; Grout Cleaning</span>
+                    <span class="cat-info" title="High-pressure tile cleaning restores grout to near-original color.">i</span>
+                    <span class="cat-badge" id="badge-tile"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-tile">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead>
+                            <tr>
+                                <th class="col-item"></th>
+                                <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows-tile"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- AREA RUGS -->
+        <div class="category" id="cat-rugs">
+            <div class="cat-header" id="hdr-rugs" onclick="toggleCat('rugs')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Area Rug Cleaning</span>
+                    <span class="cat-info" title="In-home area rug cleaning for all rug types.">i</span>
+                    <span class="cat-badge" id="badge-rugs"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-rugs">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead>
+                            <tr>
+                                <th class="col-item"></th>
+                                <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows-rugs"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER PROMO ROW -->
+        <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden;">
+            <div class="center-promo">
+                <span class="center-promo-label">Promo Code</span>
+                <input type="text" class="promo-input-field" id="centerPromoInput" placeholder="Enter code (try KCSAVE10)" maxlength="20">
+                <button class="promo-apply-btn" onclick="applyPromoFromCenter()">APPLY</button>
+            </div>
+            <div class="promo-msg" id="centerPromoMsg" style="display:none;"></div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+        <div class="quote-card">
+            <div class="quote-card-header">
+                <span class="quote-title">Your Quote</span>
+                <button class="clear-btn" onclick="clearAll()">Clear All</button>
+            </div>
+            <div class="quote-body">
+
+                <!-- Empty -->
+                <div class="q-empty" id="qEmpty">
+                    <div class="q-empty-icon">🧹</div>
+                    <p>Select services on the left to build your instant quote.</p>
+                </div>
+
+                <!-- Items -->
+                <div class="q-items" id="qItems"></div>
+
+                <!-- Totals -->
+                <div class="q-totals" id="qTotals">
+                    <div class="q-divider"></div>
+                    <div class="q-row promo" id="qPromoRow" style="display:none;">
+                        <span class="q-row-label">✓ Promo applied</span>
+                        <span class="q-row-val" id="qPromoAmt"></span>
+                    </div>
+                    <div class="q-row" id="qSubRow">
+                        <span class="q-row-label">Subtotal</span>
+                        <span class="q-row-val" id="qSub">$0</span>
+                    </div>
+                    <div class="q-row mod" id="qModRow" style="display:none;">
+                        <span class="q-row-label" id="qModLabel">Access Fee</span>
+                        <span class="q-row-val" id="qModAmt"></span>
+                    </div>
+                    <div class="q-total-block">
+                        <span class="q-total-label">Est. Total</span>
+                        <span class="q-total-val" id="qTotal">$0</span>
+                    </div>
+                </div>
+
+                <!-- Promo input in quote panel -->
+                <div class="q-promo-row" id="qPromoRow2" style="display:flex;">
+                    <input type="text" class="q-promo-input" id="qPromoInput" placeholder="Promo code" maxlength="20">
+                    <button class="q-promo-btn" onclick="applyPromo()">APPLY</button>
+                </div>
+                <div class="q-promo-status" id="qPromoStatus"></div>
+
+                <!-- Access modifiers -->
+                <div class="mod-section" id="modSection">
+                    <div class="mod-header" id="modHdr" onclick="toggleMod()">
+                        <span>Access &amp; Parking Conditions</span>
+                        <span class="mod-chevron">&#8964;</span>
+                    </div>
+                    <div class="mod-body" id="modBody">
+                        <div class="mod-inner">
+                            <div class="mod-item">
+                                <input type="checkbox" id="mod1" onchange="refreshModifiers()">
+                                <label for="mod1"><strong>No parking nearby</strong><br>Limited street or lot access (+$15)</label>
+                            </div>
+                            <div class="mod-item">
+                                <input type="checkbox" id="mod2" onchange="refreshModifiers()">
+                                <label for="mod2"><strong>3rd floor or higher</strong><br>Elevator or stair carry required (+$25)</label>
+                            </div>
+                            <div class="mod-item">
+                                <input type="checkbox" id="mod3" onchange="refreshModifiers()">
+                                <label for="mod3"><strong>Guaranteed parking available</strong><br>No additional charge</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="q-cta-wrap" id="qCtaWrap" style="padding:0 16px 16px;">
+                <a href="/schedule" class="q-cta">Book This Appointment →</a>
+                <p class="q-cta-note">No credit card required &nbsp;·&nbsp; Confirmation within 1 hour</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 KC Clean Carpet. All rights reserved. &nbsp;|&nbsp; <a href="/privacy-policy">Privacy Policy</a></p>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// SERVICE DATA
+// ─────────────────────────────────────────────────────────────
+const SERVICES = {
+    carpet: {
+        label: 'Carpet Cleaning',
+        tiers: ['clean','protect','deodorize'],
+        tierLabels: { clean:'Clean', protect:'Protect', deodorize:'Deodorize' },
+        items: [
+            { id:'room',  label:'Room',           note:'up to 300 sq ft', prices:{ clean:59, protect:79, deodorize:74 } },
+            { id:'bath',  label:'Bath / Laundry', note:'standard size',   prices:{ clean:39, protect:59, deodorize:54 } },
+            { id:'hall',  label:'Entry or Hall',  note:'up to 100 sq ft', prices:{ clean:35, protect:55, deodorize:50 } },
+            { id:'stair', label:'Staircase',      note:'per flight',      prices:{ clean:49, protect:69, deodorize:64 } },
+        ]
+    },
+    upholstery: {
+        label: 'Upholstery Cleaning',
+        tiers: ['clean','protect'],
+        tierLabels: { clean:'Clean', protect:'Protect' },
+        items: [
+            { id:'sofa',     label:'Sofa (3-cushion)',  prices:{ clean:89, protect:109 } },
+            { id:'loveseat', label:'Loveseat',          prices:{ clean:69, protect:89  } },
+            { id:'chair',    label:'Chair / Recliner',  prices:{ clean:49, protect:69  } },
+            { id:'ottoman',  label:'Ottoman',           prices:{ clean:29, protect:44  } },
+        ]
+    },
+    hardwood: {
+        label: 'Hardwood Cleaning',
+        tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'hw-room', label:'Room',    note:'per room', prices:{ clean:69 } },
+            { id:'hw-hall', label:'Hallway', note:'per hall', prices:{ clean:45 } },
+        ]
+    },
+    tile: {
+        label: 'Tile & Grout Cleaning',
+        tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'tile-room', label:'Room',     note:'per room', prices:{ clean:79 } },
+            { id:'tile-bath', label:'Bathroom', note:'per bath', prices:{ clean:59 } },
+        ]
+    },
+    rugs: {
+        label: 'Area Rug Cleaning',
+        tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'rug-sm', label:'Small Rug (up to 5×8)',   prices:{ clean:49  } },
+            { id:'rug-md', label:'Medium Rug (up to 8×10)', prices:{ clean:79  } },
+            { id:'rug-lg', label:'Large Rug (9×12+)',        prices:{ clean:109 } },
+        ]
+    }
+};
+
+const PROMOS = {
+    'KCSAVE10':  { type:'pct',  val:0.10, label:'10% off applied' },
+    'KCHERO':    { type:'flat', val:25,   label:'$25 off applied' },
+    'FIRSTROOM': { type:'flat', val:59,   label:'1st room free applied' },
+};
+
+const KC_ZIPS = new Set([
+    '64101','64102','64103','64104','64105','64106','64108','64109','64110','64111','64112','64113','64114','64116','64117','64118','64119','64120','64123','64124','64125','64126','64127','64128','64129','64130','64131','64132','64133','64134','64136','64137','64138','64139','64145','64146','64147','64149','64150','64151','64152','64153','64154','64155','64156','64157','64158','64163','64164','64165','64166','64167','64168',
+    '66061','66062','66063','66202','66203','66204','66205','66206','66207','66208','66209','66210','66211','66212','66213','66214','66215','66216','66217','66218','66219','66220','66221','66223','66224','66225','66226','66227','66251',
+    '64063','64064','64065','64068','64050','64051','64052','64053','64054','64055','64056','64057','64058','64014','64015','64029','64030'
+]);
+
+// ─────────────────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────────────────
+const qty = {};
+let activePromo  = null;
+let modifierCost = 0;
+let animRaf      = null;
+let displayedTotal = 0;
+
+for (const [cat, data] of Object.entries(SERVICES)) {
+    qty[cat] = {};
+    for (const item of data.items) {
+        qty[cat][item.id] = {};
+        for (const tier of data.tiers) qty[cat][item.id][tier] = 0;
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// BUILD TABLES
+// ─────────────────────────────────────────────────────────────
+function buildTables() {
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        const tbody = document.getElementById(`rows-${cat}`);
+        if (!tbody) continue;
+        for (const item of data.items) {
+            const tr = document.createElement('tr');
+            const tdItem = document.createElement('td');
+            tdItem.className = 'col-item';
+            tdItem.innerHTML = `<div class="item-name">${item.label}</div><div class="item-from">from $${item.prices[data.tiers[0]]}</div>`;
+            tr.appendChild(tdItem);
+            for (const tier of data.tiers) {
+                const td = document.createElement('td');
+                td.innerHTML = `
+                    <div class="stepper" id="sp-${cat}-${item.id}-${tier}">
+                        <button class="step-btn dec" onclick="step('${cat}','${item.id}','${tier}',-1)" aria-label="Decrease">&#8722;</button>
+                        <span class="step-val" id="sv-${cat}-${item.id}-${tier}">0</span>
+                        <button class="step-btn inc" onclick="step('${cat}','${item.id}','${tier}',1)"  aria-label="Increase">&#43;</button>
+                    </div>`;
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// STEPPER
+// ─────────────────────────────────────────────────────────────
+function step(cat, itemId, tier, delta) {
+    const cur  = qty[cat][itemId][tier];
+    const next = Math.max(0, Math.min(10, cur + delta));
+    if (next === cur) return;
+    qty[cat][itemId][tier] = next;
+    const val = document.getElementById(`sv-${cat}-${itemId}-${tier}`);
+    val.textContent = next;
+    const sp = document.getElementById(`sp-${cat}-${itemId}-${tier}`);
+    sp.classList.toggle('active', next > 0);
+    updateBadge(cat);
+    renderQuote();
+}
+
+function updateBadge(cat) {
+    let total = 0;
+    for (const item of SERVICES[cat].items)
+        for (const tier of SERVICES[cat].tiers)
+            total += qty[cat][item.id][tier];
+    const b = document.getElementById(`badge-${cat}`);
+    if (total > 0) { b.textContent = total; b.classList.add('show'); }
+    else           { b.classList.remove('show'); }
+}
+
+// ─────────────────────────────────────────────────────────────
+// ACCORDION
+// ─────────────────────────────────────────────────────────────
+function toggleCat(cat) {
+    const hdr  = document.getElementById(`hdr-${cat}`);
+    const body = document.getElementById(`body-${cat}`);
+    hdr.classList.toggle('is-open');
+    body.classList.toggle('is-open');
+}
+
+function toggleMod() {
+    document.getElementById('modHdr').classList.toggle('is-open');
+    document.getElementById('modBody').classList.toggle('is-open');
+}
+
+// ─────────────────────────────────────────────────────────────
+// MODIFIERS
+// ─────────────────────────────────────────────────────────────
+function refreshModifiers() {
+    modifierCost = 0;
+    const labels = [];
+    if (document.getElementById('mod1').checked) { modifierCost += 15; labels.push('No Parking (+$15)'); }
+    if (document.getElementById('mod2').checked) { modifierCost += 25; labels.push('3rd Floor (+$25)'); }
+    const row = document.getElementById('qModRow');
+    if (modifierCost > 0) {
+        row.style.display = '';
+        document.getElementById('qModLabel').textContent = labels.join(' + ');
+        document.getElementById('qModAmt').textContent   = `+$${modifierCost}`;
+    } else {
+        row.style.display = 'none';
+    }
+    renderQuote();
+}
+
+// ─────────────────────────────────────────────────────────────
+// PROMO
+// ─────────────────────────────────────────────────────────────
+function applyPromo() {
+    const code = (document.getElementById('qPromoInput').value || '').trim().toUpperCase();
+    _applyCode(code, document.getElementById('qPromoStatus'), 'cls');
+}
+
+function applyPromoFromCenter() {
+    const code = (document.getElementById('centerPromoInput').value || '').trim().toUpperCase();
+    const msg  = document.getElementById('centerPromoMsg');
+    _applyCode(code, msg, '');
+    msg.style.display = '';
+}
+
+function applyCardPromo() {
+    activePromo = 'FIRSTROOM';
+    document.getElementById('qPromoInput').value      = 'FIRSTROOM';
+    document.getElementById('centerPromoInput').value = 'FIRSTROOM';
+    const el = document.getElementById('qPromoStatus');
+    el.textContent  = '✓ Offer applied — 1st room free!';
+    el.className    = 'q-promo-status ok';
+    renderQuote();
+}
+
+function _applyCode(code, statusEl, className) {
+    if (!code) {
+        statusEl.textContent = 'Enter a promo code first.';
+        statusEl.className   = `${className} q-promo-status err`.trim();
+        return;
+    }
+    if (PROMOS[code]) {
+        activePromo = code;
+        statusEl.textContent = `✓ ${PROMOS[code].label}!`;
+        statusEl.className   = `${className} q-promo-status ok`.trim();
+        // Sync both inputs
+        document.getElementById('qPromoInput').value      = code;
+        document.getElementById('centerPromoInput').value = code;
+        renderQuote();
+    } else {
+        statusEl.textContent = 'Invalid code. Try KCSAVE10.';
+        statusEl.className   = `${className} q-promo-status err`.trim();
+    }
+}
+
+// ─────────────────────────────────────────────────────────────
+// CLEAR ALL
+// ─────────────────────────────────────────────────────────────
+function clearAll() {
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        for (const item of data.items) {
+            for (const tier of data.tiers) {
+                qty[cat][item.id][tier] = 0;
+                const v = document.getElementById(`sv-${cat}-${item.id}-${tier}`);
+                const s = document.getElementById(`sp-${cat}-${item.id}-${tier}`);
+                if (v) v.textContent = '0';
+                if (s) s.classList.remove('active');
+            }
+        }
+        updateBadge(cat);
+    }
+    activePromo  = null;
+    modifierCost = 0;
+    document.getElementById('qPromoInput').value      = '';
+    document.getElementById('centerPromoInput').value = '';
+    document.getElementById('qPromoStatus').textContent     = '';
+    document.getElementById('centerPromoMsg').style.display = 'none';
+    document.getElementById('mod1').checked = false;
+    document.getElementById('mod2').checked = false;
+    document.getElementById('mod3').checked = false;
+    document.getElementById('qModRow').style.display = 'none';
+    displayedTotal = 0;
+    renderQuote();
+}
+
+// ─────────────────────────────────────────────────────────────
+// RENDER QUOTE
+// ─────────────────────────────────────────────────────────────
+function renderQuote() {
+    let subtotal = 0;
+    const groups = [];
+
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        const lines = [];
+        for (const item of data.items) {
+            for (const tier of data.tiers) {
+                const n = qty[cat][item.id][tier];
+                if (n < 1) continue;
+                const price = item.prices[tier] * n;
+                subtotal += price;
+                lines.push({
+                    name:  n > 1 ? `${item.label} ×${n} (${data.tierLabels[tier]})` : `${item.label} (${data.tierLabels[tier]})`,
+                    price
+                });
+            }
+        }
+        if (lines.length) groups.push({ label: data.label, lines });
+    }
+
+    const hasItems = groups.length > 0;
+    document.getElementById('qEmpty').style.display    = hasItems ? 'none' : '';
+    document.getElementById('qItems').style.display    = hasItems ? 'flex' : 'none';
+    document.getElementById('qTotals').style.display   = hasItems ? '' : 'none';
+    document.getElementById('qPromoRow2').style.display = hasItems ? 'flex' : 'none';
+    document.getElementById('modSection').style.display = hasItems ? '' : 'none';
+    document.getElementById('qCtaWrap').style.display  = hasItems ? '' : 'none';
+
+    if (!hasItems) { animateTo(0); return; }
+
+    // Build line items
+    const container = document.getElementById('qItems');
+    container.innerHTML = '';
+    for (const g of groups) {
+        const lbl = document.createElement('div');
+        lbl.className   = 'q-cat-label';
+        lbl.textContent = g.label;
+        container.appendChild(lbl);
+        for (const l of g.lines) {
+            const row = document.createElement('div');
+            row.className = 'q-line';
+            row.innerHTML = `<span class="q-line-name">${l.name}</span><span class="q-line-price">$${l.price}</span>`;
+            container.appendChild(row);
+        }
+    }
+
+    // Promo discount
+    let discount = 0;
+    if (activePromo && PROMOS[activePromo]) {
+        const p = PROMOS[activePromo];
+        discount = p.type === 'pct' ? Math.round(subtotal * p.val) : Math.min(p.val, subtotal);
+        document.getElementById('qPromoRow').style.display = '';
+        document.getElementById('qPromoAmt').textContent   = `-$${discount}`;
+    } else {
+        document.getElementById('qPromoRow').style.display = 'none';
+    }
+
+    document.getElementById('qSub').textContent = `$${subtotal}`;
+    const total = Math.max(0, subtotal - discount + modifierCost);
+    animateTo(total);
+}
+
+// ─────────────────────────────────────────────────────────────
+// ANIMATED TOTAL
+// ─────────────────────────────────────────────────────────────
+function animateTo(target) {
+    if (animRaf) cancelAnimationFrame(animRaf);
+    const from     = displayedTotal;
+    const diff     = target - from;
+    const duration = 350;
+    const t0       = performance.now();
+
+    function tick(now) {
+        const p = Math.min((now - t0) / duration, 1);
+        const e = 1 - Math.pow(1 - p, 3); // cubic ease-out
+        const v = Math.round(from + diff * e);
+        document.getElementById('qTotal').textContent = `$${v}`;
+        if (p < 1) { animRaf = requestAnimationFrame(tick); }
+        else {
+            displayedTotal = target;
+            const el = document.getElementById('qTotal');
+            el.classList.remove('num-flip');
+            void el.offsetWidth;
+            el.classList.add('num-flip');
+        }
+    }
+    animRaf = requestAnimationFrame(tick);
+}
+
+// ─────────────────────────────────────────────────────────────
+// ZIP VALIDATION
+// ─────────────────────────────────────────────────────────────
+document.getElementById('zipInput').addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+    const st   = document.getElementById('zipStatus');
+    if (this.value.length === 5) {
+        if (KC_ZIPS.has(this.value)) {
+            st.textContent = '✓ We serve your area!';
+            st.className   = 'zip-status ok';
+        } else {
+            st.textContent = '✗ Outside our current service area. Call us to confirm.';
+            st.className   = 'zip-status err';
+        }
+    } else {
+        st.textContent = '';
+        st.className   = 'zip-status';
+    }
+});
+
+// ─────────────────────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────────────────────
+buildTables();
+</script>
+</body>
+</html>

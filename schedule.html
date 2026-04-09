@@ -892,53 +892,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- LEFT: FORM -->
     <div>
 
-        <!-- STEP 1 -->
-        <div id="step-1" class="form-card">
-            <div class="form-header">
-                <div class="step-progress">
-                    <div class="step-item active">
-                        <div class="step-num">1</div>
-                        <div class="step-text">
-                            <span class="step-label">Get Your Exact Price Texted to You</span>
-                            <span class="step-sub">Enter your info to get your exact itemized price by text.</span>
-                        </div>
-                        <span class="step-arrow">›</span>
-                    </div>
-                    <div class="step-divider"></div>
-                    <div class="step-item upcoming">
-                        <div class="step-num">2</div>
-                        <div class="step-text">
-                            <span class="step-label">Select Your Areas</span>
-                            <span class="step-sub">Tap the rooms to be cleaned—unlock your exact price, no surprises.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-progress-bar"></div>
-            </div>
-            <div class="form-body">
-                <form id="lead-form" novalidate>
-
-                    <div class="field-group">
-                        <label>First Name <span>*</span></label>
-                        <input type="text" id="fname" placeholder="" required>
-                    </div>
-
-                    <div class="field-group">
-                        <label>Phone Number <span>*</span></label>
-                        <input type="tel" id="phone" placeholder="" required>
-                    </div>
-
-                    <div id="form-error" style="display:none; background:#FFF3CD; border:1px solid #FFB300; color:#7a5000; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
-                        Please fill in all required fields (First Name and Phone).
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        Show My Price &rarr;
-                    </button>
-                    <p class="form-fine">&#128274; We'll text your quote for your records instantly. No spam, ever.</p>
-                </form>
-            </div>
-        </div>
+        <!-- MARKATE BOOKING WIDGET -->
+        <div id="markate-widget-booking"></div>
+        <script>(function() { function async() {var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+var u = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.markate.com/public/widget/booking/js';
+var t = Math.random()*10000000000000000;
+s.src = u + '?id=7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231&ref=' + encodeURIComponent(window.location.href) + '&t=' + t;
+var w = document.getElementById('markate-widget-booking'); w.parentNode.insertBefore(s, w);
+} if (window.attachEvent) { window.attachEvent('onload', async); } else { window.addEventListener('load', async, false); }
+})();</script>
 
     </div><!-- /left -->
 
@@ -1003,60 +965,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 
-<script>
-document.getElementById('lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    var fname    = document.getElementById('fname').value.trim();
-    var phone    = document.getElementById('phone').value.trim();
-    var errorBox = document.getElementById('form-error');
-    var submitBtn = document.querySelector('.submit-btn');
-
-    if (!fname || !phone) {
-        errorBox.style.display = 'block';
-        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-    }
-    errorBox.style.display = 'none';
-
-    // GTM event: form submission attempt
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'form_submission',
-        'form_name': 'book_appointment'
-    });
-
-    // Disable button while sending
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
-    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "leadStatus": "new",
-            "date": new Date().toISOString().slice(0, 19),
-            "firstname": fname,
-            "phone": phone
-        })
-    })
-    .then(function() {
-        // no-cors always resolves with opaque response — treat as success
-        submitBtn.textContent = 'Redirecting...';
-        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
-    })
-    .catch(function(err) {
-        var msg = err && err.message ? err.message : String(err);
-        errorBox.textContent = 'Error: ' + msg;
-        errorBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Show My Price →';
-        console.error('Form submission error:', err);
-    });
-});
-</script>
 
 <script>
 document.addEventListener('click', function(e) {

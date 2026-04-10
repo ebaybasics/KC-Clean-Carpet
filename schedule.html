@@ -735,7 +735,8 @@
         }
     
         @media (max-width: 768px) {
-            html, body { overflow-x: hidden; }
+            /* overflow-x on html/body breaks position:fixed — clip on main instead */
+            main { overflow-x: clip; }
         }
         @media (max-width: 420px) {
             .lp-header { padding: 8px 12px; }

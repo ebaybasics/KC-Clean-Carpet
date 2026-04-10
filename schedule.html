@@ -735,7 +735,9 @@
         }
     
         @media (max-width: 768px) {
-            html, body { overflow-x: hidden; }
+            /* overflow-x removed — it breaks position:fixed on mobile */
+            .mob-total-bar { display: flex; }
+            body { padding-bottom: 72px; }
         }
         @media (max-width: 420px) {
             .lp-header { padding: 8px 12px; }
@@ -1312,8 +1314,6 @@ function animateTo(target) {
         var v = Math.round(from + diff * e);
         var el = document.getElementById('qTotal');
         if (el) el.textContent = '$' + v;
-        var mob = document.getElementById('mobTotal');
-        if (mob) mob.textContent = '$' + v;
         if (p < 1) { animRaf = requestAnimationFrame(tick); }
         else {
             displayedTotal = target;
@@ -1326,15 +1326,8 @@ function animateTo(target) {
 
 // ── MOBILE BAR ───────────────────────────────────────────────
 function updateMobBar(total) {
-    var bar = document.getElementById('mobTotalBar');
-    if (!bar) return;
-    if (total > 0) {
-        bar.classList.add('show');
-        document.body.classList.add('mob-bar-open');
-    } else {
-        bar.classList.remove('show');
-        document.body.classList.remove('mob-bar-open');
-    }
+    var mob = document.getElementById('mobTotal');
+    if (mob) mob.textContent = '$' + total;
 }
 
 // ── INIT ─────────────────────────────────────────────────────

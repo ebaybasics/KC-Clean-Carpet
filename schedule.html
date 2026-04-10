@@ -18,7 +18,7 @@
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
@@ -64,7 +64,15 @@
             font-display: swap;
             src: url(fonts/roboto-400-latin.woff2) format('woff2');
         }
-        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
+        :root {
+            --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300;
+            --gray-50: #F7F7F5; --gray-100: #EEEEED; --gray-200: #DDDDD8; --gray-400: #9E9E96; --gray-600: #5C5C58; --gray-800: #28281F;
+            --green: #2E7D32; --red: #C62828; --orange: #E65100;
+            --shadow-sm: 0 1px 3px rgba(10,36,99,.07), 0 1px 2px rgba(10,36,99,.04);
+            --shadow-md: 0 4px 14px rgba(10,36,99,.10), 0 2px 4px rgba(10,36,99,.05);
+            --font-h: 'Barlow Condensed', sans-serif;
+            --font-b: 'DM Sans', sans-serif;
+        }
         *, *::before, *::after { box-sizing: border-box; }
         html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; background: #f5f7fb; }
         a { text-decoration: none; }
@@ -468,199 +476,134 @@
             margin: 0 auto;
             padding: 32px 32px 72px;
             display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 40px;
-            align-items: stretch;
+            grid-template-columns: 1fr 380px;
+            gap: 32px;
+            align-items: start;
         }
-        .sidebar { display: flex; flex-direction: column; gap: 20px; height: 100%; }
+        .sidebar { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 80px; }
 
-        /* ── FORM CARD ── */
-        .form-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 48px rgba(13,71,161,.13), 0 2px 8px rgba(13,71,161,.06);
-            overflow: hidden;
-            border: 1px solid rgba(13,71,161,.2);
+        /* ── QUOTE BUILDER ── */
+        .panel-intro {
+            background: white; border-left: 3px solid var(--kc-gold);
+            border-radius: 0 8px 8px 0; padding: 13px 18px;
+            font-size: 14px; color: var(--gray-600); line-height: 1.6;
+            box-shadow: var(--shadow-sm); margin-bottom: 12px;
         }
-        .form-header {
-            background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue-dark) 100%);
-            padding: 0;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
+        .panel-intro strong { color: var(--gray-800); }
+
+        .category { background: white; border-radius: 8px; box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 10px; }
+        .cat-header {
+            background: var(--kc-navy); padding: 13px 16px;
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; user-select: none; transition: background .18s;
         }
-        .form-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 120% at 0% 50%, rgba(255,179,0,.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        /* ── STEP PROGRESS BAR ── */
-        .step-progress {
-            display: flex;
-            align-items: stretch;
-            position: relative;
-        }
-        .step-item {
-            flex: 1;
-            padding: 22px 28px;
-            display: flex;
+        .cat-header:hover { background: #0d2e80; }
+        .cat-header.is-open { background: var(--kc-blue); }
+        .cat-header-left { display: flex; align-items: center; gap: 10px; }
+        .cat-label { font-family: var(--font-h); font-size: 15px; font-weight: 800; color: white; letter-spacing: .07em; text-transform: uppercase; }
+        .cat-info { width: 17px; height: 17px; border-radius: 50%; background: rgba(255,255,255,.18); color: rgba(255,255,255,.9); border: none; font-size: 10px; font-weight: 700; cursor: default; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: serif; font-style: italic; }
+        .cat-badge { font-family: var(--font-h); font-size: 11px; font-weight: 700; color: var(--kc-gold); background: rgba(255,179,0,.15); border: 1px solid rgba(255,179,0,.3); border-radius: 3px; padding: 2px 7px; display: none; }
+        .cat-badge.show { display: block; }
+        .cat-chevron { color: rgba(255,255,255,.65); font-size: 20px; line-height: 1; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+        .cat-header.is-open .cat-chevron { transform: rotate(180deg); }
+        .cat-body { max-height: 0; overflow: hidden; transition: max-height .4s cubic-bezier(.4,0,.2,1); }
+        .cat-body.is-open { max-height: 1400px; }
+        .cat-inner { padding: 18px 16px 14px; }
+
+        .svc-table { width: 100%; border-collapse: collapse; }
+        .svc-table th { font-family: var(--font-h); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-600); padding: 0 6px 10px; text-align: center; }
+        .svc-table th.col-item { text-align: left; padding-left: 0; }
+        .svc-table td { padding: 6px; vertical-align: middle; border-top: 1px solid var(--gray-100); }
+        .svc-table td.col-item { padding-left: 0; }
+        .svc-table tr:first-child td { border-top: none; }
+        .item-name { font-size: 13px; font-weight: 600; color: var(--gray-800); line-height: 1.3; }
+        .item-from { font-size: 11px; color: var(--gray-400); margin-top: 1px; }
+        .th-inner { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+        .th-tier-name { font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+        .th-hint { font-family: var(--font-b); font-size: 10px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--gray-400); }
+        .th-info { display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px; border-radius: 50%; background: var(--gray-200); color: var(--gray-600); font-size: 8px; font-family: serif; font-style: italic; cursor: help; position: relative; margin-left: 2px; }
+        .th-info::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: var(--gray-800); color: white; font-family: var(--font-b); font-size: 11px; font-weight: 400; letter-spacing: 0; text-transform: none; white-space: nowrap; padding: 5px 10px; border-radius: 4px; opacity: 0; pointer-events: none; transition: opacity .18s; z-index: 50; }
+        .th-info:hover::after { opacity: 1; }
+        .table-footer { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .table-note-text { font-size: 11px; color: var(--gray-400); line-height: 1.4; }
+        .tc-link { font-size: 11px; color: var(--kc-blue); text-decoration: none; font-weight: 500; white-space: nowrap; }
+        .tc-link:hover { text-decoration: underline; }
+
+        /* Stepper */
+        .stepper { display: inline-flex; align-items: center; border: 1.5px solid var(--gray-200); border-radius: 6px; overflow: hidden; width: 86px; transition: border-color .2s, box-shadow .2s; }
+        .stepper.active { border-color: var(--kc-blue); box-shadow: 0 0 0 2px rgba(21,101,192,.12); }
+        .step-btn { width: 27px; height: 32px; background: var(--gray-50); border: none; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--gray-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .12s, color .12s; line-height: 1; }
+        .step-btn:hover { background: var(--gray-200); color: var(--gray-800); }
+        .step-btn.inc:hover { background: var(--kc-blue); color: white; }
+        .step-val { flex: 1; text-align: center; font-family: var(--font-h); font-size: 17px; font-weight: 700; color: var(--gray-800); background: white; height: 32px; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); min-width: 0; user-select: none; }
+        .stepper.active .step-val { color: var(--kc-blue); }
+
+        /* ── QUOTE PANEL (right sidebar) ── */
+        .quote-card { background: white; border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; }
+        .quote-card-header { background: var(--kc-navy); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; }
+        .quote-title { font-family: var(--font-h); font-size: 17px; font-weight: 800; color: white; letter-spacing: .08em; text-transform: uppercase; }
+        .clear-btn { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.55); background: none; border: none; cursor: pointer; font-family: var(--font-b); text-decoration: underline; transition: color .15s; }
+        .clear-btn:hover { color: var(--kc-gold); }
+        .quote-body { padding: 16px; }
+        .q-empty { text-align: center; padding: 28px 12px 20px; }
+        .q-empty-icon { font-size: 36px; margin-bottom: 8px; }
+        .q-empty p { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
+        .q-items { display: none; flex-direction: column; }
+        .q-cat-label { font-family: var(--font-h); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-400); margin-top: 10px; margin-bottom: 4px; }
+        .q-cat-label:first-child { margin-top: 0; }
+        .q-line { display: flex; align-items: baseline; gap: 8px; padding: 3px 0; }
+        .q-line-name { flex: 1; font-size: 13px; font-weight: 500; color: var(--gray-800); line-height: 1.35; }
+        .q-line-price { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: var(--gray-800); white-space: nowrap; }
+        .q-totals { display: none; }
+        .q-divider { height: 1px; background: var(--gray-100); margin: 10px 0; }
+        .q-row { display: flex; align-items: center; justify-content: space-between; padding: 3px 0; }
+        .q-row-label { font-size: 13px; color: var(--gray-600); font-weight: 500; }
+        .q-row-val { font-family: var(--font-h); font-size: 15px; font-weight: 700; color: var(--gray-600); }
+        .q-row.promo .q-row-label, .q-row.promo .q-row-val { color: var(--green); }
+        .q-total-block { display: flex; align-items: center; justify-content: space-between; background: var(--gray-50); border-radius: 6px; padding: 12px 14px; margin-top: 8px; }
+        .q-total-label { font-family: var(--font-h); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gray-800); }
+        .q-total-val { font-family: var(--font-h); font-size: 30px; font-weight: 800; color: var(--kc-blue); letter-spacing: -.01em; }
+        .q-promo-row { display: none; gap: 6px; padding: 10px 0 4px; }
+        .q-promo-input { flex: 1; border: 1.5px solid var(--gray-200); border-radius: 5px; padding: 7px 10px; font-family: var(--font-h); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gray-800); outline: none; transition: border-color .18s; }
+        .q-promo-input::placeholder { text-transform: none; font-weight: 400; letter-spacing: 0; color: var(--gray-400); }
+        .q-promo-input:focus { border-color: var(--kc-blue); }
+        .q-promo-btn { background: var(--kc-navy); color: white; border: none; border-radius: 5px; padding: 7px 12px; font-family: var(--font-h); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; cursor: pointer; transition: background .15s; }
+        .q-promo-btn:hover { background: var(--kc-blue); }
+        .q-promo-status { font-size: 11px; font-weight: 600; min-height: 16px; }
+        .q-promo-status.ok { color: var(--green); }
+        .q-promo-status.err { color: var(--red); }
+        .q-cta-wrap { display: none; padding: 12px 16px 16px; }
+        .q-cta { display: block; width: 100%; background: linear-gradient(135deg, var(--kc-gold) 0%, #FFA000 100%); color: var(--kc-navy); border: none; border-radius: 6px; padding: 14px; font-family: var(--font-h); font-size: 17px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; text-align: center; text-decoration: none; box-shadow: 0 4px 16px rgba(255,179,0,.3); transition: transform .15s, box-shadow .15s; }
+        .q-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,179,0,.42); }
+        .q-cta-note { text-align: center; font-size: 11px; color: var(--gray-400); margin-top: 8px; }
+
+        /* Number animation */
+        @keyframes numUp { from { transform: translateY(-4px); opacity: .4; } to { transform: translateY(0); opacity: 1; } }
+        .num-flip { animation: numUp .22s cubic-bezier(.22,1,.36,1); }
+
+        /* ── MOBILE STICKY TOTAL BAR ── */
+        .mob-total-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            z-index: 500;
+            background: var(--kc-navy);
+            border-top: 2px solid rgba(255,179,0,.35);
+            padding: 10px 16px;
             align-items: center;
-            gap: 14px;
-            position: relative;
-            transition: background .2s;
+            justify-content: space-between;
+            gap: 10px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,.25);
         }
-        .step-item.active {
-            background: rgba(255,179,0,.1);
-        }
-        .step-item.upcoming {
-            opacity: .55;
-        }
-        .step-num {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-        .step-item.active .step-num {
-            background: var(--kc-gold);
-            color: var(--kc-navy);
-            box-shadow: 0 4px 14px rgba(255,179,0,.45);
-        }
-        .step-item.upcoming .step-num {
-            background: rgba(255,255,255,.15);
-            color: #fff;
-        }
-        .step-text { min-width: 0; }
-        .step-label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 13px;
-            letter-spacing: .03em;
-            color: #fff;
-            line-height: 1.2;
-            display: block;
-        }
-        .step-item.active .step-label { color: var(--kc-gold); }
-        .step-sub {
-            font-size: 11px;
-            color: rgba(255,255,255,.82);
-            font-family: 'Roboto', sans-serif;
-            margin-top: 3px;
-            display: block;
-        }
-        .step-divider {
-            width: 1px;
-            background: rgba(255,255,255,.1);
-            margin: 16px 0;
-            flex-shrink: 0;
-        }
-        .step-arrow {
-            position: absolute;
-            right: -1px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255,255,255,.2);
-            font-size: 18px;
-            z-index: 1;
-        }
-        /* gold progress line at bottom */
-        .step-progress-bar {
-            height: 3px;
-            background: rgba(255,255,255,.08);
-            position: relative;
-        }
-        .step-progress-bar::after {
-            content: '';
-            position: absolute;
-            left: 0; top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--kc-gold), rgba(255,179,0,.3));
-            border-radius: 0 2px 2px 0;
-        }
-        .form-body { padding: 36px; }
-
-        .field-group { margin-bottom: 22px; }
-        .field-group label { display: block; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #333; margin-bottom: 8px; }
-        .field-group label span { color: var(--kc-gold); }
-        .field-group input,
-        .field-group select,
-        .field-group textarea {
-            width: 100%;
-            padding: 15px 18px;
-            border: 2px solid #b8c4d9;
-            border-radius: 6px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            color: #1a1a2e;
-            background: #f8faff;
-            outline: none;
-            transition: border-color .2s, box-shadow .2s, background .2s;
-        }
-        .field-group input:focus,
-        .field-group select:focus,
-        .field-group textarea:focus {
-            border-color: var(--kc-blue);
-            box-shadow: 0 0 0 4px rgba(21,101,192,.1);
-            background: #fff;
-        }
-        .field-group textarea { resize: vertical; min-height: 110px; }
-        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-        .service-chips { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
-        .svc-category { background: #f8faff; border-radius: 8px; padding: 16px; border: 1px solid #e4e9f4; }
-        .svc-cat-label { font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--kc-blue); padding-bottom: 10px; border-bottom: 2px solid #e4e9f4; margin-bottom: 12px; display: block; }
-        .svc-cat-chips { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-        .chip { display: flex; align-items: center; gap: 9px; min-width: 160px; }
-        .chip input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--kc-blue); cursor: pointer; flex-shrink: 0; }
-        .chip label { font-size: 14px; color: #333; cursor: pointer; font-weight: 500; line-height: 1.3; }
-        .svc-divider { display: none; }
-        .chip-other { margin-top: 4px; padding: 10px 16px; background: #f0f4ff; border-radius: 6px; border: 1px dashed #c5d0ea; }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--kc-gold);
-            color: var(--kc-navy);
-            font-family: 'Montserrat',sans-serif;
-            font-weight: 900;
-            font-size: 17px;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-            padding: 20px 24px;
-            border: none;
-            cursor: pointer;
-            border-radius: 6px;
-            margin-top: 12px;
-            transition: background .2s, transform .15s, box-shadow .2s;
-            box-shadow: 0 6px 24px rgba(255,179,0,.4), 0 2px 8px rgba(255,179,0,.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .submit-btn::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .submit-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,160,0,.5); }
-        .submit-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(255,179,0,.3); }
-
-        .form-fine {
-            font-size: 11px;
-            color: #767676;
-            text-align: center;
-            margin-top: 14px;
-            line-height: 1.7;
-        }
+        .mob-total-bar.show { display: flex; }
+        .mob-bar-left { display: flex; flex-direction: column; }
+        .mob-bar-label { font-family: var(--font-h); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+        .mob-bar-val { font-family: var(--font-h); font-size: 26px; font-weight: 800; color: var(--kc-gold); line-height: 1; }
+        .mob-bar-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .mob-clear-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.8); border-radius: 6px; padding: 8px 14px; font-family: var(--font-h); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: background .15s; }
+        .mob-clear-btn:hover { background: rgba(255,255,255,.22); }
+        .mob-book-btn { background: linear-gradient(135deg, var(--kc-gold), #FFA000); color: var(--kc-navy); border: none; border-radius: 6px; padding: 9px 18px; font-family: var(--font-h); font-size: 14px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; cursor: pointer; box-shadow: 0 3px 10px rgba(255,179,0,.35); display: flex; align-items: center; }
+        @media (max-width: 768px) { body.mob-bar-open { padding-bottom: 72px; } }
 
 
         /* ── SIDEBAR ── */
@@ -778,17 +721,17 @@
             .lp-logo { height: 44px; }
             .lp-phone-btn { font-size: 15px; padding: 8px 16px; }
             .main-wrap { grid-template-columns: 1fr; padding: 16px 12px 48px; gap: 20px; }
-            .field-row { grid-template-columns: 1fr; gap: 0; }
-            .form-body { padding: 20px 16px; }
-            .form-header { padding: 16px 16px; }
             .page-band { padding: 8px 16px 12px; }
             .hero-scroll-wrap { margin: 0 0 6px; gap: 6px; }
             .hero-review-card { margin: 6px auto 0; }
             .page-band h1 { font-size: clamp(18px, 6vw, 28px); margin-bottom: 12px; }
-            .band-carousel { max-width: 100%; }
-            .review-card { padding: 14px 16px 12px; }
-            .review-card p { font-size: 12px; margin-bottom: 10px; }
-            .carousel-dots { margin-top: 10px; }
+            /* On mobile, move sidebar below the builder and hide the quote card (sticky bar covers it) */
+            .sidebar { position: static; order: 2; }
+            .quote-card { display: none; }
+            /* Show stepper tables compactly — hide Deodorize column on small screens */
+        }
+        @media (max-width: 520px) {
+            .svc-table th:nth-child(4), .svc-table td:nth-child(4) { display: none; }
         }
     
         @media (max-width: 768px) {
@@ -889,16 +832,177 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="main-wrap">
 
-    <!-- LEFT: FORM -->
+    <!-- LEFT: QUOTE BUILDER -->
     <div>
+        <div class="panel-intro">
+            <strong>Build your quote below.</strong> Select the services you need — your estimated total updates instantly in the panel on the right. Add any combination, then book when you're ready.
+        </div>
 
-        <!-- MARKATE BOOKING WIDGET -->
-        <iframe id="markate-widget-booking-iframe" src="https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231" width="100%" height="2950" scrolling="no" frameborder="0" allowTransparency="true" style="border:none;overflow:hidden"></iframe>
+        <!-- CARPET CLEANING -->
+        <div class="category">
+            <div class="cat-header is-open" id="hdr-carpet" onclick="toggleCat('carpet')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Carpet Cleaning</span>
+                    <span class="cat-info" title="Hot water extraction removes deep-set dirt, allergens, and bacteria.">i</span>
+                    <span class="cat-badge" id="badge-carpet"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body is-open" id="body-carpet">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead><tr>
+                            <th class="col-item"></th>
+                            <th><div class="th-inner"><span class="th-tier-name">CLEAN <span class="th-info" data-tip="Hot water extraction — deep cleans & removes allergens">i</span></span><span class="th-hint">from $35</span></div></th>
+                            <th><div class="th-inner"><span class="th-tier-name">PROTECT <span class="th-info" data-tip="Scotchgard™ — repels future stains & spills">i</span></span><span class="th-hint">+$20/room</span></div></th>
+                            <th><div class="th-inner"><span class="th-tier-name">DEODORIZE <span class="th-info" data-tip="Enzyme deodorizer — eliminates pet odors at the source">i</span></span><span class="th-hint">+$15/room</span></div></th>
+                        </tr></thead>
+                        <tbody id="rows-carpet"></tbody>
+                    </table>
+                    <div class="table-footer">
+                        <span class="table-note-text">Standard room up to 300 sq ft. Larger rooms may vary.</span>
+                        <a href="#" class="tc-link">Terms &amp; Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPHOLSTERY -->
+        <div class="category">
+            <div class="cat-header" id="hdr-upholstery" onclick="toggleCat('upholstery')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Upholstery Cleaning</span>
+                    <span class="cat-info" title="Deep cleans sofas, chairs, and fabric furniture.">i</span>
+                    <span class="cat-badge" id="badge-upholstery"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-upholstery">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead><tr>
+                            <th class="col-item"></th>
+                            <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                            <th><div class="th-inner"><span class="th-tier-name">PROTECT <span class="th-info" data-tip="Fabric guard protects against future stains">i</span></span><span class="th-hint">+$20/piece</span></div></th>
+                        </tr></thead>
+                        <tbody id="rows-upholstery"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- HARDWOOD -->
+        <div class="category">
+            <div class="cat-header" id="hdr-hardwood" onclick="toggleCat('hardwood')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Hardwood Cleaning</span>
+                    <span class="cat-info" title="Professional hardwood cleaning and conditioning.">i</span>
+                    <span class="cat-badge" id="badge-hardwood"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-hardwood">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead><tr>
+                            <th class="col-item"></th>
+                            <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                        </tr></thead>
+                        <tbody id="rows-hardwood"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TILE & GROUT -->
+        <div class="category">
+            <div class="cat-header" id="hdr-tile" onclick="toggleCat('tile')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Tile &amp; Grout Cleaning</span>
+                    <span class="cat-info" title="High-pressure tile cleaning restores grout to near-original color.">i</span>
+                    <span class="cat-badge" id="badge-tile"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-tile">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead><tr>
+                            <th class="col-item"></th>
+                            <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                        </tr></thead>
+                        <tbody id="rows-tile"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- AREA RUGS -->
+        <div class="category">
+            <div class="cat-header" id="hdr-rugs" onclick="toggleCat('rugs')">
+                <div class="cat-header-left">
+                    <span class="cat-label">Area Rug Cleaning</span>
+                    <span class="cat-info" title="In-home area rug cleaning for all rug types.">i</span>
+                    <span class="cat-badge" id="badge-rugs"></span>
+                </div>
+                <span class="cat-chevron">&#8964;</span>
+            </div>
+            <div class="cat-body" id="body-rugs">
+                <div class="cat-inner">
+                    <table class="svc-table">
+                        <thead><tr>
+                            <th class="col-item"></th>
+                            <th><div class="th-inner"><span class="th-tier-name">CLEAN</span><span class="th-hint">base price</span></div></th>
+                        </tr></thead>
+                        <tbody id="rows-rugs"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
     </div><!-- /left -->
 
     <!-- RIGHT: SIDEBAR -->
     <aside class="sidebar">
+
+        <!-- QUOTE PANEL -->
+        <div class="quote-card">
+            <div class="quote-card-header">
+                <span class="quote-title">Your Quote</span>
+                <button class="clear-btn" onclick="clearAll()">Clear All</button>
+            </div>
+            <div class="quote-body">
+                <div class="q-empty" id="qEmpty">
+                    <div class="q-empty-icon">🧹</div>
+                    <p>Select services on the left to build your quote.</p>
+                </div>
+                <div class="q-items" id="qItems"></div>
+                <div class="q-totals" id="qTotals">
+                    <div class="q-divider"></div>
+                    <div class="q-row promo" id="qPromoRow" style="display:none;">
+                        <span class="q-row-label">✓ Promo applied</span>
+                        <span class="q-row-val" id="qPromoAmt"></span>
+                    </div>
+                    <div class="q-row" id="qSubRow">
+                        <span class="q-row-label">Subtotal</span>
+                        <span class="q-row-val" id="qSub">$0</span>
+                    </div>
+                    <div class="q-total-block">
+                        <span class="q-total-label">Est. Total</span>
+                        <span class="q-total-val" id="qTotal">$0</span>
+                    </div>
+                </div>
+                <div class="q-promo-row" id="qPromoInputRow">
+                    <input type="text" class="q-promo-input" id="qPromoInput" placeholder="Promo code (try KCSAVE10)" maxlength="20">
+                    <button class="q-promo-btn" onclick="applyPromo()">APPLY</button>
+                </div>
+                <div class="q-promo-status" id="qPromoStatus"></div>
+            </div>
+            <div class="q-cta-wrap" id="qCtaWrap">
+                <a href="tel:8167151130" class="q-cta">Call to Book: (816) 715-1130</a>
+                <p class="q-cta-note">Share your quote total &nbsp;·&nbsp; We'll confirm within 1 hour</p>
+            </div>
+        </div>
 
         <div class="trust-box">
             <h2>Why KC Clean Carpet?</h2>
@@ -951,6 +1055,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 </main>
+
+<!-- MOBILE STICKY TOTAL BAR -->
+<div class="mob-total-bar" id="mobTotalBar">
+    <div class="mob-bar-left">
+        <span class="mob-bar-label">Your Quote</span>
+        <span class="mob-bar-val" id="mobTotal">$0</span>
+    </div>
+    <div class="mob-bar-right">
+        <button class="mob-clear-btn" onclick="clearAll()">Clear</button>
+        <a href="tel:8167151130" class="mob-book-btn">Call to Book →</a>
+    </div>
+</div>
+
 <footer>
     <div class="footer-bottom">
         <span>&copy; 2026 KC Clean Carpet. All rights reserved.</span>
@@ -958,6 +1075,271 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </footer>
 
+
+<script>
+// ── SERVICE DATA ─────────────────────────────────────────────
+const SERVICES = {
+    carpet: {
+        label: 'Carpet Cleaning', tiers: ['clean','protect','deodorize'],
+        tierLabels: { clean:'Clean', protect:'Protect', deodorize:'Deodorize' },
+        items: [
+            { id:'room',  label:'Room',           note:'up to 300 sq ft', prices:{ clean:59, protect:79, deodorize:74 } },
+            { id:'bath',  label:'Bath / Laundry', note:'standard size',   prices:{ clean:39, protect:59, deodorize:54 } },
+            { id:'hall',  label:'Entry or Hall',  note:'up to 100 sq ft', prices:{ clean:35, protect:55, deodorize:50 } },
+            { id:'stair', label:'Staircase',      note:'per flight',      prices:{ clean:49, protect:69, deodorize:64 } },
+        ]
+    },
+    upholstery: {
+        label: 'Upholstery Cleaning', tiers: ['clean','protect'],
+        tierLabels: { clean:'Clean', protect:'Protect' },
+        items: [
+            { id:'sofa',     label:'Sofa (3-cushion)', prices:{ clean:89, protect:109 } },
+            { id:'loveseat', label:'Loveseat',         prices:{ clean:69, protect:89  } },
+            { id:'chair',    label:'Chair / Recliner', prices:{ clean:49, protect:69  } },
+            { id:'ottoman',  label:'Ottoman',          prices:{ clean:29, protect:44  } },
+        ]
+    },
+    hardwood: {
+        label: 'Hardwood Cleaning', tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'hw-room', label:'Room',    prices:{ clean:69 } },
+            { id:'hw-hall', label:'Hallway', prices:{ clean:45 } },
+        ]
+    },
+    tile: {
+        label: 'Tile & Grout Cleaning', tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'tile-room', label:'Room',     prices:{ clean:79 } },
+            { id:'tile-bath', label:'Bathroom', prices:{ clean:59 } },
+        ]
+    },
+    rugs: {
+        label: 'Area Rug Cleaning', tiers: ['clean'],
+        tierLabels: { clean:'Clean' },
+        items: [
+            { id:'rug-sm', label:'Small Rug (up to 5×8)',   prices:{ clean:49  } },
+            { id:'rug-md', label:'Medium Rug (up to 8×10)', prices:{ clean:79  } },
+            { id:'rug-lg', label:'Large Rug (9×12+)',        prices:{ clean:109 } },
+        ]
+    }
+};
+
+const PROMOS = {
+    'KCSAVE10':  { type:'pct',  val:0.10, label:'10% off applied' },
+    'KCHERO':    { type:'flat', val:25,   label:'$25 off applied' },
+    'FIRSTROOM': { type:'flat', val:59,   label:'1st room free applied' },
+};
+
+// ── STATE ────────────────────────────────────────────────────
+const qty = {};
+let activePromo = null;
+let animRaf = null;
+let displayedTotal = 0;
+
+for (const [cat, data] of Object.entries(SERVICES)) {
+    qty[cat] = {};
+    for (const item of data.items) {
+        qty[cat][item.id] = {};
+        for (const tier of data.tiers) qty[cat][item.id][tier] = 0;
+    }
+}
+
+// ── BUILD TABLES ─────────────────────────────────────────────
+function buildTables() {
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        const tbody = document.getElementById('rows-' + cat);
+        if (!tbody) continue;
+        for (const item of data.items) {
+            const tr = document.createElement('tr');
+            const tdItem = document.createElement('td');
+            tdItem.className = 'col-item';
+            tdItem.innerHTML = '<div class="item-name">' + item.label + '</div><div class="item-from">from $' + item.prices[data.tiers[0]] + '</div>';
+            tr.appendChild(tdItem);
+            for (const tier of data.tiers) {
+                const td = document.createElement('td');
+                td.innerHTML = '<div class="stepper" id="sp-' + cat + '-' + item.id + '-' + tier + '">' +
+                    '<button class="step-btn dec" onclick="step(\'' + cat + '\',\'' + item.id + '\',\'' + tier + '\',-1)">&#8722;</button>' +
+                    '<span class="step-val" id="sv-' + cat + '-' + item.id + '-' + tier + '">0</span>' +
+                    '<button class="step-btn inc" onclick="step(\'' + cat + '\',\'' + item.id + '\',\'' + tier + '\',1)">+</button>' +
+                    '</div>';
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+    }
+}
+
+// ── STEPPER ──────────────────────────────────────────────────
+function step(cat, itemId, tier, delta) {
+    const cur  = qty[cat][itemId][tier];
+    const next = Math.max(0, Math.min(10, cur + delta));
+    if (next === cur) return;
+    qty[cat][itemId][tier] = next;
+    var val = document.getElementById('sv-' + cat + '-' + itemId + '-' + tier);
+    var sp  = document.getElementById('sp-' + cat + '-' + itemId + '-' + tier);
+    val.textContent = next;
+    sp.classList.toggle('active', next > 0);
+    updateBadge(cat);
+    renderQuote();
+}
+
+function updateBadge(cat) {
+    var total = 0;
+    for (const item of SERVICES[cat].items)
+        for (const tier of SERVICES[cat].tiers)
+            total += qty[cat][item.id][tier];
+    var b = document.getElementById('badge-' + cat);
+    if (total > 0) { b.textContent = total; b.classList.add('show'); }
+    else           { b.classList.remove('show'); }
+}
+
+// ── ACCORDION ────────────────────────────────────────────────
+function toggleCat(cat) {
+    document.getElementById('hdr-' + cat).classList.toggle('is-open');
+    document.getElementById('body-' + cat).classList.toggle('is-open');
+}
+
+// ── PROMO ────────────────────────────────────────────────────
+function applyPromo() {
+    var code = (document.getElementById('qPromoInput').value || '').trim().toUpperCase();
+    var status = document.getElementById('qPromoStatus');
+    if (!code) { status.textContent = 'Enter a promo code first.'; status.className = 'q-promo-status err'; return; }
+    if (PROMOS[code]) {
+        activePromo = code;
+        status.textContent = '✓ ' + PROMOS[code].label + '!';
+        status.className = 'q-promo-status ok';
+        renderQuote();
+    } else {
+        status.textContent = 'Invalid code. Try KCSAVE10.';
+        status.className = 'q-promo-status err';
+    }
+}
+
+// ── CLEAR ALL ────────────────────────────────────────────────
+function clearAll() {
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        for (const item of data.items) {
+            for (const tier of data.tiers) {
+                qty[cat][item.id][tier] = 0;
+                var v = document.getElementById('sv-' + cat + '-' + item.id + '-' + tier);
+                var s = document.getElementById('sp-' + cat + '-' + item.id + '-' + tier);
+                if (v) v.textContent = '0';
+                if (s) s.classList.remove('active');
+            }
+        }
+        updateBadge(cat);
+    }
+    activePromo = null;
+    var pi = document.getElementById('qPromoInput');
+    var ps = document.getElementById('qPromoStatus');
+    if (pi) pi.value = '';
+    if (ps) { ps.textContent = ''; ps.className = 'q-promo-status'; }
+    displayedTotal = 0;
+    renderQuote();
+}
+
+// ── RENDER QUOTE ─────────────────────────────────────────────
+function renderQuote() {
+    var subtotal = 0;
+    var groups = [];
+
+    for (const [cat, data] of Object.entries(SERVICES)) {
+        var lines = [];
+        for (const item of data.items) {
+            for (const tier of data.tiers) {
+                var n = qty[cat][item.id][tier];
+                if (n < 1) continue;
+                var price = item.prices[tier] * n;
+                subtotal += price;
+                lines.push({ name: n > 1 ? item.label + ' \xd7' + n + ' (' + data.tierLabels[tier] + ')' : item.label + ' (' + data.tierLabels[tier] + ')', price: price });
+            }
+        }
+        if (lines.length) groups.push({ label: data.label, lines: lines });
+    }
+
+    var hasItems = groups.length > 0;
+    document.getElementById('qEmpty').style.display    = hasItems ? 'none' : '';
+    document.getElementById('qItems').style.display    = hasItems ? 'flex' : 'none';
+    document.getElementById('qTotals').style.display   = hasItems ? '' : 'none';
+    document.getElementById('qPromoInputRow').style.display = hasItems ? 'flex' : 'none';
+    document.getElementById('qCtaWrap').style.display  = hasItems ? '' : 'none';
+
+    if (!hasItems) { animateTo(0); updateMobBar(0); return; }
+
+    // Line items
+    var container = document.getElementById('qItems');
+    container.innerHTML = '';
+    for (const g of groups) {
+        var lbl = document.createElement('div');
+        lbl.className = 'q-cat-label';
+        lbl.textContent = g.label;
+        container.appendChild(lbl);
+        for (const l of g.lines) {
+            var row = document.createElement('div');
+            row.className = 'q-line';
+            row.innerHTML = '<span class="q-line-name">' + l.name + '</span><span class="q-line-price">$' + l.price + '</span>';
+            container.appendChild(row);
+        }
+    }
+
+    // Promo
+    var discount = 0;
+    if (activePromo && PROMOS[activePromo]) {
+        var p = PROMOS[activePromo];
+        discount = p.type === 'pct' ? Math.round(subtotal * p.val) : Math.min(p.val, subtotal);
+        document.getElementById('qPromoRow').style.display = '';
+        document.getElementById('qPromoAmt').textContent   = '-$' + discount;
+    } else {
+        document.getElementById('qPromoRow').style.display = 'none';
+    }
+
+    document.getElementById('qSub').textContent = '$' + subtotal;
+    var total = Math.max(0, subtotal - discount);
+    animateTo(total);
+    updateMobBar(total);
+}
+
+// ── ANIMATED TOTAL ───────────────────────────────────────────
+function animateTo(target) {
+    if (animRaf) cancelAnimationFrame(animRaf);
+    var from = displayedTotal, diff = target - from, t0 = performance.now();
+    var duration = 320;
+    function tick(now) {
+        var p = Math.min((now - t0) / duration, 1);
+        var e = 1 - Math.pow(1 - p, 3);
+        var v = Math.round(from + diff * e);
+        var el = document.getElementById('qTotal');
+        if (el) el.textContent = '$' + v;
+        var mob = document.getElementById('mobTotal');
+        if (mob) mob.textContent = '$' + v;
+        if (p < 1) { animRaf = requestAnimationFrame(tick); }
+        else {
+            displayedTotal = target;
+            var qel = document.getElementById('qTotal');
+            if (qel) { qel.classList.remove('num-flip'); void qel.offsetWidth; qel.classList.add('num-flip'); }
+        }
+    }
+    animRaf = requestAnimationFrame(tick);
+}
+
+// ── MOBILE BAR ───────────────────────────────────────────────
+function updateMobBar(total) {
+    var bar = document.getElementById('mobTotalBar');
+    if (!bar) return;
+    if (total > 0) {
+        bar.classList.add('show');
+        document.body.classList.add('mob-bar-open');
+    } else {
+        bar.classList.remove('show');
+        document.body.classList.remove('mob-bar-open');
+    }
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+buildTables();
+</script>
 
 <script>
 document.addEventListener('click', function(e) {

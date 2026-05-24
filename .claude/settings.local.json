@@ -125,7 +125,8 @@
       "PowerShell(robocopy \"C:\\\\Users\\\\snipe\\\\AppData\\\\Local\\\\Temp\\\\kc-extract2\\\\public_html\" \"C:\\\\Users\\\\snipe\\\\OneDrive\\\\Documents\\\\Programs\\\\Test Site\" /MIR /XD \".claude\" \"Test Site\" \"temporary screenshots\" /XF \"archived.zip\" /NP 2>&1 | Select-Object -Last 20)",
       "Bash(node screenshot.mjs http://localhost:3000 hero)",
       "Bash(node screenshot.mjs http://localhost:3000/index.html#reviews service-areas)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(pip install *)"
     ]
   }
 }

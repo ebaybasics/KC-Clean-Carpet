@@ -9,7 +9,7 @@
     <meta property="og:title" content="About Us | KC Clean Carpet – Kansas City, MO">
     <meta property="og:description" content="Meet the KC Clean Carpet team. Family-owned and operated in Raytown, MO, proudly serving the Kansas City metro with 5-star carpet and floor cleaning since day one.">
     <meta property="og:url" content="https://www.kccleancarpets.com/about">
-    <meta property="og:image" content="https://www.kccleancarpets.com/images/Workvan%20Pic.webp">
+    <meta property="og:image" content="https://www.kccleancarpets.com/brand_assets/profile-pic.webp">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | KC Clean Carpet – Kansas City, MO</title>
@@ -64,6 +64,12 @@
 
         .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 72px; }
         .intro-grid img { width: 100%; border-radius: 4px; box-shadow: 0 8px 40px rgba(13,71,161,.15); }
+        .owner-photo-wrap { position: relative; }
+        .owner-photo-wrap img { width: 100%; border-radius: 6px; box-shadow: 0 12px 48px rgba(13,71,161,.18); display: block; }
+        .owner-caption { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 16px 20px; background: #f5f7fb; border-left: 4px solid var(--kc-gold); border-radius: 0 4px 4px 0; }
+        .owner-caption-text { display: flex; flex-direction: column; }
+        .owner-caption-name { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 16px; color: var(--kc-blue-dark); }
+        .owner-caption-title { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #888; margin-top: 2px; }
         .intro-text h2 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(20px,3vw,28px); color: var(--kc-blue-dark); margin: 0 0 18px; line-height: 1.25; }
         .intro-text p { font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px; }
         .intro-text .tagline { font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 16px; color: var(--kc-blue); font-style: italic; border-left: 4px solid var(--kc-gold); padding-left: 16px; margin: 24px 0 0; }
@@ -383,7 +389,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="content-wrap">
     <div class="intro-grid">
-        <img loading="lazy" src="images/Clean Carpet Example.webp" alt="KC Clean Carpet team at work">
+        <div class="owner-photo-wrap">
+            <img loading="lazy" src="brand_assets/profile-pic.webp" alt="Roland Smith, founder of KC Clean Carpet in Raytown, MO" width="926" height="989">
+            <div class="owner-caption">
+                <div class="owner-caption-text">
+                    <span class="owner-caption-name">Roland Smith</span>
+                    <span class="owner-caption-title">Founder &amp; Owner · KC Clean Carpet · Raytown, MO</span>
+                </div>
+            </div>
+        </div>
         <div class="intro-text">
             <h2>A Family Business Built on Trust &amp; Quality</h2>
             <p>KC Clean Carpet was founded on a simple belief: that every customer deserves the same level of care and attention that you'd give a family member's home. We are a family owned and operated company, and that means something to us — it shapes every decision we make and every job we take on.</p>

@@ -18,7 +18,8 @@
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Clean Carpet | Professional Carpet Cleaning in Kansas City, MO</title>
-        <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" as="image" href="images/Clean Carpet Example.webp" fetchpriority="high">
+    <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1066,13 +1067,9 @@
       }
     }
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WJHSP6P6');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (delayed) -->
+    <script>window.dataLayer=window.dataLayer||[];</script>
+    <!-- End Google Tag Manager (delayed) -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1118,7 +1115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <!-- HERO -->
 <section class="hero">
-    <img class="hero-bg" src="images/Clean Carpet Example.webp" alt="" width="810" height="810" fetchpriority="high">
+    <img class="hero-bg" src="images/Clean Carpet Example.webp" alt="" width="810" height="810" loading="lazy">
     <div class="hero-content">
         <h1>Get Your Exact Price in 60 Seconds</h1>
         <p class="hero-tagline">See your price instantly — book only if it makes sense.</p>
@@ -1486,6 +1483,22 @@ document.addEventListener('click', function(e) {
         });
     }
 });
+</script>
+<script>
+(function(){
+    var loaded=false;
+    function loadGTM(){
+        if(loaded)return;loaded=true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
+    }
+    ['scroll','mousedown','touchstart','keydown','pointerdown'].forEach(function(e){
+        window.addEventListener(e,loadGTM,{passive:true,once:true});
+    });
+    setTimeout(loadGTM,4000);
+})();
 </script>
 </body>
 </html>

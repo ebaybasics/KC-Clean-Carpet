@@ -65,7 +65,8 @@
         .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 72px; }
         .intro-grid img { width: 100%; border-radius: 4px; box-shadow: 0 8px 40px rgba(13,71,161,.15); }
         .owner-photo-wrap { position: relative; }
-        .owner-photo-wrap img { width: 100%; border-radius: 6px; box-shadow: 0 12px 48px rgba(13,71,161,.18); display: block; }
+        .owner-photo-frame { width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: 6px; box-shadow: 0 12px 48px rgba(13,71,161,.18); }
+        .owner-photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
         .owner-caption { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 16px 20px; background: #f5f7fb; border-left: 4px solid var(--kc-gold); border-radius: 0 4px 4px 0; }
         .owner-caption-text { display: flex; flex-direction: column; }
         .owner-caption-name { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 16px; color: var(--kc-blue-dark); }
@@ -390,7 +391,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="content-wrap">
     <div class="intro-grid">
         <div class="owner-photo-wrap">
-            <img loading="lazy" src="brand_assets/profile-pic.webp" alt="Roland Smith, founder of KC Clean Carpet in Raytown, MO" width="926" height="989">
+            <div class="owner-photo-frame">
+                <img loading="lazy" src="brand_assets/profile-pic.webp" alt="Roland Smith, founder of KC Clean Carpet in Raytown, MO" width="1851" height="1977">
+            </div>
             <div class="owner-caption">
                 <div class="owner-caption-text">
                     <span class="owner-caption-name">Roland Smith</span>

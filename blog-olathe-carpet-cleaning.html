@@ -344,13 +344,9 @@
       ]
     }
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WJHSP6P6');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (delayed) -->
+    <script>window.dataLayer=window.dataLayer||[];</script>
+    <!-- End Google Tag Manager (delayed) -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -391,7 +387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <main>
 <div class="post-hero">
-    <img loading="lazy" src="images/Tile and Grout.webp" alt="Professional carpet cleaning vs DIY rental machines in Olathe, KS">
+    <img fetchpriority="high" src="images/Tile and Grout.webp" alt="Professional carpet cleaning vs DIY rental machines in Olathe, KS">
     <div class="post-hero-overlay"></div>
     <div class="post-hero-content">
         <span class="post-tag">Olathe, KS</span>
@@ -608,6 +604,22 @@ document.addEventListener('click', function(e) {
         });
     }
 });
+</script>
+<script>
+(function(){
+    var loaded=false;
+    function loadGTM(){
+        if(loaded)return;loaded=true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
+    }
+    ['scroll','mousedown','touchstart','keydown','pointerdown'].forEach(function(e){
+        window.addEventListener(e,loadGTM,{passive:true,once:true});
+    });
+    setTimeout(loadGTM,4000);
+})();
 </script>
 </body>
 </html>

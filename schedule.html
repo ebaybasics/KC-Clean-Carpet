@@ -1030,30 +1030,34 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
-    // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
-    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
+    var payload = JSON.stringify({
+        "leadStatus": "new",
+        "date": new Date().toISOString().slice(0, 19),
+        "firstname": fname,
+        "phone": phone
+    });
+
+    // Backup: sendBeacon guarantees delivery even after page navigates away
+    navigator.sendBeacon(
+        'https://hooks.zapier.com/hooks/catch/10879187/un9seqm/',
+        new Blob([payload], { type: 'application/json' })
+    );
+
+    // Redirect as soon as the primary (n8n) resolves
+    fetch('https://n8n.kccleancarpets.com/webhook/36c03856-e835-466a-9e68-a8f1c689956e', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "leadStatus": "new",
-            "date": new Date().toISOString().slice(0, 19),
-            "firstname": fname,
-            "phone": phone
-        })
+        body: payload
     })
     .then(function() {
-        // no-cors always resolves with opaque response — treat as success
         submitBtn.textContent = 'Redirecting...';
         window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
     })
     .catch(function(err) {
-        var msg = err && err.message ? err.message : String(err);
-        errorBox.textContent = 'Error: ' + msg;
-        errorBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Show My Price →';
-        console.error('Form submission error:', err);
+        // n8n failed — redirect anyway so we don't lose the customer
+        console.error('Primary webhook failed:', err);
+        submitBtn.textContent = 'Redirecting...';
+        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
     });
 });
 </script>

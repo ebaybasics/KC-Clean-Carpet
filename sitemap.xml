@@ -54,6 +54,23 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- City Blogs — additional -->
+  <url>
+    <loc>https://kccleancarpets.com/blog-raytown-carpet-cleaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kccleancarpets.com/blog-kansas-city-carpet-cleaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://kccleancarpets.com/blog-north-kansas-city-carpet-cleaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- Resources / Pricing -->
   <url>
     <loc>https://kccleancarpets.com/carpet-cleaning-cost</loc>

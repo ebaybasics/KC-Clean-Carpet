@@ -54,6 +54,13 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Resources / Pricing -->
+  <url>
+    <loc>https://kccleancarpets.com/carpet-cleaning-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Landing Pages -->
   <url>
     <loc>https://kccleancarpets.com/sandless-refinishing-landing</loc>

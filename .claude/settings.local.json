@@ -201,7 +201,9 @@
       "Bash(node -e \"require\\('sharp'\\)\")",
       "Bash(node *)",
       "Bash(python add_service_preloads.py)",
-      "mcp__pagespeed-insights__get_performance_summary"
+      "mcp__pagespeed-insights__get_performance_summary",
+      "Bash(curl -sf -o /dev/null \"https://kccleancarpets.com/hardwood-cleaning\")",
+      "Bash(curl -sf \"https://kccleancarpets.com/hardwood-cleaning\")"
     ]
   }
 }

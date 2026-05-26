@@ -670,10 +670,7 @@ document.addEventListener('click', function(e) {
     ['scroll','mousedown','touchstart','keydown','pointerdown','click'].forEach(function(e){
         window.addEventListener(e,loadGTM,{passive:true,once:true});
     });
-    window.addEventListener('load',function(){
-        if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:5000});}
-        else{setTimeout(loadGTM,5000);}
-    },{once:true});
+
 })();
 </script>
 </body>

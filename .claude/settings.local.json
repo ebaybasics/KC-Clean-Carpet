@@ -200,7 +200,8 @@
       "Bash(ffmpeg -version)",
       "Bash(node -e \"require\\('sharp'\\)\")",
       "Bash(node *)",
-      "Bash(python add_service_preloads.py)"
+      "Bash(python add_service_preloads.py)",
+      "mcp__pagespeed-insights__get_performance_summary"
     ]
   }
 }

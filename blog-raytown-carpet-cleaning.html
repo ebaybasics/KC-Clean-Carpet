@@ -388,7 +388,23 @@ window.addEventListener('resize', function() { if (window.innerWidth > 768) clos
 document.addEventListener('click', function(e) { var link = e.target.closest('a[href^="tel:"]'); if (link) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'phone_click', 'phone_number': link.href.replace('tel:', ''), 'click_location': link.closest('.sticky-fab') ? 'fab' : link.closest('.top-bar') ? 'top_bar' : link.closest('.mob-drawer') ? 'mobile_nav' : link.closest('footer') ? 'footer' : 'other'}); } });
 </script>
 <script>
-(function(){ var loaded=false; function loadGTM(){ if(loaded)return;loaded=true; (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'}); var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:''; j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6'); } ['scroll','mousedown','touchstart','keydown','pointerdown'].forEach(function(e){ window.addEventListener(e,loadGTM,{passive:true,once:true}); }); setTimeout(loadGTM,4000); })();
+(function(){
+    var loaded=false;
+    function loadGTM(){
+        if(loaded)return;loaded=true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
+    }
+    ['scroll','mousedown','touchstart','keydown','pointerdown','click'].forEach(function(e){
+        window.addEventListener(e,loadGTM,{passive:true,once:true});
+    });
+    window.addEventListener('load',function(){
+        if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:5000});}
+        else{setTimeout(loadGTM,5000);}
+    },{once:true});
+})();
 </script>
 </body>
 </html>

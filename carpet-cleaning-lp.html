@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -246,7 +246,7 @@
                 <img src="brand_assets/KC Clean Carpet Logo.webp" alt="KC Clean Carpets" class="h-12 w-auto drop-shadow-md">
             </a>
             <a href="tel:+18162333325" class="phone-btn goog-sn">
-                <span class="inline-block mr-1">📞</span> CALL NOW: (816) 233-3325
+                <span class="inline-block mr-1">ðŸ“ž</span> CALL NOW: (816) 233-3325
             </a>
         </div>
     </header>
@@ -261,7 +261,7 @@
                 <span class="text-kc-gold font-black text-[22px]">|</span> Eco-Friendly &amp; Guaranteed.
             </p>
 
-            <!-- Hero Image — full width, flush bottom -->
+            <!-- Hero Image â€” full width, flush bottom -->
             <div class="hero-img-wrap" style="border-radius:12px 12px 0 0; margin: 0 -4px;">
                 <img src="images/landing_page_image.avif" alt="Professional carpet cleaning by KC Clean Carpets" class="w-full h-auto object-cover" style="display:block; max-height:220px; object-fit:cover; border-radius:10px 10px 0 0;">
             </div>
@@ -315,7 +315,7 @@
                         <path d="M35.29 41.19V32H67.4c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.7.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.01z" fill="#4285F4"/>
                     </svg>
                     <div class="font-body text-[12px] font-bold text-kc-charcoal flex items-center gap-0.5">
-                        <span class="star text-[13px]">★★★★★</span> <span class="text-gray-500">(452)</span>
+                        <span class="star text-[13px]">â˜…â˜…â˜…â˜…â˜…</span> <span class="text-gray-500">(452)</span>
                     </div>
                 </div>
 
@@ -365,7 +365,7 @@
                     $50 OFF
                 </p>
                 <p class="font-heading font-700 text-kc-charcoal text-[15px]" style="font-weight:700;">
-                    LIMITED-TIME OFFER – Book Now!
+                    LIMITED-TIME OFFER â€“ Book Now!
                 </p>
             </div>
         </div>
@@ -380,12 +380,12 @@
                         S
                     </div>
                     <div class="flex-1">
-                        <div class="star text-lg mb-1">★★★★★</div>
+                        <div class="star text-lg mb-1">â˜…â˜…â˜…â˜…â˜…</div>
                         <p class="font-body text-kc-charcoal text-[15px] leading-relaxed mb-2" style="line-height:1.65;">
                             "Brand new carpets! Friendly service and they were on time. Highly recommend KC Clean Carpets to anyone looking for a professional job."
                         </p>
                         <p class="font-heading font-600 text-kc-navy text-[13px]" style="font-weight:600;">
-                            – Sarah M., Kansas City
+                            â€“ Sarah M., Kansas City
                         </p>
                     </div>
                 </div>
@@ -413,10 +413,13 @@
         j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
         f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
     }
-    ['scroll','mousedown','touchstart','keydown','pointerdown'].forEach(function(e){
+    ['scroll','mousedown','touchstart','keydown','pointerdown','click'].forEach(function(e){
         window.addEventListener(e,loadGTM,{passive:true,once:true});
     });
-    setTimeout(loadGTM,4000);
+    window.addEventListener('load',function(){
+        if('requestIdleCallback' in window){requestIdleCallback(loadGTM,{timeout:5000});}
+        else{setTimeout(loadGTM,5000);}
+    },{once:true});
 })();
 </script>
 </body>

@@ -79,7 +79,7 @@
         .page-hero-content p { font-family: 'Montserrat',sans-serif; font-size: 16px; opacity: .9; margin: 0; }
 
         .breadcrumb { background: #f5f7fb; padding: 12px 32px; font-size: 12px; color: #666; font-family: 'Montserrat',sans-serif; }
-        .breadcrumb a { color: var(--kc-blue); font-weight: 600; }
+        .breadcrumb a { color: var(--kc-blue); text-decoration: underline; font-weight: 600; }
         .breadcrumb a:hover { color: var(--kc-gold); }
 
         .content-wrap { max-width: 1060px; margin: 0 auto; padding: 64px 32px; display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: start; }
@@ -212,10 +212,10 @@
 
         /* Sticky FAB */
         .sticky-fab { position: fixed; right: 0; display: flex; flex-direction: column; gap: 0; z-index: 999; top: 55%; transform: translateY(-50%); }
-        .sticky-fab a { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; text-decoration: none; opacity: .65; transition: opacity .2s, transform .2s; box-shadow: -2px 2px 10px rgba(0,0,0,.14); }
+        .sticky-fab a { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; text-decoration: none; opacity: 1; transition: opacity .2s, transform .2s; box-shadow: -2px 2px 10px rgba(0,0,0,.14); }
         .sticky-fab a:first-child { background: var(--kc-blue-dark); color: #fff; border-radius: 6px 0 0 0; }
         .sticky-fab a:last-child { background: var(--kc-gold); color: var(--kc-navy); border-radius: 0 0 0 6px; }
-        .sticky-fab a:hover { opacity: 1; transform: translateX(-3px); }
+        .sticky-fab a:hover { transform: translateX(-3px); }
         .sticky-fab svg { width: 19px; height: 19px; }
     </style>
     <style>
@@ -588,15 +588,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="other-services">
     <h2>Our Cleaning Services</h2>
     <div class="services-row">
-        <a href="/carpet-cleaning" class="svc-card" aria-label="Carpet Cleaning">
+        <a href="/carpet-cleaning" class="svc-card">
             <img loading="lazy" src="images/Clean Carpet Example.webp" alt="Carpet Cleaning Kansas City">
             <div class="svc-card-overlay"><span class="svc-card-label">Carpet Cleaning</span></div>
         </a>
-        <a href="/hardwood-cleaning" class="svc-card" aria-label="Hardwood Floor Cleaning">
+        <a href="/hardwood-cleaning" class="svc-card">
             <img loading="lazy" src="images/Hardwood example.webp" alt="Hardwood Floor Cleaning">
             <div class="svc-card-overlay"><span class="svc-card-label">Hardwood Floor Cleaning</span></div>
         </a>
-        <a href="/upholstery-cleaning" class="svc-card" aria-label="Upholstery Cleaning">
+        <a href="/upholstery-cleaning" class="svc-card">
             <img loading="lazy" src="images/Upholstery Example.webp" alt="Upholstery Cleaning">
             <div class="svc-card-overlay"><span class="svc-card-label">Upholstery Cleaning</span></div>
         </a>

@@ -18,7 +18,7 @@
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KC Clean Carpets | Professional Carpet Cleaning in Kansas City, MO</title>
-        <link rel="preload" as="image" href="images/Clean Carpet Example.webp" fetchpriority="high">
+        <link rel="preload" as="image" href="images/Clean%20Carpet%20Example.webp" fetchpriority="high">
     <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/montserrat-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -1108,6 +1108,47 @@
     <!-- Google Tag Manager (delayed) -->
     <script>window.dataLayer=window.dataLayer||[];</script>
     <!-- End Google Tag Manager (delayed) -->
+
+<style>
+/* Review card sizing — pure CSS, no JS layout read needed */
+.review-card { width: calc((100% - 48px) / 3); min-width: calc((100% - 48px) / 3); }
+@media (max-width: 639px) { .review-card { width: 100%; min-width: 100%; } }
+
+/* Sticky floating action buttons */
+.sticky-fab {
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 999;
+    top: 55%;
+    transform: translateY(-50%);
+}
+.sticky-fab a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity .2s, transform .2s;
+    box-shadow: -2px 2px 10px rgba(0,0,0,.14);
+}
+.sticky-fab a:first-child {
+    background: #2E7D32;
+    color: #fff;
+    border-radius: 6px 0 0 0;
+}
+.sticky-fab a:last-child {
+    background: var(--kc-gold);
+    color: var(--kc-navy);
+    border-radius: 0 0 0 6px;
+}
+.sticky-fab a:hover { transform: translateX(-3px); }
+.sticky-fab svg { width: 24px; height: 24px; }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1128,7 +1169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- NAV -->
 <nav class="navbar">
-    <a href="#"><img src="brand_assets/KC Clean Carpet Logo.webp" class="nav-logo" alt="KC Clean Carpets" width="200" height="216"></a>
+    <a href="#"><img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" class="nav-logo" alt="KC Clean Carpets" width="200" height="216"></a>
         <button class="hamburger" aria-label="Menu" onclick="toggleMobNav()"><span></span><span></span><span></span></button>
         <div class="nav-links">
         <a href="/">Home</a>
@@ -1153,7 +1194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <!-- HERO -->
 <section class="hero">
-    <img class="hero-bg" src="images/Clean Carpet Example.webp" alt="Freshly cleaned carpet in a Kansas City home" width="810" height="810" fetchpriority="high" loading="eager" decoding="sync">
+    <img class="hero-bg" src="images/Clean%20Carpet%20Example.webp" alt="Freshly cleaned carpet in a Kansas City home" width="810" height="810" fetchpriority="high" loading="eager" decoding="sync">
     <div class="hero-content">
         <h1>Professional Carpet Cleaning in Kansas City</h1>
         <p class="hero-tagline">Get your exact price in 60 seconds — book only if it makes sense.</p>
@@ -1172,25 +1213,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-heading">Our Services</h2>
     <div class="services-grid">
         <a href="/carpet-cleaning" class="service-card">
-            <img loading="lazy" src="images/Clean Carpet Example.webp" alt="Professional carpet cleaning in Kansas City, MO" width="810" height="810">
+            <img loading="lazy" src="images/Clean%20Carpet%20Example.webp" alt="Professional carpet cleaning in Kansas City, MO" width="810" height="810">
             <div class="service-card-overlay">
                 <div class="service-card-label">Carpet Cleaning</div>
             </div>
         </a>
         <a href="/hardwood-cleaning" class="service-card">
-            <img loading="lazy" src="images/Hardwood example.webp" alt="Hardwood floor cleaning" width="700" height="374">
+            <img loading="lazy" src="images/Hardwood%20example.webp" alt="Hardwood floor cleaning" width="700" height="374">
             <div class="service-card-overlay">
                 <div class="service-card-label">Hardwood Floor Cleaning</div>
             </div>
         </a>
         <a href="/upholstery-cleaning" class="service-card">
-            <img loading="lazy" src="images/Upholstery Example.webp" alt="Upholstery cleaning" width="610" height="610">
+            <img loading="lazy" src="images/Upholstery%20Example.webp" alt="Upholstery cleaning" width="610" height="610">
             <div class="service-card-overlay">
                 <div class="service-card-label">Upholstery Cleaning</div>
             </div>
         </a>
         <a href="/tile-grout-cleaning" class="service-card">
-            <img loading="lazy" src="images/Tile and Grout.webp" alt="Tile and grout cleaning" width="610" height="457">
+            <img loading="lazy" src="images/Tile%20and%20Grout.webp" alt="Tile and grout cleaning" width="610" height="457">
             <div class="service-card-overlay">
                 <div class="service-card-label">Tile &amp; Grout Cleaning</div>
             </div>
@@ -1207,7 +1248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="about-inner">
         <div class="about-img-wrap">
-            <img loading="lazy" src="images/Workvan Pic.webp" alt="KC Clean Carpets service van in Raytown, MO" width="960" height="776">
+            <img loading="lazy" src="images/Workvan%20Pic.webp" alt="KC Clean Carpets service van in Raytown, MO" width="960" height="776">
         </div>
         <div class="about-copy">
             <h2>Kansas City's Trusted Cleaning Heroes</h2>
@@ -1285,47 +1326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
 </section>
-
-<style>
-/* Review card sizing — pure CSS, no JS layout read needed */
-.review-card { width: calc((100% - 48px) / 3); min-width: calc((100% - 48px) / 3); }
-@media (max-width: 639px) { .review-card { width: 100%; min-width: 100%; } }
-
-/* Sticky floating action buttons */
-.sticky-fab {
-    position: fixed;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    z-index: 999;
-    top: 55%;
-    transform: translateY(-50%);
-}
-.sticky-fab a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    text-decoration: none;
-    opacity: 1;
-    transition: opacity .2s, transform .2s;
-    box-shadow: -2px 2px 10px rgba(0,0,0,.14);
-}
-.sticky-fab a:first-child {
-    background: #2E7D32;
-    color: #fff;
-    border-radius: 6px 0 0 0;
-}
-.sticky-fab a:last-child {
-    background: var(--kc-gold);
-    color: var(--kc-navy);
-    border-radius: 0 0 0 6px;
-}
-.sticky-fab a:hover { transform: translateX(-3px); }
-.sticky-fab svg { width: 24px; height: 24px; }
-</style>
+
 
 <!-- Sticky FAB -->
 <div class="sticky-fab">
@@ -1444,8 +1445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="map-section" style="width:100%; height:450px;">
     <iframe title="KC Clean Carpets Location Map"
         src="https://www.google.com/maps?q=KC+Clean+Carpets,+Raytown,+MO&output=embed"
-        width="100%" height="100%"
-        style="border:0; display:block;"
+        style="width:100%; height:100%; border:0; display:block;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
@@ -1457,7 +1457,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
     <div class="footer-inner">
         <div class="footer-logo-wrap">
-            <img src="brand_assets/KC Clean Carpet Logo.webp" alt="KC Clean Carpets">
+            <img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets">
             <p>Heroic Cleaning.<br>Superior Results.</p>
         </div>
         <div class="footer-col">
@@ -1528,7 +1528,7 @@ window.addEventListener('resize', function() {
 <div class="mob-backdrop" id="mob-backdrop" onclick="closeMobNav()"></div>
 <div class="mob-drawer" id="mob-drawer">
     <div class="mob-drawer-head">
-        <img src="brand_assets/KC Clean Carpet Logo.webp" alt="KC Clean Carpets">
+        <img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets">
         <button class="mob-close" onclick="closeMobNav()" aria-label="Close menu">&#10005;</button>
     </div>
     <div class="mob-drawer-body">

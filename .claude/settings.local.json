@@ -185,7 +185,22 @@
       "Bash(curl -s -o lora-400-600-latin.woff2 \"https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7I_FMl_E.woff2\")",
       "Bash(curl -s -o lora-italic-400-latin.woff2 \"https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nPWa3Zw.woff2\")",
       "Bash(curl -s -o playfair-display-italic-400-latin.woff2 \"https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-oE0o.woff2\")",
-      "Bash(curl -s -o roboto-400-700-latin.woff2 \"https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2\")"
+      "Bash(curl -s -o roboto-400-700-latin.woff2 \"https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2\")",
+      "Bash(curl -sI \"https://kccleancarpets.com\")",
+      "Bash(curl -sI \"https://www.kccleancarpets.com\")",
+      "mcp__pagespeed-insights__get_full_audit",
+      "Bash(curl -sI \"https://www.kccleancarpets.com/schedule\")",
+      "Bash(curl -sI \"https://kccleancarpets.com/carpet-cleaning.html\")",
+      "Bash(curl -sI \"http://kccleancarpets.com/carpet-cleaning.html\")",
+      "mcp__pagespeed-insights__get_element_analysis",
+      "mcp__pagespeed-insights__get_visual_analysis",
+      "Bash(python add_image_preloads.py)",
+      "Bash(del add_image_preloads.py)",
+      "Bash(sort -k5 -rn)",
+      "Bash(ffmpeg -version)",
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(node *)",
+      "Bash(python add_service_preloads.py)"
     ]
   }
 }

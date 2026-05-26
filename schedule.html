@@ -19,7 +19,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/landing_page_image.avif" fetchpriority="high">
+    <link rel="preload" as="image" href="images/landing_page_image.avif" fetchpriority="high" type="image/avif">
     <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
@@ -859,7 +859,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
     </div>
     <div class="hero-proof">
-        <img src="images/landing_page_image.avif" alt="KC Clean Carpets — Professional Carpet Cleaning Results" width="1060" height="400">
+        <img src="images/landing_page_image.avif" alt="KC Clean Carpets — Professional Carpet Cleaning Results" width="1060" height="400" fetchpriority="high" loading="eager" decoding="sync">
         <div class="hero-proof-overlay"></div>
         <div class="hero-proof-badge">Our Work</div>
     </div>
@@ -1106,13 +1106,7 @@ document.addEventListener('click', function(e) {
     }
 });
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WJHSP6P6');</script>
-<!-- End Google Tag Manager -->
+<!-- Google Tag Manager — deferred until after load -->
 <script>
 (function(){
     var loaded=false;
@@ -1123,11 +1117,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
         f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
     }
-    ['scroll','mousedown','touchstart','keydown','pointerdown'].forEach(function(e){
+    ['scroll','mousedown','touchstart','keydown','pointerdown','click'].forEach(function(e){
         window.addEventListener(e,loadGTM,{passive:true,once:true});
     });
-    setTimeout(loadGTM,4000);
+    window.addEventListener('load',function(){setTimeout(loadGTM,2000);},{once:true});
 })();
 </script>
+<!-- End Google Tag Manager -->
 </body>
 </html>

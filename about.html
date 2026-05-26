@@ -20,6 +20,7 @@
     <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/montserrat-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="brand_assets/profile-pic.avif" fetchpriority="high" type="image/avif">
     <style>
         @font-face {
             font-family: 'Montserrat';
@@ -423,7 +424,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="intro-grid">
         <div class="owner-photo-wrap">
             <div class="owner-photo-frame">
-                <img loading="lazy" src="brand_assets/profile-pic.webp" alt="Roland Smith, founder of KC Clean Carpets in Raytown, MO" width="1851" height="1977">
+                <img loading="eager" fetchpriority="high" decoding="sync" src="brand_assets/profile-pic.avif" alt="Roland Smith, founder of KC Clean Carpets in Raytown, MO" width="600" height="641">
             </div>
             <div class="owner-caption">
                 <div class="owner-caption-text">

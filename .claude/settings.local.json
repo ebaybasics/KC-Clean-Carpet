@@ -174,7 +174,18 @@
       "mcp__pagespeed-insights__get_render_blocking_details",
       "mcp__pagespeed-insights__get_javascript_analysis",
       "mcp__pagespeed-insights__clear_cache",
-      "Bash(curl -sf -o /dev/null -w \"%{http_code}\" \"https://kccleancarpets.com/schedule\")"
+      "Bash(curl -sf -o /dev/null -w \"%{http_code}\" \"https://kccleancarpets.com/schedule\")",
+      "mcp__pagespeed-insights__get_network_analysis",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Linux; Android 10; Pixel 3\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Mobile Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:ital,wght@1,400&display=swap\")",
+      "Bash(curl -s -o montserrat-500-800-latin.woff2 \"https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2\")",
+      "Bash(curl -s -o roboto-italic-400-latin.woff2 \"https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHQuAj-k3Yk128.woff2\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Linux; Android 10; Pixel 3\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Mobile Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Linux; Android 10; Pixel 3\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Mobile Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap\")",
+      "Bash(curl -s -A \"Mozilla/5.0 \\(Linux; Android 10; Pixel 3\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Mobile Safari/537.36\" \"https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital@1&display=swap\")",
+      "Bash(curl -s -o lora-400-600-latin.woff2 \"https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7I_FMl_E.woff2\")",
+      "Bash(curl -s -o lora-italic-400-latin.woff2 \"https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nPWa3Zw.woff2\")",
+      "Bash(curl -s -o playfair-display-italic-400-latin.woff2 \"https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-oE0o.woff2\")",
+      "Bash(curl -s -o roboto-400-700-latin.woff2 \"https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ.woff2\")"
     ]
   }
 }

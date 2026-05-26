@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,11 +16,42 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"></noscript>
+    <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserrat-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: swap;
+            src: url(fonts/montserrat-500-800-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(fonts/montserrat-900-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: url(fonts/roboto-400-700-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/roboto-italic-400-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
         :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
         *, *::before, *::after { box-sizing: border-box; }
         html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; }
@@ -131,7 +162,7 @@
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Carpet Cleaning in North Kansas City, MO — Deep Clean for a Working City",
+      "headline": "Carpet Cleaning in North Kansas City, MO â€” Deep Clean for a Working City",
       "description": "Professional carpet cleaning guide for North Kansas City homeowners. NKC's unique mix of older housing stock and industrial-adjacent neighborhoods creates specific carpet challenges that require professional extraction.",
       "datePublished": "2026-05-01",
       "dateModified": "2026-05-24",
@@ -182,7 +213,7 @@
 <div class="top-bar">
     <span>Customer Service &amp; Quality is Our #1 Priority!</span>
     <div style="display:flex;align-items:center;gap:20px;">
-        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;"><span>📞</span> <span class="goog-sn">(816) 715-1130</span></a>
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;"><span>ðŸ“ž</span> <span class="goog-sn">(816) 715-1130</span></a>
         <div class="top-socials"><a href="https://www.facebook.com/KCCleanCarpet" title="Facebook" target="_blank" rel="noopener">f</a></div>
     </div>
 </div>
@@ -212,12 +243,12 @@
 
 <main>
 <div class="post-hero">
-    <img fetchpriority="high" src="images/Clean Carpet Example.webp" alt="Professional carpet cleaning in North Kansas City, MO">
+    <img fetchpriority="high" src="images/Clean Carpet Example.webp" alt="Professional carpet cleaning in North Kansas City, MO" loading="eager" decoding="sync">
     <div class="post-hero-overlay"></div>
     <div class="post-hero-content">
         <span class="post-tag">North Kansas City, MO</span>
         <h1>Carpet Cleaning in North Kansas City: Deep Extraction for a Working-Class City</h1>
-        <span class="post-meta">May 1, 2026 &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; Local Service</span>
+        <span class="post-meta">May 1, 2026 &nbsp;Â·&nbsp; 6 min read &nbsp;Â·&nbsp; Local Service</span>
     </div>
 </div>
 
@@ -229,15 +260,15 @@
     <article class="post-body">
 
         <h2>NKC Carpet Takes a Harder Hit Than Most</h2>
-        <p>North Kansas City is one of the most densely employed small cities in Missouri — a tight 2.5-square-mile municipality packed with manufacturing, distribution, healthcare, and logistics operations that employ tens of thousands of workers from across the metro. For NKC residents, that means more work boots at the door, more grit tracked in from parking lots and warehouses, and more demand on their home carpet than a typical suburban neighborhood.</p>
-        <p>Add in NKC's mix of older bungalow-style homes and mid-century residential stock — much of it built during the postwar industrial expansion — and you have carpet that works harder and needs more consistent professional care to stay clean and healthy.</p>
+        <p>North Kansas City is one of the most densely employed small cities in Missouri â€” a tight 2.5-square-mile municipality packed with manufacturing, distribution, healthcare, and logistics operations that employ tens of thousands of workers from across the metro. For NKC residents, that means more work boots at the door, more grit tracked in from parking lots and warehouses, and more demand on their home carpet than a typical suburban neighborhood.</p>
+        <p>Add in NKC's mix of older bungalow-style homes and mid-century residential stock â€” much of it built during the postwar industrial expansion â€” and you have carpet that works harder and needs more consistent professional care to stay clean and healthy.</p>
 
         <div class="callout">
-            <p><strong>KC Clean Carpets serves North Kansas City with the same professional-grade truck-mounted extraction used throughout the KC metro.</strong> No portable machines, no shortcuts — just thorough hot water extraction and a 100% satisfaction guarantee on every job. Call <a href="tel:8167151130" style="color:inherit;font-weight:700;text-decoration:none;"><span class="goog-sn">(816) 715-1130</span></a> or <a href="/schedule" style="color:var(--kc-blue);font-weight:700;">get your quote in 60 seconds online</a>.</p>
+            <p><strong>KC Clean Carpets serves North Kansas City with the same professional-grade truck-mounted extraction used throughout the KC metro.</strong> No portable machines, no shortcuts â€” just thorough hot water extraction and a 100% satisfaction guarantee on every job. Call <a href="tel:8167151130" style="color:inherit;font-weight:700;text-decoration:none;"><span class="goog-sn">(816) 715-1130</span></a> or <a href="/schedule" style="color:var(--kc-blue);font-weight:700;">get your quote in 60 seconds online</a>.</p>
         </div>
 
         <h2>What Makes NKC Carpet Soiling Different</h2>
-        <p>Most carpet cleaning guides are written for suburban households — pets, kids, the occasional spill. North Kansas City households deal with all of that plus a distinct set of soiling challenges tied to the city's industrial character:</p>
+        <p>Most carpet cleaning guides are written for suburban households â€” pets, kids, the occasional spill. North Kansas City households deal with all of that plus a distinct set of soiling challenges tied to the city's industrial character:</p>
         <ul>
             <li><strong>Fine industrial particulates:</strong> Manufacturing and distribution facilities near residential areas contribute fine airborne particles that settle into carpet fibers at a higher rate than in purely residential neighborhoods. These particles are too fine to vacuum effectively and require professional extraction to remove.</li>
             <li><strong>Work boot traffic:</strong> Concrete dust, machine oil residue, and compacted parking lot grit tracked in daily by workers from nearby facilities is significantly heavier soil than typical household foot traffic.</li>
@@ -246,15 +277,15 @@
         </ul>
 
         <h2>Why Rental Machines Fall Short for NKC Homes</h2>
-        <p>We understand the appeal — a $40/day rental machine from the grocery store seems like a reasonable DIY option. But for North Kansas City's carpet conditions specifically, consumer rental equipment consistently underperforms for two reasons:</p>
-        <p>First, rental machines simply can't generate the water temperature or extraction pressure needed to dislodge compacted industrial particulates from deep within carpet fibers. Their vacuum motors extract roughly 20–30% of the water they put in; professional truck-mount systems extract 90–95%. The result? Rental machines leave carpet wet for 24–48 hours — a mold risk in any home, and especially in NKC's humid river-adjacent climate.</p>
-        <p>Second, most consumer carpet cleaning solutions leave behind a soapy residue that actually attracts and holds future soil faster. After a rental machine job, carpet often appears clean for 2–3 weeks before re-soiling noticeably faster than before. Professional hot water extraction uses a full rinse pass to remove all cleaning agent from the fibers.</p>
+        <p>We understand the appeal â€” a $40/day rental machine from the grocery store seems like a reasonable DIY option. But for North Kansas City's carpet conditions specifically, consumer rental equipment consistently underperforms for two reasons:</p>
+        <p>First, rental machines simply can't generate the water temperature or extraction pressure needed to dislodge compacted industrial particulates from deep within carpet fibers. Their vacuum motors extract roughly 20â€“30% of the water they put in; professional truck-mount systems extract 90â€“95%. The result? Rental machines leave carpet wet for 24â€“48 hours â€” a mold risk in any home, and especially in NKC's humid river-adjacent climate.</p>
+        <p>Second, most consumer carpet cleaning solutions leave behind a soapy residue that actually attracts and holds future soil faster. After a rental machine job, carpet often appears clean for 2â€“3 weeks before re-soiling noticeably faster than before. Professional hot water extraction uses a full rinse pass to remove all cleaning agent from the fibers.</p>
 
-        <h3>Truck-mount vs. rental — a side-by-side comparison</h3>
+        <h3>Truck-mount vs. rental â€” a side-by-side comparison</h3>
         <ul>
-            <li><strong>Water temperature:</strong> Truck-mount 200°F+ vs. rental 120–140°F — heat kills bacteria and dissolves soil chemical bonds</li>
-            <li><strong>Extraction rate:</strong> Truck-mount ~95% vs. rental ~25% — less water left in carpet means faster drying and no mold risk</li>
-            <li><strong>Dry time:</strong> Truck-mount 4–6 hours vs. rental 18–36 hours</li>
+            <li><strong>Water temperature:</strong> Truck-mount 200Â°F+ vs. rental 120â€“140Â°F â€” heat kills bacteria and dissolves soil chemical bonds</li>
+            <li><strong>Extraction rate:</strong> Truck-mount ~95% vs. rental ~25% â€” less water left in carpet means faster drying and no mold risk</li>
+            <li><strong>Dry time:</strong> Truck-mount 4â€“6 hours vs. rental 18â€“36 hours</li>
             <li><strong>Residue:</strong> Truck-mount full-rinse, no residue vs. rental soap residue that re-soils carpet faster</li>
             <li><strong>Deep particle removal:</strong> Truck-mount extracts embedded fine particulates vs. rental lifts surface soil only</li>
         </ul>
@@ -262,10 +293,10 @@
         <h2>How Often Should NKC Homes Be Professionally Cleaned?</h2>
         <p>Given the soiling factors specific to North Kansas City, we generally recommend more frequent professional cleaning than the standard carpet manufacturer guidelines:</p>
         <ul>
-            <li><strong>Working adults tracking in industrial-area grit:</strong> Every 6–9 months minimum</li>
+            <li><strong>Working adults tracking in industrial-area grit:</strong> Every 6â€“9 months minimum</li>
             <li><strong>Homes with pets or children:</strong> Every 6 months</li>
             <li><strong>High-traffic older carpet:</strong> Every 6 months, with interim vacuuming at least 3x/week</li>
-            <li><strong>Allergy sufferers:</strong> Every 3–6 months — fine industrial particles are significant allergen carriers</li>
+            <li><strong>Allergy sufferers:</strong> Every 3â€“6 months â€” fine industrial particles are significant allergen carriers</li>
         </ul>
 
         <h2>Between Cleanings: Carpet Care for NKC Homes</h2>
@@ -274,12 +305,12 @@
             <li><strong>Boot tray and dedicated entry mat:</strong> An absorbent mat inside and a boot tray outside each entrance can cut tracked-in soil by up to 80%. This is the single highest-impact change NKC homeowners can make.</li>
             <li><strong>Vacuum high-traffic areas 3x per week:</strong> More frequent vacuuming in entryways, hallways, and living areas prevents surface grit from working deeper into fibers.</li>
             <li><strong>Change HVAC filters regularly:</strong> A dirty filter recirculates fine particulates that settle into carpet. NKC homes benefit from more frequent filter changes than typical residential schedules suggest.</li>
-            <li><strong>Address spills immediately:</strong> Blot from the outside in with a clean white cloth — never rub. Most spills are manageable if treated within the first few minutes.</li>
+            <li><strong>Address spills immediately:</strong> Blot from the outside in with a clean white cloth â€” never rub. Most spills are manageable if treated within the first few minutes.</li>
         </ul>
 
         <h2>Ready to Book Professional Carpet Cleaning in NKC?</h2>
         <p>KC Clean Carpets serves North Kansas City with the same professional-grade equipment and satisfaction guarantee we bring to every job in the metro. Whether you need a full home refresh, pet stain and odor treatment, or a targeted deep clean of your highest-traffic areas, we can help.</p>
-        <p>Call us at <a href="tel:8167151130" style="color:var(--kc-blue);font-weight:700;"><span class="goog-sn">(816) 715-1130</span></a> or use our <a href="/schedule" style="color:var(--kc-blue);font-weight:700;">60-second online quote</a> — enter your name and phone number and we'll text you a firm, all-in price within minutes. No obligation, no phone tag, no surprises.</p>
+        <p>Call us at <a href="tel:8167151130" style="color:var(--kc-blue);font-weight:700;"><span class="goog-sn">(816) 715-1130</span></a> or use our <a href="/schedule" style="color:var(--kc-blue);font-weight:700;">60-second online quote</a> â€” enter your name and phone number and we'll text you a firm, all-in price within minutes. No obligation, no phone tag, no surprises.</p>
 
     </article>
 
@@ -374,7 +405,7 @@
         <a href="/about">About Us</a>
         <a href="/blog">Blog</a>
         <a href="/schedule" class="mob-cta">Start My 60-Second Quote</a>
-        <a href="tel:8167151130" class="mob-drawer-phone"><span>📞</span> <span class="goog-sn">(816) 715-1130</span></a>
+        <a href="tel:8167151130" class="mob-drawer-phone"><span>ðŸ“ž</span> <span class="goog-sn">(816) 715-1130</span></a>
     </div>
 </div>
 <script>

@@ -251,7 +251,8 @@
       "Bash(sed -i 's|<title>Sandless Floor Refinishing Kansas City | Restore Like-New for Less</title>|<title>Sandless Floor Refinishing Kansas City | Restore Like-New</title>|' sandless-refinishing.html)",
       "Bash(sed -i 's|<title>Upholstery \\\\&amp; Couch Cleaning Kansas City | Safe for All Fabrics</title>|<title>Upholstery Cleaning Kansas City | Safe for All Fabrics</title>|' upholstery-cleaning.html)",
       "Bash(sed -i 's|<title>Tile \\\\&amp; Grout Cleaning Kansas City | Restore Discolored Grout Lines</title>|<title>Tile \\\\&amp; Grout Cleaning Kansas City | Restore Grout Lines</title>|' tile-grout-cleaning.html)",
-      "Skill(seo-keywords)"
+      "Skill(seo-keywords)",
+      "Bash(python *)"
     ]
   }
 }

@@ -1,4 +1,9 @@
+https://kccleancarpets.com/* https://www.kccleancarpets.com/:splat 301
+
 /home                    /                        301
+/home/                   /                        301
 /book-now                /schedule                301
+/book-now/               /schedule                301
 /contact-us              /schedule                301
+/contact-us/             /schedule                301
 /index.html              /                        301

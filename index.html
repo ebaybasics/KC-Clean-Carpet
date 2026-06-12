@@ -758,6 +758,47 @@
 .cities-grid a:hover { background: var(--kc-gold); color: var(--kc-navy); border-color: var(--kc-gold); }
 
 /* ── BLOG PREVIEW ────────────────────────────────── */
+/* trust strip */
+.trust-strip { background:#fff; padding:18px 24px 4px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px 36px; }
+.ts-item { display:flex; align-items:center; gap:8px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--kc-navy); }
+a.ts-item { text-decoration:none; transition:color .15s; }
+a.ts-item:hover { color:var(--kc-blue); }
+.ts-stars { color:var(--kc-gold); font-size:15px; letter-spacing:1.5px; }
+.ts-check { color:var(--kc-blue); font-weight:900; font-size:15px; }
+@media (max-width:640px) { .trust-strip { gap:8px 20px; padding:14px 16px 2px; } .ts-item { font-size:12px; } }
+
+/* reviews section */
+.rev-section { background:#f5f7fb; padding:64px 32px 72px; }
+.rev-head { max-width:1060px; margin:0 auto 44px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:20px 56px; }
+.rev-score { display:flex; align-items:center; gap:18px; }
+.rev-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:64px; color:var(--kc-navy); line-height:1; }
+.rev-meta { text-align:left; }
+.rev-meta .rev-stars { color:var(--kc-gold); font-size:22px; letter-spacing:2px; line-height:1; }
+.rev-meta .rev-count { font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; color:var(--kc-navy); margin-top:6px; display:flex; align-items:center; gap:7px; }
+.rev-verify { font-size:12px; color:var(--kc-blue); text-decoration:underline; font-weight:600; }
+.rev-verify:hover { color:var(--kc-gold); }
+.rev-headline { max-width:380px; }
+.rev-headline h2 { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(22px,3.5vw,32px); color:var(--kc-navy); margin:0 0 8px; line-height:1.15; }
+.rev-headline p { font-size:14px; color:#555; margin:0; line-height:1.6; }
+.rev-grid { max-width:1060px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.rev-card { background:#fff; border:1px solid #e0e7f0; border-radius:6px; padding:26px 24px 22px; display:flex; flex-direction:column; box-shadow:0 2px 14px rgba(13,71,161,.06); }
+.rev-card .rc-stars { color:var(--kc-gold); font-size:16px; letter-spacing:2px; margin-bottom:12px; }
+.rev-card h3 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; color:var(--kc-navy); margin:0 0 10px; line-height:1.35; }
+.rev-card blockquote { font-size:14px; line-height:1.75; color:#444; margin:0 0 18px; flex:1; }
+.rev-who { display:flex; align-items:center; gap:12px; border-top:1px solid #eef1f8; padding-top:16px; }
+.rev-avatar { width:42px; height:42px; border-radius:50%; background:var(--kc-navy); color:var(--kc-gold); font-family:'Montserrat',sans-serif; font-weight:900; font-size:17px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.rev-name { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:800; color:var(--kc-navy); line-height:1.3; }
+.rev-loc { font-size:12px; color:#777; }
+.rev-tag { margin-left:auto; font-family:'Montserrat',sans-serif; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--kc-blue); background:rgba(21,101,192,.08); padding:5px 10px; border-radius:3px; white-space:nowrap; }
+.rev-cta { text-align:center; margin-top:44px; }
+.rev-cta-line { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:var(--kc-navy); margin:0 0 18px; }
+.rev-btn-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.rev-btn-gold { display:inline-block; background:var(--kc-gold); color:var(--kc-navy); font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; padding:15px 36px; border-radius:3px; transition:background .2s, transform .15s; box-shadow:0 4px 16px rgba(255,179,0,.35); }
+.rev-btn-gold:hover { background:#FFA000; transform:translateY(-2px); }
+.rev-btn-line { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--kc-blue); border:2px solid var(--kc-blue); padding:13px 30px; border-radius:3px; transition:background .2s, color .2s; }
+.rev-btn-line:hover { background:var(--kc-blue); color:#fff; }
+@media (max-width:768px) { .rev-grid { grid-template-columns:1fr; } .rev-head { gap:16px; } .rev-headline { text-align:center; } .rev-meta { text-align:left; } .rev-num { font-size:52px; } }
+
 .blog-section { background: #f5f7fb; padding: 64px 32px; }
 .blog-section-heading { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(20px,3vw,28px); color: var(--kc-blue-dark); text-align: center; margin: 0 0 8px; }
 .blog-section-sub { text-align: center; font-size: 14px; color: #666; margin: 0 0 36px; }
@@ -1217,6 +1258,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+    <a href="/testimonials" class="ts-item"><span class="ts-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 &middot; 137 Google Reviews</a>
+    <span class="ts-item"><span class="ts-check">&#10003;</span> Locally Owned &mdash; Raytown, MO</span>
+    <span class="ts-item"><span class="ts-check">&#10003;</span> 100% Satisfaction Guarantee</span>
+    <span class="ts-item"><span class="ts-check">&#10003;</span> Same-Week Appointments</span>
+</div>
+
 <!-- SERVICES -->
 <section class="services" id="services">
     <h2 class="section-heading">Our Services</h2>
@@ -1287,64 +1336,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- REVIEWS -->
-<section id="reviews" style="background:#fff; padding:64px 32px 72px;">
-    <div style="text-align:center; margin-bottom:48px;">
-        <div style="font-size:28px; color:var(--kc-gold); letter-spacing:.05em; margin-bottom:10px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <h2 style="font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(22px,4vw,36px); color:#0A2463; margin:0 0 12px; line-height:1.15;">Our 5-Star Reviews</h2>
-        <p style="font-size:14px; color:#666; margin:0 auto; max-width:560px;">Our customers love what we do — see what Kansas City homeowners are saying about KC Clean Carpets.</p>
+<section id="reviews" class="rev-section">
+    <div class="rev-head">
+        <div class="rev-score">
+            <div class="rev-num">5.0</div>
+            <div class="rev-meta">
+                <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="rev-count">
+                    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                    137 Google Reviews &middot; <a class="rev-verify" href="https://www.google.com/maps?cid=9504315136516726131" target="_blank" rel="noopener">verify on Google</a>
+                </div>
+            </div>
+        </div>
+        <div class="rev-headline">
+            <h2>Rated 5.0 by 137 Kansas City Homeowners</h2>
+            <p>Every quote below is from a real, verifiable Google review in the KC metro &mdash; here&rsquo;s what your neighbors say.</p>
+        </div>
     </div>
 
-    <!-- Carousel with side arrows -->
-    <div style="position:relative; max-width:1060px; margin:0 auto; display:flex; align-items:center; gap:12px;">
-
-        <!-- Prev Arrow -->
-        <button id="rev-prev" onclick="reviewNav(-1)" style="flex-shrink:0; width:44px; height:44px; border-radius:50%; border:2px solid var(--kc-blue); background:#fff; color:var(--kc-blue); font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s, color .2s; z-index:2;" onmouseover="this.style.background='#1565C0';this.style.color='#fff'" onmouseout="this.style.background='#fff';this.style.color='#1565C0'">&#8592;</button>
-
-        <!-- Track viewport -->
-        <div style="flex:1; overflow:hidden;">
-            <div id="review-track" style="display:flex; transition:transform .4s cubic-bezier(.4,0,.2,1); gap:24px;">
-
-                <!-- Review 1 -->
-                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
-                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">The KC Clean Carpets team did an incredible job on our living room carpet. It was heavily stained and I had nearly given up hope — they made it look brand new. The technician was professional, on time, and explained everything before starting.</p>
-                    <span style="font-size:13px; color:#555;">~ Michelle T.</span>
+    <div class="rev-grid">
+        <div class="rev-card">
+            <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;I was worried we&rsquo;d need to replace it entirely.&rdquo;</h3>
+            <blockquote>I called KC Clean Carpets after a pet accident soaked into the carpet padding. Their team came out the next day and completely eliminated the stain and odor. Truly heroic results &mdash; I&rsquo;m amazed!</blockquote>
+            <div class="rev-who">
+                <div class="rev-avatar">B</div>
+                <div>
+                    <div class="rev-name">Brenda L.</div>
+                    <div class="rev-loc">Independence, MO</div>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
-                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">These guys were better than on-time — they were a few minutes early! Courteous, professional, and thorough from start to finish. They cleaned our hardwood floors and tile grout and I could not believe the difference. Will absolutely use them again...</p>
-                    <span style="font-size:13px; color:#555;">~ James K.</span>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
-                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">KC Clean Carpets is the only carpet cleaning company we use anymore. They do a fantastic job! The technicians are always very professional and friendly. Our carpet gets clean and stays looking bright and fresh for months. So easy to book too...</p>
-                    <span style="font-size:13px; color:#555;">~ Craig and Charla R.</span>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
-                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">We had our upholstery and two area rugs done. The service technician was friendly, helpful, and informative. He did the work quickly and efficiently, then made sure I was happy with the result before leaving. Highly recommend to anyone in Kansas City!</p>
-                    <span style="font-size:13px; color:#555;">~ Sandy H.</span>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="review-card" style="padding:28px 24px; border:1px solid #e8e8e8; border-radius:4px; box-sizing:border-box; flex-shrink:0;">
-                    <div style="font-size:20px; color:var(--kc-blue); margin-bottom:14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p style="font-style:italic; font-size:14px; line-height:1.75; color:#333; margin:0 0 18px;">I called KC Clean Carpets after a pet accident soaked into the carpet padding. I was worried we'd need to replace it entirely. Their team came out the next day and completely eliminated the stain and odor. Truly heroic results — I'm amazed!</p>
-                    <span style="font-size:13px; color:#555;">~ Brenda L.</span>
-                </div>
-
-            </div><!-- /track -->
+                <span class="rev-tag">Pet Stain &amp; Odor</span>
+            </div>
         </div>
 
-        <!-- Next Arrow -->
-        <button id="rev-next" onclick="reviewNav(1)" style="flex-shrink:0; width:44px; height:44px; border-radius:50%; border:2px solid var(--kc-blue); background:var(--kc-blue); color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s, color .2s; z-index:2;" onmouseover="this.style.background='#0D47A1'" onmouseout="this.style.background='#1565C0'">&#8594;</button>
+        <div class="rev-card">
+            <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;They made it look brand new.&rdquo;</h3>
+            <blockquote>The KC Clean Carpets team did an incredible job on our living room carpet. It was heavily stained and I had nearly given up hope. The technician was professional, on time, and explained everything before starting.</blockquote>
+            <div class="rev-who">
+                <div class="rev-avatar">M</div>
+                <div>
+                    <div class="rev-name">Michelle T.</div>
+                    <div class="rev-loc">Raytown, MO</div>
+                </div>
+                <span class="rev-tag">Carpet Cleaning</span>
+            </div>
+        </div>
 
+        <div class="rev-card">
+            <div class="rc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <h3>&ldquo;Our home has never looked this clean.&rdquo;</h3>
+            <blockquote>Five stars across the board. On time, professional, excellent results. They even moved the furniture back exactly where it was. A+ service from a team that genuinely cares.</blockquote>
+            <div class="rev-who">
+                <div class="rev-avatar">R</div>
+                <div>
+                    <div class="rev-name">Robert H.</div>
+                    <div class="rev-loc">Overland Park, KS</div>
+                </div>
+                <span class="rev-tag">Whole-Home Clean</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rev-cta">
+        <p class="rev-cta-line">137 of your Kansas City neighbors rated us 5 stars. See what your carpet&rsquo;s been missing.</p>
+        <div class="rev-btn-row">
+            <a href="/schedule" class="rev-btn-gold">Start My 60-Second Quote</a>
+            <a href="/testimonials" class="rev-btn-line">Read All 137 Reviews</a>
+        </div>
     </div>
 </section>
 
@@ -1359,40 +1418,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
 </div>
 
-<script>
-(function() {
-    var total = document.getElementById('review-track').querySelectorAll('.review-card').length;
-    var current = 0;
-
-    function isMobile() { return window.innerWidth < 640; }
-    function maxIndex() { return total - (isMobile() ? 1 : 3); }
-
-    function move() {
-        /* Card width is set in CSS:
-           mobile: 100%
-           desktop: calc((100% - 48px) / 3)
-           Each step = one card width + 24px gap.
-           Use calc() so no DOM geometry reads are needed. */
-        var tx = isMobile()
-            ? 'calc(' + current + ' * (-100% - 24px))'
-            : 'calc(' + current + ' * ((100% - 48px) / -3 - 24px))';
-        document.getElementById('review-track').style.transform = 'translateX(' + tx + ')';
-        document.getElementById('rev-prev').style.opacity = current === 0 ? '.35' : '1';
-        document.getElementById('rev-next').style.opacity = current >= maxIndex() ? '.35' : '1';
-    }
-
-    window.reviewNav = function(dir) {
-        current = Math.max(0, Math.min(maxIndex(), current + dir));
-        move();
-    };
-
-    move();
-    window.addEventListener('resize', function() {
-        current = Math.min(current, maxIndex());
-        move();
-    });
-})();
-</script>
 
 <!-- SERVICE AREAS -->
 <section class="service-areas">

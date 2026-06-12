@@ -302,7 +302,9 @@
       "Bash(grep -c '\\\\$45' index.html carpet-cleaning.html carpet-cleaning-cost.html)",
       "Bash(grep -n 'hero-cta-label\\\\|hero.*sub\\\\|From \\\\$45' index.html)",
       "Bash(curl -s --max-time 15 \"https://www.kccleancarpets.com/\")",
-      "Bash(curl -s --max-time 15 \"https://www.kccleancarpets.com/schedule\")"
+      "Bash(curl -s --max-time 15 \"https://www.kccleancarpets.com/schedule\")",
+      "Bash(ls -la images/before-after/)",
+      "Bash(ls -la \"images/before after\")"
     ]
   }
 }

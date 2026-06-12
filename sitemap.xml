@@ -64,6 +64,63 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- City Pages -->
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-raytown</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-lees-summit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-independence</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-blue-springs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-grandview</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-overland-park</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-leawood</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-olathe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-gladstone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-liberty</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kccleancarpets.com/carpet-cleaning-north-kansas-city</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Resources / Pricing -->
   <url>
     <loc>https://www.kccleancarpets.com/carpet-cleaning-cost</loc>

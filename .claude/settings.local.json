@@ -279,7 +279,30 @@
       "mcp__ahrefs__site-explorer-organic-keywords",
       "mcp__ahrefs__site-audit-issues",
       "mcp__ahrefs__site-explorer-anchors",
-      "mcp__ahrefs__site-explorer-referring-domains"
+      "mcp__ahrefs__site-explorer-referring-domains",
+      "Bash(curl -s --max-time 180 \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.kccleancarpets.com%2Fcarpet-cleaning-overland-park&strategy=mobile&category=PERFORMANCE&category=ACCESSIBILITY&category=BEST_PRACTICES&category=SEO\" -o /tmp/psi.json)",
+      "Bash(curl -s --max-time 180 \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https%3A%2F%2Fwww.kccleancarpets.com%2Fcarpet-cleaning-overland-park&strategy=mobile&category=PERFORMANCE&category=ACCESSIBILITY&category=BEST_PRACTICES&category=SEO\" -o \"dataforseo-claude/psi.json\")",
+      "mcp__ahrefs__site-audit-page-explorer",
+      "Skill(seo-technical)",
+      "mcp__ahrefs__site-explorer-pages-by-backlinks",
+      "mcp__ahrefs__site-explorer-organic-competitors",
+      "mcp__ahrefs__subscription-info-limits-and-usage",
+      "mcp__ahrefs__site-explorer-broken-backlinks",
+      "mcp__ahrefs__batch-analysis",
+      "mcp__ahrefs__site-explorer-metrics-history",
+      "mcp__gsc__advanced_search_analytics",
+      "mcp__dataforseo__ai_optimization_llm_response",
+      "WebFetch(domain:www.yelp.com)",
+      "mcp__gsc__submit_batch",
+      "mcp__gsc__multi_site_dashboard",
+      "Bash(curl -sI --max-time 15 \"http://kccleancarpets.com/about\")",
+      "Bash(curl -s -o /dev/null --max-time 20 -L -w \"%{url_effective} \\(%{num_redirects} hops, final %{http_code}\\)\\\\n\" \"http://kccleancarpets.com/about\")",
+      "mcp__dataforseo__dataforseo_labs_bulk_keyword_difficulty",
+      "mcp__gsc__ctr_vs_benchmark",
+      "Bash(grep -c '\\\\$45' index.html carpet-cleaning.html carpet-cleaning-cost.html)",
+      "Bash(grep -n 'hero-cta-label\\\\|hero.*sub\\\\|From \\\\$45' index.html)",
+      "Bash(curl -s --max-time 15 \"https://www.kccleancarpets.com/\")",
+      "Bash(curl -s --max-time 15 \"https://www.kccleancarpets.com/schedule\")"
     ]
   }
 }

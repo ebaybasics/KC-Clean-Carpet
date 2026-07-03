@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpets. Serving the Kansas City metro. Call (816) 715-1130 or book now.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
+    <meta name="description" content="Get your exact carpet cleaning price online in about 60 seconds and book your appointment — no phone call needed first. Serving the Kansas City metro. (816) 715-1130.">
     <link rel="canonical" href="https://www.kccleancarpets.com/schedule">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Schedule a Cleaning | KC Clean Carpets – Book Online Today">
-    <meta property="og:description" content="Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpets. Serving the Kansas City metro. Call (816) 715-1130 or book now.">
+    <meta property="og:title" content="Schedule a Cleaning Online in About 60 Seconds | KC Clean Carpets">
+    <meta property="og:description" content="Get your exact carpet cleaning price online in about 60 seconds and book your appointment — no phone call needed first. Serving the Kansas City metro. (816) 715-1130.">
     <meta property="og:url" content="https://www.kccleancarpets.com/schedule">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule a Cleaning | KC Clean Carpets – Book Online Today</title>
+    <title>Schedule a Cleaning Online in About 60 Seconds | KC Clean Carpets</title>
     <link rel="icon" type="image/png" sizes="96x96" href="/brand_assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
-    <link rel="preload" as="image" href="images/landing_page_image.avif" fetchpriority="high" type="image/avif">
     <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/montserrat-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/roboto-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -45,29 +43,21 @@
             src: url(fonts/roboto-400-700-latin.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
-        @font-face {
-            font-family: 'Roboto';
-            font-style: italic;
-            font-weight: 400;
-            font-display: fallback;
-            src: url(fonts/roboto-italic-400-latin.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        :root {
+            --kc-blue: #1565C0;
+            --kc-blue-dark: #0D47A1;
+            --kc-navy: #0A2463;
+            --kc-gold: #FFB300;
+            --ink: #1a1a2e;
+            --ink-soft: #4c5468;
+            --bg: #f5f7fb;
         }
-        @font-face {
-            font-family: 'Playfair Display';
-            font-style: italic;
-            font-weight: 400;
-            font-display: optional;
-            src: url(fonts/playfair-display-italic-400-latin.woff2) format('woff2');
-            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-        }
-        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
         *, *::before, *::after { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; background: #f5f7fb; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: var(--ink); background: var(--bg); }
         a { text-decoration: none; }
         img { display: block; max-width: 100%; }
 
-        /* ── LANDING HEADER ── */
+        /* ── HEADER ── */
         .lp-header {
             background: var(--kc-navy);
             padding: 12px 32px;
@@ -78,12 +68,12 @@
         }
         .lp-logo { height: 56px; width: auto; display: block; transition: opacity .2s; }
         .lp-logo:hover { opacity: .85; }
-        .lp-phone-wrap { display: flex; align-items: center; }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--kc-gold); outline-offset: 3px; border-radius: 4px; }
         .lp-phone-btn {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-family: 'Montserrat',sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 18px;
             color: #fff;
@@ -99,545 +89,262 @@
         .lp-phone-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
         .lp-phone-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(31,122,77,.3); }
 
-        @media (min-width: 900px) {
-            .phone-band p { font-size: 13px; margin-bottom: 12px; }
-            .phone-band .phone-number { font-size: 34px; }
-        }
-
-        /* ── HERO PROOF IMAGE ── */
-        .hero-proof {
-            position: relative;
-            max-width: clamp(680px, 82vw, 1140px);
-            margin: 4px auto 0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0,0,0,.35), 0 2px 10px rgba(0,0,0,.18);
-        }
-        .hero-proof img {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            display: block;
-            transition: transform .7s cubic-bezier(.25,.46,.45,.94);
-        }
-        .hero-proof:hover img { transform: scale(1.04); }
-        .hero-proof-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10,36,99,.4) 0%, rgba(10,36,99,.1) 30%, transparent 100%);
-            pointer-events: none;
-        }
-        .hero-proof-badge {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            background: var(--kc-gold);
-            color: var(--kc-navy);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 9px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            padding: 5px 11px;
-            border-radius: 2px;
-            box-shadow: 0 2px 10px rgba(255,179,0,.4);
-        }
-        /* ── HERO REVIEW CARD ── */
-        .hero-review-card {
-            max-width: clamp(680px, 82vw, 1140px);
-            margin: 6px auto 0;
-            background: linear-gradient(135deg, #0D1B3E 0%, #111D3C 60%, #0A1830 100%);
-            border-radius: 8px;
-            padding: 10px 24px 8px;
-            box-shadow: 0 8px 32px rgba(0,0,0,.35), 0 2px 8px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,179,0,.12);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-top: 2px solid var(--kc-gold);
-        }
-        /* ghost quotation mark depth layer */
-        .hero-review-card::before {
-            content: '\201C';
-            position: absolute;
-            top: -8px;
-            left: 8px;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 72px;
-            font-style: italic;
-            line-height: 1;
-            color: var(--kc-gold);
-            opacity: .18;
-            pointer-events: none;
-            user-select: none;
-        }
-        /* subtle gold shimmer streak across card */
-        .hero-review-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,179,0,.4) 40%, rgba(255,179,0,.4) 60%, transparent 100%);
-            pointer-events: none;
-        }
-        .hrc-quote {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3px;
-        }
-        .hrc-stars {
-            color: var(--kc-gold);
-            font-size: 11px;
-            letter-spacing: 2px;
-            line-height: 1;
-            filter: drop-shadow(0 1px 4px rgba(255,179,0,.5));
-        }
-        .hrc-quote p {
-            margin: 0;
-            font-family: 'Playfair Display', Georgia, serif;
-            font-style: italic;
-            font-size: clamp(12px, 2vw, 14px);
-            color: #EDE8DC;
-            line-height: 1.55;
-            position: relative;
-            z-index: 1;
-            max-width: 520px;
-            text-wrap: balance;
-        }
-        .hrc-quote cite {
-            font-style: normal;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 9px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            color: var(--kc-gold);
-            opacity: .75;
-        }
-        .hrc-ratings-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            margin-top: 6px;
-            padding-top: 5px;
-            border-top: 1px solid rgba(255,179,0,.15);
-        }
-        .hrc-platform-icon {
-            width: 13px;
-            height: 13px;
-            flex-shrink: 0;
-        }
-        .hrc-rating {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 11px;
-            color: #EDE8DC;
-            letter-spacing: .02em;
-        }
-        .hrc-count {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            font-weight: 600;
-            color: rgba(237,232,220,.55);
-            letter-spacing: .04em;
-        }
-        .hrc-divider {
-            width: 1px;
-            height: 12px;
-            background: rgba(255,179,0,.25);
-            margin: 0 6px;
-            flex-shrink: 0;
-        }
-        @media (max-width: 600px) {
-            .hero-review-card { padding: 8px 14px 7px; }
-            .hrc-quote p { font-size: 12px; }
-            .hrc-ratings-row { gap: 4px; }
-            .hrc-count { font-size: 9px; white-space: nowrap; }
-            .hrc-divider { margin: 0 4px; }
-        }
-        @media (max-width: 360px) {
-            .hrc-quote p { font-size: 11px; }
-            .hrc-platform-icon { width: 12px; height: 12px; }
-            .hrc-rating { font-size: 10px; }
-            .hrc-count { font-size: 8px; }
-        }
-
-        @media (min-width: 1024px) {
-            .hero-scroll-btn { padding: 18px 72px 14px; }
-            .hero-scroll-btn h1 { font-size: clamp(22px, 2.2vw, 34px); }
-            .hero-cta-label { font-size: 10px; letter-spacing: .15em; }
-            .hrc-quote p { font-size: clamp(15px, 1.3vw, 19px); }
-            .hrc-quote cite { font-size: 10px; }
-            .hrc-stars { font-size: 13px; }
-            .hrc-ratings-row { gap: 8px; padding-top: 7px; margin-top: 8px; }
-            .hrc-platform-icon { width: 18px; height: 18px; }
-            .hrc-rating { font-size: 14px; }
-            .hrc-count { font-size: 12px; }
-            .hrc-divider { height: 16px; margin: 0 10px; }
-        }
-
         /* ── HERO BAND ── */
-        .page-band {
-            background: linear-gradient(135deg, var(--kc-navy) 0%, #1a3a8f 50%, var(--kc-blue) 100%);
-            padding: 14px 32px 20px;
-            text-align: center;
+        .hero-band {
+            background: linear-gradient(150deg, var(--kc-navy) 0%, #12317e 55%, var(--kc-blue-dark) 100%);
             color: #fff;
+            text-align: center;
+            padding: 36px 20px 96px;
             position: relative;
             overflow: hidden;
         }
-        .page-band::before {
+        .hero-band::before {
             content: '';
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse 70% 90% at 50% 0%, rgba(255,179,0,.18) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 40% at 10% 100%, rgba(21,101,192,.4) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 90% 100%, rgba(21,101,192,.4) 0%, transparent 70%);
+                radial-gradient(ellipse 75% 95% at 50% 0%, rgba(255,179,0,.14) 0%, transparent 60%),
+                radial-gradient(ellipse 45% 45% at 8% 100%, rgba(21,101,192,.45) 0%, transparent 70%),
+                radial-gradient(ellipse 45% 45% at 92% 100%, rgba(21,101,192,.45) 0%, transparent 70%);
             pointer-events: none;
         }
-        .page-band::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,179,0,.5), transparent);
-        }
-        /* ── HERO CTA BUTTON ── */
-        .hero-scroll-wrap {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+        .hero-inner { max-width: 620px; margin: 0 auto; position: relative; }
+        .hero-eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--kc-gold);
             margin: 0 0 14px;
         }
-        .hero-cta-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: .13em;
-            text-transform: uppercase;
-            color: rgba(10,36,99,.6);
-            position: relative;
-            z-index: 1;
-            margin-top: 1px;
-        }
-        .hero-scroll-btn {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-            cursor: pointer;
-            background: var(--kc-gold);
-            border: none;
-            border-radius: 10px;
-            color: var(--kc-navy);
-            padding: 8px 20px 6px;
-            position: relative;
-            overflow: hidden;
-            transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
-            box-shadow:
-                0 6px 28px rgba(255,179,0,.45),
-                0 2px 8px rgba(255,179,0,.25),
-                inset 0 1px 0 rgba(255,255,255,.25);
-        }
-        /* shimmer sweep — fires every 4s */
-        .hero-scroll-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,.35) 50%, transparent 80%);
-            animation: btn-shimmer 4s ease-in-out infinite;
-            pointer-events: none;
-        }
-        /* pulse ring */
-        .hero-scroll-btn::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 13px;
-            border: 2px solid rgba(255,179,0,.6);
-            animation: btn-pulse-ring 3s ease-out infinite;
-            pointer-events: none;
-        }
-        @keyframes btn-shimmer {
-            0%   { left: -100%; opacity: 0; }
-            10%  { opacity: 1; }
-            50%  { left: 130%; opacity: 1; }
-            51%, 100% { left: 130%; opacity: 0; }
-        }
-        @keyframes btn-pulse-ring {
-            0%   { transform: scale(1); opacity: .7; }
-            70%  { transform: scale(1.06); opacity: 0; }
-            100% { transform: scale(1.06); opacity: 0; }
-        }
-        .hero-scroll-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow:
-                0 12px 40px rgba(255,179,0,.55),
-                0 4px 12px rgba(255,179,0,.3),
-                inset 0 1px 0 rgba(255,255,255,.25);
-        }
-        .hero-scroll-btn:active { transform: translateY(-1px) scale(.99); }
-
-        .hero-scroll-btn h1 {
+        .hero-band h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(13px, 3.5vw, 22px);
-            margin: 0;
-            position: relative;
-            line-height: 1.1;
-            letter-spacing: -.02em;
-            color: var(--kc-navy);
-            z-index: 1;
+            font-size: clamp(27px, 6.4vw, 42px);
+            line-height: 1.12;
+            letter-spacing: -.025em;
+            margin: 0 0 14px;
+            text-wrap: balance;
+        }
+        .hero-band h1 em {
+            font-style: normal;
+            color: var(--kc-gold);
             white-space: nowrap;
         }
-        .scroll-chevron {
-            display: block;
-            width: 24px;
-            height: 24px;
-            opacity: .65;
-            margin-top: 6px;
-            color: var(--kc-navy);
-            position: relative;
-            z-index: 1;
-            transition: opacity .25s, transform .3s cubic-bezier(.34,1.56,.64,1);
-            animation: bounce-chevron 2.5s ease-in-out infinite;
+        .hero-sub {
+            font-size: clamp(15px, 2.6vw, 17px);
+            line-height: 1.7;
+            color: rgba(255,255,255,.88);
+            margin: 0 auto 18px;
+            max-width: 480px;
         }
-        @keyframes bounce-chevron {
-            0%, 100% { transform: translateY(0); }
-            50%       { transform: translateY(5px); }
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 7px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,179,0,.3);
+            border-radius: 999px;
+            padding: 8px 18px;
         }
-
-        /* ── STATIC REVIEW ── */
-        .band-review-static {
-            margin: 0 auto;
-            max-width: 580px;
-            text-align: center;
-        }
-        .band-stars {
-            font-size: 18px;
+        .hero-rating svg { width: 15px; height: 15px; flex-shrink: 0; }
+        .hero-rating .stars {
             color: var(--kc-gold);
-            letter-spacing: .1em;
-            margin-bottom: 16px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            line-height: 1;
             filter: drop-shadow(0 1px 4px rgba(255,179,0,.5));
         }
-        .band-review-static blockquote {
-            margin: 0 0 20px;
-            padding: 0;
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: clamp(15px, 2.2vw, 18px);
-            font-style: italic;
-            line-height: 1.75;
-            color: rgba(255,255,255,.95);
-            letter-spacing: .01em;
-        }
-        .band-review-byline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-        }
-        .band-review-rule {
-            height: 1px;
-            width: 32px;
-            background: linear-gradient(90deg, transparent, var(--kc-gold));
-            flex-shrink: 0;
-        }
-        .band-review-rule.right {
-            background: linear-gradient(90deg, var(--kc-gold), transparent);
-        }
-        .band-review-byline cite {
-            font-style: normal;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 11px;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--kc-gold);
-        }
-
-        /* ── MAIN LAYOUT ── */
-        .main-wrap {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 32px 32px 72px;
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 40px;
-            align-items: stretch;
-        }
-        .sidebar { display: flex; flex-direction: column; gap: 20px; height: 100%; }
-
-        /* ── FORM CARD ── */
-        .form-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 8px 48px rgba(13,71,161,.13), 0 2px 8px rgba(13,71,161,.06);
-            overflow: hidden;
-            border: 1px solid rgba(13,71,161,.2);
-        }
-        .form-header {
-            background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue-dark) 100%);
-            padding: 0;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        .form-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 120% at 0% 50%, rgba(255,179,0,.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        /* ── STEP PROGRESS BAR ── */
-        .step-progress {
-            display: flex;
-            align-items: stretch;
-            position: relative;
-        }
-        .step-item {
-            flex: 1;
-            padding: 22px 28px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            position: relative;
-            transition: background .2s;
-        }
-        .step-item.active {
-            background: rgba(255,179,0,.1);
-        }
-        .step-item.upcoming {
-            opacity: .55;
-        }
-        .step-num {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-        .step-item.active .step-num {
-            background: var(--kc-gold);
-            color: var(--kc-navy);
-            box-shadow: 0 4px 14px rgba(255,179,0,.45);
-        }
-        .step-item.upcoming .step-num {
-            background: rgba(255,255,255,.15);
-            color: #fff;
-        }
-        .step-text { min-width: 0; }
-        .step-label {
+        .hero-rating strong {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 13px;
-            letter-spacing: .03em;
             color: #fff;
-            line-height: 1.2;
-            display: block;
         }
-        .step-item.active .step-label { color: var(--kc-gold); }
-        .step-sub {
+        .hero-rating span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             font-size: 11px;
-            color: rgba(255,255,255,.82);
-            font-family: 'Roboto', sans-serif;
-            margin-top: 3px;
-            display: block;
+            letter-spacing: .03em;
+            color: rgba(255,255,255,.75);
         }
-        .step-divider {
-            width: 1px;
-            background: rgba(255,255,255,.1);
-            margin: 16px 0;
-            flex-shrink: 0;
+
+        /* ── QUOTE CARD ── */
+        .quote-wrap { max-width: 560px; margin: -72px auto 0; padding: 0 16px; position: relative; z-index: 2; }
+        .quote-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(13,71,161,.16);
+            box-shadow: 0 24px 64px rgba(10,36,99,.22), 0 6px 18px rgba(10,36,99,.10), 0 1px 3px rgba(10,36,99,.08);
+            overflow: hidden;
         }
-        .step-arrow {
-            position: absolute;
-            right: -1px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255,255,255,.2);
-            font-size: 18px;
-            z-index: 1;
-        }
-        /* gold progress line at bottom */
-        .step-progress-bar {
-            height: 3px;
-            background: rgba(255,255,255,.08);
+
+        /* quote path — the 3-stop strip */
+        .quote-path {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue-dark) 100%);
+            padding: 14px 12px 12px;
+            gap: 6px;
             position: relative;
         }
-        .step-progress-bar::after {
+        .qp-stop { text-align: center; position: relative; padding: 0 4px; }
+        .qp-dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            margin: 0 auto 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 12px;
+            background: rgba(255,255,255,.14);
+            color: rgba(255,255,255,.85);
+            position: relative;
+            z-index: 1;
+        }
+        .qp-stop.here .qp-dot {
+            background: var(--kc-gold);
+            color: var(--kc-navy);
+            box-shadow: 0 3px 12px rgba(255,179,0,.5);
+        }
+        /* connector line between dots */
+        .qp-stop::before {
             content: '';
             position: absolute;
-            left: 0; top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, var(--kc-gold), rgba(255,179,0,.3));
-            border-radius: 0 2px 2px 0;
+            top: 13px;
+            left: calc(-50% + 16px);
+            right: calc(50% + 16px);
+            height: 2px;
+            background: rgba(255,255,255,.18);
         }
-        .form-body { padding: 36px; }
+        .qp-stop:first-child::before { display: none; }
+        .qp-label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 10px;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            line-height: 1.35;
+            color: rgba(255,255,255,.78);
+        }
+        .qp-stop.here .qp-label { color: var(--kc-gold); }
+        .qp-here-tag {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 8px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--kc-navy);
+            background: var(--kc-gold);
+            border-radius: 999px;
+            padding: 2px 8px;
+            margin-top: 5px;
+        }
 
-        .field-group { margin-bottom: 22px; }
-        .field-group label { display: block; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #333; margin-bottom: 8px; }
-        .field-group label span { color: var(--kc-gold); }
-        .field-group input,
-        .field-group select,
-        .field-group textarea {
+        .quote-body { padding: 26px 24px 24px; }
+        .quote-body-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 17px;
+            letter-spacing: -.01em;
+            color: var(--ink);
+            margin: 0 0 4px;
+        }
+        .quote-body-sub {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--ink-soft);
+            margin: 0 0 20px;
+        }
+
+        .field-group { margin-bottom: 18px; }
+        .field-group label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #333;
+            margin-bottom: 7px;
+        }
+        .field-group label .req { color: var(--kc-blue); }
+        .field-group input {
             width: 100%;
             padding: 15px 18px;
             border: 2px solid #b8c4d9;
-            border-radius: 6px;
+            border-radius: 8px;
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
-            color: #1a1a2e;
+            color: var(--ink);
             background: #f8faff;
             outline: none;
             transition: border-color .2s, box-shadow .2s, background .2s;
         }
-        .field-group input:focus,
-        .field-group select:focus,
-        .field-group textarea:focus {
+        .field-group input:focus-visible {
             border-color: var(--kc-blue);
-            box-shadow: 0 0 0 4px rgba(21,101,192,.1);
+            box-shadow: 0 0 0 4px rgba(21,101,192,.14);
             background: #fff;
+            outline: none;
         }
-        .field-group textarea { resize: vertical; min-height: 110px; }
-        .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .field-group input[aria-invalid="true"] { border-color: #C62828; background: #fff8f8; }
+        .field-hint {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: var(--ink-soft);
+            margin-top: 7px;
+        }
+        .field-hint svg { flex-shrink: 0; margin-top: 2px; color: var(--kc-blue); }
+        .field-error {
+            display: none;
+            font-size: 13px;
+            font-weight: 500;
+            color: #B71C1C;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+        .field-error.show { display: block; }
 
-        .service-chips { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
-        .svc-category { background: #f8faff; border-radius: 8px; padding: 16px; border: 1px solid #e4e9f4; }
-        .svc-cat-label { font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--kc-blue); padding-bottom: 10px; border-bottom: 2px solid #e4e9f4; margin-bottom: 12px; display: block; }
-        .svc-cat-chips { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-        .chip { display: flex; align-items: center; gap: 9px; min-width: 160px; }
-        .chip input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--kc-blue); cursor: pointer; flex-shrink: 0; }
-        .chip label { font-size: 14px; color: #333; cursor: pointer; font-weight: 500; line-height: 1.3; }
-        .svc-divider { display: none; }
-        .chip-other { margin-top: 4px; padding: 10px 16px; background: #f0f4ff; border-radius: 6px; border: 1px dashed #c5d0ea; }
+        .form-error-box {
+            display: none;
+            background: #FFF3CD;
+            border: 1px solid var(--kc-gold);
+            color: #7a5000;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .form-error-box.show { display: block; }
 
         .submit-btn {
             width: 100%;
             background: var(--kc-gold);
             color: var(--kc-navy);
-            font-family: 'Montserrat',sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 17px;
-            letter-spacing: .05em;
+            letter-spacing: .04em;
             text-transform: uppercase;
-            padding: 20px 24px;
+            padding: 19px 24px;
             border: none;
             cursor: pointer;
-            border-radius: 6px;
-            margin-top: 12px;
+            border-radius: 8px;
+            margin-top: 4px;
             transition: background .2s, transform .15s, box-shadow .2s;
-            box-shadow: 0 6px 24px rgba(255,179,0,.4), 0 2px 8px rgba(255,179,0,.2);
+            box-shadow: 0 6px 24px rgba(255,179,0,.4), 0 2px 8px rgba(255,179,0,.2), inset 0 1px 0 rgba(255,255,255,.3);
             position: relative;
             overflow: hidden;
         }
@@ -645,172 +352,184 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
+            background: linear-gradient(135deg, rgba(255,255,255,.18) 0%, transparent 60%);
             pointer-events: none;
         }
-        .submit-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,160,0,.5); }
+        .submit-btn:hover { background: #FFA000; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255,160,0,.5), inset 0 1px 0 rgba(255,255,255,.3); }
+        .submit-btn:focus-visible { outline: 3px solid var(--kc-navy); outline-offset: 3px; }
         .submit-btn:active { transform: translateY(0); box-shadow: 0 2px 8px rgba(255,179,0,.3); }
+        .submit-btn[disabled] { opacity: .7; cursor: default; transform: none; }
 
         .form-fine {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             font-size: 11px;
+            letter-spacing: .04em;
             color: #595959;
             text-align: center;
-            margin-top: 14px;
+            margin: 14px 0 0;
             line-height: 1.7;
         }
+        .form-fine .dot { color: var(--kc-gold); }
 
-        /* ── SIDEBAR ── */
-
-        .trust-box {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 24px rgba(13,71,161,.08), 0 1px 4px rgba(13,71,161,.04);
-            padding: 28px 24px;
-            border: 1px solid rgba(13,71,161,.05);
-        }
-        .trust-box h2 {
-            font-family: 'Montserrat',sans-serif;
+        /* ── AFTER-SUBMIT STEPS ── */
+        .section { max-width: 560px; margin: 0 auto; padding: 34px 20px 0; }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 12px;
-            color: var(--kc-blue);
-            margin: 0 0 20px;
-            text-transform: uppercase;
+            font-size: 13px;
             letter-spacing: .1em;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #f0f4ff;
+            text-transform: uppercase;
+            color: var(--kc-blue);
+            text-align: center;
+            margin: 0 0 18px;
         }
-        .trust-item {
+        .next-steps { display: flex; flex-direction: column; gap: 12px; }
+        .ns-item {
             display: flex;
-            align-items: flex-start;
             gap: 14px;
-            margin-bottom: 16px;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid rgba(13,71,161,.10);
+            border-radius: 10px;
+            padding: 15px 16px;
+            box-shadow: 0 3px 14px rgba(13,71,161,.06), 0 1px 3px rgba(13,71,161,.04);
         }
-        .trust-item:last-child { margin-bottom: 0; }
-        .trust-icon {
-            width: 38px;
-            height: 38px;
+        .ns-num {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             background: linear-gradient(135deg, var(--kc-blue-dark), var(--kc-blue));
-            border-radius: 8px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 13px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 17px;
+            box-shadow: 0 3px 10px rgba(13,71,161,.25);
+        }
+        .ns-text strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            color: var(--ink);
+            margin-bottom: 3px;
+        }
+        .ns-text span { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+
+        /* ── TRUST ROW ── */
+        .trust-row { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .tr-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            border: 1px solid rgba(13,71,161,.10);
+            border-radius: 10px;
+            padding: 13px 16px;
+            box-shadow: 0 3px 14px rgba(13,71,161,.06), 0 1px 3px rgba(13,71,161,.04);
+        }
+        .tr-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--kc-blue-dark), var(--kc-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
             box-shadow: 0 3px 10px rgba(13,71,161,.2);
         }
-        .trust-item-text strong { display: block; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: 13px; color: #1a1a2e; margin-bottom: 3px; }
-        .trust-item-text span { font-size: 12px; color: #5a5a6e; line-height: 1.55; }
+        .tr-text strong { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; color: var(--ink); }
+        .tr-text span { font-size: 12px; color: var(--ink-soft); line-height: 1.55; }
 
-        /* ── HERO WORK PROOF ── */
-        .hero-proof {
-            max-width: clamp(680px, 82vw, 1140px);
-            margin: 8px auto 0;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 8px 32px rgba(10,36,99,.3), 0 2px 8px rgba(10,36,99,.15);
-        }
-        .hero-proof img {
-            width: 100%;
-            height: clamp(360px, 41vw, 577px);
-            display: block;
-            object-fit: cover;
-            object-position: center 40%;
-            transition: transform .7s cubic-bezier(.25,.46,.45,.94);
-        }
-        .hero-proof:hover img { transform: scale(1.03); }
-        .hero-proof-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(10,36,99,.5) 0%,
-                rgba(10,36,99,.15) 40%,
-                transparent 100%
-            );
-            pointer-events: none;
-        }
-        .hero-proof-badge {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            background: var(--kc-gold);
-            color: var(--kc-navy);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 9px;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-            padding: 5px 11px;
-            border-radius: 2px;
-            box-shadow: 0 2px 10px rgba(255,179,0,.4);
-        }
-        .phone-band {
+        /* ── CALL FALLBACK ── */
+        .call-band-wrap { max-width: 560px; margin: 0 auto; padding: 34px 20px 56px; }
+        .call-band {
             background: linear-gradient(135deg, var(--kc-blue) 0%, var(--kc-blue-dark) 100%);
-            border-radius: 10px;
-            padding: 28px 24px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,179,0,.35);
+            padding: 24px 20px;
             text-align: center;
             color: #fff;
-            box-shadow: 0 4px 20px rgba(21,101,192,.25);
-            border: 2px solid rgba(255,179,0,.35);
             display: block;
+            box-shadow: 0 6px 24px rgba(21,101,192,.25);
             transition: border-color .2s, box-shadow .2s, transform .15s;
         }
-        .phone-band:hover {
-            border-color: rgba(255,179,0,.7);
-            box-shadow: 0 8px 32px rgba(21,101,192,.35);
-            transform: translateY(-2px);
+        .call-band:hover { border-color: rgba(255,179,0,.7); box-shadow: 0 10px 32px rgba(21,101,192,.35); transform: translateY(-2px); }
+        .call-band:active { transform: translateY(0); }
+        .call-band p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            opacity: .8;
+            margin: 0 0 8px;
         }
-        .phone-band:active { transform: translateY(0); }
-        .phone-band p { font-family: 'Montserrat',sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin: 0 0 10px; }
-        .phone-band-number { display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .phone-band .phone-number { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: 26px; color: var(--kc-gold); text-shadow: 0 2px 12px rgba(255,179,0,.3); }
+        .call-band-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 25px;
+            color: var(--kc-gold);
+            text-shadow: 0 2px 12px rgba(255,179,0,.3);
+        }
+        .call-band-number svg { color: var(--kc-gold); flex-shrink: 0; }
 
-        footer { background: #07142A; padding: 48px 32px 24px; }
-        .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 160px 1fr 1fr 1fr; gap: 40px 32px; }
-        .footer-logo-wrap img { width: 110px; }
-        .footer-logo-wrap p { font-size: 12px; color: rgba(255,255,255,.8); margin: 10px 0 0; line-height: 1.6; }
-        .footer-col h3 { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-gold); margin: 0 0 14px; }
-        .footer-col a { display: flex; align-items: center; min-height: 44px; font-size: 13px; color: rgba(255,255,255,.8); transition: color .2s; text-decoration: none; }
-        .footer-col a:hover { color: #fff; }
-        .footer-col span { display: block; font-size: 13px; color: rgba(255,255,255,.8); padding: 6px 0; }
-        .footer-bottom { max-width: 1060px; margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.75); flex-wrap: wrap; gap: 8px; }
-        @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; } .footer-logo-wrap { grid-column: 1/-1; } }
-        .footer-bottom { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.75); flex-wrap: wrap; gap: 8px; }
+        /* ── FOOTER ── */
+        footer { background: #07142A; padding: 26px 20px; }
+        .footer-slim {
+            max-width: 560px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,.75);
+            line-height: 2;
+        }
+        .footer-slim a { color: rgba(255,255,255,.85); text-decoration: underline; text-underline-offset: 3px; transition: color .2s; }
+        .footer-slim a:hover { color: #fff; }
 
+        /* ── RESPONSIVE ── */
+        @media (min-width: 700px) {
+            .quote-body { padding: 30px 34px 30px; }
+            .quote-path { padding: 16px 18px 14px; }
+            .qp-label { font-size: 10.5px; }
+            .trust-row { grid-template-columns: 1fr 1fr; }
+            .tr-item:first-child { grid-column: 1 / -1; }
+        }
         @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
             .lp-header { padding: 10px 16px; }
             .lp-logo { height: 44px; }
             .lp-phone-btn { font-size: 15px; padding: 8px 16px; }
-            .main-wrap { grid-template-columns: 1fr; padding: 16px 12px 48px; gap: 20px; }
-            .field-row { grid-template-columns: 1fr; gap: 0; }
-            .form-body { padding: 20px 16px; }
-            .form-header { padding: 16px 16px; }
-            .page-band { padding: 8px 16px 12px; }
-            .hero-scroll-wrap { margin: 0 0 6px; gap: 6px; }
-            .hero-review-card { margin: 6px auto 0; }
-            .page-band h1 { font-size: clamp(18px, 6vw, 28px); margin-bottom: 12px; }
-            .band-carousel { max-width: 100%; }
-            .review-card { padding: 14px 16px 12px; }
-            .review-card p { font-size: 12px; margin-bottom: 10px; }
-            .carousel-dots { margin-top: 10px; }
-        }
-    
-        @media (max-width: 768px) {
-            html, body { overflow-x: hidden; }
+            .hero-band { padding: 22px 16px 86px; }
+            .hero-sub { margin-bottom: 14px; }
         }
         @media (max-width: 420px) {
             .lp-header { padding: 8px 12px; }
             .lp-logo { height: 36px; }
             .lp-phone-btn { font-size: 14px; padding: 8px 14px; gap: 6px; }
             .lp-phone-btn svg { width: 15px; height: 15px; }
-            .main-wrap { padding: 12px 8px 48px; }
-            .form-body { padding: 16px 12px; }
-            .field-row { grid-template-columns: 1fr; gap: 0; }
-            .step-item { padding: 14px 12px; gap: 10px; }
-            .step-label { font-size: 11px; }
-            .step-sub { font-size: 10px; }
-            .step-num { width: 28px; height: 28px; font-size: 13px; }
+            .quote-wrap { padding: 0 10px; }
+            .quote-body { padding: 22px 16px 20px; }
+            .hero-rating { padding: 7px 12px; gap: 5px; }
+            .hero-rating span { font-size: 10px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
         }
     </style>
     <script type="application/ld+json">
@@ -818,7 +537,7 @@
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Schedule a Cleaning — KC Clean Carpets",
-      "description": "Book your carpet, hardwood, upholstery or tile cleaning online with KC Clean Carpets. Serving the Kansas City metro. Call (816) 715-1130 or book online.",
+      "description": "Get your exact carpet cleaning price online in about 60 seconds and book your appointment with KC Clean Carpets. Serving the Kansas City metro. Call (816) 715-1130 or book online.",
       "url": "https://www.kccleancarpets.com/schedule",
       "mainEntity": {
         "@id": "https://www.kccleancarpets.com/#business"
@@ -850,252 +569,247 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="lp-header">
     <a href="/"><img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" class="lp-logo" alt="KC Clean Carpets — Home"></a>
     <div class="lp-phone-wrap">
-        <a href="tel:8167151130" class="lp-phone-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span class="goog-sn">(816) 715-1130</span></a>
+        <a href="tel:8167151130" class="lp-phone-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span class="goog-sn">(816) 715-1130</span></a>
     </div>
 </header>
 
 <main>
-<h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Schedule a Carpet Cleaning in Kansas City — Book Online with KC Clean Carpets</h1>
-<div class="page-band">
-    <div class="hero-scroll-wrap">
-        <button class="hero-scroll-btn" onclick="document.getElementById('review-card').scrollIntoView({behavior:'smooth',block:'start'})">
-            <span style="display:block; font-size:inherit; font-weight:inherit; line-height:inherit; margin:0;">Get My Exact Price Now ↓</span>
-            <span class="hero-cta-label">Free &middot; No obligation &middot; 60 seconds</span>
-        </button>
-    </div>
-    <div class="hero-proof">
-        <img src="images/landing_page_image.avif" alt="KC Clean Carpets — Professional Carpet Cleaning Results" width="1060" height="400" fetchpriority="high" loading="eager" decoding="sync">
-        <div class="hero-proof-overlay"></div>
-        <div class="hero-proof-badge">Our Work</div>
-    </div>
-    <div class="hero-review-card" id="review-card">
-        <div class="hrc-quote">
-            <span class="hrc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <p>"Best carpet cleaning in Kansas City! Roland did an amazing job and my carpet looks brand new!!"</p>
-            <cite>— Michelle T.</cite>
-        </div>
-        <div class="hrc-ratings-row">
-            <svg class="hrc-platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-            </svg>
-            <strong class="hrc-rating">5.0</strong>
-            <span class="hrc-count">135+ five-star reviews</span>
-            <span class="hrc-divider"></span>
-            <svg class="hrc-platform-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.384C19.612 22.954 24 17.99 24 12z" fill="#1877F2"/>
-            </svg>
-            <strong class="hrc-rating">5.0</strong>
-            <span class="hrc-count">five-star rated</span>
-        </div>
-    </div>
-</div>
-
-<div class="main-wrap">
-
-    <!-- LEFT: FORM -->
-    <div>
-
-        <!-- STEP 1 -->
-        <div id="step-1" class="form-card">
-            <div class="form-header">
-                <div class="step-progress">
-                    <div class="step-item active">
-                        <div class="step-num">1</div>
-                        <div class="step-text">
-                            <span class="step-label">Get Your Exact Price Texted to You</span>
-                            <span class="step-sub">Enter your info to get your exact itemized price by text.</span>
-                        </div>
-                        <span class="step-arrow">›</span>
-                    </div>
-                    <div class="step-divider"></div>
-                    <div class="step-item upcoming">
-                        <div class="step-num">2</div>
-                        <div class="step-text">
-                            <span class="step-label">Select Your Areas</span>
-                            <span class="step-sub">Tap the rooms to be cleaned—unlock your exact price, no surprises.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="step-progress-bar"></div>
+    <div class="hero-band">
+        <div class="hero-inner">
+            <p class="hero-eyebrow">Serving the Kansas City Metro</p>
+            <h1>Your exact carpet cleaning price, online, in <em>about 60 seconds</em></h1>
+            <p class="hero-sub">Two quick fields, then tap the rooms you want cleaned. Your complete, itemized quote appears on the next screen — no need to talk to anyone first.</p>
+            <div class="hero-rating">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>5.0 on Google</strong>
+                <span>135+ five-star reviews</span>
             </div>
-            <div class="form-body">
+        </div>
+    </div>
+
+    <div class="quote-wrap">
+        <div class="quote-card">
+            <div class="quote-path" aria-label="Quote progress: step 1 of 3, your info">
+                <div class="qp-stop here">
+                    <div class="qp-dot" aria-hidden="true">1</div>
+                    <span class="qp-label">Your info</span>
+                    <span class="qp-here-tag">You're here</span>
+                </div>
+                <div class="qp-stop">
+                    <div class="qp-dot" aria-hidden="true">2</div>
+                    <span class="qp-label">Pick your rooms</span>
+                </div>
+                <div class="qp-stop">
+                    <div class="qp-dot" aria-hidden="true">3</div>
+                    <span class="qp-label">See price &amp; book</span>
+                </div>
+            </div>
+            <div class="quote-body">
+                <h2 class="quote-body-title">Start your instant quote</h2>
+                <p class="quote-body-sub">Just these two fields — you'll build your exact price on the next screen.</p>
                 <form id="lead-form" novalidate>
+                    <div class="field-group">
+                        <label for="fname">First Name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="fname" name="fname" autocomplete="given-name" required
+                               aria-required="true" aria-describedby="fname-error">
+                        <p class="field-error" id="fname-error">Please enter your first name.</p>
+                    </div>
 
                     <div class="field-group">
-                        <label for="fname">First Name <span>*</span></label>
-                        <input type="text" id="fname" name="fname" autocomplete="given-name" placeholder="" required>
+                        <label for="phone">Mobile Number <span class="req" aria-hidden="true">*</span></label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" required
+                               aria-required="true" aria-describedby="phone-hint phone-error">
+                        <p class="field-error" id="phone-error">Please enter a 10-digit phone number, like (816) 555-0123.</p>
+                        <p class="field-hint" id="phone-hint">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                            <span>We text your itemized quote to this number instantly, so you have it in writing. No spam, ever.</span>
+                        </p>
                     </div>
 
-                    <div class="field-group">
-                        <label for="phone">Phone Number <span>*</span></label>
-                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="" required>
-                    </div>
+                    <div class="form-error-box" id="form-error" role="alert"></div>
 
-                    <div id="form-error" style="display:none; background:#FFF3CD; border:1px solid #FFB300; color:#7a5000; padding:10px 14px; border-radius:3px; font-size:13px; margin-bottom:16px;">
-                        Please fill in all required fields (First Name and Phone).
-                    </div>
-
-                    <button type="submit" class="submit-btn">
-                        Show My Price &rarr;
-                    </button>
-                    <p class="form-fine">&#128274; We'll text your quote for your records instantly. No spam, ever.</p>
+                    <button type="submit" class="submit-btn">Show My Exact Price &rarr;</button>
+                    <p class="form-fine">Free quote <span class="dot" aria-hidden="true">&bull;</span> No obligation <span class="dot" aria-hidden="true">&bull;</span> Takes about 60 seconds</p>
                 </form>
             </div>
         </div>
+    </div>
 
-    </div><!-- /left -->
-
-    <!-- RIGHT: SIDEBAR -->
-    <aside class="sidebar">
-
-        <div class="trust-box">
-            <h2>Why KC Clean Carpets?</h2>
-            <div class="trust-item">
-                <div class="trust-icon">&#9733;</div>
-                <div class="trust-item-text">
-                    <strong>5-Star Rated Service</strong>
-                    <span>Consistently rated 5 stars on Google and Facebook by Kansas City homeowners.</span>
+    <section class="section" aria-labelledby="next-steps-title">
+        <h2 class="section-title" id="next-steps-title">What happens when you tap the button</h2>
+        <div class="next-steps">
+            <div class="ns-item">
+                <div class="ns-num" aria-hidden="true">1</div>
+                <div class="ns-text">
+                    <strong>Tap the rooms you want cleaned</strong>
+                    <span>On the next screen, select your rooms and any extras — upholstery, tile, rugs, and more.</span>
                 </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#9989;</div>
-                <div class="trust-item-text">
+            <div class="ns-item">
+                <div class="ns-num" aria-hidden="true">2</div>
+                <div class="ns-text">
+                    <strong>See your exact, itemized price</strong>
+                    <span>Your complete quote appears instantly — no surprises. We also text you a copy for your records.</span>
+                </div>
+            </div>
+            <div class="ns-item">
+                <div class="ns-num" aria-hidden="true">3</div>
+                <div class="ns-text">
+                    <strong>Book your time online</strong>
+                    <span>Pick a day and time that works for you. Most appointments are confirmed within 1 hour.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="trust-title">
+        <h2 class="section-title" id="trust-title">Why Kansas City books with us</h2>
+        <div class="trust-row">
+            <div class="tr-item">
+                <div class="tr-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                <div class="tr-text">
                     <strong>100% Satisfaction Guarantee</strong>
                     <span>Not happy? We'll come back and make it right — no questions asked.</span>
                 </div>
             </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#128197;</div>
-                <div class="trust-item-text">
-                    <strong>Fast, Easy Booking</strong>
-                    <span>Most appointments confirmed within 1 hour. Same-week and next-day slots often available.</span>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#127807;</div>
-                <div class="trust-item-text">
-                    <strong>Eco-Friendly Solutions</strong>
-                    <span>Safe for kids, pets, and allergy sufferers. No harsh chemicals left behind.</span>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">&#128737;</div>
-                <div class="trust-item-text">
+            <div class="tr-item">
+                <div class="tr-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <div class="tr-text">
                     <strong>Licensed &amp; Insured</strong>
-                    <span>Fully licensed, bonded, and insured. Your home is in safe, professional hands.</span>
+                    <span>Fully licensed, bonded, and insured.</span>
+                </div>
+            </div>
+            <div class="tr-item">
+                <div class="tr-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                <div class="tr-text">
+                    <strong>Safe for Kids &amp; Pets</strong>
+                    <span>Eco-friendly solutions, no harsh chemicals left behind.</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <a href="tel:8167151130" class="phone-band">
-            <p>Prefer to call? We're here Mon–Sat 8am–8pm</p>
-            <span class="phone-band-number">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--kc-gold);flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span class="phone-number goog-sn">(816) 715-1130</span>
+    <div class="call-band-wrap">
+        <a href="tel:8167151130" class="call-band">
+            <p>Prefer to talk it through? We're here Mon&ndash;Sat 8am&ndash;8pm</p>
+            <span class="call-band-number">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.11-1.11a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span class="goog-sn">(816) 715-1130</span>
             </span>
         </a>
-
-    </aside>
-</div>
-
-</main>
-<footer>
-    <div class="footer-inner">
-        <div class="footer-logo-wrap">
-            <img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets">
-            <p>Heroic Cleaning.<br>Superior Results.</p>
-        </div>
-        <div class="footer-col">
-            <h3>Services</h3>
-            <a href="/carpet-cleaning">Carpet Cleaning</a>
-            <a href="/commercial-carpet-cleaning">Commercial Cleaning</a>
-            <a href="/hardwood-cleaning">Hardwood Floor Cleaning</a>
-            <a href="/sandless-refinishing">Sandless Refinishing</a>
-            <a href="/wax-removal">Wax Removal</a>
-            <a href="/upholstery-cleaning">Upholstery Cleaning</a>
-            <a href="/tile-grout-cleaning">Tile &amp; Grout Cleaning</a>
-            <a href="/rug-cleaning-kansas-city">Area Rug Cleaning</a>
-                <a href="/water-extraction-kansas-city">Water Extraction</a>
-        </div>
-        <div class="footer-col">
-            <h3>Company</h3>
-            <a href="/about">About Us</a>
-            <a href="/blog">Blog</a>
-            <a href="/testimonials">Testimonials</a>
-            <a href="/carpet-cleaning-before-and-after">Before &amp; After Gallery</a>
-            <a href="/carpet-cleaning-cost">Pricing Guide</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-        </div>
-        <div class="footer-col">
-            <h3>Contact Us</h3>
-            <a href="tel:8167151130"><span class="goog-sn">(816) 715-1130</span></a>
-            <a href="mailto:kccleancarpets@gmail.com">kccleancarpets@gmail.com</a>
-            <span>Raytown, MO</span>
-            <span>Mon&ndash;Sat: 8am &ndash; 8pm</span>
-        </div>
     </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 KC Clean Carpets. All rights reserved.</span>
-        <span>Heroic Cleaning. Superior Results.</span>
+</main>
+
+<footer>
+    <div class="footer-slim">
+        <span>&copy; 2026 KC Clean Carpets &middot; Raytown, MO &middot; <a href="tel:8167151130"><span class="goog-sn">(816) 715-1130</span></a></span><br>
+        <span>Heroic Cleaning. Superior Results. &middot; <a href="/privacy-policy">Privacy Policy</a></span>
     </div>
 </footer>
 
 <script>
-document.getElementById('lead-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+(function() {
+    var form      = document.getElementById('lead-form');
+    var fnameEl   = document.getElementById('fname');
+    var phoneEl   = document.getElementById('phone');
+    var fnameErr  = document.getElementById('fname-error');
+    var phoneErr  = document.getElementById('phone-error');
+    var errorBox  = document.getElementById('form-error');
+    var submitBtn = form.querySelector('.submit-btn');
 
-    var fname    = document.getElementById('fname').value.trim();
-    var phone    = document.getElementById('phone').value.trim();
-    var errorBox = document.getElementById('form-error');
-    var submitBtn = document.querySelector('.submit-btn');
+    function digits(v) { return v.replace(/\D/g, ''); }
 
-    if (!fname || !phone) {
-        errorBox.style.display = 'block';
-        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
+    function formatPhone(v) {
+        var d = digits(v);
+        if (d.length > 11) d = d.slice(0, 11);
+        var n = (d.length === 11 && d.charAt(0) === '1') ? d.slice(1) : d;
+        if (d.length === 11 && d.charAt(0) !== '1') n = d.slice(0, 10);
+        if (n.length > 6)  return '(' + n.slice(0, 3) + ') ' + n.slice(3, 6) + '-' + n.slice(6, 10);
+        if (n.length > 3)  return '(' + n.slice(0, 3) + ') ' + n.slice(3);
+        if (n.length > 0)  return '(' + n;
+        return '';
     }
-    errorBox.style.display = 'none';
 
-    // GTM event: form submission attempt
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        'event': 'form_submission',
-        'form_name': 'book_appointment'
+    phoneEl.addEventListener('input', function() {
+        phoneEl.value = formatPhone(phoneEl.value);
+        if (phoneErr.classList.contains('show') && phoneValid()) clearError(phoneEl, phoneErr);
     });
 
-    // Disable button while sending
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    fnameEl.addEventListener('input', function() {
+        if (fnameErr.classList.contains('show') && fnameEl.value.trim()) clearError(fnameEl, fnameErr);
+    });
 
-    // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
-    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "leadStatus": "new",
-            "date": new Date().toISOString().slice(0, 19),
-            "firstname": fname,
-            "phone": phone
+    function phoneValid() { return digits(phoneEl.value).length === 10; }
+
+    function setError(input, err) {
+        input.setAttribute('aria-invalid', 'true');
+        err.classList.add('show');
+    }
+    function clearError(input, err) {
+        input.removeAttribute('aria-invalid');
+        err.classList.remove('show');
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var fname = fnameEl.value.trim();
+        var valid = true;
+
+        if (!fname) { setError(fnameEl, fnameErr); valid = false; } else { clearError(fnameEl, fnameErr); }
+        if (!phoneValid()) { setError(phoneEl, phoneErr); valid = false; } else { clearError(phoneEl, phoneErr); }
+
+        if (!valid) {
+            var firstInvalid = form.querySelector('input[aria-invalid="true"]');
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+        errorBox.classList.remove('show');
+
+        // GTM event: form submission attempt
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'form_submission',
+            'form_name': 'book_appointment',
+            'form_variant': 'schedule_v2'
+        });
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
+        fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                "leadStatus": "new",
+                "date": new Date().toISOString().slice(0, 19),
+                "firstname": fname,
+                "phone": phoneEl.value.trim()
+            })
         })
-    })
-    .then(function() {
-        // no-cors always resolves with opaque response — treat as success
-        submitBtn.textContent = 'Redirecting...';
-        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
-    })
-    .catch(function(err) {
-        var msg = err && err.message ? err.message : String(err);
-        errorBox.textContent = 'Error: ' + msg;
-        errorBox.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Show My Price →';
-        console.error('Form submission error:', err);
+        .then(function() {
+            // no-cors always resolves with opaque response — treat as success
+            submitBtn.textContent = 'Opening your quote...';
+            window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
+        })
+        .catch(function(err) {
+            var msg = err && err.message ? err.message : String(err);
+            errorBox.textContent = "Something went wrong sending your info (" + msg + "). Please try again, or call us at (816) 715-1130.";
+            errorBox.classList.add('show');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Show My Exact Price →';
+            console.error('Form submission error:', err);
+        });
     });
-});
+})();
 </script>
 
 <script>
@@ -1106,9 +820,8 @@ document.addEventListener('click', function(e) {
         window.dataLayer.push({
             'event': 'phone_click',
             'phone_number': link.href.replace('tel:', ''),
-            'click_location': link.closest('.sticky-fab') ? 'fab' :
-                              link.closest('.top-bar') ? 'top_bar' :
-                              link.closest('.mob-drawer') ? 'mobile_nav' :
+            'click_location': link.closest('.lp-header') ? 'top_bar' :
+                              link.closest('.call-band') ? 'call_band' :
                               link.closest('footer') ? 'footer' : 'other'
         });
     }

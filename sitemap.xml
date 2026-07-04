@@ -143,16 +143,10 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Landing Pages -->
   <url>
-    <loc>https://www.kccleancarpets.com/sandless-refinishing-landing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.kccleancarpets.com/wax-removal-landing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.kccleancarpets.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
   <!-- Blog -->

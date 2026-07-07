@@ -11,3 +11,12 @@ images/Water-extraction-kansas-city.jpg
 images/commercial-carpet.jpg
 images/sofa-cleaning.jpg
 images/before-after/*.jpg
+
+# Local-only ad landing pages — to deploy one, remove it from this list and commit it
+lp-same-day.html
+lp-pet-stains.html
+lp-whole-home.html
+lp-dynamic.html
+
+# Internal marketing docs — never deploy
+fb-ad-copies.html

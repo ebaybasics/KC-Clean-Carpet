@@ -731,6 +731,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var errorBox  = document.getElementById('form-error');
     var submitBtn = form.querySelector('.submit-btn');
 
+    // ── n8n webhook (parallel, fire-and-forget) ──────────────────────────
+    // Paste your n8n *Production* webhook URL here:
+    //   n8n → Webhook node → "Production URL" (looks like
+    //   https://<your-n8n-host>/webhook/<path>). Leave as-is to disable.
+    var N8N_WEBHOOK_URL = 'https://n8n.kccleancarpets.com/webhook/website-leads';
+
+    function sendToN8n(payload) {
+        if (!N8N_WEBHOOK_URL) return;
+        // form-urlencoded is a CORS-safe content type: it survives no-cors and
+        // n8n parses each field into $json.body.<name> automatically.
+        var body = new URLSearchParams(payload).toString();
+        fetch(N8N_WEBHOOK_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body
+        }).catch(function (err) {
+            // Never let an n8n failure affect the Zapier->Markate flow below.
+            console.error('n8n webhook error:', err);
+        });
+    }
+
     function digits(v) { return v.replace(/\D/g, ''); }
 
     function formatPhone(v) {
@@ -791,17 +813,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
+        var payload = {
+            "leadStatus": "new",
+            "date": new Date().toISOString().slice(0, 19),
+            "firstname": fname,
+            "phone": phoneEl.value.trim()
+        };
+
+        // Fire n8n in parallel — fire-and-forget, cannot block or break the
+        // Zapier->Markate flow that drives the redirect below.
+        sendToN8n(payload);
+
         // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
         fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                "leadStatus": "new",
-                "date": new Date().toISOString().slice(0, 19),
-                "firstname": fname,
-                "phone": phoneEl.value.trim()
-            })
+            body: JSON.stringify(payload)
         })
         .then(function() {
             // no-cors always resolves with opaque response — treat as success

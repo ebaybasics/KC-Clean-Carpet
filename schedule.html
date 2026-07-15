@@ -776,6 +776,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     function phoneValid() { return digits(phoneEl.value).length === 10; }
 
+    // Current time as YYYY-MM-DDTHH:mm:ss in Kansas City time (America/Chicago).
+    // Uses the IANA zone so CST/CDT daylight saving is handled automatically,
+    // regardless of the visitor's or server's timezone.
+    function kcTimestamp() {
+        var map = {};
+        new Intl.DateTimeFormat('en-CA', {
+            timeZone: 'America/Chicago',
+            year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hour12: false
+        }).formatToParts(new Date()).forEach(function(p) { map[p.type] = p.value; });
+        var hour = map.hour === '24' ? '00' : map.hour; // some engines emit "24" at midnight
+        return map.year + '-' + map.month + '-' + map.day + 'T' + hour + ':' + map.minute + ':' + map.second;
+    }
+
     function setError(input, err) {
         input.setAttribute('aria-invalid', 'true');
         err.classList.add('show');
@@ -814,7 +829,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         var payload = {
             "leadStatus": "new",
-            "date": new Date().toISOString().slice(0, 19),
+            "date": kcTimestamp(),
             "firstname": fname,
             "phone": phoneEl.value.trim()
         };

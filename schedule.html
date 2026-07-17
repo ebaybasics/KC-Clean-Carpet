@@ -732,9 +732,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var submitBtn = form.querySelector('.submit-btn');
 
     // ── n8n webhook (parallel, fire-and-forget) ──────────────────────────
-    // Using the *Test* webhook URL for now — swap to the Production URL
-    // (n8n → Webhook node → "Production URL") once the workflow is verified.
-    var N8N_WEBHOOK_URL = 'https://n8n.kccleancarpets.com/webhook-test/website-leads';
+    var N8N_WEBHOOK_URL = 'https://n8n.kccleancarpets.com/webhook/website-leads';
 
     function sendToN8n(payload) {
         if (!N8N_WEBHOOK_URL) return;

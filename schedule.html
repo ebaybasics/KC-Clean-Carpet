@@ -739,13 +739,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // form-urlencoded is a CORS-safe content type: it survives no-cors and
         // n8n parses each field into $json.body.<name> automatically.
         var body = new URLSearchParams(payload).toString();
+        // keepalive lets this request outlive the page: the redirect below
+        // navigates away immediately, and without keepalive the browser would
+        // cancel an in-flight fetch (esp. on a cold connection, before the
+        // request ever reaches n8n). With it, delivery is guaranteed.
         fetch(N8N_WEBHOOK_URL, {
             method: 'POST',
             mode: 'no-cors',
+            keepalive: true,
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: body
         }).catch(function (err) {
-            // Never let an n8n failure affect the Zapier->Markate flow below.
             console.error('n8n webhook error:', err);
         });
     }
@@ -832,30 +836,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "phone": phoneEl.value.trim()
         };
 
-        // Fire n8n in parallel — fire-and-forget, cannot block or break the
-        // Zapier->Markate flow that drives the redirect below.
+        // Send the lead to n8n, then go straight to the booking widget.
+        // n8n is our only lead sink now (the Zapier zap was retired), and the
+        // keepalive flag inside sendToN8n guarantees the request is delivered
+        // even as this navigation tears the page down — so the redirect can't
+        // outrace it. No async gate: the redirect no longer depends on any
+        // webhook's response.
         sendToN8n(payload);
 
-        // Use no-cors — Zapier receives the data but browser can't read the response (CORS policy)
-        fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        })
-        .then(function() {
-            // no-cors always resolves with opaque response — treat as success
-            submitBtn.textContent = 'Opening your quote...';
-            window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
-        })
-        .catch(function(err) {
-            var msg = err && err.message ? err.message : String(err);
-            errorBox.textContent = "Something went wrong sending your info (" + msg + "). Please try again, or call us at (816) 715-1130.";
-            errorBox.classList.add('show');
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Show My Exact Price →';
-            console.error('Form submission error:', err);
-        });
+        submitBtn.textContent = 'Opening your quote...';
+        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
     });
 })();
 </script>

@@ -731,26 +731,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var errorBox  = document.getElementById('form-error');
     var submitBtn = form.querySelector('.submit-btn');
 
-    // ── n8n webhook (parallel, fire-and-forget) ──────────────────────────
-    var N8N_WEBHOOK_URL = 'https://n8n.kccleancarpets.com/webhook/website-leads';
+    // ── Lead delivery (parallel, fire-and-forget) ────────────────────────
+    // n8n is the primary sink; Zapier is an independent backup so a single
+    // failed endpoint can't lose a lead. Both get the same payload.
+    var N8N_WEBHOOK_URL   = 'https://n8n.kccleancarpets.com/webhook/website-leads';
+    var ZAPIER_BACKUP_URL = 'https://hooks.zapier.com/hooks/catch/10879187/44wf2pz/';
 
-    function sendToN8n(payload) {
-        if (!N8N_WEBHOOK_URL) return;
-        // form-urlencoded is a CORS-safe content type: it survives no-cors and
-        // n8n parses each field into $json.body.<name> automatically.
-        var body = new URLSearchParams(payload).toString();
-        // keepalive lets this request outlive the page: the redirect below
-        // navigates away immediately, and without keepalive the browser would
-        // cancel an in-flight fetch (esp. on a cold connection, before the
-        // request ever reaches n8n). With it, delivery is guaranteed.
-        fetch(N8N_WEBHOOK_URL, {
+    function postLead(url, payload, label) {
+        if (!url) return;
+        // form-urlencoded is the one content type that survives no-cors (an
+        // application/json header is silently dropped) — n8n parses it into
+        // $json.body.<name> and Zapier splits it into named catch-hook fields.
+        // keepalive lets the request outlive the redirect that fires right
+        // after, so navigation can't cancel an in-flight POST (which on a cold
+        // connection would silently lose the lead).
+        fetch(url, {
             method: 'POST',
             mode: 'no-cors',
             keepalive: true,
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: body
+            body: new URLSearchParams(payload).toString()
         }).catch(function (err) {
-            console.error('n8n webhook error:', err);
+            console.error(label + ' webhook error:', err);
         });
     }
 
@@ -836,13 +838,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "phone": phoneEl.value.trim()
         };
 
-        // Send the lead to n8n, then go straight to the booking widget.
-        // n8n is our only lead sink now (the Zapier zap was retired), and the
-        // keepalive flag inside sendToN8n guarantees the request is delivered
-        // even as this navigation tears the page down — so the redirect can't
-        // outrace it. No async gate: the redirect no longer depends on any
-        // webhook's response.
-        sendToN8n(payload);
+        // Send the lead to both sinks in parallel, then go straight to the
+        // booking widget. keepalive (inside postLead) guarantees each request
+        // survives this navigation, so the redirect can't outrace them and
+        // doesn't depend on any webhook's response.
+        postLead(N8N_WEBHOOK_URL, payload, 'n8n');
+        postLead(ZAPIER_BACKUP_URL, payload, 'zapier');
 
         submitBtn.textContent = 'Opening your quote...';
         window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';

@@ -29,10 +29,11 @@ const MIME = {
 const server = http.createServer((req, res) => {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
 
-  // Redirect .html URLs to clean versions
+  // Redirect .html URLs to clean versions (preserving query string, like Cloudflare Pages)
+  const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
   if (urlPath.endsWith('.html')) {
     const clean = urlPath === '/index.html' ? '/home' : urlPath.slice(0, -5);
-    res.writeHead(301, { 'Location': clean });
+    res.writeHead(301, { 'Location': clean + query });
     res.end();
     return;
   }
@@ -47,6 +48,13 @@ const server = http.createServer((req, res) => {
   // Aliases
   if (urlPath === '/book-now' || urlPath === '/contact-us' || urlPath === '/schedule-v2') {
     res.writeHead(301, { 'Location': '/schedule' });
+    res.end();
+    return;
+  }
+
+  // /book → external booking widget (mirrors _redirects for local parity)
+  if (urlPath === '/book') {
+    res.writeHead(301, { 'Location': 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231' });
     res.end();
     return;
   }

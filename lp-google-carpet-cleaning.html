@@ -197,6 +197,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
+// Kansas City local time in YYYY-MM-DDTHH:MM:SS, matching the schedule form
+// so lead timestamps are consistent (not UTC) and n8n's parser accepts them.
+function kcTimestamp() {
+    var map = {};
+    new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'America/Chicago',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false
+    }).formatToParts(new Date()).forEach(function(p) { map[p.type] = p.value; });
+    var hour = map.hour === '24' ? '00' : map.hour;
+    return map.year + '-' + map.month + '-' + map.day + 'T' + hour + ':' + map.minute + ':' + map.second;
+}
 document.getElementById('lead-form').addEventListener('submit', function(e) {
     e.preventDefault();
     var fname = document.getElementById('fname').value.trim();
@@ -208,18 +221,19 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ 'event': 'form_submission', 'form_name': 'lp_google' });
     btn.disabled = true; btn.textContent = 'Sending...';
-    fetch('https://hooks.zapier.com/hooks/catch/10879187/un9seqm/', {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ "leadStatus": "new", "leadSource": "lp_google", "date": new Date().toISOString().slice(0,19), "firstname": fname, "phone": phone })
-    }).then(function() {
-        btn.textContent = 'Redirecting...';
-        window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
-    }).catch(function() {
-        errorBox.textContent = 'Something went wrong - please call us at (816) 715-1130.';
-        errorBox.style.display = 'block';
-        btn.disabled = false; btn.textContent = 'Get My Exact Price &rarr;';
-    });
+    // Send the lead to n8n as form-urlencoded — a CORS-safe content type that
+    // survives no-cors (application/json does not: the browser silently drops
+    // it), so n8n parses each field into $json.body.<name>. keepalive lets the
+    // request outlive the redirect below, so the lead can't be dropped mid-flight.
+    var body = new URLSearchParams({ "leadStatus": "new", "leadSource": "lp_google", "date": kcTimestamp(), "firstname": fname, "phone": phone }).toString();
+    fetch('https://n8n.kccleancarpets.com/webhook/website-leads', {
+        method: 'POST', mode: 'no-cors', keepalive: true,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+    }).catch(function (err) { console.error('n8n webhook error:', err); });
+    // Straight to booking — the redirect no longer waits on any webhook response.
+    btn.textContent = 'Redirecting...';
+    window.location.href = 'https://www.markate.com/public/widget/booking/products/7ef135c66c1c4f08932b8a16464ca1b8:30542:79c51231';
 });
 </script>
 <script>

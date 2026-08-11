@@ -505,5 +505,41 @@ document.addEventListener('click', function(e) {
 
 })();
 </script>
+
+<!-- PostHog (deferred until after load — same pattern as GTM below/above).
+     Mirrors the existing GTM dataLayer conversion events (phone_click,
+     form_submission) so PostHog and GA4 see identical conversions. -->
+<script>
+(function () {
+  var loaded = false;
+  function loadPH() {
+    if (loaded) return; loaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://us-assets.i.posthog.com/static/array.js';
+    s.onload = function () {
+      if (!window.posthog || !window.posthog.init) return;
+      window.posthog.init('phc_nMxUUgf2idAQRmwwtwUcH7QaWM4PoVyjTf3ZVEMwGuZV', {
+        api_host: 'https://us.i.posthog.com',
+        persistence: 'localStorage+cookie'
+      });
+      var dl = window.dataLayer = window.dataLayer || [];
+      var orig = dl.push.bind(dl);
+      dl.push = function () {
+        for (var i = 0; i < arguments.length; i++) {
+          var e = arguments[i];
+          if (e && (e.event === 'phone_click' || e.event === 'form_submission')) {
+            try { window.posthog.capture(e.event, e); } catch (_) {}
+          }
+        }
+        return orig.apply(null, arguments);
+      };
+    };
+    document.head.appendChild(s);
+  }
+  if (document.readyState === 'complete') setTimeout(loadPH, 1);
+  else window.addEventListener('load', function () { setTimeout(loadPH, 1); });
+})();
+</script>
 </body>
 </html>

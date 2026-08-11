@@ -732,10 +732,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var submitBtn = form.querySelector('.submit-btn');
 
     // ── Lead delivery (parallel, fire-and-forget) ────────────────────────
-    // n8n is the primary sink; Zapier is an independent backup so a single
+    // n8n is the client-side sink; server-side fan-out (FSM, sheets, backup
     // failed endpoint can't lose a lead. All sinks get the same payload.
     var N8N_WEBHOOK_URL   = 'https://n8n.kccleancarpets.com/webhook/website-leads';
-    var ZAPIER_BACKUP_URL = 'https://hooks.zapier.com/hooks/catch/10879187/44wf2pz/';
     // n8n's TEST webhook — only receives when the workflow editor is armed with
     // "Listen for test event"; otherwise it just 404s harmlessly. Fired last.
     var N8N_TEST_URL      = 'https://n8n.kccleancarpets.com/webhook-test/website-leads';
@@ -744,7 +743,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!url) return;
         // form-urlencoded is the one content type that survives no-cors (an
         // application/json header is silently dropped) — n8n parses it into
-        // $json.body.<name> and Zapier splits it into named catch-hook fields.
+        // $json.body.<name> on the n8n side.
         // keepalive lets the request outlive the redirect that fires right
         // after, so navigation can't cancel an in-flight POST (which on a cold
         // connection would silently lose the lead).
@@ -846,7 +845,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // survives this navigation, so the redirect can't outrace them and
         // doesn't depend on any webhook's response.
         postLead(N8N_WEBHOOK_URL, payload, 'n8n');
-        postLead(ZAPIER_BACKUP_URL, payload, 'zapier');
         postLead(N8N_TEST_URL, payload, 'n8n-test'); // last; only lands when the editor is listening
 
         submitBtn.textContent = 'Opening your quote...';

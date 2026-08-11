@@ -498,11 +498,19 @@ document.addEventListener('click', function(e) {
       if (inited) return; inited = true;
       window.posthog.init('phc_nMxUUgf2idAQRmwwtwUcH7QaWM4PoVyjTf3ZVEMwGuZV', {
         api_host: 'https://us.i.posthog.com',
-        persistence: 'localStorage+cookie'
+        persistence: 'localStorage+cookie',
+        disable_surveys: true
       });
     }
-    if (document.readyState === 'complete') setTimeout(initPH, 1);
-    else window.addEventListener('load', function () { setTimeout(initPH, 1); });
+    // Init on first interaction — same trigger discipline as GTM, so PostHog
+    // and GA4 count identical sessions and neither touches the lab LCP window.
+    // Captures before init queue safely in the stub above.
+    var evs = ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'];
+    function arm() {
+      for (var i = 0; i < evs.length; i++) window.removeEventListener(evs[i], arm, {passive: true});
+      setTimeout(initPH, 1);
+    }
+    for (var i = 0; i < evs.length; i++) window.addEventListener(evs[i], arm, {passive: true, once: true});
   })();
 </script>
 </body>

@@ -376,6 +376,10 @@
             line-height: 1.7;
         }
         .form-fine .dot { color: var(--kc-gold); }
+        .sms-optin { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: #444; margin: 4px 0 14px; cursor: pointer; }
+        .sms-optin input { width: 18px; height: 18px; margin: 1px 0 0; flex-shrink: 0; accent-color: var(--kc-blue); }
+        .sms-consent { font-size: 11px; line-height: 1.55; color: #595959; text-align: left; margin: 12px 0 0; }
+        .sms-consent a { color: var(--kc-blue); }
 
         /* ── AFTER-SUBMIT STEPS ── */
         .section { max-width: 560px; margin: 0 auto; padding: 34px 20px 0; }
@@ -641,7 +645,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="form-error-box" id="form-error" role="alert"></div>
 
+                    <label class="sms-optin"><input type="checkbox" id="sms-offers" name="smsOffers" value="yes"> <span>Also text me occasional offers and seasonal reminders (optional).</span></label>
                     <button type="submit" class="submit-btn">Show My Exact Price &rarr;</button>
+                    <p class="sms-consent">By submitting, you agree to receive text messages from KC Clean Carpets at this number about your quote, scheduling, appointment reminders and follow-ups, including automated texts. Consent is not a condition of purchase. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. <a href="/sms-terms">SMS Terms</a> &middot; <a href="/privacy-policy">Privacy Policy</a></p>
                     <p class="form-fine">Free quote <span class="dot" aria-hidden="true">&bull;</span> No obligation <span class="dot" aria-hidden="true">&bull;</span> Takes about 60 seconds</p>
                 </form>
             </div>
@@ -727,7 +733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
     <div class="footer-slim">
         <span>&copy; 2026 KC Clean Carpets &middot; Raytown, MO &middot; <a href="tel:8167151130"><span class="goog-sn">(816) 715-1130</span></a></span><br>
-        <span>Heroic Cleaning. Superior Results. &middot; <a href="/privacy-policy">Privacy Policy</a></span>
+        <span>Heroic Cleaning. Superior Results. &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/sms-terms">SMS Terms</a></span>
     </div>
 </footer>
 
@@ -848,7 +854,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "leadStatus": "new",
             "date": kcTimestamp(),
             "firstname": fname,
-            "phone": phoneEl.value.trim()
+            "phone": phoneEl.value.trim(),
+            "smsOffers": document.getElementById('sms-offers').checked ? "yes" : "no"
         };
 
         // Send the lead to both sinks in parallel, then go straight to the

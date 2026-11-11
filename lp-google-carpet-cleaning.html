@@ -68,6 +68,10 @@
         .field input { width:100%; padding:14px 14px; font-size:16px; border:1.5px solid #cdd7e4; border-radius:6px; font-family:'Roboto',sans-serif; }
         .field input:focus { outline:none; border-color:var(--kc-blue); box-shadow:0 0 0 3px rgba(21,101,192,.15); }
         .fine { font-size:12px; color:#888; text-align:center; margin:12px 0 0; }
+        .sms-optin { display:flex; gap:8px; align-items:flex-start; font-size:13px; line-height:1.5; color:#444; margin:4px 0 12px; cursor:pointer; }
+        .sms-optin input { width:18px; height:18px; margin:1px 0 0; flex-shrink:0; }
+        .sms-consent { font-size:11px; line-height:1.55; color:#777; margin:10px 0 0; }
+        .sms-consent a { color:inherit; text-decoration:underline; }
         #form-error { display:none; background:#FFF3CD; border:1px solid var(--kc-gold); color:#7a5000; padding:10px 14px; border-radius:5px; font-size:13px; margin-bottom:14px; }
         .chips { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 28px; padding:16px 20px; background:#f5f7fb; }
         .chip { display:flex; align-items:center; gap:7px; font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--kc-navy); }
@@ -150,8 +154,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="tel" id="phone" name="phone" autocomplete="tel" required>
         </div>
         <div id="form-error">Please fill in both fields (First Name and Phone).</div>
+        <label class="sms-optin"><input type="checkbox" id="sms-offers" name="smsOffers" value="yes"> <span>Also text me occasional offers and seasonal reminders (optional).</span></label>
         <button type="submit" class="btn-cta">Get My Exact Price &rarr;</button>
         <p class="fine">&#128274; We&rsquo;ll text your quote straight to your phone. No spam, ever.</p>
+        <p class="sms-consent">By submitting, you agree to receive text messages from KC Clean Carpets at this number about your quote, scheduling, appointment reminders and follow-ups, including automated texts. Consent is not a condition of purchase. Msg frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. <a href="/sms-terms">SMS Terms</a> &middot; <a href="/privacy-policy">Privacy Policy</a></p>
     </form>
 </div>
         </div>
@@ -193,7 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer class="lp-foot">
     KC Clean Carpets &middot; Family-owned in Raytown, MO &middot; Serving the Kansas City metro<br>
-    (816) 715-1130 &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; &copy; 2026 KC Clean Carpets
+    (816) 715-1130 &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/sms-terms">SMS Terms</a> &middot; &copy; 2026 KC Clean Carpets
 </footer>
 
 <script>
@@ -225,7 +231,7 @@ document.getElementById('lead-form').addEventListener('submit', function(e) {
     // survives no-cors (application/json does not: the browser silently drops
     // it), so n8n parses each field into $json.body.<name>. keepalive lets the
     // request outlive the redirect below, so the lead can't be dropped mid-flight.
-    var body = new URLSearchParams({ "leadStatus": "new", "leadSource": "lp_google", "date": kcTimestamp(), "firstname": fname, "phone": phone }).toString();
+    var body = new URLSearchParams({ "leadStatus": "new", "leadSource": "lp_google", "date": kcTimestamp(), "firstname": fname, "phone": phone, "smsOffers": document.getElementById('sms-offers').checked ? "yes" : "no" }).toString();
     fetch('https://n8n.kccleancarpets.com/webhook/website-leads', {
         method: 'POST', mode: 'no-cors', keepalive: true,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

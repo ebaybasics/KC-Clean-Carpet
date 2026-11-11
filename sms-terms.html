@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Text messaging terms for KC Clean Carpets: what texts we send, how often, and how to opt out (reply STOP) or get help (reply HELP).">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.kccleancarpets.com/sms-terms">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SMS Terms | KC Clean Carpets">
+    <meta property="og:description" content="Text messaging terms for KC Clean Carpets.">
+    <meta property="og:url" content="https://www.kccleancarpets.com/sms-terms">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Terms | KC Clean Carpets</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="/brand_assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/brand_assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/brand_assets/favicon/site.webmanifest">
+    <link rel="preload" href="fonts/montserrat-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/montserrat-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/roboto-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: fallback;
+            src: url(fonts/montserrat-500-800-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-display: fallback;
+            src: url(fonts/montserrat-900-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: fallback;
+            src: url(fonts/roboto-400-700-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            font-display: fallback;
+            src: url(fonts/roboto-italic-400-latin.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        :root { --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #222; background: #fff; }
+        a { text-decoration: none; }
+        img { display: block; max-width: 100%; }
+
+        .top-bar { background: var(--kc-blue-dark); color: #fff; font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 7px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-phone { font-size: 15px; font-weight: 800; color: var(--kc-gold); }
+        .top-socials { display: flex; gap: 8px; }
+        .top-socials a { width: 36px; height: 36px; background: rgba(255,255,255,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 700; transition: background .2s; }
+        .top-socials a:hover { background: var(--kc-gold); color: var(--kc-navy); }
+
+        .navbar { background: #fff; padding: 10px 32px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 12px rgba(13,71,161,.12); position: sticky; top: 0; z-index: 100; }
+        .nav-logo { height: 72px; width: auto; }
+        .nav-links { display: flex; gap: 8px; align-items: center; }
+        .nav-links > a { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; transition: color .2s, background .2s; }
+        .nav-links > a:hover { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-cta { background: var(--kc-gold) !important; color: var(--kc-navy) !important; padding: 9px 20px !important; font-weight: 800 !important; border-radius: 2px; }
+        .nav-cta:hover { background: #E65100 !important; color: #fff !important; }
+        .nav-dropdown { position: relative; }
+        .nav-dropdown-trigger { font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 8px 14px; border-radius: 2px; cursor: pointer; transition: color .2s, background .2s; display: flex; align-items: center; gap: 4px; }
+        .nav-dropdown-trigger:hover, .nav-dropdown:hover .nav-dropdown-trigger { color: var(--kc-gold); background: rgba(21,101,192,.06); }
+        .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #e8edf5; border-radius: 4px; box-shadow: 0 8px 32px rgba(13,71,161,.14); min-width: 210px; z-index: 200; overflow: hidden; padding-top: 6px; }
+        .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+        .nav-dropdown-menu a { display: block; font-family: 'Montserrat',sans-serif; font-size: 12px; font-weight: 600; color: var(--kc-blue-dark); padding: 11px 18px; letter-spacing: .04em; transition: background .15s, color .15s; border-bottom: 1px solid #f0f3fa; }
+        .nav-dropdown-menu a:last-child { border-bottom: none; }
+        .nav-dropdown-menu a:hover { background: var(--kc-blue-dark); color: #fff; }
+
+        .page-hero { background: linear-gradient(135deg, var(--kc-navy) 0%, var(--kc-blue) 100%); padding: 56px 32px; text-align: center; color: #fff; }
+        .page-hero h1 { font-family: 'Montserrat',sans-serif; font-weight: 900; font-size: clamp(26px,4vw,42px); margin: 0 0 8px; }
+        .page-hero p { font-family: 'Montserrat',sans-serif; font-size: 14px; opacity: .75; margin: 0; }
+
+        .content-wrap { max-width: 820px; margin: 0 auto; padding: 64px 32px 80px; }
+
+        .content-wrap h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--kc-blue-dark);
+            margin: 40px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eef1f8;
+        }
+        .content-wrap h2:first-child { margin-top: 0; }
+        .content-wrap p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin: 0 0 16px;
+        }
+        .content-wrap ul {
+            margin: 0 0 16px;
+            padding-left: 24px;
+        }
+        .content-wrap ul li {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 6px;
+        }
+        .content-wrap a { color: var(--kc-blue); }
+        .content-wrap a:hover { text-decoration: underline; }
+        .effective-date {
+            display: inline-block;
+            background: #f5f7fb;
+            border-left: 3px solid var(--kc-gold);
+            padding: 10px 18px;
+            font-size: 13px;
+            color: #666;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 40px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer { background: #07142A; padding: 48px 32px 24px; }
+        .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 160px 1fr 1fr 1fr; gap: 40px 32px; }
+        .footer-logo-wrap img { width: 110px; }
+        .footer-logo-wrap p { font-size: 12px; color: rgba(255,255,255,.8); margin: 10px 0 0; line-height: 1.6; }
+        .footer-col h3 { font-family: 'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-gold); margin: 0 0 14px; }
+        .footer-col a { display: flex; align-items: center; min-height: 44px; font-size: 13px; color: rgba(255,255,255,.8); transition: color .2s; }
+        .footer-col a:hover { color: #fff; }
+        .footer-col span { display: block; font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 7px; }
+        .footer-bottom { max-width: 1060px; margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.07); display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.75); flex-wrap: wrap; gap: 8px; }
+
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; z-index: 301; flex-direction: column; gap: 5px; }
+        .hamburger span { display: block; width: 26px; height: 3px; background: var(--kc-blue-dark); border-radius: 2px; transition: transform .3s, opacity .3s; }
+        .hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        @media (max-width: 768px) {
+            html, body { overflow-x: hidden; }
+            .top-bar { flex-direction: column; gap: 4px; text-align: center; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+            .footer-logo-wrap { grid-column: 1/-1; }
+            .content-wrap { padding: 40px 20px 60px; }
+        }
+
+        .mob-backdrop { display: none; position: fixed; inset: 0; background: rgba(10,36,99,.55); z-index: 9998; cursor: pointer; }
+        .mob-backdrop.active { display: block; }
+        .mob-drawer { display: none; position: fixed; top: 0; right: 0; width: 300px; height: 100vh; background: #fff; flex-direction: column; z-index: 9999; overflow-y: auto; box-shadow: -4px 0 40px rgba(0,0,0,.22); padding: 0; }
+        .mob-drawer.active { display: flex; }
+        .mob-drawer-head { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 2px solid var(--kc-blue-dark); background: var(--kc-blue-dark); flex-shrink: 0; }
+        .mob-drawer-head img { height: 48px; width: auto; }
+        .mob-close { background: none; border: none; cursor: pointer; color: #fff; font-size: 26px; line-height: 1; padding: 4px 8px; }
+        .mob-drawer-body { flex: 1; overflow-y: auto; padding: 8px 0 24px; }
+        .mob-drawer-body a { display: block; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 14px 24px; border-bottom: 1px solid #eef1f8; text-decoration: none; }
+        .mob-drawer-body a:hover { background: rgba(21,101,192,.06); color: var(--kc-gold); }
+        .mob-svc-label { font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--kc-blue-dark); padding: 16px 24px 6px; display: block; }
+        .mob-drawer-body .mob-sub { font-size: 12px; font-weight: 600; text-transform: none; letter-spacing: .03em; color: #555; padding: 11px 24px 11px 36px; }
+        .mob-drawer-body .mob-cta { margin: 20px 20px 0; background: var(--kc-gold); color: var(--kc-navy) !important; text-align: center; border-radius: 3px; padding: 14px 20px !important; font-size: 13px !important; border-bottom: none !important; box-shadow: 0 4px 14px rgba(255,179,0,.35); }
+        .mob-drawer-phone { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 20px; background: #f5f7fb; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; color: var(--kc-blue-dark) !important; letter-spacing: .02em; border-bottom: none !important; text-transform: none !important; }
+        @media (max-width: 768px) { .nav-links { display: none !important; } .hamburger { display: flex !important; } }
+        @media (min-width: 769px) { .mob-backdrop, .mob-drawer { display: none !important; } }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.kccleancarpets.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SMS Terms",
+          "item": "https://www.kccleancarpets.com/sms-terms"
+        }
+      ]
+    }
+    </script>
+    <!-- Google Tag Manager (delayed) -->
+    <script>window.dataLayer=window.dataLayer||[];</script>
+    <!-- End Google Tag Manager (delayed) -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJHSP6P6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="top-bar">
+    <span>Customer Service &amp; Quality is Our #1 Priority!</span>
+    <div style="display:flex;align-items:center;gap:20px;">
+        <a href="tel:8167151130" class="top-bar-phone" style="text-decoration:none;"><span>📞</span> <span class="goog-sn">(816) 715-1130</span></a>
+        <div class="top-socials"><a href="https://www.facebook.com/kccleancarpets" title="Facebook" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.youtube.com/@kccleancarpets" title="YouTube" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <a href="/"><img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" class="nav-logo" alt="KC Clean Carpets"></a>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMobNav()"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <div class="nav-dropdown">
+            <span class="nav-dropdown-trigger">Services &#9662;</span>
+            <div class="nav-dropdown-menu">
+                <a href="/carpet-cleaning">Carpet Cleaning</a>
+                <a href="/pet-stain-odor-removal-kansas-city">Pet Stain &amp; Odor Removal</a>
+                <a href="/commercial-carpet-cleaning">Commercial Carpet Cleaning</a>
+                <a href="/hardwood-cleaning">Hardwood Floor Cleaning</a>
+                <a href="/sandless-refinishing">Sandless Refinishing</a>
+                <a href="/wax-removal">Wax Removal</a>
+                <a href="/upholstery-cleaning">Upholstery Cleaning</a>
+                <a href="/tile-grout-cleaning">Tile &amp; Grout Cleaning</a>
+                <a href="/rug-cleaning-kansas-city">Area Rug Cleaning</a>
+                <a href="/water-extraction-kansas-city">Water Extraction</a>
+            </div>
+        </div>
+        <a href="/about">About Us</a>
+        <a href="/blog">Blog</a>
+        <a href="/partners">Partners</a>
+        <a href="/schedule" class="nav-cta">Start My 60-Second Quote</a>
+    </div>
+</nav>
+
+<main>
+<div class="page-hero">
+    <h1>SMS Terms</h1>
+    <p>Last updated: November 11, 2026</p>
+</div>
+
+<div class="content-wrap">
+    <span class="effective-date">Effective Date: November 11, 2026</span>
+
+    <h2>1. Program</h2>
+    <p>KC Clean Carpets sends text messages to customers and people who request a quote. Texts are about your quote, scheduling, appointment reminders and confirmations, and follow-ups on your request, including automated follow-ups if we haven&rsquo;t connected yet. If you checked the optional offers box, we may also send occasional promotional texts such as seasonal reminders and specials.</p>
+
+    <h2>2. How you opt in</h2>
+    <p>You opt in by entering your mobile number on a quote or booking form on www.kccleancarpets.com and submitting it next to our text-messaging disclosure, or by texting us first or asking us to text you. Promotional texts are a separate, optional checkbox that is unchecked by default. Consent to receive texts is not a condition of purchase.</p>
+
+    <h2>3. Message frequency</h2>
+    <p>Message frequency varies with your request and appointments. A typical quote conversation is a handful of messages; automated follow-ups stop after a few days if you don&rsquo;t reply, and stop as soon as you reply or book.</p>
+
+    <h2>4. Cost</h2>
+    <p>Message and data rates may apply. KC Clean Carpets does not charge for text messages.</p>
+
+    <h2>5. Opting out</h2>
+    <p>Reply <strong>STOP</strong> to any message to stop all texts from us. You will receive one final message confirming you have been unsubscribed, and no further texts after that. Reply <strong>START</strong> to resubscribe. You can also ask us to stop by calling <a href="tel:8167151130">(816) 715-1130</a> or emailing <a href="mailto:kccleancarpets@gmail.com">kccleancarpets@gmail.com</a>.</p>
+
+    <h2>6. Help</h2>
+    <p>Reply <strong>HELP</strong> to any message for help, call <a href="tel:8167151130">(816) 715-1130</a>, or email <a href="mailto:kccleancarpets@gmail.com">kccleancarpets@gmail.com</a>.</p>
+
+    <h2>7. Carriers</h2>
+    <p>Carriers are not liable for delayed or undelivered messages. Supported carriers include all major U.S. carriers.</p>
+
+    <h2>8. Privacy</h2>
+    <p>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Text messaging opt-in data and consent are not shared with or sold to any third party. See our <a href="/privacy-policy">Privacy Policy</a>, including the <a href="/privacy-policy#sms">Text Messaging (SMS)</a> section, for how we handle your information.</p>
+
+    <h2>9. Contact</h2>
+    <ul>
+        <li>KC Clean Carpets, Kansas City, MO</li>
+        <li>Phone: <a href="tel:8167151130">(816) 715-1130</a></li>
+        <li>Email: <a href="mailto:kccleancarpets@gmail.com">kccleancarpets@gmail.com</a></li>
+    </ul>
+</div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo-wrap">
+            <img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets">
+            <p>Heroic Cleaning.<br>Superior Results.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Services</h3>
+            <a href="/carpet-cleaning">Carpet Cleaning</a>
+            <a href="/pet-stain-odor-removal-kansas-city">Pet Stain &amp; Odor Removal</a>
+            <a href="/commercial-carpet-cleaning">Commercial Cleaning</a>
+            <a href="/hardwood-cleaning">Hardwood Floor Cleaning</a>
+            <a href="/sandless-refinishing">Sandless Refinishing</a>
+            <a href="/wax-removal">Wax Removal</a>
+            <a href="/upholstery-cleaning">Upholstery Cleaning</a>
+            <a href="/tile-grout-cleaning">Tile &amp; Grout Cleaning</a>
+            <a href="/rug-cleaning-kansas-city">Area Rug Cleaning</a>
+                <a href="/water-extraction-kansas-city">Water Extraction</a>
+        </div>
+        <div class="footer-col">
+            <h3>Company</h3>
+            <a href="/about">About Us</a>
+            <a href="/blog">Blog</a>
+            <a href="/testimonials">Testimonials</a>
+            <a href="/partners">Partners</a>
+            <a href="/carpet-cleaning-before-and-after">Before &amp; After Gallery</a>
+            <a href="/carpet-cleaning-cost">Pricing Guide</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/sms-terms">SMS Terms</a>
+        </div>
+        <div class="footer-col">
+            <h3>Contact Us</h3>
+            <a href="tel:8167151130"><span class="goog-sn">(816) 715-1130</span></a>
+            <a href="mailto:kccleancarpets@gmail.com">kccleancarpets@gmail.com</a>
+            <span>Raytown, MO</span>
+            <span>Mon&ndash;Sat: 8am &ndash; 8pm</span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 KC Clean Carpets. All rights reserved.</span>
+        <span>Heroic Cleaning. Superior Results.</span>
+    </div>
+</footer>
+
+<div class="mob-backdrop" id="mobBackdrop" onclick="toggleMobNav()"></div>
+<div class="mob-drawer" id="mobDrawer">
+    <div class="mob-drawer-head">
+        <img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets">
+        <button class="mob-close" onclick="toggleMobNav()" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mob-drawer-body">
+        <a href="/">Home</a>
+        <span class="mob-svc-label">Services</span>
+        <a href="/carpet-cleaning" class="mob-sub">Carpet Cleaning</a>
+        <a href="/pet-stain-odor-removal-kansas-city" class="mob-sub">Pet Stain &amp; Odor Removal</a>
+        <a href="/commercial-carpet-cleaning" class="mob-sub">Commercial Carpet Cleaning</a>
+        <a href="/hardwood-cleaning" class="mob-sub">Hardwood Floor Cleaning</a>
+        <a href="/sandless-refinishing" class="mob-sub">Sandless Refinishing</a>
+        <a href="/wax-removal" class="mob-sub">Wax Removal</a>
+        <a href="/upholstery-cleaning" class="mob-sub">Upholstery Cleaning</a>
+        <a href="/tile-grout-cleaning" class="mob-sub">Tile &amp; Grout Cleaning</a>
+        <a href="/rug-cleaning-kansas-city" class="mob-sub">Area Rug Cleaning</a>
+        <a href="/water-extraction-kansas-city" class="mob-sub">Water Extraction</a>
+        <a href="/about">About Us</a>
+        <a href="/blog">Blog</a>
+        <a href="/partners">Partners</a>
+        <a href="tel:8167151130" class="mob-drawer-phone">📞 (816) 715-1130</a>
+        <a href="/schedule" class="mob-cta">Start My 60-Second Quote</a>
+    </div>
+</div>
+
+<script>
+function toggleMobNav() {
+    document.getElementById('mobDrawer').classList.toggle('active');
+    document.getElementById('mobBackdrop').classList.toggle('active');
+    document.body.style.overflow = document.getElementById('mobDrawer').classList.contains('active') ? 'hidden' : '';
+}
+</script>
+<script>
+(function(){
+    var loaded=false;
+    function loadGTM(){
+        if(loaded)return;loaded=true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WJHSP6P6');
+    }
+    ['scroll','mousedown','touchstart','keydown','pointerdown','click'].forEach(function(e){
+        window.addEventListener(e,loadGTM,{passive:true,once:true});
+    });
+
+})();
+</script>
+
+<!-- PostHog: canonical stub inline (queues captures before load), init
+     deferred until after window load so LCP is untouched. The dataLayer
+     bridge mirrors GTM's phone_click / form_submission into PostHog. -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}p||((p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",p.onerror=function(){p=null},(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r));var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  (function () {
+    // GTM replaces dataLayer.push when it loads, so a one-shot wrapper gets
+    // wiped. Re-wrap whatever push currently is (chaining through it, so GTM
+    // processing is untouched) until the wrap survives.
+    function wrapDL() {
+      var dl = window.dataLayer = window.dataLayer || [];
+      if (dl.push && dl.push.__phWrapped) return;
+      var orig = dl.push.bind(dl);
+      var wrapped = function () {
+        for (var i = 0; i < arguments.length; i++) {
+          var e = arguments[i];
+          if (e && (e.event === 'phone_click' || e.event === 'form_submission')) {
+            try { window.posthog.capture(e.event, e); } catch (_) {}
+          }
+        }
+        return orig.apply(null, arguments);
+      };
+      wrapped.__phWrapped = true;
+      dl.push = wrapped;
+    }
+    wrapDL();
+    setInterval(wrapDL, 2000);
+    var inited = false;
+    function initPH() {
+      if (inited) return; inited = true;
+      window.posthog.init('phc_nMxUUgf2idAQRmwwtwUcH7QaWM4PoVyjTf3ZVEMwGuZV', {
+        api_host: 'https://us.i.posthog.com',
+        persistence: 'localStorage+cookie',
+        disable_surveys: true
+      });
+    }
+    // Init on first interaction — same trigger discipline as GTM, so PostHog
+    // and GA4 count identical sessions and neither touches the lab LCP window.
+    // Captures before init queue safely in the stub above.
+    var evs = ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'];
+    function arm() {
+      for (var i = 0; i < evs.length; i++) window.removeEventListener(evs[i], arm, {passive: true});
+      setTimeout(initPH, 1);
+    }
+    for (var i = 0; i < evs.length; i++) window.addEventListener(evs[i], arm, {passive: true, once: true});
+  })();
+</script>
+</body>
+</html>

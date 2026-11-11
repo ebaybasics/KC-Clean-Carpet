@@ -35,6 +35,7 @@
   textarea { min-height: 120px; resize: vertical; }
   .small-link { display: inline-block; margin-top: 16px; font-size: 14px; color: var(--kc-blue); }
   [hidden] { display: none !important; }
+  .owner img { display: block; width: 72px; height: 72px; margin: -4px auto 12px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid #fff; box-shadow: 0 2px 10px rgba(10, 36, 99, 0.18); }
   footer { text-align: center; font-size: 13px; color: var(--muted); padding: 0 16px 32px; }
   footer a { color: var(--muted); }
 </style>
@@ -44,8 +45,12 @@
 <main>
   <div class="card">
     <section id="ask">
+      <picture class="owner">
+        <source srcset="brand_assets/profile-pic.avif" type="image/avif">
+        <img src="brand_assets/profile-pic.webp" alt="Roland, owner of KC Clean Carpets" width="72" height="72">
+      </picture>
       <h1 id="hello">How did we do?</h1>
-      <p>Tap a star. It only takes a second.</p>
+      <p>Thanks for having us out. Tap a star, it only takes a second.</p>
       <div class="stars" role="group" aria-label="Your rating">
         <button type="button" data-stars="1" aria-label="1 star">★</button>
         <button type="button" data-stars="2" aria-label="2 stars">★</button>
@@ -63,8 +68,8 @@
     </section>
 
     <section id="sorry" hidden>
-      <h1>I'm sorry.</h1>
-      <p>I'm sorry we missed the mark. Tell me what happened and I'll make it right.</p>
+      <h1>Let's make it right.</h1>
+      <p>I'm sorry we missed the mark. Tell me what happened and I'll fix it.</p>
       <form id="fb">
         <label for="text">What happened?</label>
         <textarea id="text" maxlength="1000" required></textarea>

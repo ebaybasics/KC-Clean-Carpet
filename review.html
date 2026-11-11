@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How did we do? | KC Clean Carpets</title>
+<link rel="icon" href="/favicon.ico">
+<style>
+  :root {
+    --kc-blue: #1565C0; --kc-blue-dark: #0D47A1; --kc-navy: #0A2463; --kc-gold: #FFB300;
+    --text: #1d2433; --muted: #5b6475; --line: #e3e7ef; --bg: #f5f7fb; --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+  header { background: var(--kc-navy); padding: 14px 16px; text-align: center; }
+  header img { height: 56px; width: auto; }
+  main { max-width: 480px; margin: 0 auto; padding: 24px 16px 48px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px 22px; box-shadow: 0 6px 24px rgba(10, 36, 99, 0.08); text-align: center; }
+  h1 { font-size: 24px; line-height: 1.25; margin: 0 0 8px; color: var(--kc-navy); letter-spacing: -0.01em; }
+  p { margin: 0 0 14px; color: var(--muted); }
+  .stars { display: flex; justify-content: center; gap: 6px; margin: 18px 0 8px; }
+  .stars button { font-size: 44px; line-height: 1; background: none; border: 0; padding: 4px; cursor: pointer; color: #c9cfdb; transition: transform .12s ease; }
+  .stars button.on { color: var(--kc-gold); }
+  .stars button:hover { transform: scale(1.08); }
+  .stars button:focus-visible { outline: 3px solid var(--kc-blue); outline-offset: 2px; border-radius: 8px; }
+  .hint { font-size: 13px; color: var(--muted); }
+  .btn { display: inline-block; width: 100%; padding: 14px 18px; border-radius: 12px; border: 0; font: inherit; font-weight: 700; font-size: 17px; cursor: pointer; text-decoration: none; }
+  .btn-google { background: var(--kc-blue); color: #fff; margin-top: 6px; }
+  .btn-google:hover { background: var(--kc-blue-dark); }
+  .btn-send { background: var(--kc-navy); color: #fff; margin-top: 10px; }
+  .btn:focus-visible { outline: 3px solid var(--kc-gold); outline-offset: 2px; }
+  label { display: block; text-align: left; font-weight: 600; font-size: 14px; margin: 14px 0 6px; color: var(--text); }
+  textarea, input { width: 100%; font: inherit; font-size: 16px; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--text); }
+  textarea { min-height: 120px; resize: vertical; }
+  .small-link { display: inline-block; margin-top: 16px; font-size: 14px; color: var(--kc-blue); }
+  [hidden] { display: none !important; }
+  footer { text-align: center; font-size: 13px; color: var(--muted); padding: 0 16px 32px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<header><img src="brand_assets/KC%20Clean%20Carpet%20Logo.webp" alt="KC Clean Carpets"></header>
+<main>
+  <div class="card">
+    <section id="ask">
+      <h1 id="hello">How did we do?</h1>
+      <p>Tap a star. It only takes a second.</p>
+      <div class="stars" role="group" aria-label="Your rating">
+        <button type="button" data-stars="1" aria-label="1 star">★</button>
+        <button type="button" data-stars="2" aria-label="2 stars">★</button>
+        <button type="button" data-stars="3" aria-label="3 stars">★</button>
+        <button type="button" data-stars="4" aria-label="4 stars">★</button>
+        <button type="button" data-stars="5" aria-label="5 stars">★</button>
+      </div>
+    </section>
+
+    <section id="happy" hidden>
+      <h1>Thank you!</h1>
+      <p>Would you share that on Google? It helps other Kansas City families find us.</p>
+      <a class="btn btn-google" href="https://g.page/r/CXOdcrlCHOaDEBM/review" target="_blank" rel="noopener">Leave a Google review</a>
+      <p class="hint" style="margin-top:14px">Changed your mind? You can tap a different star above.</p>
+    </section>
+
+    <section id="sorry" hidden>
+      <h1>I'm sorry.</h1>
+      <p>I'm sorry we missed the mark. Tell me what happened and I'll make it right.</p>
+      <form id="fb">
+        <label for="text">What happened?</label>
+        <textarea id="text" maxlength="1000" required></textarea>
+        <label for="contact">Best way to reach you (optional)</label>
+        <input id="contact" maxlength="200" autocomplete="tel">
+        <button class="btn btn-send" type="submit">Send to Roland</button>
+      </form>
+      <p id="thanks" hidden>Thank you. I got your note and I'll be in touch. – Roland</p>
+      <a class="small-link" href="https://g.page/r/CXOdcrlCHOaDEBM/review" target="_blank" rel="noopener">Or leave a Google review</a>
+    </section>
+
+    <section id="expired" hidden>
+      <h1>Thanks for stopping by</h1>
+      <p>This link has expired. Call or text (816) 715-1130.</p>
+    </section>
+  </div>
+</main>
+<footer>KC Clean Carpets · <a href="/privacy-policy">Privacy Policy</a></footer>
+<script>
+(function () {
+  var HOOK = 'https://n8n.kccleancarpets.com/webhook/review-feedback';
+  var t = (new URLSearchParams(location.search).get('t') || '').toLowerCase();
+  var $ = function (id) { return document.getElementById(id); };
+  var show = function (id) { ['ask', 'happy', 'sorry', 'expired'].forEach(function (s) { $(s).hidden = s !== id && !(s === 'ask' && id !== 'expired'); }); };
+  var stars = 0;
+  var post = function (fields) {
+    var body = new URLSearchParams(Object.assign({ t: t }, fields)); // form-encoded: no CORS preflight
+    return fetch(HOOK, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() })
+      .then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }); });
+  };
+  var paint = function (n) { document.querySelectorAll('[data-stars]').forEach(function (b) { b.classList.toggle('on', Number(b.dataset.stars) <= n); }); };
+
+  if (!/^[0-9a-f]{16}$/.test(t)) { show('expired'); return; }
+  fetch(HOOK + '?t=' + encodeURIComponent(t)).then(function (r) { return r.json().then(function (j) { return { status: r.status, body: j }; }); })
+    .then(function (res) {
+      if (res.status !== 200 || !res.body.ok) { show('expired'); return; }
+      if (res.body.first && res.body.first !== 'there') $('hello').textContent = 'How did we do, ' + res.body.first + '?';
+    }).catch(function () { /* still let them rate; the POST decides */ });
+
+  document.querySelectorAll('[data-stars]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      stars = Number(b.dataset.stars);
+      paint(stars);
+      show(stars >= 4 ? 'happy' : 'sorry');
+      post({ stars: String(stars) }).then(function (res) { if (res.status === 404) show('expired'); }).catch(function () {});
+    });
+  });
+  $('fb').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var text = $('text').value.trim();
+    if (!text) return;
+    post({ stars: String(stars), text: text, contact: $('contact').value.trim() }).then(function () {
+      $('fb').hidden = true; $('thanks').hidden = false;
+    }).catch(function () { alert('Sorry, that did not go through. Please call or text (816) 715-1130.'); });
+  });
+})();
+</script>
+</body>
+</html>
